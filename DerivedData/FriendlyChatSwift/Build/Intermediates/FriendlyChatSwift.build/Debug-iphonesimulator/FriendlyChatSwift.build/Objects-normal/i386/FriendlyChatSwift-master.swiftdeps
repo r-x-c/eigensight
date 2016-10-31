@@ -1,0 +1,10 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "1ea630a83b1bf5c26de8f96b24b586f3"
+build_time: [531206980, 506247000]
+inputs:
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/SignInViewController.swift": [531203952, 0]
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/AppState.swift": [530776369, 0]
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/FCViewController.swift": [531206958, 0]
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/AppDelegate.swift": [530429186, 0]
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/MeasurementHelper.swift": [530428564, 0]
+  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/Constants.swift": [530428564, 0]

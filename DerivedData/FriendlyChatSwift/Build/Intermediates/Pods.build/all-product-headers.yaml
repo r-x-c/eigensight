@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/FriendlyChatSwift/Build/Products/Debug-iphoneos/Pods_FriendlyChatSwift.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-FriendlyChatSwift-umbrella.h",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_FriendlyChatSwift-Swift.h",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/FriendlyChatSwift/Build/Products/Debug-iphoneos/Pods_FriendlyChatSwift.framework/Headers/Pods_FriendlyChatSwift-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/FriendlyChatSwift/Build/Products/Debug-iphoneos/Pods_FriendlyChatSwift.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/FriendlyChatSwift/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-FriendlyChatSwift.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
