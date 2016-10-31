@@ -1,0 +1,351 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["CSo6NSDate", ""]
+- ["CSo6NSDate", "hour"]
+- ["CSo6NSDate", "minute"]
+- ["CSo6NSDate", "second"]
+- ["CSo6NSDate", "toShortTimeString"]
+provides-dynamic-lookup:
+- "second"
+- "toShortTimeString"
+- "hour"
+- "minute"
+depends-top-level:
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- "NSDate"
+- "String"
+- !private "NSCalendar"
+- "Int"
+- !private "DateFormatter"
+- !private "Date"
+depends-member:
+- !private ["Ps9AnyObject", "DateFormatter"]
+- !private ["Ps9AnyObject", "NSCalendar"]
+- !private ["Ps9AnyObject", "current"]
+- ["Ps9AnyObject", "hour"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "minute"]
+- ["Ps9AnyObject", "second"]
+- !private ["Ps9AnyObject", "string"]
+- !private ["Ps9AnyObject", "timeStyle"]
+- ["Ps9AnyObject", "toShortTimeString"]
+- !private ["Ps7CVarArg", "DateFormatter"]
+- !private ["Ps7CVarArg", "NSCalendar"]
+- !private ["Ps7CVarArg", "current"]
+- ["Ps7CVarArg", "hour"]
+- !private ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "minute"]
+- ["Ps7CVarArg", "second"]
+- !private ["Ps7CVarArg", "string"]
+- !private ["Ps7CVarArg", "timeStyle"]
+- ["Ps7CVarArg", "toShortTimeString"]
+- !private ["V10Foundation8Calendar", "component"]
+- ["V10Foundation8Calendar", "deinit"]
+- ["OV10Foundation8Calendar9Component", "deinit"]
+- !private ["OV10Foundation8Calendar9Component", "hour"]
+- !private ["OV10Foundation8Calendar9Component", "minute"]
+- !private ["OV10Foundation8Calendar9Component", "second"]
+- !private ["Ps28CustomDebugStringConvertible", "DateFormatter"]
+- !private ["Ps28CustomDebugStringConvertible", "NSCalendar"]
+- !private ["Ps28CustomDebugStringConvertible", "component"]
+- !private ["Ps28CustomDebugStringConvertible", "current"]
+- ["Ps28CustomDebugStringConvertible", "hour"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "minute"]
+- ["Ps28CustomDebugStringConvertible", "second"]
+- !private ["Ps28CustomDebugStringConvertible", "string"]
+- !private ["Ps28CustomDebugStringConvertible", "timeStyle"]
+- ["Ps28CustomDebugStringConvertible", "toShortTimeString"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "DateFormatter"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "NSCalendar"]
+- !private ["Ps17CustomReflectable", "component"]
+- !private ["Ps23CustomStringConvertible", "DateFormatter"]
+- !private ["Ps23CustomStringConvertible", "NSCalendar"]
+- !private ["Ps23CustomStringConvertible", "component"]
+- !private ["Ps23CustomStringConvertible", "current"]
+- ["Ps23CustomStringConvertible", "hour"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "minute"]
+- ["Ps23CustomStringConvertible", "second"]
+- !private ["Ps23CustomStringConvertible", "string"]
+- !private ["Ps23CustomStringConvertible", "timeStyle"]
+- ["Ps23CustomStringConvertible", "toShortTimeString"]
+- ["V10Foundation4Date", "deinit"]
+- ["CSo13DateFormatter", "deinit"]
+- !private ["CSo13DateFormatter", "init"]
+- !private ["CSo13DateFormatter", "string"]
+- !private ["CSo13DateFormatter", "timeStyle"]
+- !private ["Ps9Equatable", "DateFormatter"]
+- !private ["Ps9Equatable", "NSCalendar"]
+- !private ["Ps9Equatable", "component"]
+- !private ["Ps9Equatable", "current"]
+- ["Ps9Equatable", "hour"]
+- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "minute"]
+- ["Ps9Equatable", "second"]
+- !private ["Ps9Equatable", "short"]
+- !private ["Ps9Equatable", "string"]
+- !private ["Ps9Equatable", "timeStyle"]
+- ["Ps9Equatable", "toShortTimeString"]
+- !private ["CSo9Formatter", "init"]
+- !private ["CSo9Formatter", "string"]
+- !private ["CSo9Formatter", "timeStyle"]
+- !private ["Ps8Hashable", "DateFormatter"]
+- !private ["Ps8Hashable", "NSCalendar"]
+- !private ["Ps8Hashable", "component"]
+- !private ["Ps8Hashable", "current"]
+- ["Ps8Hashable", "hour"]
+- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "minute"]
+- ["Ps8Hashable", "second"]
+- !private ["Ps8Hashable", "short"]
+- !private ["Ps8Hashable", "string"]
+- !private ["Ps8Hashable", "timeStyle"]
+- ["Ps8Hashable", "toShortTimeString"]
+- ["Si", "deinit"]
+- !private ["CSo10NSCalendar", "current"]
+- !private ["PSo8NSCoding", "DateFormatter"]
+- !private ["PSo8NSCoding", "NSCalendar"]
+- !private ["PSo8NSCoding", "current"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "string"]
+- !private ["PSo8NSCoding", "timeStyle"]
+- !private ["PSo9NSCopying", "DateFormatter"]
+- !private ["PSo9NSCopying", "NSCalendar"]
+- !private ["PSo9NSCopying", "current"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "string"]
+- !private ["PSo9NSCopying", "timeStyle"]
+- !private ["CSo6NSDate", "Date"]
+- !private ["CSo6NSDate", "DateFormatter"]
+- ["CSo6NSDate", "Int"]
+- !private ["CSo6NSDate", "NSCalendar"]
+- ["CSo6NSDate", "String"]
+- ["CSo6NSDate", "deinit"]
+- ["CSo6NSDate", "hour"]
+- ["CSo6NSDate", "minute"]
+- ["CSo6NSDate", "second"]
+- ["CSo6NSDate", "toShortTimeString"]
+- !private ["CSo8NSObject", "Date"]
+- !private ["CSo8NSObject", "DateFormatter"]
+- ["CSo8NSObject", "Int"]
+- !private ["CSo8NSObject", "NSCalendar"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "current"]
+- ["CSo8NSObject", "hour"]
+- !private ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "minute"]
+- ["CSo8NSObject", "second"]
+- !private ["CSo8NSObject", "string"]
+- !private ["CSo8NSObject", "timeStyle"]
+- ["CSo8NSObject", "toShortTimeString"]
+- !private ["PSo16NSObjectProtocol", "DateFormatter"]
+- !private ["PSo16NSObjectProtocol", "NSCalendar"]
+- !private ["PSo16NSObjectProtocol", "current"]
+- ["PSo16NSObjectProtocol", "hour"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "minute"]
+- ["PSo16NSObjectProtocol", "second"]
+- !private ["PSo16NSObjectProtocol", "string"]
+- !private ["PSo16NSObjectProtocol", "timeStyle"]
+- ["PSo16NSObjectProtocol", "toShortTimeString"]
+- !private ["PSo14NSSecureCoding", "DateFormatter"]
+- !private ["PSo14NSSecureCoding", "NSCalendar"]
+- !private ["PSo14NSSecureCoding", "current"]
+- !private ["Ps16RawRepresentable", "short"]
+- !private ["P10Foundation20ReferenceConvertible", "component"]
+- ["SS", "deinit"]
+- ["OCSo13DateFormatter5Style", "deinit"]
+- !private ["OCSo13DateFormatter5Style", "short"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "DateFormatter"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "NSCalendar"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "current"]
+- !private ["Ps9_Hashable", "DateFormatter"]
+- !private ["Ps9_Hashable", "NSCalendar"]
+- !private ["Ps9_Hashable", "component"]
+- !private ["Ps9_Hashable", "current"]
+- ["Ps9_Hashable", "hour"]
+- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "minute"]
+- ["Ps9_Hashable", "second"]
+- !private ["Ps9_Hashable", "short"]
+- !private ["Ps9_Hashable", "string"]
+- !private ["Ps9_Hashable", "timeStyle"]
+- ["Ps9_Hashable", "toShortTimeString"]
+- !private ["P10Foundation14_MutableBoxing", "component"]
+- !private ["Ps21_ObjectiveCBridgeable", "component"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps7CVarArg"
+- "V10Foundation8Calendar"
+- "OV10Foundation8Calendar9Component"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "V10Foundation4Date"
+- "CSo13DateFormatter"
+- "Ps9Equatable"
+- !private "CSo9Formatter"
+- "Ps8Hashable"
+- "Si"
+- !private "CSo10NSCalendar"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "CSo6NSDate"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "Ps16RawRepresentable"
+- !private "P10Foundation20ReferenceConvertible"
+- "SS"
+- "OCSo13DateFormatter5Style"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "P10Foundation14_MutableBoxing"
+- !private "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FIRCrashLog.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FirebaseCrash.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FIRRemoteConfig.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FirebaseRemoteConfig.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdReward.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchRequest.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchBannerView.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeContentAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAppInstallAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdNotificationSource.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPRequest.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPInterstitial.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPBannerView.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoOptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoController.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMobileAds.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediaView.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitial.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchase.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADExtras.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoader.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelator.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequestError.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequest.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerView.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSize.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdDelegate.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+interface-hash: "743c6d06a7ee4fafecba70a18b86f398"

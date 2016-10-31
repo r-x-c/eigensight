@@ -16,6 +16,7 @@
 		5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */; };
 		5F5A53801ADE67D500F81DF0 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */; };
 		DA137FC41DC6FF6400C9339D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */; };
+		DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* sharedCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCViewController.swift; sourceTree = "<group>"; };
 		DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
 		F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 		5F5A537A1ADE67D500F81DF0 /* FriendlyChatSwift */ = {
 			isa = PBXGroup;
 			children = (
+				DA84F89E1DC72A7E00890354 /* sharedCode.swift */,
 				5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */,
 				5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */,
 				2CA807BB1B21702E009AD7F2 /* MeasurementHelper.swift */,
@@ -236,6 +239,7 @@
 			files = (
 				2C8E6C2B1B16875B0073CE3D /* SignInViewController.swift in Sources */,
 				2CA807BE1B217B21009AD7F2 /* AppState.swift in Sources */,
+				DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */,
 				5F5A53801ADE67D500F81DF0 /* FCViewController.swift in Sources */,
 				5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */,
 				2CA807BC1B21702E009AD7F2 /* MeasurementHelper.swift in Sources */,

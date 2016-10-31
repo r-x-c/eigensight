@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9B01AA99FBC59E7AE7EE9B7D2581920023DAEAA6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9B01AA99FBC59E7AE7EE9B7D2581920023DAEAA6" : 9223372036854775807,
+    "EDE978B054832EB498028C3CC646998BE3FB2B78" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3E8C888A-E252-44C6-9796-C6813DD4FDFE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9B01AA99FBC59E7AE7EE9B7D2581920023DAEAA6" : "swift-starter\/",
+    "EDE978B054832EB498028C3CC646998BE3FB2B78" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Kairos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Kairos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/r-x-c\/kairos",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9B01AA99FBC59E7AE7EE9B7D2581920023DAEAA6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/firebase\/friendlychat",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EDE978B054832EB498028C3CC646998BE3FB2B78"
+    }
+  ]
+}

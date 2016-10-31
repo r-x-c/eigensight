@@ -10,19 +10,19 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/SignInViewController.nib</key>
 		<data>
-		TQmB4plQFAhpDCd5QDwYNL0DltI=
+		WSGS5RlUpwlBC4rMdeCDthTGLQQ=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<data>
-		N/1V7wSLUv6y9nbz//ekz5aj39s=
+		+LnN1KFZ7QxkPFQH46yLpEjfHGk=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<data>
-		ErxHiSDZj7mSHKv3M01eR88YdjM=
+		LvP7b1zQfzeXttfakwl6ISODL7s=
 		</data>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<data>
-		IAIJG9A+MM3IGrOCaPl8jXHw1J4=
+		/SWptrHp+CbzRuzIz/sva/ILnEA=
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
@@ -246,44 +246,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TQmB4plQFAhpDCd5QDwYNL0DltI=
+			WSGS5RlUpwlBC4rMdeCDthTGLQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			vi04JPstKmRaUDvFZ0H4I/IAsjZZohcEPNFotz7BjlQ=
+			D7TJHrnTaY3mKoES2cCJ45lYEjpPpowhe6LgmRt9/ic=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N/1V7wSLUv6y9nbz//ekz5aj39s=
+			+LnN1KFZ7QxkPFQH46yLpEjfHGk=
 			</data>
 			<key>hash2</key>
 			<data>
-			HYqoY7oP5U572+LY8Oi8SrEdIA7QOzQmznW9eF0gJmI=
+			wcd9FOFSG0AlqVqEIOkeB0V74n/pWsz7JzpMF2kg4zI=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ErxHiSDZj7mSHKv3M01eR88YdjM=
+			LvP7b1zQfzeXttfakwl6ISODL7s=
 			</data>
 			<key>hash2</key>
 			<data>
-			WXq5+rLjRMtHIGqC/fIvIwAjqhdGO/PcWwNTHQhgdqc=
+			Tzv3BXDQKkmqjQQbDU2xc8FMr9ze1VBuJtUqXXsWeU4=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IAIJG9A+MM3IGrOCaPl8jXHw1J4=
+			/SWptrHp+CbzRuzIz/sva/ILnEA=
 			</data>
 			<key>hash2</key>
 			<data>
-			V6JTxzc8rIJ1RiO2aRwi8GcusKQ1koHUAhcLWRLoTzQ=
+			gzmOea+fpmc9Mv2YvTNKEuCm/LqzHdq2wMp7zsOA1E8=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>

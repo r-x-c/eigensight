@@ -143,12 +143,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 @class NSNumber;
 @class FIRStorageReference;
 @class FIRRemoteConfig;
+@class NSTimer;
+@class NSDate;
 @class UIButton;
 @class UITextField;
 @class UITableView;
 @class UITableViewCell;
-@class UIImagePickerController;
 @class GADBannerView;
+@class UILabel;
 @class NSBundle;
 @class NSCoder;
 
@@ -163,7 +165,16 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, strong) FIRRemoteConfig * _Null_unspecified remoteConfig;
 @property (nonatomic, weak) IBOutlet GADBannerView * _Null_unspecified banner;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified clientTable;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified mainClock;
+@property (nonatomic) NSInteger c_hours;
+@property (nonatomic) NSInteger c_minutes;
+@property (nonatomic) NSInteger c_seconds;
+@property (nonatomic, strong) NSTimer * _Nonnull timer;
+@property (nonatomic, strong) NSTimer * _Nonnull countdown;
+@property (nonatomic, strong) NSDate * _Nonnull currentDate;
+@property (nonatomic, copy) NSString * _Nonnull countdownString;
 - (void)viewDidLoad;
+- (void)updateCountdown;
 - (void)configureDatabase;
 - (void)configureStorage;
 - (void)configureRemoteConfig;
@@ -172,15 +183,11 @@ SWIFT_CLASS_NAMED("FCViewController")
 - (IBAction)didSendMessage:(UIButton * _Nonnull)sender;
 - (IBAction)didPressCrash:(id _Nonnull)sender;
 - (void)logViewLoaded;
-- (void)loadAd;
 - (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField;
 - (void)sendMessageWithData:(NSDictionary<NSString *, NSString *> * _Nonnull)data;
-- (IBAction)didTapAddPhoto:(id _Nonnull)sender;
-- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
-- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (IBAction)signOut:(UIButton * _Nonnull)sender;
 - (void)showAlertWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -194,6 +201,14 @@ SWIFT_CLASS("_TtC6Kairos17MeasurementHelper")
 + (void)sendLogoutEvent;
 + (void)sendMessageEvent;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface NSDate (SWIFT_EXTENSION(Kairos))
+- (NSInteger)hour;
+- (NSInteger)minute;
+- (NSInteger)second;
+- (NSString * _Nonnull)toShortTimeString;
 @end
 
 @class FIRUser;

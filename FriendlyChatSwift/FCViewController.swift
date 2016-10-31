@@ -26,6 +26,40 @@ import GoogleMobileAds
  */
 let kBannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
 
+class timeStorage {
+    var hours: Int
+    var minutes: Int
+    var seconds: Int
+    
+    init (hrs: Int, min: Int, sec: Int) {
+        self.hours = hrs
+        self.minutes = min
+        self.seconds = sec
+    }
+    func updateTime(hrs: Int, min: Int, sec: Int) {
+        self.hours = hrs
+        self.minutes = min
+        self.seconds = sec
+    }
+    func addTime(hrs: Int, min: Int, sec: Int) {
+        self.hours += hrs
+        self.minutes += min
+        self.seconds += sec
+        
+        if self.seconds > 60{
+            self.minutes += 1
+            self.seconds -= 60
+        }
+        if self.minutes > 60{
+            self.hours += 1
+            self.minutes -= 60
+        }
+    }
+    
+}
+
+
+
 @objc(FCViewController)
 class FCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
 UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -44,9 +78,28 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     @IBOutlet weak var banner: GADBannerView!
     @IBOutlet weak var clientTable: UITableView!
     
+    //Countdown Variables
+    @IBOutlet weak var mainClock: UILabel!
+    var c_hours: Int = 0
+    var c_minutes: Int = 0
+    var c_seconds: Int = 0
+    var timer = Timer()
+    var countdown = Timer()
+    var currentDate = NSDate()
+    var countdownString: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainClock.text = "00:00:00"
+        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
+
+        c_hours = 23 - currentDate.hour()
+        c_minutes = 60 - currentDate.minute()
+        c_seconds = 60 - currentDate.second()
+
+        
         
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
         
@@ -54,13 +107,34 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         configureStorage()
         configureRemoteConfig()
         fetchConfig()
-        loadAd()
+//        loadAd()
         logViewLoaded()
     }
     
     deinit {
         self.ref.child("messages").removeObserver(withHandle: _refHandle)
     }
+    
+    func updateCountdown(){
+        
+        c_seconds -= 1
+        if c_seconds == -1{
+            c_minutes -= 1
+            c_seconds = 59
+        }
+        if c_minutes == -1{
+            c_hours -= 1
+            c_minutes = 59
+        }
+        
+        let secondsString = c_seconds > 9 ? "\(c_seconds)" : "0\(c_seconds)"
+        let minutesString = c_minutes > 9 ? "\(c_minutes)" : "0\(c_minutes)"
+        let hoursString = c_hours > 9 ? "\(c_hours)" : "0\(c_hours)"
+        countdownString = "\(hoursString):\(minutesString):\(secondsString)"
+        mainClock.text = countdownString
+    }
+
+    
     
     func configureDatabase() {
         ref = FIRDatabase.database().reference()
@@ -132,11 +206,11 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         FIRCrashMessage("View loaded")
     }
     
-    func loadAd() {
-        self.banner.adUnitID = kBannerAdUnitID
-        self.banner.rootViewController = self
-        self.banner.load(GADRequest())
-    }
+//    func loadAd() {
+//        self.banner.adUnitID = kBannerAdUnitID
+//        self.banner.rootViewController = self
+//        self.banner.load(GADRequest())
+//    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
@@ -190,7 +264,9 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     func sendMessage(withData data: [String: String]) {
+//        var mdata = data
         var mdata = data
+
         mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
         if let photoURL = AppState.sharedInstance.photoURL {
             mdata[Constants.MessageFields.photoURL] = photoURL.absoluteString
@@ -199,63 +275,6 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         self.ref.child("messages").childByAutoId().setValue(mdata)
     }
     
-    // MARK: - Image Picker
-    @IBAction func didTapAddPhoto(_ sender: AnyObject) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
-        }
-        
-        present(picker, animated: true, completion:nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true, completion:nil)
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-        
-        // if it's a photo from the library, not an image from the camera
-        if #available(iOS 8.0, *), let referenceURL = info[UIImagePickerControllerReferenceURL] {
-            let assets = PHAsset.fetchAssets(withALAssetURLs: [referenceURL as! URL], options: nil)
-            let asset = assets.firstObject
-            asset?.requestContentEditingInput(with: nil, completionHandler: { [weak self] (contentEditingInput, info) in
-                let imageFile = contentEditingInput?.fullSizeImageURL
-                let filePath = "\(uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\((referenceURL as AnyObject).lastPathComponent!)"
-                guard let strongSelf = self else { return }
-                strongSelf.storageRef.child(filePath)
-                    .putFile(imageFile!, metadata: nil) { (metadata, error) in
-                        if let error = error {
-                            let nsError = error as NSError
-                            print("Error uploading: \(nsError.localizedDescription)")
-                            return
-                        }
-                        strongSelf.sendMessage(withData: [Constants.MessageFields.imageURL: strongSelf.storageRef.child((metadata?.path)!).description])
-                }
-                })
-        } else {
-            guard let image = info[UIImagePickerControllerOriginalImage] as! UIImage? else { return }
-            let imageData = UIImageJPEGRepresentation(image, 0.8)
-            let imagePath = "\(uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
-            let metadata = FIRStorageMetadata()
-            metadata.contentType = "image/jpeg"
-            self.storageRef.child(imagePath)
-                .put(imageData!, metadata: metadata) { [weak self] (metadata, error) in
-                    if let error = error {
-                        print("Error uploading: \(error)")
-                        return
-                    }
-                    guard let strongSelf = self else { return }
-                    strongSelf.sendMessage(withData: [Constants.MessageFields.imageURL: strongSelf.storageRef.child((metadata?.path)!).description])
-            }
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion:nil)
-    }
     
     @IBAction func signOut(_ sender: UIButton) {
         let firebaseAuth = FIRAuth.auth()

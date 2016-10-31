@@ -227,8 +227,15 @@
                                     <constraint firstAttribute="width" constant="118" id="ptq-PQ-goH"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYS-Gi-M6f">
+                                <frame key="frameInset" minX="30" minY="551" width="314" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="79"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.53207031249999992" green="0.30829215596315906" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.05998046874999996" green="0.05998046874999996" blue="0.05998046874999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="VRr-Ou-qfp" secondAttribute="trailing" constant="-20" id="7LE-0W-xWN"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-4" id="8ff-Rm-C4p"/>
@@ -248,6 +255,7 @@
                     <connections>
                         <outlet property="banner" destination="9C0-fE-spr" id="NlI-Px-SJT"/>
                         <outlet property="clientTable" destination="DHD-HU-kCB" id="VEb-Fb-vE0"/>
+                        <outlet property="mainClock" destination="CYS-Gi-M6f" id="phU-IA-6YK"/>
                         <outlet property="sendButton" destination="wv1-bL-LxQ" id="NjU-mG-4FR"/>
                         <outlet property="textField" destination="STK-FK-gn5" id="NHK-Z3-xOt"/>
                     </connections>
