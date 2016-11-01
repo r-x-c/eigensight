@@ -91,6 +91,8 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+
         
         mainClock.text = "00:00:00"
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
@@ -109,6 +111,14 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         fetchConfig()
 //        loadAd()
         logViewLoaded()
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FCViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
     
     deinit {
@@ -255,16 +265,28 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         return cell
     }
     
+    
+    
     // UITextViewDelegate protocol methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
-        let data = [Constants.MessageFields.text: text]
+        var curr_hour = currentDate.hour()
+        var curr_min = currentDate.minute()
+        var curr_sec = currentDate.second()
+        var secondsString = curr_sec > 9 ? "\(curr_sec)" : "0\(curr_sec)"
+        var minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
+        var hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
+
+        //let fooo = "\(hoursString):\(minutesString):\(secondsString)"
+
+        let fooo = "\(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"
+        //changed from .text: text] to :countdownString
+        let data = [Constants.MessageFields.text: "\(text) \(fooo)"]
         sendMessage(withData: data)
         return true
     }
     
     func sendMessage(withData data: [String: String]) {
-//        var mdata = data
         var mdata = data
 
         mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName

@@ -29,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>REVERSED_CLIENT_ID</string>
+				<string>com.googleusercontent.apps.985096514625-60rvr29aiikfioo3r1n4qpdd9lci3i6p</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.google.firebase.codelab.FriendlyChatSwift</string>
+				<string>kairos-</string>
 			</array>
 		</dict>
 	</array>

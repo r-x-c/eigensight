@@ -10,106 +10,107 @@ provides-member:
 - ["C6Kairos11timeStorage", ""]
 - ["C6Kairos16FCViewController", ""]
 provides-dynamic-lookup:
-- "clientTable"
+- "updateCountdown"
+- "sendButton"
+- "configureStorage"
+- "countdownString"
+- "signOut"
+- "tableView"
+- "tableView"
+- "c_hours"
+- "storageRef"
+- "currentDate"
+- "c_seconds"
+- "banner"
+- "messages"
 - "didSendMessage"
+- "remoteConfig"
+- "ref"
+- "c_minutes"
+- "fetchConfig"
 - "timer"
 - "msglength"
 - "logViewLoaded"
-- "sendMessage"
-- "tableView"
-- "tableView"
-- "banner"
-- "showAlert"
-- "mainClock"
-- "signOut"
-- "textField"
-- "textField"
-- "countdown"
-- "configureStorage"
-- "fetchConfig"
-- "configureRemoteConfig"
-- "didPressCrash"
-- "countdownString"
-- "sendButton"
-- "c_hours"
 - "textFieldShouldReturn"
-- "storageRef"
-- "currentDate"
-- "configureDatabase"
-- "c_seconds"
+- "clientTable"
 - "viewDidLoad"
-- "messages"
-- "remoteConfig"
-- "updateCountdown"
+- "mainClock"
+- "configureDatabase"
+- "showAlert"
+- "countdown"
 - "didPressFreshConfig"
-- "ref"
-- "c_minutes"
+- "didPressCrash"
+- "textField"
+- "textField"
+- "sendMessage"
+- "configureRemoteConfig"
 depends-top-level:
-- !private "UIImage"
-- "Timer"
-- !private "UIAlertController"
+- "FIRStorageReference"
+- !private "NSError"
+- !private "FIRCrashMessage"
+- !private "Data"
+- "UITableViewCell"
+- !private "Dictionary"
+- "UITextField"
+- "UIButton"
 - !private "FIRRemoteConfigSettings"
-- !private "print"
-- "UITableViewDataSource"
-- "UITableViewDelegate"
 - "String"
-- "CastingPrecedence"
+- !private "AppState"
+- !private "FIRStorage"
+- !private "FIRAuth"
+- !private "UITapGestureRecognizer"
+- !private "DispatchQueue"
+- !private "URL"
+- "timeStorage"
+- "FCViewController"
+- !private ">"
+- !private "<="
+- !private "Constants"
+- !private "UIImage"
+- !private "fatalError"
+- "kBannerAdUnitID"
+- "FIRRemoteConfig"
+- !private "+"
+- !private "UIAlertAction"
+- !private "print"
+- "UILabel"
+- "Timer"
+- !private "BooleanLiteralType"
+- !private "UnicodeScalarType"
+- !private "UIAlertController"
+- "Array"
 - "UIViewController"
 - "UITextFieldDelegate"
-- "FCViewController"
-- "AssignmentPrecedence"
-- "GADBannerView"
-- !private "Data"
-- !private "FIRStorage"
-- !private "=="
-- "TernaryPrecedence"
-- !private "FIRCrashMessage"
-- !private "URL"
-- !private "FIRAuth"
+- "UIImagePickerControllerDelegate"
+- "UITableViewDelegate"
+- "StringLiteralType"
+- !private "Void"
 - "NSRange"
-- !private "Dictionary"
+- "UITableViewDataSource"
+- !private "FIRDatabase"
+- "GADBannerView"
+- !private "FIRApp"
+- !private "=="
+- "AssignmentPrecedence"
+- "NSDate"
+- !private "INT64_MAX"
+- "Bool"
+- "CastingPrecedence"
+- "UITableView"
+- "Int"
+- !private "-="
+- "UINavigationControllerDelegate"
+- "FIRDatabaseHandle"
 - !private "-"
 - !private "!="
-- !private "+"
-- !private "UnicodeScalarType"
-- !private "-="
 - "NSNumber"
-- "UIImagePickerControllerDelegate"
 - "AnyObject"
-- "UITableView"
-- !private "+="
-- "UINavigationControllerDelegate"
-- "Int"
-- "FIRDataSnapshot"
-- "Bool"
-- "UILabel"
-- !private "<="
-- !private "fatalError"
-- "FIRStorageReference"
-- "UIButton"
-- "UITableViewCell"
-- !private "NSError"
-- !private "DispatchQueue"
-- "Array"
-- !private "Constants"
-- "FIRDatabaseHandle"
-- !private "UIAlertAction"
-- !private "INT64_MAX"
-- !private "Double"
-- "UITextField"
-- "IndexPath"
-- !private "Void"
-- !private "BooleanLiteralType"
-- "timeStorage"
-- !private "FIRApp"
-- !private "FIRDatabase"
-- !private "AppState"
-- !private ">"
-- "StringLiteralType"
 - "FIRDatabaseReference"
-- "FIRRemoteConfig"
-- "NSDate"
-- "kBannerAdUnitID"
+- "IndexPath"
+- "FIRDataSnapshot"
+- "TernaryPrecedence"
+- !private "Double"
+- !private "+="
 depends-member:
 - !private ["Ps9AnyObject", "AppState"]
 - !private ["Ps9AnyObject", "Constants"]
@@ -131,10 +132,12 @@ depends-member:
 - !private ["Ps9AnyObject", "UIAlertController"]
 - !private ["Ps9AnyObject", "UIImage"]
 - !private ["Ps9AnyObject", "UITableViewCell"]
+- !private ["Ps9AnyObject", "UITapGestureRecognizer"]
 - !private ["Ps9AnyObject", "URL"]
 - ["Ps9AnyObject", "_refHandle"]
 - !private ["Ps9AnyObject", "activateFetched"]
 - !private ["Ps9AnyObject", "addAction"]
+- !private ["Ps9AnyObject", "addGestureRecognizer"]
 - !private ["Ps9AnyObject", "async"]
 - !private ["Ps9AnyObject", "auth"]
 - ["Ps9AnyObject", "banner"]
@@ -160,11 +163,13 @@ depends-member:
 - ["Ps9AnyObject", "didPressFreshConfig"]
 - ["Ps9AnyObject", "didSendMessage"]
 - !private ["Ps9AnyObject", "dismiss"]
+- !private ["Ps9AnyObject", "dismissKeyboard"]
 - !private ["Ps9AnyObject", "displayName"]
 - !private ["Ps9AnyObject", "fatalError"]
 - !private ["Ps9AnyObject", "fetch"]
 - ["Ps9AnyObject", "fetchConfig"]
 - !private ["Ps9AnyObject", "hasPrefix"]
+- !private ["Ps9AnyObject", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9AnyObject", "hour"]
 - !private ["Ps9AnyObject", "hours"]
 - !private ["Ps9AnyObject", "image"]
@@ -243,6 +248,7 @@ depends-member:
 - ["Ps9AnyObject", "timer"]
 - ["Ps9AnyObject", "updateCountdown"]
 - !private ["Ps9AnyObject", "value"]
+- !private ["Ps9AnyObject", "view"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", "viewForZooming"]
 - ["Ps9AnyObject", "viewForZoomingInScrollView"]
@@ -297,6 +303,7 @@ depends-member:
 - !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
+- !private ["PSo15CALayerDelegate", "addGestureRecognizer"]
 - !private ["PSo15CALayerDelegate", "dequeueReusableCell"]
 - !private ["PSo15CALayerDelegate", "image"]
 - !private ["PSo15CALayerDelegate", "imageView"]
@@ -332,6 +339,7 @@ depends-member:
 - !private ["Ps7CVarArg", "UIAlertController"]
 - !private ["Ps7CVarArg", "UIImage"]
 - !private ["Ps7CVarArg", "UITableViewCell"]
+- !private ["Ps7CVarArg", "UITapGestureRecognizer"]
 - !private ["Ps7CVarArg", "URL"]
 - !private ["Ps7CVarArg", "Value"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
@@ -339,6 +347,7 @@ depends-member:
 - ["Ps7CVarArg", "_refHandle"]
 - !private ["Ps7CVarArg", "activateFetched"]
 - !private ["Ps7CVarArg", "addAction"]
+- !private ["Ps7CVarArg", "addGestureRecognizer"]
 - !private ["Ps7CVarArg", "append"]
 - !private ["Ps7CVarArg", "async"]
 - !private ["Ps7CVarArg", "auth"]
@@ -366,11 +375,13 @@ depends-member:
 - ["Ps7CVarArg", "didPressFreshConfig"]
 - ["Ps7CVarArg", "didSendMessage"]
 - !private ["Ps7CVarArg", "dismiss"]
+- !private ["Ps7CVarArg", "dismissKeyboard"]
 - !private ["Ps7CVarArg", "displayName"]
 - !private ["Ps7CVarArg", "fatalError"]
 - !private ["Ps7CVarArg", "fetch"]
 - ["Ps7CVarArg", "fetchConfig"]
 - !private ["Ps7CVarArg", "hasPrefix"]
+- !private ["Ps7CVarArg", "hideKeyboardWhenTappedAround"]
 - !private ["Ps7CVarArg", "hour"]
 - !private ["Ps7CVarArg", "image"]
 - ["Ps7CVarArg", "imagePickerController"]
@@ -446,6 +457,7 @@ depends-member:
 - ["Ps7CVarArg", "timer"]
 - ["Ps7CVarArg", "updateCountdown"]
 - !private ["Ps7CVarArg", "value"]
+- !private ["Ps7CVarArg", "view"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", "viewForZooming"]
 - ["Ps7CVarArg", "viewForZoomingInScrollView"]
@@ -502,6 +514,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertController"]
 - !private ["Ps28CustomDebugStringConvertible", "UIImage"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCell"]
+- !private ["Ps28CustomDebugStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "URL"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
@@ -509,6 +522,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "absoluteString"]
 - !private ["Ps28CustomDebugStringConvertible", "activateFetched"]
 - !private ["Ps28CustomDebugStringConvertible", "addAction"]
+- !private ["Ps28CustomDebugStringConvertible", "addGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "async"]
 - !private ["Ps28CustomDebugStringConvertible", "auth"]
@@ -536,11 +550,13 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "didPressFreshConfig"]
 - ["Ps28CustomDebugStringConvertible", "didSendMessage"]
 - !private ["Ps28CustomDebugStringConvertible", "dismiss"]
+- !private ["Ps28CustomDebugStringConvertible", "dismissKeyboard"]
 - !private ["Ps28CustomDebugStringConvertible", "displayName"]
 - !private ["Ps28CustomDebugStringConvertible", "fatalError"]
 - !private ["Ps28CustomDebugStringConvertible", "fetch"]
 - ["Ps28CustomDebugStringConvertible", "fetchConfig"]
 - !private ["Ps28CustomDebugStringConvertible", "hasPrefix"]
+- !private ["Ps28CustomDebugStringConvertible", "hideKeyboardWhenTappedAround"]
 - !private ["Ps28CustomDebugStringConvertible", "hour"]
 - !private ["Ps28CustomDebugStringConvertible", "image"]
 - ["Ps28CustomDebugStringConvertible", "imagePickerController"]
@@ -618,6 +634,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "timer"]
 - ["Ps28CustomDebugStringConvertible", "updateCountdown"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
+- !private ["Ps28CustomDebugStringConvertible", "view"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", "viewForZooming"]
 - ["Ps28CustomDebugStringConvertible", "viewForZoomingInScrollView"]
@@ -683,6 +700,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UIAlertController"]
 - !private ["Ps23CustomStringConvertible", "UIImage"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCell"]
+- !private ["Ps23CustomStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "URL"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
@@ -692,6 +710,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "absoluteString"]
 - !private ["Ps23CustomStringConvertible", "activateFetched"]
 - !private ["Ps23CustomStringConvertible", "addAction"]
+- !private ["Ps23CustomStringConvertible", "addGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "async"]
 - !private ["Ps23CustomStringConvertible", "auth"]
@@ -719,11 +738,13 @@ depends-member:
 - ["Ps23CustomStringConvertible", "didPressFreshConfig"]
 - ["Ps23CustomStringConvertible", "didSendMessage"]
 - !private ["Ps23CustomStringConvertible", "dismiss"]
+- !private ["Ps23CustomStringConvertible", "dismissKeyboard"]
 - !private ["Ps23CustomStringConvertible", "displayName"]
 - !private ["Ps23CustomStringConvertible", "fatalError"]
 - !private ["Ps23CustomStringConvertible", "fetch"]
 - ["Ps23CustomStringConvertible", "fetchConfig"]
 - !private ["Ps23CustomStringConvertible", "hasPrefix"]
+- !private ["Ps23CustomStringConvertible", "hideKeyboardWhenTappedAround"]
 - !private ["Ps23CustomStringConvertible", "hour"]
 - !private ["Ps23CustomStringConvertible", "image"]
 - ["Ps23CustomStringConvertible", "imagePickerController"]
@@ -800,6 +821,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "timer"]
 - ["Ps23CustomStringConvertible", "updateCountdown"]
 - !private ["Ps23CustomStringConvertible", "value"]
+- !private ["Ps23CustomStringConvertible", "view"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", "viewForZooming"]
 - ["Ps23CustomStringConvertible", "viewForZoomingInScrollView"]
@@ -851,6 +873,7 @@ depends-member:
 - !private ["Ps9Equatable", "UIAlertController"]
 - !private ["Ps9Equatable", "UIImage"]
 - !private ["Ps9Equatable", "UITableViewCell"]
+- !private ["Ps9Equatable", "UITapGestureRecognizer"]
 - !private ["Ps9Equatable", "URL"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
@@ -858,6 +881,7 @@ depends-member:
 - !private ["Ps9Equatable", "absoluteString"]
 - !private ["Ps9Equatable", "activateFetched"]
 - !private ["Ps9Equatable", "addAction"]
+- !private ["Ps9Equatable", "addGestureRecognizer"]
 - !private ["Ps9Equatable", "alert"]
 - !private ["Ps9Equatable", "async"]
 - !private ["Ps9Equatable", "auth"]
@@ -887,11 +911,13 @@ depends-member:
 - ["Ps9Equatable", "didPressFreshConfig"]
 - ["Ps9Equatable", "didSendMessage"]
 - !private ["Ps9Equatable", "dismiss"]
+- !private ["Ps9Equatable", "dismissKeyboard"]
 - !private ["Ps9Equatable", "displayName"]
 - !private ["Ps9Equatable", "fatalError"]
 - !private ["Ps9Equatable", "fetch"]
 - ["Ps9Equatable", "fetchConfig"]
 - !private ["Ps9Equatable", "hasPrefix"]
+- !private ["Ps9Equatable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9Equatable", "hour"]
 - !private ["Ps9Equatable", "image"]
 - ["Ps9Equatable", "imagePickerController"]
@@ -970,6 +996,7 @@ depends-member:
 - ["Ps9Equatable", "timer"]
 - ["Ps9Equatable", "updateCountdown"]
 - !private ["Ps9Equatable", "value"]
+- !private ["Ps9Equatable", "view"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", "viewForZooming"]
 - ["Ps9Equatable", "viewForZoomingInScrollView"]
@@ -1049,6 +1076,7 @@ depends-member:
 - ["C6Kairos16FCViewController", "UILabel"]
 - ["C6Kairos16FCViewController", "UITableView"]
 - ["C6Kairos16FCViewController", "UITableViewCell"]
+- !private ["C6Kairos16FCViewController", "UITapGestureRecognizer"]
 - ["C6Kairos16FCViewController", "UITextField"]
 - !private ["C6Kairos16FCViewController", "URL"]
 - !private ["C6Kairos16FCViewController", "Void"]
@@ -1069,8 +1097,10 @@ depends-member:
 - ["C6Kairos16FCViewController", "didPressFreshConfig"]
 - ["C6Kairos16FCViewController", "didSendMessage"]
 - !private ["C6Kairos16FCViewController", "dismiss"]
+- !private ["C6Kairos16FCViewController", "dismissKeyboard"]
 - !private ["C6Kairos16FCViewController", "fatalError"]
 - ["C6Kairos16FCViewController", "fetchConfig"]
+- !private ["C6Kairos16FCViewController", "hideKeyboardWhenTappedAround"]
 - ["C6Kairos16FCViewController", "imagePickerController"]
 - ["C6Kairos16FCViewController", "imagePickerControllerDidCancel"]
 - ["C6Kairos16FCViewController", "indexPathForPreferredFocusedView"]
@@ -1118,6 +1148,7 @@ depends-member:
 - ["C6Kairos16FCViewController", "textFieldShouldReturn"]
 - ["C6Kairos16FCViewController", "timer"]
 - ["C6Kairos16FCViewController", "updateCountdown"]
+- !private ["C6Kairos16FCViewController", "view"]
 - ["C6Kairos16FCViewController", "viewDidLoad"]
 - ["C6Kairos16FCViewController", "viewForZooming"]
 - ["C6Kairos16FCViewController", "viewForZoomingInScrollView"]
@@ -1195,6 +1226,7 @@ depends-member:
 - !private ["Ps8Hashable", "UIAlertController"]
 - !private ["Ps8Hashable", "UIImage"]
 - !private ["Ps8Hashable", "UITableViewCell"]
+- !private ["Ps8Hashable", "UITapGestureRecognizer"]
 - !private ["Ps8Hashable", "URL"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
@@ -1202,6 +1234,7 @@ depends-member:
 - !private ["Ps8Hashable", "absoluteString"]
 - !private ["Ps8Hashable", "activateFetched"]
 - !private ["Ps8Hashable", "addAction"]
+- !private ["Ps8Hashable", "addGestureRecognizer"]
 - !private ["Ps8Hashable", "alert"]
 - !private ["Ps8Hashable", "async"]
 - !private ["Ps8Hashable", "auth"]
@@ -1231,11 +1264,13 @@ depends-member:
 - ["Ps8Hashable", "didPressFreshConfig"]
 - ["Ps8Hashable", "didSendMessage"]
 - !private ["Ps8Hashable", "dismiss"]
+- !private ["Ps8Hashable", "dismissKeyboard"]
 - !private ["Ps8Hashable", "displayName"]
 - !private ["Ps8Hashable", "fatalError"]
 - !private ["Ps8Hashable", "fetch"]
 - ["Ps8Hashable", "fetchConfig"]
 - !private ["Ps8Hashable", "hasPrefix"]
+- !private ["Ps8Hashable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps8Hashable", "hour"]
 - !private ["Ps8Hashable", "image"]
 - ["Ps8Hashable", "imagePickerController"]
@@ -1314,6 +1349,7 @@ depends-member:
 - ["Ps8Hashable", "timer"]
 - ["Ps8Hashable", "updateCountdown"]
 - !private ["Ps8Hashable", "value"]
+- !private ["Ps8Hashable", "view"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", "viewForZooming"]
 - ["Ps8Hashable", "viewForZoomingInScrollView"]
@@ -1423,9 +1459,11 @@ depends-member:
 - !private ["PSo8NSCoding", "UIAlertController"]
 - !private ["PSo8NSCoding", "UIImage"]
 - !private ["PSo8NSCoding", "UITableViewCell"]
+- !private ["PSo8NSCoding", "UITapGestureRecognizer"]
 - !private ["PSo8NSCoding", "URL"]
 - ["PSo8NSCoding", "_refHandle"]
 - !private ["PSo8NSCoding", "addAction"]
+- !private ["PSo8NSCoding", "addGestureRecognizer"]
 - ["PSo8NSCoding", "banner"]
 - ["PSo8NSCoding", "c_hours"]
 - ["PSo8NSCoding", "c_minutes"]
@@ -1443,9 +1481,11 @@ depends-member:
 - ["PSo8NSCoding", "didPressFreshConfig"]
 - ["PSo8NSCoding", "didSendMessage"]
 - !private ["PSo8NSCoding", "dismiss"]
+- !private ["PSo8NSCoding", "dismissKeyboard"]
 - !private ["PSo8NSCoding", "fatalError"]
 - ["PSo8NSCoding", "fetchConfig"]
 - !private ["PSo8NSCoding", "hasPrefix"]
+- !private ["PSo8NSCoding", "hideKeyboardWhenTappedAround"]
 - !private ["PSo8NSCoding", "hour"]
 - !private ["PSo8NSCoding", "image"]
 - ["PSo8NSCoding", "imagePickerController"]
@@ -1504,6 +1544,7 @@ depends-member:
 - !private ["PSo8NSCoding", "textLabel"]
 - ["PSo8NSCoding", "timer"]
 - ["PSo8NSCoding", "updateCountdown"]
+- !private ["PSo8NSCoding", "view"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", "viewForZooming"]
 - ["PSo8NSCoding", "viewForZoomingInScrollView"]
@@ -1546,6 +1587,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
 - !private ["PSo26NSExtensionRequestHandling", "UIImage"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCell"]
+- !private ["PSo26NSExtensionRequestHandling", "UITapGestureRecognizer"]
 - !private ["PSo26NSExtensionRequestHandling", "URL"]
 - ["PSo26NSExtensionRequestHandling", "_refHandle"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
@@ -1564,8 +1606,10 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "didPressFreshConfig"]
 - ["PSo26NSExtensionRequestHandling", "didSendMessage"]
 - !private ["PSo26NSExtensionRequestHandling", "dismiss"]
+- !private ["PSo26NSExtensionRequestHandling", "dismissKeyboard"]
 - !private ["PSo26NSExtensionRequestHandling", "fatalError"]
 - ["PSo26NSExtensionRequestHandling", "fetchConfig"]
+- !private ["PSo26NSExtensionRequestHandling", "hideKeyboardWhenTappedAround"]
 - ["PSo26NSExtensionRequestHandling", "imagePickerController"]
 - ["PSo26NSExtensionRequestHandling", "imagePickerControllerDidCancel"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedView"]
@@ -1613,6 +1657,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "textFieldShouldReturn"]
 - ["PSo26NSExtensionRequestHandling", "timer"]
 - ["PSo26NSExtensionRequestHandling", "updateCountdown"]
+- !private ["PSo26NSExtensionRequestHandling", "view"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", "viewForZooming"]
 - ["PSo26NSExtensionRequestHandling", "viewForZoomingInScrollView"]
@@ -1664,12 +1709,14 @@ depends-member:
 - ["CSo8NSObject", "UILabel"]
 - ["CSo8NSObject", "UITableView"]
 - ["CSo8NSObject", "UITableViewCell"]
+- !private ["CSo8NSObject", "UITapGestureRecognizer"]
 - ["CSo8NSObject", "UITextField"]
 - !private ["CSo8NSObject", "URL"]
 - !private ["CSo8NSObject", "Void"]
 - ["CSo8NSObject", "_refHandle"]
 - !private ["CSo8NSObject", "activateFetched"]
 - !private ["CSo8NSObject", "addAction"]
+- !private ["CSo8NSObject", "addGestureRecognizer"]
 - !private ["CSo8NSObject", "async"]
 - !private ["CSo8NSObject", "auth"]
 - ["CSo8NSObject", "banner"]
@@ -1695,11 +1742,13 @@ depends-member:
 - ["CSo8NSObject", "didPressFreshConfig"]
 - ["CSo8NSObject", "didSendMessage"]
 - !private ["CSo8NSObject", "dismiss"]
+- !private ["CSo8NSObject", "dismissKeyboard"]
 - !private ["CSo8NSObject", "displayName"]
 - !private ["CSo8NSObject", "fatalError"]
 - !private ["CSo8NSObject", "fetch"]
 - ["CSo8NSObject", "fetchConfig"]
 - !private ["CSo8NSObject", "hasPrefix"]
+- !private ["CSo8NSObject", "hideKeyboardWhenTappedAround"]
 - !private ["CSo8NSObject", "hour"]
 - !private ["CSo8NSObject", "image"]
 - ["CSo8NSObject", "imagePickerController"]
@@ -1775,6 +1824,7 @@ depends-member:
 - ["CSo8NSObject", "timer"]
 - ["CSo8NSObject", "updateCountdown"]
 - !private ["CSo8NSObject", "value"]
+- !private ["CSo8NSObject", "view"]
 - ["CSo8NSObject", "viewDidLoad"]
 - ["CSo8NSObject", "viewForZooming"]
 - ["CSo8NSObject", "viewForZoomingInScrollView"]
@@ -1798,10 +1848,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UIAlertController"]
 - !private ["PSo16NSObjectProtocol", "UIImage"]
 - !private ["PSo16NSObjectProtocol", "UITableViewCell"]
+- !private ["PSo16NSObjectProtocol", "UITapGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "URL"]
 - ["PSo16NSObjectProtocol", "_refHandle"]
 - !private ["PSo16NSObjectProtocol", "activateFetched"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
+- !private ["PSo16NSObjectProtocol", "addGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "async"]
 - !private ["PSo16NSObjectProtocol", "auth"]
 - ["PSo16NSObjectProtocol", "banner"]
@@ -1827,11 +1879,13 @@ depends-member:
 - ["PSo16NSObjectProtocol", "didPressFreshConfig"]
 - ["PSo16NSObjectProtocol", "didSendMessage"]
 - !private ["PSo16NSObjectProtocol", "dismiss"]
+- !private ["PSo16NSObjectProtocol", "dismissKeyboard"]
 - !private ["PSo16NSObjectProtocol", "displayName"]
 - !private ["PSo16NSObjectProtocol", "fatalError"]
 - !private ["PSo16NSObjectProtocol", "fetch"]
 - ["PSo16NSObjectProtocol", "fetchConfig"]
 - !private ["PSo16NSObjectProtocol", "hasPrefix"]
+- !private ["PSo16NSObjectProtocol", "hideKeyboardWhenTappedAround"]
 - !private ["PSo16NSObjectProtocol", "hour"]
 - !private ["PSo16NSObjectProtocol", "image"]
 - ["PSo16NSObjectProtocol", "imagePickerController"]
@@ -1907,6 +1961,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "timer"]
 - ["PSo16NSObjectProtocol", "updateCountdown"]
 - !private ["PSo16NSObjectProtocol", "value"]
+- !private ["PSo16NSObjectProtocol", "view"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", "viewForZooming"]
 - ["PSo16NSObjectProtocol", "viewForZoomingInScrollView"]
@@ -2031,6 +2086,7 @@ depends-member:
 - ["CSo5Timer", "deinit"]
 - ["CSo5Timer", "init"]
 - !private ["CSo5Timer", "scheduledTimer"]
+- !private ["PSo29UIAccessibilityIdentification", "addGestureRecognizer"]
 - !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCell"]
 - !private ["PSo29UIAccessibilityIdentification", "image"]
 - !private ["PSo29UIAccessibilityIdentification", "imageView"]
@@ -2048,6 +2104,7 @@ depends-member:
 - !private ["CSo17UIAlertController", "init"]
 - !private ["OSC22UIAlertControllerStyle", "alert"]
 - !private ["OSC22UIAlertControllerStyle", "deinit"]
+- !private ["PSo12UIAppearance", "addGestureRecognizer"]
 - !private ["PSo12UIAppearance", "dequeueReusableCell"]
 - !private ["PSo12UIAppearance", "image"]
 - !private ["PSo12UIAppearance", "imageView"]
@@ -2075,9 +2132,11 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
 - !private ["PSo21UIAppearanceContainer", "UIImage"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCell"]
+- !private ["PSo21UIAppearanceContainer", "UITapGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "URL"]
 - ["PSo21UIAppearanceContainer", "_refHandle"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
+- !private ["PSo21UIAppearanceContainer", "addGestureRecognizer"]
 - ["PSo21UIAppearanceContainer", "banner"]
 - ["PSo21UIAppearanceContainer", "c_hours"]
 - ["PSo21UIAppearanceContainer", "c_minutes"]
@@ -2094,8 +2153,10 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "didPressFreshConfig"]
 - ["PSo21UIAppearanceContainer", "didSendMessage"]
 - !private ["PSo21UIAppearanceContainer", "dismiss"]
+- !private ["PSo21UIAppearanceContainer", "dismissKeyboard"]
 - !private ["PSo21UIAppearanceContainer", "fatalError"]
 - ["PSo21UIAppearanceContainer", "fetchConfig"]
+- !private ["PSo21UIAppearanceContainer", "hideKeyboardWhenTappedAround"]
 - !private ["PSo21UIAppearanceContainer", "image"]
 - ["PSo21UIAppearanceContainer", "imagePickerController"]
 - ["PSo21UIAppearanceContainer", "imagePickerControllerDidCancel"]
@@ -2149,6 +2210,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "textLabel"]
 - ["PSo21UIAppearanceContainer", "timer"]
 - ["PSo21UIAppearanceContainer", "updateCountdown"]
+- !private ["PSo21UIAppearanceContainer", "view"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", "viewForZooming"]
 - ["PSo21UIAppearanceContainer", "viewForZoomingInScrollView"]
@@ -2173,6 +2235,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UIAlertController"]
 - !private ["PSo18UIContentContainer", "UIImage"]
 - !private ["PSo18UIContentContainer", "UITableViewCell"]
+- !private ["PSo18UIContentContainer", "UITapGestureRecognizer"]
 - !private ["PSo18UIContentContainer", "URL"]
 - ["PSo18UIContentContainer", "_refHandle"]
 - !private ["PSo18UIContentContainer", "addAction"]
@@ -2191,8 +2254,10 @@ depends-member:
 - ["PSo18UIContentContainer", "didPressFreshConfig"]
 - ["PSo18UIContentContainer", "didSendMessage"]
 - !private ["PSo18UIContentContainer", "dismiss"]
+- !private ["PSo18UIContentContainer", "dismissKeyboard"]
 - !private ["PSo18UIContentContainer", "fatalError"]
 - ["PSo18UIContentContainer", "fetchConfig"]
+- !private ["PSo18UIContentContainer", "hideKeyboardWhenTappedAround"]
 - ["PSo18UIContentContainer", "imagePickerController"]
 - ["PSo18UIContentContainer", "imagePickerControllerDidCancel"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedView"]
@@ -2240,12 +2305,14 @@ depends-member:
 - ["PSo18UIContentContainer", "textFieldShouldReturn"]
 - ["PSo18UIContentContainer", "timer"]
 - ["PSo18UIContentContainer", "updateCountdown"]
+- !private ["PSo18UIContentContainer", "view"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", "viewForZooming"]
 - ["PSo18UIContentContainer", "viewForZoomingInScrollView"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["CSo9UIControl", "text"]
+- !private ["PSo17UICoordinateSpace", "addGestureRecognizer"]
 - !private ["PSo17UICoordinateSpace", "dequeueReusableCell"]
 - !private ["PSo17UICoordinateSpace", "image"]
 - !private ["PSo17UICoordinateSpace", "imageView"]
@@ -2253,6 +2320,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "register"]
 - !private ["PSo17UICoordinateSpace", "text"]
 - !private ["PSo17UICoordinateSpace", "textLabel"]
+- !private ["PSo13UIDynamicItem", "addGestureRecognizer"]
 - !private ["PSo13UIDynamicItem", "dequeueReusableCell"]
 - !private ["PSo13UIDynamicItem", "image"]
 - !private ["PSo13UIDynamicItem", "imageView"]
@@ -2280,9 +2348,11 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
 - !private ["PSo18UIFocusEnvironment", "UIImage"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCell"]
+- !private ["PSo18UIFocusEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "URL"]
 - ["PSo18UIFocusEnvironment", "_refHandle"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
+- !private ["PSo18UIFocusEnvironment", "addGestureRecognizer"]
 - ["PSo18UIFocusEnvironment", "banner"]
 - ["PSo18UIFocusEnvironment", "c_hours"]
 - ["PSo18UIFocusEnvironment", "c_minutes"]
@@ -2299,8 +2369,10 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "didPressFreshConfig"]
 - ["PSo18UIFocusEnvironment", "didSendMessage"]
 - !private ["PSo18UIFocusEnvironment", "dismiss"]
+- !private ["PSo18UIFocusEnvironment", "dismissKeyboard"]
 - !private ["PSo18UIFocusEnvironment", "fatalError"]
 - ["PSo18UIFocusEnvironment", "fetchConfig"]
+- !private ["PSo18UIFocusEnvironment", "hideKeyboardWhenTappedAround"]
 - !private ["PSo18UIFocusEnvironment", "image"]
 - ["PSo18UIFocusEnvironment", "imagePickerController"]
 - ["PSo18UIFocusEnvironment", "imagePickerControllerDidCancel"]
@@ -2354,10 +2426,12 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "textLabel"]
 - ["PSo18UIFocusEnvironment", "timer"]
 - ["PSo18UIFocusEnvironment", "updateCountdown"]
+- !private ["PSo18UIFocusEnvironment", "view"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", "viewForZooming"]
 - ["PSo18UIFocusEnvironment", "viewForZoomingInScrollView"]
 - ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "addGestureRecognizer"]
 - !private ["PSo11UIFocusItem", "dequeueReusableCell"]
 - !private ["PSo11UIFocusItem", "image"]
 - !private ["PSo11UIFocusItem", "imageView"]
@@ -2365,6 +2439,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "register"]
 - !private ["PSo11UIFocusItem", "text"]
 - !private ["PSo11UIFocusItem", "textLabel"]
+- !private ["CSo19UIGestureRecognizer", "init"]
 - !private ["PSo27UIGestureRecognizerDelegate", "imageView"]
 - !private ["PSo27UIGestureRecognizerDelegate", "textLabel"]
 - !private ["CSo7UIImage", "init"]
@@ -2388,6 +2463,7 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "UIAlertController"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIImage"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewCell"]
+- !private ["PSo31UIImagePickerControllerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo31UIImagePickerControllerDelegate", "URL"]
 - !private ["PSo31UIImagePickerControllerDelegate", "_refHandle"]
 - !private ["PSo31UIImagePickerControllerDelegate", "c_hours"]
@@ -2401,8 +2477,10 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "countdownString"]
 - !private ["PSo31UIImagePickerControllerDelegate", "currentDate"]
 - !private ["PSo31UIImagePickerControllerDelegate", "dismiss"]
+- !private ["PSo31UIImagePickerControllerDelegate", "dismissKeyboard"]
 - !private ["PSo31UIImagePickerControllerDelegate", "fatalError"]
 - !private ["PSo31UIImagePickerControllerDelegate", "fetchConfig"]
+- !private ["PSo31UIImagePickerControllerDelegate", "hideKeyboardWhenTappedAround"]
 - ["PSo31UIImagePickerControllerDelegate", "imagePickerController"]
 - ["PSo31UIImagePickerControllerDelegate", "imagePickerControllerDidCancel"]
 - ["PSo31UIImagePickerControllerDelegate", "indexPathForPreferredFocusedView"]
@@ -2445,6 +2523,7 @@ depends-member:
 - ["PSo31UIImagePickerControllerDelegate", "textFieldShouldEndEditing"]
 - ["PSo31UIImagePickerControllerDelegate", "textFieldShouldReturn"]
 - !private ["PSo31UIImagePickerControllerDelegate", "updateCountdown"]
+- !private ["PSo31UIImagePickerControllerDelegate", "view"]
 - ["PSo31UIImagePickerControllerDelegate", "viewForZooming"]
 - ["PSo31UIImagePickerControllerDelegate", "viewForZoomingInScrollView"]
 - ["PSo31UIImagePickerControllerDelegate", ""]
@@ -2473,6 +2552,7 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "UIAlertController"]
 - !private ["PSo30UINavigationControllerDelegate", "UIImage"]
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewCell"]
+- !private ["PSo30UINavigationControllerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo30UINavigationControllerDelegate", "URL"]
 - !private ["PSo30UINavigationControllerDelegate", "_refHandle"]
 - !private ["PSo30UINavigationControllerDelegate", "c_hours"]
@@ -2486,8 +2566,10 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "countdownString"]
 - !private ["PSo30UINavigationControllerDelegate", "currentDate"]
 - !private ["PSo30UINavigationControllerDelegate", "dismiss"]
+- !private ["PSo30UINavigationControllerDelegate", "dismissKeyboard"]
 - !private ["PSo30UINavigationControllerDelegate", "fatalError"]
 - !private ["PSo30UINavigationControllerDelegate", "fetchConfig"]
+- !private ["PSo30UINavigationControllerDelegate", "hideKeyboardWhenTappedAround"]
 - ["PSo30UINavigationControllerDelegate", "imagePickerController"]
 - ["PSo30UINavigationControllerDelegate", "imagePickerControllerDidCancel"]
 - ["PSo30UINavigationControllerDelegate", "indexPathForPreferredFocusedView"]
@@ -2530,6 +2612,7 @@ depends-member:
 - ["PSo30UINavigationControllerDelegate", "textFieldShouldEndEditing"]
 - ["PSo30UINavigationControllerDelegate", "textFieldShouldReturn"]
 - !private ["PSo30UINavigationControllerDelegate", "updateCountdown"]
+- !private ["PSo30UINavigationControllerDelegate", "view"]
 - ["PSo30UINavigationControllerDelegate", "viewForZooming"]
 - ["PSo30UINavigationControllerDelegate", "viewForZoomingInScrollView"]
 - ["PSo30UINavigationControllerDelegate", ""]
@@ -2570,11 +2653,13 @@ depends-member:
 - ["CSo11UIResponder", "UILabel"]
 - ["CSo11UIResponder", "UITableView"]
 - ["CSo11UIResponder", "UITableViewCell"]
+- !private ["CSo11UIResponder", "UITapGestureRecognizer"]
 - ["CSo11UIResponder", "UITextField"]
 - !private ["CSo11UIResponder", "URL"]
 - !private ["CSo11UIResponder", "Void"]
 - ["CSo11UIResponder", "_refHandle"]
 - !private ["CSo11UIResponder", "addAction"]
+- !private ["CSo11UIResponder", "addGestureRecognizer"]
 - ["CSo11UIResponder", "banner"]
 - ["CSo11UIResponder", "c_hours"]
 - ["CSo11UIResponder", "c_minutes"]
@@ -2591,8 +2676,10 @@ depends-member:
 - ["CSo11UIResponder", "didPressFreshConfig"]
 - ["CSo11UIResponder", "didSendMessage"]
 - !private ["CSo11UIResponder", "dismiss"]
+- !private ["CSo11UIResponder", "dismissKeyboard"]
 - !private ["CSo11UIResponder", "fatalError"]
 - ["CSo11UIResponder", "fetchConfig"]
+- !private ["CSo11UIResponder", "hideKeyboardWhenTappedAround"]
 - !private ["CSo11UIResponder", "image"]
 - ["CSo11UIResponder", "imagePickerController"]
 - ["CSo11UIResponder", "imagePickerControllerDidCancel"]
@@ -2646,6 +2733,7 @@ depends-member:
 - !private ["CSo11UIResponder", "textLabel"]
 - ["CSo11UIResponder", "timer"]
 - ["CSo11UIResponder", "updateCountdown"]
+- !private ["CSo11UIResponder", "view"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "viewForZooming"]
 - ["CSo11UIResponder", "viewForZoomingInScrollView"]
@@ -2669,9 +2757,11 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
 - !private ["PSo30UIResponderStandardEditActions", "UIImage"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewCell"]
+- !private ["PSo30UIResponderStandardEditActions", "UITapGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "URL"]
 - ["PSo30UIResponderStandardEditActions", "_refHandle"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
+- !private ["PSo30UIResponderStandardEditActions", "addGestureRecognizer"]
 - ["PSo30UIResponderStandardEditActions", "banner"]
 - ["PSo30UIResponderStandardEditActions", "c_hours"]
 - ["PSo30UIResponderStandardEditActions", "c_minutes"]
@@ -2688,8 +2778,10 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "didPressFreshConfig"]
 - ["PSo30UIResponderStandardEditActions", "didSendMessage"]
 - !private ["PSo30UIResponderStandardEditActions", "dismiss"]
+- !private ["PSo30UIResponderStandardEditActions", "dismissKeyboard"]
 - !private ["PSo30UIResponderStandardEditActions", "fatalError"]
 - ["PSo30UIResponderStandardEditActions", "fetchConfig"]
+- !private ["PSo30UIResponderStandardEditActions", "hideKeyboardWhenTappedAround"]
 - !private ["PSo30UIResponderStandardEditActions", "image"]
 - ["PSo30UIResponderStandardEditActions", "imagePickerController"]
 - ["PSo30UIResponderStandardEditActions", "imagePickerControllerDidCancel"]
@@ -2743,6 +2835,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "textLabel"]
 - ["PSo30UIResponderStandardEditActions", "timer"]
 - ["PSo30UIResponderStandardEditActions", "updateCountdown"]
+- !private ["PSo30UIResponderStandardEditActions", "view"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", "viewForZooming"]
 - ["PSo30UIResponderStandardEditActions", "viewForZoomingInScrollView"]
@@ -2770,6 +2863,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "UIAlertController"]
 - !private ["PSo20UIScrollViewDelegate", "UIImage"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewCell"]
+- !private ["PSo20UIScrollViewDelegate", "UITapGestureRecognizer"]
 - !private ["PSo20UIScrollViewDelegate", "URL"]
 - !private ["PSo20UIScrollViewDelegate", "_refHandle"]
 - !private ["PSo20UIScrollViewDelegate", "c_hours"]
@@ -2783,8 +2877,10 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "countdownString"]
 - !private ["PSo20UIScrollViewDelegate", "currentDate"]
 - !private ["PSo20UIScrollViewDelegate", "dismiss"]
+- !private ["PSo20UIScrollViewDelegate", "dismissKeyboard"]
 - !private ["PSo20UIScrollViewDelegate", "fatalError"]
 - !private ["PSo20UIScrollViewDelegate", "fetchConfig"]
+- !private ["PSo20UIScrollViewDelegate", "hideKeyboardWhenTappedAround"]
 - ["PSo20UIScrollViewDelegate", "imagePickerController"]
 - ["PSo20UIScrollViewDelegate", "imagePickerControllerDidCancel"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedView"]
@@ -2827,6 +2923,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "textFieldShouldEndEditing"]
 - ["PSo20UIScrollViewDelegate", "textFieldShouldReturn"]
 - !private ["PSo20UIScrollViewDelegate", "updateCountdown"]
+- !private ["PSo20UIScrollViewDelegate", "view"]
 - ["PSo20UIScrollViewDelegate", "viewForZooming"]
 - ["PSo20UIScrollViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo20UIScrollViewDelegate", ""]
@@ -2850,6 +2947,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
 - !private ["PSo16UIStateRestoring", "UIImage"]
 - !private ["PSo16UIStateRestoring", "UITableViewCell"]
+- !private ["PSo16UIStateRestoring", "UITapGestureRecognizer"]
 - !private ["PSo16UIStateRestoring", "URL"]
 - ["PSo16UIStateRestoring", "_refHandle"]
 - !private ["PSo16UIStateRestoring", "addAction"]
@@ -2868,8 +2966,10 @@ depends-member:
 - ["PSo16UIStateRestoring", "didPressFreshConfig"]
 - ["PSo16UIStateRestoring", "didSendMessage"]
 - !private ["PSo16UIStateRestoring", "dismiss"]
+- !private ["PSo16UIStateRestoring", "dismissKeyboard"]
 - !private ["PSo16UIStateRestoring", "fatalError"]
 - ["PSo16UIStateRestoring", "fetchConfig"]
+- !private ["PSo16UIStateRestoring", "hideKeyboardWhenTappedAround"]
 - ["PSo16UIStateRestoring", "imagePickerController"]
 - ["PSo16UIStateRestoring", "imagePickerControllerDidCancel"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedView"]
@@ -2917,6 +3017,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "textFieldShouldReturn"]
 - ["PSo16UIStateRestoring", "timer"]
 - ["PSo16UIStateRestoring", "updateCountdown"]
+- !private ["PSo16UIStateRestoring", "view"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", "viewForZooming"]
 - ["PSo16UIStateRestoring", "viewForZoomingInScrollView"]
@@ -2947,6 +3048,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "UIAlertController"]
 - !private ["PSo21UITableViewDataSource", "UIImage"]
 - !private ["PSo21UITableViewDataSource", "UITableViewCell"]
+- !private ["PSo21UITableViewDataSource", "UITapGestureRecognizer"]
 - !private ["PSo21UITableViewDataSource", "URL"]
 - !private ["PSo21UITableViewDataSource", "_refHandle"]
 - !private ["PSo21UITableViewDataSource", "c_hours"]
@@ -2960,8 +3062,10 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "countdownString"]
 - !private ["PSo21UITableViewDataSource", "currentDate"]
 - !private ["PSo21UITableViewDataSource", "dismiss"]
+- !private ["PSo21UITableViewDataSource", "dismissKeyboard"]
 - !private ["PSo21UITableViewDataSource", "fatalError"]
 - !private ["PSo21UITableViewDataSource", "fetchConfig"]
+- !private ["PSo21UITableViewDataSource", "hideKeyboardWhenTappedAround"]
 - ["PSo21UITableViewDataSource", "imagePickerController"]
 - ["PSo21UITableViewDataSource", "imagePickerControllerDidCancel"]
 - ["PSo21UITableViewDataSource", "indexPathForPreferredFocusedView"]
@@ -3004,6 +3108,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "textFieldShouldEndEditing"]
 - ["PSo21UITableViewDataSource", "textFieldShouldReturn"]
 - !private ["PSo21UITableViewDataSource", "updateCountdown"]
+- !private ["PSo21UITableViewDataSource", "view"]
 - ["PSo21UITableViewDataSource", "viewForZooming"]
 - ["PSo21UITableViewDataSource", "viewForZoomingInScrollView"]
 - ["PSo21UITableViewDataSource", ""]
@@ -3027,6 +3132,7 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "UIAlertController"]
 - !private ["PSo19UITableViewDelegate", "UIImage"]
 - !private ["PSo19UITableViewDelegate", "UITableViewCell"]
+- !private ["PSo19UITableViewDelegate", "UITapGestureRecognizer"]
 - !private ["PSo19UITableViewDelegate", "URL"]
 - !private ["PSo19UITableViewDelegate", "_refHandle"]
 - !private ["PSo19UITableViewDelegate", "c_hours"]
@@ -3040,8 +3146,10 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "countdownString"]
 - !private ["PSo19UITableViewDelegate", "currentDate"]
 - !private ["PSo19UITableViewDelegate", "dismiss"]
+- !private ["PSo19UITableViewDelegate", "dismissKeyboard"]
 - !private ["PSo19UITableViewDelegate", "fatalError"]
 - !private ["PSo19UITableViewDelegate", "fetchConfig"]
+- !private ["PSo19UITableViewDelegate", "hideKeyboardWhenTappedAround"]
 - ["PSo19UITableViewDelegate", "imagePickerController"]
 - ["PSo19UITableViewDelegate", "imagePickerControllerDidCancel"]
 - ["PSo19UITableViewDelegate", "indexPathForPreferredFocusedView"]
@@ -3084,11 +3192,14 @@ depends-member:
 - ["PSo19UITableViewDelegate", "textFieldShouldEndEditing"]
 - ["PSo19UITableViewDelegate", "textFieldShouldReturn"]
 - !private ["PSo19UITableViewDelegate", "updateCountdown"]
+- !private ["PSo19UITableViewDelegate", "view"]
 - ["PSo19UITableViewDelegate", "viewForZooming"]
 - ["PSo19UITableViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo19UITableViewDelegate", ""]
 - !private ["OSC23UITableViewRowAnimation", "automatic"]
 - !private ["OSC23UITableViewRowAnimation", "deinit"]
+- ["CSo22UITapGestureRecognizer", "deinit"]
+- !private ["CSo22UITapGestureRecognizer", "init"]
 - ["CSo11UITextField", "deinit"]
 - !private ["CSo11UITextField", "text"]
 - !private ["PSo19UITextFieldDelegate", "AppState"]
@@ -3111,6 +3222,7 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "UIAlertController"]
 - !private ["PSo19UITextFieldDelegate", "UIImage"]
 - !private ["PSo19UITextFieldDelegate", "UITableViewCell"]
+- !private ["PSo19UITextFieldDelegate", "UITapGestureRecognizer"]
 - !private ["PSo19UITextFieldDelegate", "URL"]
 - !private ["PSo19UITextFieldDelegate", "_refHandle"]
 - !private ["PSo19UITextFieldDelegate", "c_hours"]
@@ -3124,8 +3236,10 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "countdownString"]
 - !private ["PSo19UITextFieldDelegate", "currentDate"]
 - !private ["PSo19UITextFieldDelegate", "dismiss"]
+- !private ["PSo19UITextFieldDelegate", "dismissKeyboard"]
 - !private ["PSo19UITextFieldDelegate", "fatalError"]
 - !private ["PSo19UITextFieldDelegate", "fetchConfig"]
+- !private ["PSo19UITextFieldDelegate", "hideKeyboardWhenTappedAround"]
 - ["PSo19UITextFieldDelegate", "imagePickerController"]
 - ["PSo19UITextFieldDelegate", "imagePickerControllerDidCancel"]
 - ["PSo19UITextFieldDelegate", "indexPathForPreferredFocusedView"]
@@ -3168,6 +3282,7 @@ depends-member:
 - ["PSo19UITextFieldDelegate", "textFieldShouldEndEditing"]
 - ["PSo19UITextFieldDelegate", "textFieldShouldReturn"]
 - !private ["PSo19UITextFieldDelegate", "updateCountdown"]
+- !private ["PSo19UITextFieldDelegate", "view"]
 - ["PSo19UITextFieldDelegate", "viewForZooming"]
 - ["PSo19UITextFieldDelegate", "viewForZoomingInScrollView"]
 - ["PSo19UITextFieldDelegate", ""]
@@ -3193,9 +3308,11 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
 - !private ["PSo18UITraitEnvironment", "UIImage"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCell"]
+- !private ["PSo18UITraitEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "URL"]
 - ["PSo18UITraitEnvironment", "_refHandle"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
+- !private ["PSo18UITraitEnvironment", "addGestureRecognizer"]
 - ["PSo18UITraitEnvironment", "banner"]
 - ["PSo18UITraitEnvironment", "c_hours"]
 - ["PSo18UITraitEnvironment", "c_minutes"]
@@ -3212,8 +3329,10 @@ depends-member:
 - ["PSo18UITraitEnvironment", "didPressFreshConfig"]
 - ["PSo18UITraitEnvironment", "didSendMessage"]
 - !private ["PSo18UITraitEnvironment", "dismiss"]
+- !private ["PSo18UITraitEnvironment", "dismissKeyboard"]
 - !private ["PSo18UITraitEnvironment", "fatalError"]
 - ["PSo18UITraitEnvironment", "fetchConfig"]
+- !private ["PSo18UITraitEnvironment", "hideKeyboardWhenTappedAround"]
 - !private ["PSo18UITraitEnvironment", "image"]
 - ["PSo18UITraitEnvironment", "imagePickerController"]
 - ["PSo18UITraitEnvironment", "imagePickerControllerDidCancel"]
@@ -3267,10 +3386,12 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "textLabel"]
 - ["PSo18UITraitEnvironment", "timer"]
 - ["PSo18UITraitEnvironment", "updateCountdown"]
+- !private ["PSo18UITraitEnvironment", "view"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", "viewForZooming"]
 - ["PSo18UITraitEnvironment", "viewForZoomingInScrollView"]
 - ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "addGestureRecognizer"]
 - !private ["CSo6UIView", "dequeueReusableCell"]
 - !private ["CSo6UIView", "image"]
 - !private ["CSo6UIView", "imageView"]
@@ -3315,6 +3436,7 @@ depends-member:
 - ["CSo16UIViewController", "UILabel"]
 - ["CSo16UIViewController", "UITableView"]
 - ["CSo16UIViewController", "UITableViewCell"]
+- !private ["CSo16UIViewController", "UITapGestureRecognizer"]
 - ["CSo16UIViewController", "UITextField"]
 - !private ["CSo16UIViewController", "URL"]
 - !private ["CSo16UIViewController", "Void"]
@@ -3336,8 +3458,10 @@ depends-member:
 - ["CSo16UIViewController", "didPressFreshConfig"]
 - ["CSo16UIViewController", "didSendMessage"]
 - !private ["CSo16UIViewController", "dismiss"]
+- !private ["CSo16UIViewController", "dismissKeyboard"]
 - !private ["CSo16UIViewController", "fatalError"]
 - ["CSo16UIViewController", "fetchConfig"]
+- !private ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "imagePickerController"]
 - ["CSo16UIViewController", "imagePickerControllerDidCancel"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedView"]
@@ -3385,6 +3509,7 @@ depends-member:
 - ["CSo16UIViewController", "textFieldShouldReturn"]
 - ["CSo16UIViewController", "timer"]
 - ["CSo16UIViewController", "updateCountdown"]
+- !private ["CSo16UIViewController", "view"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", "viewForZooming"]
 - ["CSo16UIViewController", "viewForZoomingInScrollView"]
@@ -3407,6 +3532,7 @@ depends-member:
 - !private ["Ps14_ArrayProtocol", "append"]
 - !private ["Ps14_ArrayProtocol", "count"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addGestureRecognizer"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "dequeueReusableCell"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "image"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "imageView"]
@@ -3472,6 +3598,7 @@ depends-member:
 - !private ["Ps9_Hashable", "UIAlertController"]
 - !private ["Ps9_Hashable", "UIImage"]
 - !private ["Ps9_Hashable", "UITableViewCell"]
+- !private ["Ps9_Hashable", "UITapGestureRecognizer"]
 - !private ["Ps9_Hashable", "URL"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
@@ -3479,6 +3606,7 @@ depends-member:
 - !private ["Ps9_Hashable", "absoluteString"]
 - !private ["Ps9_Hashable", "activateFetched"]
 - !private ["Ps9_Hashable", "addAction"]
+- !private ["Ps9_Hashable", "addGestureRecognizer"]
 - !private ["Ps9_Hashable", "alert"]
 - !private ["Ps9_Hashable", "async"]
 - !private ["Ps9_Hashable", "auth"]
@@ -3508,11 +3636,13 @@ depends-member:
 - ["Ps9_Hashable", "didPressFreshConfig"]
 - ["Ps9_Hashable", "didSendMessage"]
 - !private ["Ps9_Hashable", "dismiss"]
+- !private ["Ps9_Hashable", "dismissKeyboard"]
 - !private ["Ps9_Hashable", "displayName"]
 - !private ["Ps9_Hashable", "fatalError"]
 - !private ["Ps9_Hashable", "fetch"]
 - ["Ps9_Hashable", "fetchConfig"]
 - !private ["Ps9_Hashable", "hasPrefix"]
+- !private ["Ps9_Hashable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9_Hashable", "hour"]
 - !private ["Ps9_Hashable", "image"]
 - ["Ps9_Hashable", "imagePickerController"]
@@ -3591,6 +3721,7 @@ depends-member:
 - ["Ps9_Hashable", "timer"]
 - ["Ps9_Hashable", "updateCountdown"]
 - !private ["Ps9_Hashable", "value"]
+- !private ["Ps9_Hashable", "view"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", "viewForZooming"]
 - ["Ps9_Hashable", "viewForZoomingInScrollView"]
@@ -3767,6 +3898,7 @@ depends-nominal:
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
 - !private "PSo11UIFocusItem"
+- !private "CSo19UIGestureRecognizer"
 - !private "PSo27UIGestureRecognizerDelegate"
 - !private "CSo7UIImage"
 - "PSo31UIImagePickerControllerDelegate"
@@ -3784,6 +3916,7 @@ depends-nominal:
 - "PSo21UITableViewDataSource"
 - "PSo19UITableViewDelegate"
 - !private "OSC23UITableViewRowAnimation"
+- "CSo22UITapGestureRecognizer"
 - "CSo11UITextField"
 - "PSo19UITextFieldDelegate"
 - !private "PSo11UITextInput"
@@ -3956,6 +4089,13 @@ depends-external:
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Photos.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"

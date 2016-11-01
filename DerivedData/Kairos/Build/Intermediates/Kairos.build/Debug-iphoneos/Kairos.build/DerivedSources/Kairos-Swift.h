@@ -111,19 +111,25 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
-@import ObjectiveC;
+@import GoogleSignIn;
 @import Foundation;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class UIWindow;
 @class UIApplication;
+@class NSObject;
+@class GIDSignIn;
+@class GIDGoogleUser;
 
 SWIFT_CLASS("_TtC6Kairos11AppDelegate")
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <GIDSignInDelegate, UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow * _Nullable window;
-- (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
+- (BOOL)applicationWithApplication:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary * _Nullable)launchOptions;
+- (BOOL)application:(UIApplication * _Nonnull)app openURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
+- (void)signIn:(GIDSignIn * _Null_unspecified)signIn didSignInForUser:(GIDGoogleUser * _Null_unspecified)user withError:(NSError * _Null_unspecified)error;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -211,12 +217,18 @@ SWIFT_CLASS("_TtC6Kairos17MeasurementHelper")
 - (NSString * _Nonnull)toShortTimeString;
 @end
 
+@class NSError;
 @class FIRUser;
+@class GIDSignInButton;
 
 SWIFT_CLASS_NAMED("SignInViewController")
-@interface SignInViewController : UIViewController
+@interface SignInViewController : UIViewController <GIDSignInDelegate, GIDSignInUIDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordField;
+@property (nonatomic, weak) IBOutlet GIDSignInButton * _Null_unspecified signInButton;
+- (void)viewDidLoad;
+- (void)signIn:(GIDSignIn * _Null_unspecified)signIn didSignInForUser:(GIDGoogleUser * _Null_unspecified)user withError:(NSError * _Null_unspecified)error;
+- (void)signWithSignIn:(GIDSignIn * _Null_unspecified)signIn didDisconnectWithUser:(GIDGoogleUser * _Null_unspecified)user withError:(NSError * _Null_unspecified)error;
 - (void)viewDidAppear:(BOOL)animated;
 - (IBAction)didTapSignIn:(id _Nonnull)sender;
 - (IBAction)didTapSignUp:(id _Nonnull)sender;
@@ -225,6 +237,12 @@ SWIFT_CLASS_NAMED("SignInViewController")
 - (void)signedIn:(FIRUser * _Nullable)user;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface UIViewController (SWIFT_EXTENSION(Kairos))
+- (void)hideKeyboardWhenTappedAround;
+- (void)dismissKeyboard;
 @end
 
 #pragma clang diagnostic pop

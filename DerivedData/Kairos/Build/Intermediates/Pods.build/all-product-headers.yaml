@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-Kairos-umbrella.h",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Target Support Files/Pods-Kairos/Pods-Kairos-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_Kairos-Swift.h",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Headers/Pods_Kairos-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/DerivedData/Kairos/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-Kairos.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

@@ -8,19 +8,19 @@ provides-member:
 - ["CSo6NSDate", "second"]
 - ["CSo6NSDate", "toShortTimeString"]
 provides-dynamic-lookup:
-- "second"
-- "toShortTimeString"
 - "hour"
+- "second"
 - "minute"
+- "toShortTimeString"
 depends-top-level:
-- "CastingPrecedence"
-- "AssignmentPrecedence"
-- "NSDate"
-- "String"
 - !private "NSCalendar"
 - "Int"
-- !private "DateFormatter"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
 - !private "Date"
+- !private "DateFormatter"
+- "String"
+- "NSDate"
 depends-member:
 - !private ["Ps9AnyObject", "DateFormatter"]
 - !private ["Ps9AnyObject", "NSCalendar"]
@@ -343,6 +343,13 @@ depends-external:
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
 - "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
+- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Photos.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"

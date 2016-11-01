@@ -17,18 +17,89 @@
 import UIKit
 
 import Firebase
+import GoogleSignIn
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
 
 @objc(SignInViewController)
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signInButton: GIDSignInButton!
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
+
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // Uncomment to automatically sign in the user.
+        //GIDSignIn.sharedInstance().signInSilently()
+        
+        // TODO(developer) Configure the sign-in button look/feel
+        // ...
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+                withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        let authentication = user.authentication
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
+        
+        FIRAuth.auth()?.signIn(with: credential, completion: {(user, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+                return
+            }
+            print("User logged in with google.")
+            
+        })
+        
+        
+        // ...
+    }
+    
+    func sign(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+                withError error: NSError!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        try! FIRAuth.auth()!.signOut()
+
+    }
+    
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
             self.signedIn(user)
         }
+        
+        
     }
     
     @IBAction func didTapSignIn(_ sender: AnyObject) {
@@ -97,3 +168,8 @@ class SignInViewController: UIViewController {
         performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
     }
 }
+
+
+
+
+

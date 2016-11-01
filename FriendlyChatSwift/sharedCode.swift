@@ -13,8 +13,6 @@ extension NSDate
         //Return Hour
         return hour
     }
-
-
     func minute() -> Int
     {
         //Get Minute

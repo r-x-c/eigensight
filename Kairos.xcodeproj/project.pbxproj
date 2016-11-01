@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048054D0195EBE7D056D3514 /* Pods_Kairos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C7D5701E7B57F289F86598 /* Pods_Kairos.framework */; };
 		107960731C612531003DB6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107960711C612531003DB6CC /* Main.storyboard */; };
 		10D602891D5A2F9F004530C6 /* shared in Resources */ = {isa = PBXBuildFile; fileRef = 10D602881D5A2F9F004530C6 /* shared */; };
 		2C595F061B34B73A00355AE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C595F041B34B73A00355AE7 /* Constants.swift */; };
@@ -16,6 +17,7 @@
 		5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */; };
 		5F5A53801ADE67D500F81DF0 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */; };
 		DA137FC41DC6FF6400C9339D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */; };
+		DA3C79E61DC90CE900AD5319 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA3C79E51DC90CE900AD5319 /* Podfile */; };
 		DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* sharedCode.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +30,15 @@
 		2CA807BB1B21702E009AD7F2 /* MeasurementHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementHelper.swift; sourceTree = "<group>"; };
 		2CA807BD1B217B21009AD7F2 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		37AE55E79CD0EE198BF2EF8E /* Pods-FriendlyChatSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.release.xcconfig"; sourceTree = "<group>"; };
+		435E9B4322E11FDB24680145 /* Pods-Kairos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kairos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kairos/Pods-Kairos.release.xcconfig"; sourceTree = "<group>"; };
 		5F5A53791ADE67D500F81DF0 /* Kairos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kairos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCViewController.swift; sourceTree = "<group>"; };
+		80C7D5701E7B57F289F86598 /* Pods_Kairos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kairos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88A98BDC8D104EBFB80B3D61 /* Pods-Kairos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kairos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kairos/Pods-Kairos.debug.xcconfig"; sourceTree = "<group>"; };
 		DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA3C79E51DC90CE900AD5319 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kairos-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
 		F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048054D0195EBE7D056D3514 /* Pods_Kairos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +58,7 @@
 		5F5A53431ADE670C00F81DF0 = {
 			isa = PBXGroup;
 			children = (
+				DA3C79E51DC90CE900AD5319 /* Podfile */,
 				DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */,
 				10D602881D5A2F9F004530C6 /* shared */,
 				5F5A537A1ADE67D500F81DF0 /* FriendlyChatSwift */,
@@ -72,10 +81,11 @@
 			children = (
 				DA84F89E1DC72A7E00890354 /* sharedCode.swift */,
 				5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */,
+				2C8E6C2A1B16875B0073CE3D /* SignInViewController.swift */,
 				5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */,
 				2CA807BB1B21702E009AD7F2 /* MeasurementHelper.swift */,
-				2C8E6C2A1B16875B0073CE3D /* SignInViewController.swift */,
 				2CA807BD1B217B21009AD7F2 /* AppState.swift */,
+				DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */,
 				2C595F041B34B73A00355AE7 /* Constants.swift */,
 				5F5A537B1ADE67D500F81DF0 /* Supporting Files */,
 			);
@@ -94,6 +104,7 @@
 		AD1F1C80A93A096F652504F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80C7D5701E7B57F289F86598 /* Pods_Kairos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,6 +114,8 @@
 			children = (
 				F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */,
 				37AE55E79CD0EE198BF2EF8E /* Pods-FriendlyChatSwift.release.xcconfig */,
+				88A98BDC8D104EBFB80B3D61 /* Pods-Kairos.debug.xcconfig */,
+				435E9B4322E11FDB24680145 /* Pods-Kairos.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -178,6 +191,7 @@
 			files = (
 				107960731C612531003DB6CC /* Main.storyboard in Resources */,
 				10D602891D5A2F9F004530C6 /* shared in Resources */,
+				DA3C79E61DC90CE900AD5319 /* Podfile in Resources */,
 				DA137FC41DC6FF6400C9339D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kairos/Pods-Kairos-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8542B06D4F1E62528E54448B /* 📦 Copy Pods Resources */ = {
@@ -212,7 +226,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kairos/Pods-Kairos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8FD6217EBB7C02FCAF6B316 /* 📦 Check Pods Manifest.lock */ = {
@@ -355,15 +369,14 @@
 		};
 		5F5A53951ADE67D500F81DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */;
+			baseConfigurationReference = 88A98BDC8D104EBFB80B3D61 /* Pods-Kairos.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77544GGKPU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/FriendlyChatSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kairos-";
 				PRODUCT_NAME = Kairos;
@@ -375,15 +388,14 @@
 		};
 		5F5A53961ADE67D500F81DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37AE55E79CD0EE198BF2EF8E /* Pods-FriendlyChatSwift.release.xcconfig */;
+			baseConfigurationReference = 435E9B4322E11FDB24680145 /* Pods-Kairos.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77544GGKPU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/FriendlyChatSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kairos-";
 				PRODUCT_NAME = Kairos;
