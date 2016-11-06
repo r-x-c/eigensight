@@ -7,14 +7,14 @@ provides-member:
 - ["C6Kairos17MeasurementHelper", ""]
 provides-dynamic-lookup:
 - "sendLoginEvent"
-- "sendLogoutEvent"
 - "sendMessageEvent"
+- "sendLogoutEvent"
 depends-top-level:
-- !private "FIRAnalytics"
-- "MeasurementHelper"
-- !private "kFIREventLogin"
 - !private "StringLiteralType"
 - "NSObject"
+- "MeasurementHelper"
+- !private "kFIREventLogin"
+- !private "FIRAnalytics"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAnalytics"]
 - !private ["Ps9AnyObject", "init"]

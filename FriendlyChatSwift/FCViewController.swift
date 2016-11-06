@@ -55,7 +55,23 @@ class timeStorage {
             self.minutes -= 60
         }
     }
-    
+//    func saveToFirebase() {
+//        let ref = FIRStorage.storage().reference()
+//        let usersRef = Firebase.child(users)
+//        let dict = ["hours": self.hours, "minutes": self.minutes, "seconds": self.seconds]
+//        
+//        let thisUserRef = usersRef.childByAutoId()
+//        thisUserRef.setValue(dict)
+//        
+//        var uid: String
+//        
+//        if let user = FIRAuth.auth()?.currentUser {
+//            uid = user.uid
+//        }
+//        let name = marker.title
+//        ref.child("users").child(uid).child("favourites").setValue(["lat": lat, "lon": lon, "name": name!])
+//
+//    }
 }
 
 
@@ -183,8 +199,10 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     // Instance variables
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
-//    myButton.setImage(UIImage(named: "nameOfImage.png"), forState: UIControlState.Normal)
+    @IBOutlet weak var topView: UIButton!
 
+
+    
     var ref: FIRDatabaseReference!
     var messages: [FIRDataSnapshot]! = []
     var msglength: NSNumber = 35
@@ -196,17 +214,18 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var banner: GADBannerView!
     @IBOutlet weak var clientTable: UITableView!
     
-    
+
     //TIMER----------------------------------------------------------------------
 
     //Countdown Variables
     @IBOutlet weak var mainClock: UILabel!
+    var currentDate = NSDate()
+
     var c_hours: Int = 0
     var c_minutes: Int = 0
     var c_seconds: Int = 0
     var timer = Timer()
     var countdown = Timer()
-    var currentDate = NSDate()
     var countdownString: String = ""
     var stopwatchString: String = ""
     //Count-up variables
@@ -300,8 +319,10 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             guard let strongSelf = self else { return }
             strongSelf.messages.append(snapshot)
             strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
-            })
+        })
     }
+    
+    
     
     func configureStorage() {
         let storageUrl = FIRApp.defaultApp()?.options.storageBucket
@@ -383,27 +404,33 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     //fixme
-    var viewHasAppeared = false
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        if !viewHasAppeared { goToBottom() }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewHasAppeared = true
-    }
-    
+//    var viewHasAppeared = false
+//    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        if viewHasAppeared { goToBottom() }
+//    }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        viewHasAppeared = true
+//    }
+//    
     private func goToBottom() {
         guard messages.count > 0 else { return }
         let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
-        clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: false)
+        clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
         clientTable.layoutIfNeeded()
     }
     //fixme
-    
-    
+
+    @IBAction func scrollToBottom(_ sender: Any) {
+        guard messages.count > 0 else { return }
+        let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
+        clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
+        clientTable.layoutIfNeeded()
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
         let cell = self.clientTable.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
@@ -457,6 +484,25 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         // Push data to Firebase Database
         self.ref.child("messages").childByAutoId().setValue(mdata)
     }
+    
+    @IBOutlet weak var signOut: UIButton!
+    
+    class BorderedButton: UIButton {
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            layer.borderWidth = 1.0
+            layer.borderColor = tintColor.cgColor
+            layer.cornerRadius = 5.0
+            clipsToBounds = true
+            contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            setTitleColor(tintColor, for: .normal)
+            setTitleColor(UIColor.white, for: .highlighted)
+     
+            //setBackgroundImage(UIImage(color: tintColor), for: .Highlighted)
+        }
+    }
+
     
     
     @IBAction func signOut(_ sender: UIButton) {

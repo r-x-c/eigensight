@@ -17,6 +17,9 @@
 		5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */; };
 		5F5A53801ADE67D500F81DF0 /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */; };
 		DA137FC41DC6FF6400C9339D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */; };
+		DA1D986A1DCFB43900AF5F62 /* send-button.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1D98691DCFB43900AF5F62 /* send-button.png */; };
+		DA1D986C1DCFB44B00AF5F62 /* Down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */; };
+		DA1D986E1DCFB53600AF5F62 /* kairos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA1D986D1DCFB53600AF5F62 /* kairos.jpg */; };
 		DA3C79E61DC90CE900AD5319 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA3C79E51DC90CE900AD5319 /* Podfile */; };
 		DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* sharedCode.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +40,9 @@
 		80C7D5701E7B57F289F86598 /* Pods_Kairos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kairos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A98BDC8D104EBFB80B3D61 /* Pods-Kairos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kairos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kairos/Pods-Kairos.debug.xcconfig"; sourceTree = "<group>"; };
 		DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA1D98691DCFB43900AF5F62 /* send-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "send-button.png"; path = "shared/Images.xcassets/send-button.imageset/send-button.png"; sourceTree = "<group>"; };
+		DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down-arrow.png"; path = "shared/Images.xcassets/Down-arrow.imageset/Down-arrow.png"; sourceTree = "<group>"; };
+		DA1D986D1DCFB53600AF5F62 /* kairos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kairos.jpg; path = shared/Images.xcassets/kairos.imageset/kairos.jpg; sourceTree = "<group>"; };
 		DA3C79E51DC90CE900AD5319 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kairos-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 		5F5A53431ADE670C00F81DF0 = {
 			isa = PBXGroup;
 			children = (
+				DA1D986D1DCFB53600AF5F62 /* kairos.jpg */,
+				DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */,
+				DA1D98691DCFB43900AF5F62 /* send-button.png */,
 				DA3C79E51DC90CE900AD5319 /* Podfile */,
 				DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */,
 				10D602881D5A2F9F004530C6 /* shared */,
@@ -189,6 +198,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1D986E1DCFB53600AF5F62 /* kairos.jpg in Resources */,
+				DA1D986C1DCFB44B00AF5F62 /* Down-arrow.png in Resources */,
+				DA1D986A1DCFB43900AF5F62 /* send-button.png in Resources */,
 				107960731C612531003DB6CC /* Main.storyboard in Resources */,
 				10D602891D5A2F9F004530C6 /* shared in Resources */,
 				DA3C79E61DC90CE900AD5319 /* Podfile in Resources */,

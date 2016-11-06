@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:"
-      name = "imageAssets">
-      <FileRef
-         location = "group:send-button.png">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:Kairos.xcodeproj">
    </FileRef>

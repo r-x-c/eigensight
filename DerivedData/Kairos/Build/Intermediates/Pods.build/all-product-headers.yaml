@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphonesimulator/Pods_Kairos.framework/Headers",
+      'name': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -14,18 +14,18 @@
         {
           'type': 'file',
           'name': "Pods_Kairos-Swift.h",
-          'external-contents': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphonesimulator/Pods_Kairos.framework/Headers/Pods_Kairos-Swift.h"
+          'external-contents': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Headers/Pods_Kairos-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphonesimulator/Pods_Kairos.framework/Modules",
+      'name': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Products/Debug-iphoneos/Pods_Kairos.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-Kairos.build/module.modulemap"
+          'external-contents': "/Users/RichardChen/kairos/DerivedData/Kairos/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-Kairos.build/module.modulemap"
         }
       ]
     }

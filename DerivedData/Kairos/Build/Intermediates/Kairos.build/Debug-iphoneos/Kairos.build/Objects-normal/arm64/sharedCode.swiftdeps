@@ -8,19 +8,19 @@ provides-member:
 - ["CSo6NSDate", "second"]
 - ["CSo6NSDate", "toShortTimeString"]
 provides-dynamic-lookup:
-- "second"
 - "hour"
+- "second"
 - "toShortTimeString"
 - "minute"
 depends-top-level:
-- "String"
-- "NSDate"
-- "CastingPrecedence"
+- !private "DateFormatter"
 - !private "Date"
-- "AssignmentPrecedence"
 - "Int"
 - !private "NSCalendar"
-- !private "DateFormatter"
+- "String"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- "NSDate"
 depends-member:
 - !private ["Ps9AnyObject", "DateFormatter"]
 - !private ["Ps9AnyObject", "NSCalendar"]
