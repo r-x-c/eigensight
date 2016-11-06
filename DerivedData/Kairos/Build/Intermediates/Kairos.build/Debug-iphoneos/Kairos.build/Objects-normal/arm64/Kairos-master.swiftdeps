@@ -1,11 +1,11 @@
-version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "37399220ad1b9e634d9135374035691c"
-build_time: [531347096, 984992000]
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "7fa3bfe365ed1ddd6ed1b3bef9a732ff"
+build_time: [531719164, 760804000]
 inputs:
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/SignInViewController.swift": [531347084, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/AppState.swift": [530776369, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/sharedCode.swift": [531240994, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/FCViewController.swift": [531344932, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/AppDelegate.swift": [531347043, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/MeasurementHelper.swift": [531209395, 0]
-  "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/FriendlyChatSwift/Constants.swift": [530428564, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/SignInViewController.swift": [531719116, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/AppState.swift": [531625171, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/sharedCode.swift": [531625171, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/FCViewController.swift": [531718939, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/AppDelegate.swift": [531719012, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/MeasurementHelper.swift": [531625171, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/Constants.swift": [531625171, 0]

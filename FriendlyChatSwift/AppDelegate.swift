@@ -18,68 +18,59 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import Google
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    override init() {
+        FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
+    }
     
     var window: UIWindow?
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        FIRApp.configure()
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        // Initialize sign-in
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
         GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
     
-
-    
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions
-//        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        FIRApp.configure()
-//        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-//        GIDSignIn.sharedInstance().delegate = self
-//
-//        return true
-//    }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance().handle(
             url,
             sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
             annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
-    
-//    func application(application: UIApplication,
-//                     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-//        var options: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
-//                                            UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation!]
-//        return GIDSignIn.sharedInstance().handle(url as URL!,
-//                                                    sourceApplication: sourceApplication,
-//                                                    annotation: annotation)
-//    }
 
     
-    private func sign(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
-                withError error: NSError!) {
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        let authentication = user.authentication
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
-                                                                     accessToken: (authentication?.accessToken)!)
-        
-        
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+                withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
             // ...
+        } else {
+            print("\(error.localizedDescription)")
         }
     }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user:GIDGoogleUser!,
-                withError error: Error!) {
+
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+                withError error: NSError!) {
         // Perform any operations when the user disconnects from app here.
         // ...
     }
+
 
 }

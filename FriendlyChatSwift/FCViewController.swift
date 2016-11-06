@@ -91,7 +91,6 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
 
         
         mainClock.text = "00:00:00"
@@ -112,13 +111,6 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
 //        loadAd()
         logViewLoaded()
         
-        //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FCViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
     }
     
     deinit {

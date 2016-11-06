@@ -19,18 +19,6 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
@@ -42,7 +30,6 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         
 
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
@@ -70,8 +57,10 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print(error?.localizedDescription)
                 return
             }
-            print("User logged in with google.")
             
+            print("User logged in with google.")
+            self.signedIn(user!)
+
         })
         
         

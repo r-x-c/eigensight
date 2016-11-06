@@ -11,6 +11,9 @@
 
 #import <GoogleSignIn/GoogleSignIn.h>
 #import "GoogleSignIn/GoogleSignIn.h"
-
+#import <Google/Analytics.h>
+#import "Google/Core.h"
+#import "GoogleSignIn.h"
+#import <GoogleSignIn/GoogleSignIn.h>
 
 #endif /* Kairos_Bridging_Header_h */

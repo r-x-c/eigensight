@@ -10,6 +10,6 @@ pod 'Firebase/Crash'
 pod 'Firebase/Database'
 pod 'Firebase/RemoteConfig'
 pod 'GoogleSignIn'
-
+pod 'Google/SignIn'
 target 'Kairos' do
 end

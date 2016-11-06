@@ -1,0 +1,19 @@
+# Kairos Codelab
+
+use_frameworks!
+platform :ios, '10.0'
+
+pod 'Firebase/Storage'
+pod 'Firebase/AdMob'
+pod 'Firebase/Auth'
+pod 'Firebase/Crash'
+pod 'Firebase/Database'
+pod 'Firebase/RemoteConfig'
+pod 'GoogleSignIn'
+pod 'GoogleAPIClient/Calendar'
+pod 'GTMOAuth2'
+pod 'Google/SignIn'
+
+
+target 'Kairos' do
+end

@@ -4,57 +4,51 @@ provides-top-level:
 provides-nominal:
 - "C6Kairos20SignInViewController"
 provides-member:
-- ["CSo16UIViewController", ""]
 - ["C6Kairos20SignInViewController", ""]
-- ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
-- ["CSo16UIViewController", "dismissKeyboard"]
 provides-dynamic-lookup:
-- "viewDidLoad"
-- "signedIn"
-- "passwordField"
-- "setDisplayName"
 - "viewDidAppear"
-- "signInButton"
-- "dismissKeyboard"
-- "didTapSignUp"
-- "emailField"
-- "hideKeyboardWhenTappedAround"
-- "didTapSignIn"
-- "sign"
-- "sign"
 - "didRequestPasswordReset"
+- "passwordField"
+- "signedIn"
+- "didTapSignUp"
+- "setDisplayName"
+- "viewDidLoad"
+- "sign"
+- "sign"
+- "emailField"
+- "signInButton"
+- "didTapSignIn"
 depends-top-level:
-- !private "FIRApp"
-- !private "AppState"
-- !private "FIRGoogleAuthProvider"
-- !private "UITapGestureRecognizer"
-- "Error"
-- "Bool"
-- !private "BooleanLiteralType"
 - !private "FIRAuth"
-- !private "!="
-- "GIDSignInDelegate"
-- !private "MeasurementHelper"
-- !private "Constants"
-- "AnyObject"
-- "StringLiteralType"
-- !private "UIAlertAction"
-- !private "Notification"
-- "GIDSignInUIDelegate"
-- "GIDSignInButton"
-- !private "print"
-- !private "UnicodeScalarType"
-- "NSError"
-- !private "UIAlertController"
-- !private "??"
-- "FIRUser"
-- "AssignmentPrecedence"
-- "UIViewController"
-- !private "NotificationCenter"
-- "GIDGoogleUser"
-- "UITextField"
-- "GIDSignIn"
 - "SignInViewController"
+- !private "UnicodeScalarType"
+- !private "print"
+- !private "UIAlertController"
+- !private "FIRGoogleAuthProvider"
+- "AssignmentPrecedence"
+- "Error"
+- !private "!="
+- !private "??"
+- "GIDGoogleUser"
+- "Bool"
+- "UITextField"
+- "NSError"
+- !private "FIRApp"
+- "FIRUser"
+- !private "BooleanLiteralType"
+- "GIDSignInUIDelegate"
+- !private "AppState"
+- "GIDSignInDelegate"
+- "GIDSignIn"
+- "GIDSignInButton"
+- "AnyObject"
+- "UIViewController"
+- !private "Constants"
+- !private "Notification"
+- !private "UIAlertAction"
+- !private "MeasurementHelper"
+- !private "NotificationCenter"
+- "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "AppState"]
 - !private ["Ps9AnyObject", "Constants"]
@@ -67,11 +61,8 @@ depends-member:
 - !private ["Ps9AnyObject", "NotificationCenter"]
 - !private ["Ps9AnyObject", "UIAlertAction"]
 - !private ["Ps9AnyObject", "UIAlertController"]
-- !private ["Ps9AnyObject", "UITapGestureRecognizer"]
-- !private ["Ps9AnyObject", "UIViewController"]
 - !private ["Ps9AnyObject", "accessToken"]
 - !private ["Ps9AnyObject", "addAction"]
-- !private ["Ps9AnyObject", "addGestureRecognizer"]
 - !private ["Ps9AnyObject", "addTextField"]
 - !private ["Ps9AnyObject", "auth"]
 - !private ["Ps9AnyObject", "authentication"]
@@ -87,12 +78,9 @@ depends-member:
 - ["Ps9AnyObject", "didRequestPasswordReset"]
 - ["Ps9AnyObject", "didTapSignIn"]
 - ["Ps9AnyObject", "didTapSignUp"]
-- ["Ps9AnyObject", "dismissKeyboard"]
 - !private ["Ps9AnyObject", "displayName"]
 - !private ["Ps9AnyObject", "email"]
 - ["Ps9AnyObject", "emailField"]
-- !private ["Ps9AnyObject", "endEditing"]
-- ["Ps9AnyObject", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9AnyObject", "idToken"]
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "isEmpty"]
@@ -118,7 +106,6 @@ depends-member:
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "textFields"]
 - !private ["Ps9AnyObject", "uiDelegate"]
-- !private ["Ps9AnyObject", "view"]
 - ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
@@ -158,8 +145,6 @@ depends-member:
 - !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
-- !private ["PSo15CALayerDelegate", "addGestureRecognizer"]
-- !private ["PSo15CALayerDelegate", "endEditing"]
 - !private ["PSo15CALayerDelegate", "text"]
 - !private ["Ps7CVarArg", "AppState"]
 - !private ["Ps7CVarArg", "Constants"]
@@ -177,13 +162,10 @@ depends-member:
 - !private ["Ps7CVarArg", "SubSequence"]
 - !private ["Ps7CVarArg", "UIAlertAction"]
 - !private ["Ps7CVarArg", "UIAlertController"]
-- !private ["Ps7CVarArg", "UITapGestureRecognizer"]
-- !private ["Ps7CVarArg", "UIViewController"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "accessToken"]
 - !private ["Ps7CVarArg", "addAction"]
-- !private ["Ps7CVarArg", "addGestureRecognizer"]
 - !private ["Ps7CVarArg", "addTextField"]
 - !private ["Ps7CVarArg", "auth"]
 - !private ["Ps7CVarArg", "authentication"]
@@ -199,12 +181,9 @@ depends-member:
 - ["Ps7CVarArg", "didRequestPasswordReset"]
 - ["Ps7CVarArg", "didTapSignIn"]
 - ["Ps7CVarArg", "didTapSignUp"]
-- ["Ps7CVarArg", "dismissKeyboard"]
 - !private ["Ps7CVarArg", "displayName"]
 - !private ["Ps7CVarArg", "email"]
 - ["Ps7CVarArg", "emailField"]
-- !private ["Ps7CVarArg", "endEditing"]
-- ["Ps7CVarArg", "hideKeyboardWhenTappedAround"]
 - !private ["Ps7CVarArg", "idToken"]
 - !private ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "isEmpty"]
@@ -231,7 +210,6 @@ depends-member:
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "textFields"]
 - !private ["Ps7CVarArg", "uiDelegate"]
-- !private ["Ps7CVarArg", "view"]
 - ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
@@ -266,12 +244,9 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertAction"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertController"]
-- !private ["Ps28CustomDebugStringConvertible", "UITapGestureRecognizer"]
-- !private ["Ps28CustomDebugStringConvertible", "UIViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "accessToken"]
 - !private ["Ps28CustomDebugStringConvertible", "addAction"]
-- !private ["Ps28CustomDebugStringConvertible", "addGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "addTextField"]
 - !private ["Ps28CustomDebugStringConvertible", "auth"]
 - !private ["Ps28CustomDebugStringConvertible", "authentication"]
@@ -287,12 +262,9 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "didRequestPasswordReset"]
 - ["Ps28CustomDebugStringConvertible", "didTapSignIn"]
 - ["Ps28CustomDebugStringConvertible", "didTapSignUp"]
-- ["Ps28CustomDebugStringConvertible", "dismissKeyboard"]
 - !private ["Ps28CustomDebugStringConvertible", "displayName"]
 - !private ["Ps28CustomDebugStringConvertible", "email"]
 - ["Ps28CustomDebugStringConvertible", "emailField"]
-- !private ["Ps28CustomDebugStringConvertible", "endEditing"]
-- ["Ps28CustomDebugStringConvertible", "hideKeyboardWhenTappedAround"]
 - !private ["Ps28CustomDebugStringConvertible", "idToken"]
 - !private ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
@@ -315,12 +287,10 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "signInWillDispatch"]
 - !private ["Ps28CustomDebugStringConvertible", "signOut"]
 - ["Ps28CustomDebugStringConvertible", "signedIn"]
-- ["Ps28CustomDebugStringConvertible", "some"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "textFields"]
 - !private ["Ps28CustomDebugStringConvertible", "uiDelegate"]
-- !private ["Ps28CustomDebugStringConvertible", "view"]
 - ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -343,7 +313,6 @@ depends-member:
 - !private ["Ps17CustomReflectable", "components"]
 - !private ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "isEmpty"]
-- ["Ps17CustomReflectable", "some"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "AppState"]
 - !private ["Ps23CustomStringConvertible", "Constants"]
@@ -362,14 +331,11 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "SubSequence"]
 - !private ["Ps23CustomStringConvertible", "UIAlertAction"]
 - !private ["Ps23CustomStringConvertible", "UIAlertController"]
-- !private ["Ps23CustomStringConvertible", "UITapGestureRecognizer"]
-- !private ["Ps23CustomStringConvertible", "UIViewController"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "accessToken"]
 - !private ["Ps23CustomStringConvertible", "addAction"]
-- !private ["Ps23CustomStringConvertible", "addGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "addTextField"]
 - !private ["Ps23CustomStringConvertible", "auth"]
 - !private ["Ps23CustomStringConvertible", "authentication"]
@@ -385,12 +351,9 @@ depends-member:
 - ["Ps23CustomStringConvertible", "didRequestPasswordReset"]
 - ["Ps23CustomStringConvertible", "didTapSignIn"]
 - ["Ps23CustomStringConvertible", "didTapSignUp"]
-- ["Ps23CustomStringConvertible", "dismissKeyboard"]
 - !private ["Ps23CustomStringConvertible", "displayName"]
 - !private ["Ps23CustomStringConvertible", "email"]
 - ["Ps23CustomStringConvertible", "emailField"]
-- !private ["Ps23CustomStringConvertible", "endEditing"]
-- ["Ps23CustomStringConvertible", "hideKeyboardWhenTappedAround"]
 - !private ["Ps23CustomStringConvertible", "idToken"]
 - !private ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "isEmpty"]
@@ -417,7 +380,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "textFields"]
 - !private ["Ps23CustomStringConvertible", "uiDelegate"]
-- !private ["Ps23CustomStringConvertible", "view"]
 - ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
@@ -445,13 +407,10 @@ depends-member:
 - !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "UIAlertAction"]
 - !private ["Ps9Equatable", "UIAlertController"]
-- !private ["Ps9Equatable", "UITapGestureRecognizer"]
-- !private ["Ps9Equatable", "UIViewController"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "accessToken"]
 - !private ["Ps9Equatable", "addAction"]
-- !private ["Ps9Equatable", "addGestureRecognizer"]
 - !private ["Ps9Equatable", "addTextField"]
 - !private ["Ps9Equatable", "alert"]
 - !private ["Ps9Equatable", "auth"]
@@ -468,12 +427,9 @@ depends-member:
 - ["Ps9Equatable", "didRequestPasswordReset"]
 - ["Ps9Equatable", "didTapSignIn"]
 - ["Ps9Equatable", "didTapSignUp"]
-- ["Ps9Equatable", "dismissKeyboard"]
 - !private ["Ps9Equatable", "displayName"]
 - !private ["Ps9Equatable", "email"]
 - ["Ps9Equatable", "emailField"]
-- !private ["Ps9Equatable", "endEditing"]
-- ["Ps9Equatable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9Equatable", "idToken"]
 - !private ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "isEmpty"]
@@ -499,7 +455,6 @@ depends-member:
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "textFields"]
 - !private ["Ps9Equatable", "uiDelegate"]
-- !private ["Ps9Equatable", "view"]
 - ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
@@ -517,7 +472,6 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
-- ["Ps23ExpressibleByNilLiteral", "some"]
 - !private ["Ps32ExpressibleByStringInterpolation", "components"]
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "isEmpty"]
@@ -573,7 +527,6 @@ depends-member:
 - !private ["PSo17GIDSignInDelegate", "UIAlertAction"]
 - !private ["PSo17GIDSignInDelegate", "UIAlertController"]
 - !private ["PSo17GIDSignInDelegate", "emailField"]
-- !private ["PSo17GIDSignInDelegate", "hideKeyboardWhenTappedAround"]
 - !private ["PSo17GIDSignInDelegate", "passwordField"]
 - !private ["PSo17GIDSignInDelegate", "performSegue"]
 - !private ["PSo17GIDSignInDelegate", "present"]
@@ -596,7 +549,6 @@ depends-member:
 - !private ["PSo19GIDSignInUIDelegate", "UIAlertAction"]
 - !private ["PSo19GIDSignInUIDelegate", "UIAlertController"]
 - !private ["PSo19GIDSignInUIDelegate", "emailField"]
-- !private ["PSo19GIDSignInUIDelegate", "hideKeyboardWhenTappedAround"]
 - !private ["PSo19GIDSignInUIDelegate", "passwordField"]
 - !private ["PSo19GIDSignInUIDelegate", "performSegue"]
 - !private ["PSo19GIDSignInUIDelegate", "present"]
@@ -621,13 +573,10 @@ depends-member:
 - !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "UIAlertAction"]
 - !private ["Ps8Hashable", "UIAlertController"]
-- !private ["Ps8Hashable", "UITapGestureRecognizer"]
-- !private ["Ps8Hashable", "UIViewController"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "accessToken"]
 - !private ["Ps8Hashable", "addAction"]
-- !private ["Ps8Hashable", "addGestureRecognizer"]
 - !private ["Ps8Hashable", "addTextField"]
 - !private ["Ps8Hashable", "alert"]
 - !private ["Ps8Hashable", "auth"]
@@ -644,12 +593,9 @@ depends-member:
 - ["Ps8Hashable", "didRequestPasswordReset"]
 - ["Ps8Hashable", "didTapSignIn"]
 - ["Ps8Hashable", "didTapSignUp"]
-- ["Ps8Hashable", "dismissKeyboard"]
 - !private ["Ps8Hashable", "displayName"]
 - !private ["Ps8Hashable", "email"]
 - ["Ps8Hashable", "emailField"]
-- !private ["Ps8Hashable", "endEditing"]
-- ["Ps8Hashable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps8Hashable", "idToken"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "isEmpty"]
@@ -675,7 +621,6 @@ depends-member:
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "textFields"]
 - !private ["Ps8Hashable", "uiDelegate"]
-- !private ["Ps8Hashable", "view"]
 - ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
@@ -739,21 +684,15 @@ depends-member:
 - !private ["PSo8NSCoding", "NotificationCenter"]
 - !private ["PSo8NSCoding", "UIAlertAction"]
 - !private ["PSo8NSCoding", "UIAlertController"]
-- !private ["PSo8NSCoding", "UITapGestureRecognizer"]
-- !private ["PSo8NSCoding", "UIViewController"]
 - !private ["PSo8NSCoding", "accessToken"]
 - !private ["PSo8NSCoding", "addAction"]
-- !private ["PSo8NSCoding", "addGestureRecognizer"]
 - !private ["PSo8NSCoding", "addTextField"]
 - !private ["PSo8NSCoding", "authentication"]
 - !private ["PSo8NSCoding", "components"]
 - ["PSo8NSCoding", "didRequestPasswordReset"]
 - ["PSo8NSCoding", "didTapSignIn"]
 - ["PSo8NSCoding", "didTapSignUp"]
-- !private ["PSo8NSCoding", "dismissKeyboard"]
 - ["PSo8NSCoding", "emailField"]
-- !private ["PSo8NSCoding", "endEditing"]
-- !private ["PSo8NSCoding", "hideKeyboardWhenTappedAround"]
 - !private ["PSo8NSCoding", "idToken"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "isEmpty"]
@@ -770,7 +709,6 @@ depends-member:
 - ["PSo8NSCoding", "signedIn"]
 - !private ["PSo8NSCoding", "text"]
 - !private ["PSo8NSCoding", "textFields"]
-- !private ["PSo8NSCoding", "view"]
 - ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
@@ -792,16 +730,12 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "NotificationCenter"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertAction"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
-- !private ["PSo26NSExtensionRequestHandling", "UITapGestureRecognizer"]
-- !private ["PSo26NSExtensionRequestHandling", "UIViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
 - !private ["PSo26NSExtensionRequestHandling", "addTextField"]
 - ["PSo26NSExtensionRequestHandling", "didRequestPasswordReset"]
 - ["PSo26NSExtensionRequestHandling", "didTapSignIn"]
 - ["PSo26NSExtensionRequestHandling", "didTapSignUp"]
-- !private ["PSo26NSExtensionRequestHandling", "dismissKeyboard"]
 - ["PSo26NSExtensionRequestHandling", "emailField"]
-- !private ["PSo26NSExtensionRequestHandling", "hideKeyboardWhenTappedAround"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
 - ["PSo26NSExtensionRequestHandling", "passwordField"]
 - !private ["PSo26NSExtensionRequestHandling", "performSegue"]
@@ -814,7 +748,6 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "signInWillDispatch"]
 - ["PSo26NSExtensionRequestHandling", "signedIn"]
 - !private ["PSo26NSExtensionRequestHandling", "textFields"]
-- !private ["PSo26NSExtensionRequestHandling", "view"]
 - ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
@@ -839,12 +772,9 @@ depends-member:
 - !private ["CSo8NSObject", "NotificationCenter"]
 - !private ["CSo8NSObject", "UIAlertAction"]
 - !private ["CSo8NSObject", "UIAlertController"]
-- !private ["CSo8NSObject", "UITapGestureRecognizer"]
 - ["CSo8NSObject", "UITextField"]
-- !private ["CSo8NSObject", "UIViewController"]
 - !private ["CSo8NSObject", "accessToken"]
 - !private ["CSo8NSObject", "addAction"]
-- !private ["CSo8NSObject", "addGestureRecognizer"]
 - !private ["CSo8NSObject", "addTextField"]
 - !private ["CSo8NSObject", "auth"]
 - !private ["CSo8NSObject", "authentication"]
@@ -860,12 +790,9 @@ depends-member:
 - ["CSo8NSObject", "didRequestPasswordReset"]
 - ["CSo8NSObject", "didTapSignIn"]
 - ["CSo8NSObject", "didTapSignUp"]
-- ["CSo8NSObject", "dismissKeyboard"]
 - !private ["CSo8NSObject", "displayName"]
 - !private ["CSo8NSObject", "email"]
 - ["CSo8NSObject", "emailField"]
-- !private ["CSo8NSObject", "endEditing"]
-- ["CSo8NSObject", "hideKeyboardWhenTappedAround"]
 - !private ["CSo8NSObject", "idToken"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "isEmpty"]
@@ -891,7 +818,6 @@ depends-member:
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "textFields"]
 - !private ["CSo8NSObject", "uiDelegate"]
-- !private ["CSo8NSObject", "view"]
 - ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "AppState"]
@@ -905,11 +831,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "NotificationCenter"]
 - !private ["PSo16NSObjectProtocol", "UIAlertAction"]
 - !private ["PSo16NSObjectProtocol", "UIAlertController"]
-- !private ["PSo16NSObjectProtocol", "UITapGestureRecognizer"]
-- !private ["PSo16NSObjectProtocol", "UIViewController"]
 - !private ["PSo16NSObjectProtocol", "accessToken"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
-- !private ["PSo16NSObjectProtocol", "addGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "addTextField"]
 - !private ["PSo16NSObjectProtocol", "auth"]
 - !private ["PSo16NSObjectProtocol", "authentication"]
@@ -925,12 +848,9 @@ depends-member:
 - ["PSo16NSObjectProtocol", "didRequestPasswordReset"]
 - ["PSo16NSObjectProtocol", "didTapSignIn"]
 - ["PSo16NSObjectProtocol", "didTapSignUp"]
-- ["PSo16NSObjectProtocol", "dismissKeyboard"]
 - !private ["PSo16NSObjectProtocol", "displayName"]
 - !private ["PSo16NSObjectProtocol", "email"]
 - ["PSo16NSObjectProtocol", "emailField"]
-- !private ["PSo16NSObjectProtocol", "endEditing"]
-- ["PSo16NSObjectProtocol", "hideKeyboardWhenTappedAround"]
 - !private ["PSo16NSObjectProtocol", "idToken"]
 - !private ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "isEmpty"]
@@ -956,7 +876,6 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "textFields"]
 - !private ["PSo16NSObjectProtocol", "uiDelegate"]
-- !private ["PSo16NSObjectProtocol", "view"]
 - ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
@@ -975,7 +894,6 @@ depends-member:
 - !private ["CSo18NotificationCenter", "post"]
 - !private ["VV6Kairos9Constants16NotificationKeys", "SignedIn"]
 - ["Sq", "deinit"]
-- ["Sq", "some"]
 - !private ["Ps22RandomAccessCollection", "Index"]
 - !private ["Ps22RandomAccessCollection", "IndexDistance"]
 - !private ["Ps22RandomAccessCollection", "Indices"]
@@ -1011,7 +929,6 @@ depends-member:
 - !private ["Ps16RawRepresentable", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "Name"]
 - !private ["VV6Kairos9Constants6Segues", "SignInToFp"]
-- ["V10ObjectiveC8Selector", "deinit"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Index"]
 - !private ["Ps8Sequence", "IndexDistance"]
@@ -1044,7 +961,6 @@ depends-member:
 - ["C6Kairos20SignInViewController", "didTapSignIn"]
 - ["C6Kairos20SignInViewController", "didTapSignUp"]
 - ["C6Kairos20SignInViewController", "emailField"]
-- !private ["C6Kairos20SignInViewController", "hideKeyboardWhenTappedAround"]
 - ["C6Kairos20SignInViewController", "init"]
 - ["C6Kairos20SignInViewController", "passwordField"]
 - !private ["C6Kairos20SignInViewController", "performSegue"]
@@ -1081,8 +997,6 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "components"]
 - !private ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "isEmpty"]
-- !private ["PSo29UIAccessibilityIdentification", "addGestureRecognizer"]
-- !private ["PSo29UIAccessibilityIdentification", "endEditing"]
 - !private ["PSo29UIAccessibilityIdentification", "text"]
 - ["CSo13UIAlertAction", "deinit"]
 - !private ["CSo13UIAlertAction", "init"]
@@ -1095,8 +1009,6 @@ depends-member:
 - !private ["CSo17UIAlertController", "textFields"]
 - !private ["OSC22UIAlertControllerStyle", "alert"]
 - ["OSC22UIAlertControllerStyle", "deinit"]
-- !private ["PSo12UIAppearance", "addGestureRecognizer"]
-- !private ["PSo12UIAppearance", "endEditing"]
 - !private ["PSo12UIAppearance", "text"]
 - !private ["PSo21UIAppearanceContainer", "AppState"]
 - !private ["PSo21UIAppearanceContainer", "Constants"]
@@ -1109,18 +1021,12 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "NotificationCenter"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertAction"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
-- !private ["PSo21UIAppearanceContainer", "UITapGestureRecognizer"]
-- !private ["PSo21UIAppearanceContainer", "UIViewController"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
-- !private ["PSo21UIAppearanceContainer", "addGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "addTextField"]
 - ["PSo21UIAppearanceContainer", "didRequestPasswordReset"]
 - ["PSo21UIAppearanceContainer", "didTapSignIn"]
 - ["PSo21UIAppearanceContainer", "didTapSignUp"]
-- !private ["PSo21UIAppearanceContainer", "dismissKeyboard"]
 - ["PSo21UIAppearanceContainer", "emailField"]
-- !private ["PSo21UIAppearanceContainer", "endEditing"]
-- !private ["PSo21UIAppearanceContainer", "hideKeyboardWhenTappedAround"]
 - !private ["PSo21UIAppearanceContainer", "init"]
 - ["PSo21UIAppearanceContainer", "passwordField"]
 - !private ["PSo21UIAppearanceContainer", "performSegue"]
@@ -1134,7 +1040,6 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "signedIn"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - !private ["PSo21UIAppearanceContainer", "textFields"]
-- !private ["PSo21UIAppearanceContainer", "view"]
 - ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
@@ -1149,16 +1054,12 @@ depends-member:
 - !private ["PSo18UIContentContainer", "NotificationCenter"]
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
 - !private ["PSo18UIContentContainer", "UIAlertController"]
-- !private ["PSo18UIContentContainer", "UITapGestureRecognizer"]
-- !private ["PSo18UIContentContainer", "UIViewController"]
 - !private ["PSo18UIContentContainer", "addAction"]
 - !private ["PSo18UIContentContainer", "addTextField"]
 - ["PSo18UIContentContainer", "didRequestPasswordReset"]
 - ["PSo18UIContentContainer", "didTapSignIn"]
 - ["PSo18UIContentContainer", "didTapSignUp"]
-- !private ["PSo18UIContentContainer", "dismissKeyboard"]
 - ["PSo18UIContentContainer", "emailField"]
-- !private ["PSo18UIContentContainer", "hideKeyboardWhenTappedAround"]
 - !private ["PSo18UIContentContainer", "init"]
 - ["PSo18UIContentContainer", "passwordField"]
 - !private ["PSo18UIContentContainer", "performSegue"]
@@ -1171,17 +1072,12 @@ depends-member:
 - ["PSo18UIContentContainer", "signInWillDispatch"]
 - ["PSo18UIContentContainer", "signedIn"]
 - !private ["PSo18UIContentContainer", "textFields"]
-- !private ["PSo18UIContentContainer", "view"]
 - ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["CSo9UIControl", "text"]
-- !private ["PSo17UICoordinateSpace", "addGestureRecognizer"]
-- !private ["PSo17UICoordinateSpace", "endEditing"]
 - !private ["PSo17UICoordinateSpace", "text"]
-- !private ["PSo13UIDynamicItem", "addGestureRecognizer"]
-- !private ["PSo13UIDynamicItem", "endEditing"]
 - !private ["PSo13UIDynamicItem", "text"]
 - !private ["PSo18UIFocusEnvironment", "AppState"]
 - !private ["PSo18UIFocusEnvironment", "Constants"]
@@ -1194,18 +1090,12 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "NotificationCenter"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertAction"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
-- !private ["PSo18UIFocusEnvironment", "UITapGestureRecognizer"]
-- !private ["PSo18UIFocusEnvironment", "UIViewController"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
-- !private ["PSo18UIFocusEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "addTextField"]
 - ["PSo18UIFocusEnvironment", "didRequestPasswordReset"]
 - ["PSo18UIFocusEnvironment", "didTapSignIn"]
 - ["PSo18UIFocusEnvironment", "didTapSignUp"]
-- !private ["PSo18UIFocusEnvironment", "dismissKeyboard"]
 - ["PSo18UIFocusEnvironment", "emailField"]
-- !private ["PSo18UIFocusEnvironment", "endEditing"]
-- !private ["PSo18UIFocusEnvironment", "hideKeyboardWhenTappedAround"]
 - !private ["PSo18UIFocusEnvironment", "init"]
 - ["PSo18UIFocusEnvironment", "passwordField"]
 - !private ["PSo18UIFocusEnvironment", "performSegue"]
@@ -1219,14 +1109,10 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "signedIn"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - !private ["PSo18UIFocusEnvironment", "textFields"]
-- !private ["PSo18UIFocusEnvironment", "view"]
 - ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
-- !private ["PSo11UIFocusItem", "addGestureRecognizer"]
-- !private ["PSo11UIFocusItem", "endEditing"]
 - !private ["PSo11UIFocusItem", "text"]
-- !private ["CSo19UIGestureRecognizer", "init"]
 - !private ["PSo10UIKeyInput", "text"]
 - ["CSo11UIResponder", "AnyObject"]
 - !private ["CSo11UIResponder", "AppState"]
@@ -1246,19 +1132,13 @@ depends-member:
 - !private ["CSo11UIResponder", "NotificationCenter"]
 - !private ["CSo11UIResponder", "UIAlertAction"]
 - !private ["CSo11UIResponder", "UIAlertController"]
-- !private ["CSo11UIResponder", "UITapGestureRecognizer"]
 - ["CSo11UIResponder", "UITextField"]
-- !private ["CSo11UIResponder", "UIViewController"]
 - !private ["CSo11UIResponder", "addAction"]
-- !private ["CSo11UIResponder", "addGestureRecognizer"]
 - !private ["CSo11UIResponder", "addTextField"]
 - ["CSo11UIResponder", "didRequestPasswordReset"]
 - ["CSo11UIResponder", "didTapSignIn"]
 - ["CSo11UIResponder", "didTapSignUp"]
-- ["CSo11UIResponder", "dismissKeyboard"]
 - ["CSo11UIResponder", "emailField"]
-- !private ["CSo11UIResponder", "endEditing"]
-- ["CSo11UIResponder", "hideKeyboardWhenTappedAround"]
 - ["CSo11UIResponder", "init"]
 - ["CSo11UIResponder", "passwordField"]
 - !private ["CSo11UIResponder", "performSegue"]
@@ -1272,7 +1152,6 @@ depends-member:
 - ["CSo11UIResponder", "signedIn"]
 - !private ["CSo11UIResponder", "text"]
 - !private ["CSo11UIResponder", "textFields"]
-- !private ["CSo11UIResponder", "view"]
 - ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "AppState"]
@@ -1286,18 +1165,12 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "NotificationCenter"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertAction"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
-- !private ["PSo30UIResponderStandardEditActions", "UITapGestureRecognizer"]
-- !private ["PSo30UIResponderStandardEditActions", "UIViewController"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
-- !private ["PSo30UIResponderStandardEditActions", "addGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "addTextField"]
 - ["PSo30UIResponderStandardEditActions", "didRequestPasswordReset"]
 - ["PSo30UIResponderStandardEditActions", "didTapSignIn"]
 - ["PSo30UIResponderStandardEditActions", "didTapSignUp"]
-- ["PSo30UIResponderStandardEditActions", "dismissKeyboard"]
 - ["PSo30UIResponderStandardEditActions", "emailField"]
-- !private ["PSo30UIResponderStandardEditActions", "endEditing"]
-- ["PSo30UIResponderStandardEditActions", "hideKeyboardWhenTappedAround"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - ["PSo30UIResponderStandardEditActions", "passwordField"]
 - !private ["PSo30UIResponderStandardEditActions", "performSegue"]
@@ -1311,7 +1184,6 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "signedIn"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - !private ["PSo30UIResponderStandardEditActions", "textFields"]
-- !private ["PSo30UIResponderStandardEditActions", "view"]
 - ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
@@ -1326,16 +1198,12 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "NotificationCenter"]
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
-- !private ["PSo16UIStateRestoring", "UITapGestureRecognizer"]
-- !private ["PSo16UIStateRestoring", "UIViewController"]
 - !private ["PSo16UIStateRestoring", "addAction"]
 - !private ["PSo16UIStateRestoring", "addTextField"]
 - ["PSo16UIStateRestoring", "didRequestPasswordReset"]
 - ["PSo16UIStateRestoring", "didTapSignIn"]
 - ["PSo16UIStateRestoring", "didTapSignUp"]
-- !private ["PSo16UIStateRestoring", "dismissKeyboard"]
 - ["PSo16UIStateRestoring", "emailField"]
-- !private ["PSo16UIStateRestoring", "hideKeyboardWhenTappedAround"]
 - !private ["PSo16UIStateRestoring", "init"]
 - ["PSo16UIStateRestoring", "passwordField"]
 - !private ["PSo16UIStateRestoring", "performSegue"]
@@ -1348,12 +1216,9 @@ depends-member:
 - ["PSo16UIStateRestoring", "signInWillDispatch"]
 - ["PSo16UIStateRestoring", "signedIn"]
 - !private ["PSo16UIStateRestoring", "textFields"]
-- !private ["PSo16UIStateRestoring", "view"]
 - ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
-- ["CSo22UITapGestureRecognizer", "deinit"]
-- !private ["CSo22UITapGestureRecognizer", "init"]
 - !private ["CSo11UITextField", "deinit"]
 - !private ["CSo11UITextField", "text"]
 - !private ["PSo11UITextInput", "text"]
@@ -1369,18 +1234,12 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "NotificationCenter"]
 - !private ["PSo18UITraitEnvironment", "UIAlertAction"]
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
-- !private ["PSo18UITraitEnvironment", "UITapGestureRecognizer"]
-- !private ["PSo18UITraitEnvironment", "UIViewController"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
-- !private ["PSo18UITraitEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "addTextField"]
 - ["PSo18UITraitEnvironment", "didRequestPasswordReset"]
 - ["PSo18UITraitEnvironment", "didTapSignIn"]
 - ["PSo18UITraitEnvironment", "didTapSignUp"]
-- !private ["PSo18UITraitEnvironment", "dismissKeyboard"]
 - ["PSo18UITraitEnvironment", "emailField"]
-- !private ["PSo18UITraitEnvironment", "endEditing"]
-- !private ["PSo18UITraitEnvironment", "hideKeyboardWhenTappedAround"]
 - !private ["PSo18UITraitEnvironment", "init"]
 - ["PSo18UITraitEnvironment", "passwordField"]
 - !private ["PSo18UITraitEnvironment", "performSegue"]
@@ -1394,12 +1253,9 @@ depends-member:
 - ["PSo18UITraitEnvironment", "signedIn"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - !private ["PSo18UITraitEnvironment", "textFields"]
-- !private ["PSo18UITraitEnvironment", "view"]
 - ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
-- !private ["CSo6UIView", "addGestureRecognizer"]
-- !private ["CSo6UIView", "endEditing"]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "AnyObject"]
 - !private ["CSo16UIViewController", "AppState"]
@@ -1419,18 +1275,14 @@ depends-member:
 - !private ["CSo16UIViewController", "NotificationCenter"]
 - !private ["CSo16UIViewController", "UIAlertAction"]
 - !private ["CSo16UIViewController", "UIAlertController"]
-- !private ["CSo16UIViewController", "UITapGestureRecognizer"]
 - ["CSo16UIViewController", "UITextField"]
-- !private ["CSo16UIViewController", "UIViewController"]
 - !private ["CSo16UIViewController", "addAction"]
 - !private ["CSo16UIViewController", "addTextField"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "didRequestPasswordReset"]
 - ["CSo16UIViewController", "didTapSignIn"]
 - ["CSo16UIViewController", "didTapSignUp"]
-- ["CSo16UIViewController", "dismissKeyboard"]
 - ["CSo16UIViewController", "emailField"]
-- ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "init"]
 - ["CSo16UIViewController", "passwordField"]
 - !private ["CSo16UIViewController", "performSegue"]
@@ -1443,7 +1295,6 @@ depends-member:
 - ["CSo16UIViewController", "signInWillDispatch"]
 - ["CSo16UIViewController", "signedIn"]
 - !private ["CSo16UIViewController", "textFields"]
-- !private ["CSo16UIViewController", "view"]
 - ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
@@ -1452,8 +1303,6 @@ depends-member:
 - !private ["Ps14_ArrayProtocol", "SubSequence"]
 - !private ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addGestureRecognizer"]
-- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "endEditing"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
 - !private ["Ps24_DestructorSafeContainer", "Index"]
 - !private ["Ps24_DestructorSafeContainer", "IndexDistance"]
@@ -1493,13 +1342,10 @@ depends-member:
 - !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "UIAlertAction"]
 - !private ["Ps9_Hashable", "UIAlertController"]
-- !private ["Ps9_Hashable", "UITapGestureRecognizer"]
-- !private ["Ps9_Hashable", "UIViewController"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps9_Hashable", "accessToken"]
 - !private ["Ps9_Hashable", "addAction"]
-- !private ["Ps9_Hashable", "addGestureRecognizer"]
 - !private ["Ps9_Hashable", "addTextField"]
 - !private ["Ps9_Hashable", "alert"]
 - !private ["Ps9_Hashable", "auth"]
@@ -1516,12 +1362,9 @@ depends-member:
 - ["Ps9_Hashable", "didRequestPasswordReset"]
 - ["Ps9_Hashable", "didTapSignIn"]
 - ["Ps9_Hashable", "didTapSignUp"]
-- ["Ps9_Hashable", "dismissKeyboard"]
 - !private ["Ps9_Hashable", "displayName"]
 - !private ["Ps9_Hashable", "email"]
 - ["Ps9_Hashable", "emailField"]
-- !private ["Ps9_Hashable", "endEditing"]
-- ["Ps9_Hashable", "hideKeyboardWhenTappedAround"]
 - !private ["Ps9_Hashable", "idToken"]
 - !private ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "isEmpty"]
@@ -1547,7 +1390,6 @@ depends-member:
 - !private ["Ps9_Hashable", "text"]
 - !private ["Ps9_Hashable", "textFields"]
 - !private ["Ps9_Hashable", "uiDelegate"]
-- !private ["Ps9_Hashable", "view"]
 - ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
@@ -1598,7 +1440,7 @@ depends-nominal:
 - !private "V6Kairos9Constants"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
-- "Ps17CustomReflectable"
+- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - !private "Vs27DefaultBidirectionalIndices"
 - !private "Vs26DefaultRandomAccessIndices"
@@ -1608,7 +1450,6 @@ depends-nominal:
 - !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
-- "Ps23ExpressibleByNilLiteral"
 - !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
@@ -1662,7 +1503,6 @@ depends-nominal:
 - !private "Ps16RawRepresentable"
 - !private "P10Foundation20ReferenceConvertible"
 - !private "VV6Kairos9Constants6Segues"
-- "V10ObjectiveC8Selector"
 - !private "Ps8Sequence"
 - "C6Kairos20SignInViewController"
 - !private "Ps13SignedInteger"
@@ -1686,12 +1526,10 @@ depends-nominal:
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
 - !private "PSo11UIFocusItem"
-- !private "CSo19UIGestureRecognizer"
 - !private "PSo10UIKeyInput"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
 - "PSo16UIStateRestoring"
-- "CSo22UITapGestureRecognizer"
 - !private "CSo11UITextField"
 - !private "PSo11UITextInput"
 - !private "PSo17UITextInputTraits"
@@ -1722,147 +1560,161 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Firebase/Core/Sources/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIROptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRApp.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FIRCrashLog.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FirebaseCrash.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FIRRemoteConfig.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FirebaseRemoteConfig.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdReward.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchRequest.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchBannerView.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeContentAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAppInstallAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdNotificationSource.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPRequest.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPInterstitial.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPBannerView.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoOptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoController.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMobileAds.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediaView.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitial.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchase.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADExtras.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoader.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelator.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequestError.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequest.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerView.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSize.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdDelegate.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/Firebase/Core/Sources/Firebase.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
-- "/Users/RichardChen/Documents/friendlychat/ios-starter/swift-starter/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCore/Frameworks/frameworks/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FIREmailPasswordAuthProvider.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseAuth/Frameworks/frameworks/FirebaseAuth.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FIRCrashLog.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Headers/FirebaseCrash.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseCrash/Frameworks/frameworks/FirebaseCrash.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FIRRemoteConfig.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Headers/FirebaseRemoteConfig.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseRemoteConfig/Frameworks/frameworks/FirebaseRemoteConfig.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
+- "/Users/RichardChen/kairos/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdReward.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchRequest.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADSearchBannerView.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeContentAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAppInstallAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdNotificationSource.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPRequest.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPInterstitial.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/DFPBannerView.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoOptions.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADVideoController.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMobileAds.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADMediaView.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInterstitial.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchase.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADExtras.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdLoader.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADCorrelator.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequestError.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADRequest.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADBannerView.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdSize.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GADAdDelegate.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
+- "/Users/RichardChen/kairos/Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignInButton.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDSignIn.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDProfileData.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDGoogleUser.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GIDAuthentication.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Headers/GoogleSignIn.h"
+- "/Users/RichardChen/kairos/Pods/GoogleSignIn/Frameworks/GoogleSignIn.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Photos.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
-interface-hash: "70a748a0927957d4b0b8e8a2453c5120"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Headers/GMRConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLErrorCode.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLContext.h"
+- "/Users/RichardChen/kairos/Pods/Google/Headers/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLConfiguration.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Headers/GGLCore.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLCore.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLContext+SignIn.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLSignIn.framework/Headers/GGLSignIn.h"
+- "/Users/RichardChen/kairos/Pods/Google/Frameworks/GGLSignIn.framework/Modules/module.modulemap"
+- "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
+- "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
+- "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
+interface-hash: "9af95b11cb3ca74bd4bbab8f2a565201"

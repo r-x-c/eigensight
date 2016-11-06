@@ -41,6 +41,10 @@ Copyright 2016 Google
 
 Copyright 2011 Google Inc. All Rights Reserved.
 
+## Google
+
+Copyright 2016 Google Inc.
+
 ## GoogleAppUtilities
 
 Copyright 2016 Google
