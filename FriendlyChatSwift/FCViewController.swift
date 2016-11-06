@@ -103,6 +103,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         fetchConfig()
         //loadAd()
         logViewLoaded()
+        
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -182,6 +183,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     // Instance variables
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+//    myButton.setImage(UIImage(named: "nameOfImage.png"), forState: UIControlState.Normal)
+
     var ref: FIRDatabaseReference!
     var messages: [FIRDataSnapshot]! = []
     var msglength: NSNumber = 35

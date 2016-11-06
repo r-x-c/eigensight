@@ -10,19 +10,19 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/SignInViewController.nib</key>
 		<data>
-		QdbpDyPWYUzUCeM3n4NpKYNWDY4=
+		fEci0B0qKiNxtzZ3AtkDoX0WUkU=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<data>
-		566kY3wsize5kRlvNd9vznUvhrk=
+		xtZLqn3PFXJfawpw1JZpUripCrg=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<data>
-		I6cAvtaKFQ9W80IECXaJrqg2Dpc=
+		spRPnidG5TvL/omQoPqBlRvxU4Y=
 		</data>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<data>
-		F4SViLsOtca1Mn95yMwLWiR+ul0=
+		creOfvc3NQOJkSHJ9yo2/YElU0E=
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		wgJIdbWvxoV5Sd8k8Z07QugPmwM=
+		73RwJPYD/wQGrWLzxIMOviU6rQ4=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -624,6 +624,14 @@
 		<data>
 		t6Sy4ETpFsDG01bjO8sXmyHLD44=
 		</data>
+		<key>shared/Images.xcassets/send-button.imageset/Contents.json</key>
+		<data>
+		rc6KwLQDV9kdOa2HCc8v5LzhYkA=
+		</data>
+		<key>shared/Images.xcassets/send-button.imageset/send-button.png</key>
+		<data>
+		hsV4/+UVuULze5wKTFOznFSu/nA=
+		</data>
 		<key>shared/LaunchScreen.xib</key>
 		<data>
 		jrMyRBNKCIlUihdQ0w263zdzBfA=
@@ -652,10 +660,6 @@
 		<data>
 		5CvgMTsLJAjGFfSMy+s5qtmCMik=
 		</data>
-		<key>shared/assets/send-button.png</key>
-		<data>
-		hsV4/+UVuULze5wKTFOznFSu/nA=
-		</data>
 		<key>shared/assets/temperature-scale_318-30375.png</key>
 		<data>
 		GvSjcmbjOgiEUgW4uNZ86nYMcuw=
@@ -678,44 +682,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QdbpDyPWYUzUCeM3n4NpKYNWDY4=
+			fEci0B0qKiNxtzZ3AtkDoX0WUkU=
 			</data>
 			<key>hash2</key>
 			<data>
-			t6x2u8vl+KW+Gcp1GCunofQmpE0zIi+hqNvAQqkcAaQ=
+			eEvgz2a3h1ZvoB2brqCkRQjdye542/LTCi09+ZZqCHU=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			566kY3wsize5kRlvNd9vznUvhrk=
+			xtZLqn3PFXJfawpw1JZpUripCrg=
 			</data>
 			<key>hash2</key>
 			<data>
-			T4lxE8TnFgp8As9Q4sZQDlfxw1vp8bS32Nwadfv9RFs=
+			i8oQDvk9sRtyqitKtLylpX9kZCT+fQu2YIwIveY+7+Q=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			I6cAvtaKFQ9W80IECXaJrqg2Dpc=
+			spRPnidG5TvL/omQoPqBlRvxU4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			twxYAxD0h4YpctYaCodUWTYAHTM1Tp5qlCEhtUFYSkk=
+			jzmknD8q0mv5qK4t0u9WguDgHsLMlevqnKPvDYytQ08=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F4SViLsOtca1Mn95yMwLWiR+ul0=
+			creOfvc3NQOJkSHJ9yo2/YElU0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			s8Ir9xgM6Uuc7Vw11ldcEfQ+oCATJcPArMCyXdtdtNI=
+			grLLkbsiOKb13uJ6CjcIVB52yM21gN3lytUFTCZ+jkw=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
@@ -876,11 +880,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wgJIdbWvxoV5Sd8k8Z07QugPmwM=
+			73RwJPYD/wQGrWLzxIMOviU6rQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			NdhgGzb7XHMnSCEfcTLpXY5S5qRdGOvB8LJLmapBxNY=
+			+r8uSU20XJNl3L8C8Mbr17Lrf7Vffhy3wuwWaeU+Gbk=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1923,6 +1927,28 @@
 			iUSz8uE6aGIgMIDnUVq0YqoaIYZrM0+EAbHwMlrQ3QM=
 			</data>
 		</dict>
+		<key>shared/Images.xcassets/send-button.imageset/Contents.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rc6KwLQDV9kdOa2HCc8v5LzhYkA=
+			</data>
+			<key>hash2</key>
+			<data>
+			BfYhCMkOoO8+VmGIHcjXMpyFHExSKQA2Ms7GHe4qPCo=
+			</data>
+		</dict>
+		<key>shared/Images.xcassets/send-button.imageset/send-button.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hsV4/+UVuULze5wKTFOznFSu/nA=
+			</data>
+			<key>hash2</key>
+			<data>
+			cInQZMc7kVtrCYWrJ4Ufh6i7s2GcILSHeZlwydzIbqk=
+			</data>
+		</dict>
 		<key>shared/LaunchScreen.xib</key>
 		<dict>
 			<key>hash</key>
@@ -1998,17 +2024,6 @@
 			<key>hash2</key>
 			<data>
 			x/Qeqczkm7PtNYYk3d5koaIcmRWS1/09MyDphSSmOqk=
-			</data>
-		</dict>
-		<key>shared/assets/send-button.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hsV4/+UVuULze5wKTFOznFSu/nA=
-			</data>
-			<key>hash2</key>
-			<data>
-			cInQZMc7kVtrCYWrJ4Ufh6i7s2GcILSHeZlwydzIbqk=
 			</data>
 		</dict>
 		<key>shared/assets/temperature-scale_318-30375.png</key>
