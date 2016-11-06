@@ -86,6 +86,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
 
         mainClock.text = "00:00:00"
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateForwardTimer), userInfo: nil, repeats: true)
+
         
         c_hours = 23 - currentDate.hour()
         c_minutes = 60 - currentDate.minute()
@@ -107,13 +109,15 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var pickerText: UILabel!
+    var curr_hour = 0, curr_min = 0, curr_sec = 0
+    var secondsString = "", minutesString = "", hoursString = ""
+    var old_idx = 0
     
+    // PICKER VIEW------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
-    // PICKER VIEW------------------------------------------------------
-    let pickerData = ["Sleeping", "Traveling", "Studying", "Eating", "Socializing", "Refreshing", "Exercising"]
+    let pickerData = ["Sleeping", "Traveling", "Studying", "Eating", "Socializing", "Grooming", "Exercising"]
     //MARK: Data Sources
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1//MARK: - Delegates and data sources
@@ -128,11 +132,29 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        saveActivityData(idx: old_idx)
         pickerText.text = pickerData[row]
+        setWatch(sec: storedTimes[row].seconds,
+                 min: storedTimes[row].minutes,
+                 hour: storedTimes[row].hours)
         //Store info into db
-        let data = [Constants.MessageFields.text: "\(pickerText.text!) @ \(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"]
-        sendMessage(withData: data)
+        curr_hour = currentDate.hour()
+        curr_min = currentDate.minute()
+        curr_sec = currentDate.second()
+        print(NSCalendar.current)
+        print(currentDate.hour())
+        print(currentDate.minute())
+        print(currentDate.second())
+        print(NSDate(timeIntervalSince1970: 1432233446145.0/1000.0))
+        let date = NSDate(timeIntervalSince1970: 1431024488)
+        print("date is \(date)")
+
+        //NSCalendar.current.timeIntervalSinceReferenceDate
+        
+        minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
+        hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
+        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(hoursString):\(minutesString)"])
+        old_idx = row
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -144,12 +166,9 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         var pickerLabel = view as! UILabel!
         if view == nil {  //if no label there yet
             pickerLabel = UILabel()
-            //color the label's background
-            let hue = CGFloat(row)/CGFloat(pickerData.count)
-            pickerLabel?.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
         }
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.white])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor(hue: 0.0722, saturation: 0.7, brightness: 0.93, alpha: 1.0)])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .center
         return pickerLabel!
@@ -159,7 +178,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     }
     // PICKER VIEW------------------------------------------------------
     
-    @IBOutlet weak var foo: UIButton!
     
     // Instance variables
     @IBOutlet weak var textField: UITextField!
@@ -175,6 +193,9 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var banner: GADBannerView!
     @IBOutlet weak var clientTable: UITableView!
     
+    
+    //TIMER----------------------------------------------------------------------
+
     //Countdown Variables
     @IBOutlet weak var mainClock: UILabel!
     var c_hours: Int = 0
@@ -184,7 +205,16 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var countdown = Timer()
     var currentDate = NSDate()
     var countdownString: String = ""
+    var stopwatchString: String = ""
+    //Count-up variables
+    var hours: Int = 0
+    var minutes: Int = 0
+    var seconds: Int = 0
 
+    var storedTimes = (1...7).map { _ in timeStorage(hrs: 0, min: 0, sec: 0) }
+    var laps = [String](repeating: "00:00:00", count: 7)
+
+    @IBOutlet weak var forwardTimer: UILabel!
     
     
     deinit {
@@ -210,6 +240,54 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         mainClock.text = countdownString
     }
 
+    func updateForwardTimer(){
+        seconds += 1
+        if seconds == 60{
+            minutes += 1
+            seconds = 0
+        }
+        if minutes == 60{
+            hours += 1
+            minutes = 0
+        }
+        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
+        stopwatchString = "\(hoursString):\(minutesString):\(secondsString)"
+        forwardTimer.text = stopwatchString
+//        laps[activityIndex] = stopwatchString
+//        lapsTableView.reloadData()
+        //todo: increase efficiency only load one
+    }
+
+    func saveActivityData(idx : Int){
+        storedTimes[idx].updateTime(hrs: hours, min: minutes, sec: seconds)
+        let sto_sec = storedTimes[idx].seconds
+        let sto_min = storedTimes[idx].minutes
+        let sto_hr = storedTimes[idx].hours
+        
+        let secondsString = sto_sec > 9 ? "\(sto_sec)" : "0\(sto_sec)"
+        let minutesString = sto_min > 9 ? "\(sto_min)" : "0\(sto_min)"
+        let hoursString = sto_hr > 9 ? "\(sto_hr)" : "0\(sto_hr)"
+        let rowStr = "\(hoursString):\(minutesString):\(secondsString)"
+        laps[idx] = rowStr
+        print(rowStr)
+    }
+
+    func setWatch(sec : Int, min : Int, hour : Int){
+        seconds = sec
+        minutes = min
+        hours = hour
+        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
+        stopwatchString = "\(hoursString):\(minutesString):\(secondsString)"
+        forwardTimer.text = stopwatchString
+    }
+
+    
+    //TIMER----------------------------------------------------------------------
+    
     
     
     func configureDatabase() {
@@ -300,9 +378,32 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         return messages.count
     }
     
+    
+    //fixme
+    var viewHasAppeared = false
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !viewHasAppeared { goToBottom() }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewHasAppeared = true
+    }
+    
+    private func goToBottom() {
+        guard messages.count > 0 else { return }
+        let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
+        clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: false)
+        clientTable.layoutIfNeeded()
+    }
+    //fixme
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
-        let cell = self.clientTable .dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        let cell = self.clientTable.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
         // Unpack message from Firebase DataSnapshot
         let messageSnapshot: FIRDataSnapshot! = self.messages[indexPath.row]
         let message = messageSnapshot.value as! Dictionary<String, String>
@@ -328,6 +429,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
                 cell.imageView?.image = UIImage(data: data)
             }
         }
+        cell.textLabel?.font = UIFont(name:"Avenir", size:15)
         return cell
     }
     
@@ -336,15 +438,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     // UITextViewDelegate protocol methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
-        var curr_hour = currentDate.hour()
-        var curr_min = currentDate.minute()
-        var curr_sec = currentDate.second()
-        var secondsString = curr_sec > 9 ? "\(curr_sec)" : "0\(curr_sec)"
-        var minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
-        var hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
-
-        //changed from .text: text] to :countdownString
         let data = [Constants.MessageFields.text: text]
+        textField.text = ""
         sendMessage(withData: data)
         return true
     }

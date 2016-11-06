@@ -266,6 +266,7 @@
                     </view>
                     <connections>
                         <outlet property="clientTable" destination="DHD-HU-kCB" id="VEb-Fb-vE0"/>
+                        <outlet property="forwardTimer" destination="Yby-5z-b5d" id="8eW-kj-gSr"/>
                         <outlet property="mainClock" destination="CYS-Gi-M6f" id="phU-IA-6YK"/>
                         <outlet property="pickerText" destination="fGk-hS-gaf" id="MNg-nK-Nuw"/>
                         <outlet property="pickerView" destination="GQ1-gb-Mta" id="uaR-zD-AWD"/>

@@ -176,6 +176,12 @@ SWIFT_CLASS_NAMED("FCViewController")
 - (void)viewDidLoad;
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified pickerView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pickerText;
+@property (nonatomic) NSInteger curr_hour;
+@property (nonatomic) NSInteger curr_min;
+@property (nonatomic) NSInteger curr_sec;
+@property (nonatomic, copy) NSString * _Nonnull secondsString;
+@property (nonatomic, copy) NSString * _Nonnull minutesString;
+@property (nonatomic, copy) NSString * _Nonnull hoursString;
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull pickerData;
 - (NSInteger)numberOfComponentsInPickerViewWithPickerView:(UIPickerView * _Nonnull)pickerView;

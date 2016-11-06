@@ -82,7 +82,7 @@
 		</data>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		c5DFNT2o9KgzvQW17SLcaw+bDxI=
+		fj7bs4g7iDNokNElEe9NgJ95CeY=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -458,7 +458,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		oTtqEMkA4Y0yFsaABoJqHs/dhxc=
+		EMnflbVn3y1iiA/bUwz7zjilvns=
 		</data>
 		<key>libswiftRemoteMirror.dylib</key>
 		<data>
@@ -880,11 +880,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			c5DFNT2o9KgzvQW17SLcaw+bDxI=
+			fj7bs4g7iDNokNElEe9NgJ95CeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			t7agbmtu2jr/EH6aYPQUyogXyXbnOummMCRiIlIIcaI=
+			4OO9xqPXeZU56kA+AzUCJvmBHeOZZDtFlSn9imCP8Bc=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1469,11 +1469,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oTtqEMkA4Y0yFsaABoJqHs/dhxc=
+			EMnflbVn3y1iiA/bUwz7zjilvns=
 			</data>
 			<key>hash2</key>
 			<data>
-			HGPNSkMY3PQyde//+NYk0wm6nbagrX8PHpRwMaoAP8s=
+			2hxey4shWIcl9BjoWyvL4oFkGw4tuKOiTSRvJSfGI6Q=
 			</data>
 		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
