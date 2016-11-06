@@ -131,7 +131,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         
         pickerText.text = pickerData[row]
         //Store info into db
-        let data = [Constants.MessageFields.text: "\(pickerText.text!) \(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"]
+        let data = [Constants.MessageFields.text: "\(pickerText.text!) @ \(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"]
         sendMessage(withData: data)
     }
     

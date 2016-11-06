@@ -10,19 +10,19 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/SignInViewController.nib</key>
 		<data>
-		0w/bGCz9hYOKO9RBugUfM3HtmU8=
+		M8wnI++7rKoH6bFJ4+UBocGU5eo=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<data>
-		OxmXH2wVU1LOSaZuf3DoEOXL5NY=
+		A09gDcczNYlzkP1fPOcciW0bZTQ=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<data>
-		GvbNgGnBRngsywuADOAntS7QXGc=
+		0JfePNtZGcYnNK5EAYVo8RBHD6U=
 		</data>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<data>
-		LqvPLjTFBjE9cbRi+hozInGox2w=
+		CajH5GiMXauQ2W1zP9rbl/c6Wz4=
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		ilqt8/GWHciyQgEKBPScR+lzNaA=
+		c5DFNT2o9KgzvQW17SLcaw+bDxI=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -656,6 +656,10 @@
 		<data>
 		5CvgMTsLJAjGFfSMy+s5qtmCMik=
 		</data>
+		<key>shared/assets/send-button.png</key>
+		<data>
+		hsV4/+UVuULze5wKTFOznFSu/nA=
+		</data>
 		<key>shared/assets/temperature-scale_318-30375.png</key>
 		<data>
 		GvSjcmbjOgiEUgW4uNZ86nYMcuw=
@@ -678,44 +682,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0w/bGCz9hYOKO9RBugUfM3HtmU8=
+			M8wnI++7rKoH6bFJ4+UBocGU5eo=
 			</data>
 			<key>hash2</key>
 			<data>
-			vx9pmGGHd1FKJ5fn15kab1DaBuN7pQlHZU4YMc88VAY=
+			nwUzsJbJDGFq4uFoWxdwj8Wo7JVmtmc7mhq+c64p7j8=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OxmXH2wVU1LOSaZuf3DoEOXL5NY=
+			A09gDcczNYlzkP1fPOcciW0bZTQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			5za3KaG5ej5QF1Bcinx4SX6G0blBCV7bC89dUzheHUw=
+			sl8n7pZbVuQ0DZ3lBjtfKyNy9RMeqgmbmbPAyTY2494=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GvbNgGnBRngsywuADOAntS7QXGc=
+			0JfePNtZGcYnNK5EAYVo8RBHD6U=
 			</data>
 			<key>hash2</key>
 			<data>
-			N9fvGb7z8CdQraAYMVdSTkdl75vyGZuIZM3N/esVX4A=
+			RzzTklKoYql0JDL0D4w0aV7eUlw8WeolHxVWIHYO5lg=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LqvPLjTFBjE9cbRi+hozInGox2w=
+			CajH5GiMXauQ2W1zP9rbl/c6Wz4=
 			</data>
 			<key>hash2</key>
 			<data>
-			oRPBiVKTT8zvYVhf8DtVJdR2nBvaZzhPmAOCN4Q2W6o=
+			caxVU2I35rau3kR5neG/FHL8Ufr8kyOv4obthlCMsvY=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
@@ -876,11 +880,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ilqt8/GWHciyQgEKBPScR+lzNaA=
+			c5DFNT2o9KgzvQW17SLcaw+bDxI=
 			</data>
 			<key>hash2</key>
 			<data>
-			J6KuYs7hrK7VK1/FKw3yB1pfWRVIjqfslOgEM229u+0=
+			t7agbmtu2jr/EH6aYPQUyogXyXbnOummMCRiIlIIcaI=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -2009,6 +2013,17 @@
 			<key>hash2</key>
 			<data>
 			x/Qeqczkm7PtNYYk3d5koaIcmRWS1/09MyDphSSmOqk=
+			</data>
+		</dict>
+		<key>shared/assets/send-button.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hsV4/+UVuULze5wKTFOznFSu/nA=
+			</data>
+			<key>hash2</key>
+			<data>
+			cInQZMc7kVtrCYWrJ4Ufh6i7s2GcILSHeZlwydzIbqk=
 			</data>
 		</dict>
 		<key>shared/assets/temperature-scale_318-30375.png</key>
