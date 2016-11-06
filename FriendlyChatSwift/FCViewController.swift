@@ -59,10 +59,107 @@ class timeStorage {
 }
 
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboardView))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboardView() {
+        view.endEditing(true)
+    }
+}
+
+
 
 @objc(FCViewController)
 class FCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
-UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.pickerView.dataSource = self;
+        self.pickerView.delegate = self;
+        pickerText.text = pickerData[0]
+
+        mainClock.text = "00:00:00"
+        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
+        
+        c_hours = 23 - currentDate.hour()
+        c_minutes = 60 - currentDate.minute()
+        c_seconds = 60 - currentDate.second()
+        
+        
+        
+        self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
+        
+        configureDatabase()
+        configureStorage()
+        configureRemoteConfig()
+        fetchConfig()
+        //loadAd()
+        logViewLoaded()
+        self.hideKeyboardWhenTappedAround()
+    }
+
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerText: UILabel!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    // PICKER VIEW------------------------------------------------------
+    let pickerData = ["Sleeping", "Traveling", "Studying", "Eating", "Socializing", "Refreshing", "Exercising"]
+    //MARK: Data Sources
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1//MARK: - Delegates and data sources
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    //MARK: Delegates
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        pickerText.text = pickerData[row]
+        //Store info into db
+        let data = [Constants.MessageFields.text: "\(pickerText.text!) \(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"]
+        sendMessage(withData: data)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
+        return myTitle
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as! UILabel!
+        if view == nil {  //if no label there yet
+            pickerLabel = UILabel()
+            //color the label's background
+            let hue = CGFloat(row)/CGFloat(pickerData.count)
+            pickerLabel?.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+        }
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.white])
+        pickerLabel!.attributedText = myTitle
+        pickerLabel!.textAlignment = .center
+        return pickerLabel!
+    }
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 30.0
+    }
+    // PICKER VIEW------------------------------------------------------
+    
+    @IBOutlet weak var foo: UIButton!
     
     // Instance variables
     @IBOutlet weak var textField: UITextField!
@@ -89,29 +186,6 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     var countdownString: String = ""
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-        mainClock.text = "00:00:00"
-        countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
-
-        c_hours = 23 - currentDate.hour()
-        c_minutes = 60 - currentDate.minute()
-        c_seconds = 60 - currentDate.second()
-
-        
-        
-        self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
-        
-        configureDatabase()
-        configureStorage()
-        configureRemoteConfig()
-        fetchConfig()
-//        loadAd()
-        logViewLoaded()
-        
-    }
     
     deinit {
         self.ref.child("messages").removeObserver(withHandle: _refHandle)
@@ -269,11 +343,8 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         var minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
         var hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
 
-        //let fooo = "\(hoursString):\(minutesString):\(secondsString)"
-
-        let fooo = "\(currentDate.hour()):\(currentDate.minute()):\(currentDate.second())"
         //changed from .text: text] to :countdownString
-        let data = [Constants.MessageFields.text: "\(text) \(fooo)"]
+        let data = [Constants.MessageFields.text: text]
         sendMessage(withData: data)
         return true
     }

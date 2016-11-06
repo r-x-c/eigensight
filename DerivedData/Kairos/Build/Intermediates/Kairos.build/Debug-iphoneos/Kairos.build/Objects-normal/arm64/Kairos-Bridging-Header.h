@@ -119,6 +119,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import GoogleSignIn;
 @import Foundation;
 @import ObjectiveC;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -151,6 +152,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIPickerView;
+@class NSAttributedString;
+@class UIView;
 @class FIRDatabaseReference;
 @class FIRDataSnapshot;
 @class NSNumber;
@@ -162,13 +166,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 @class UITextField;
 @class UITableView;
 @class UITableViewCell;
-@class GADBannerView;
 @class UILabel;
+@class GADBannerView;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS_NAMED("FCViewController")
-@interface FCViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource>
+@interface FCViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource>
+- (void)viewDidLoad;
+@property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified pickerView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pickerText;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull pickerData;
+- (NSInteger)numberOfComponentsInPickerViewWithPickerView:(UIPickerView * _Nonnull)pickerView;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (UIView * _Nonnull)pickerView:(UIPickerView * _Nonnull)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView * _Nullable)view;
+- (CGFloat)pickerView:(UIPickerView * _Nonnull)pickerView rowHeightForComponent:(NSInteger)component;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified foo;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sendButton;
 @property (nonatomic, strong) FIRDatabaseReference * _Null_unspecified ref;
@@ -186,7 +203,6 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, strong) NSTimer * _Nonnull countdown;
 @property (nonatomic, strong) NSDate * _Nonnull currentDate;
 @property (nonatomic, copy) NSString * _Nonnull countdownString;
-- (void)viewDidLoad;
 - (void)updateCountdown;
 - (void)configureDatabase;
 - (void)configureStorage;
@@ -243,6 +259,12 @@ SWIFT_CLASS_NAMED("SignInViewController")
 - (void)signedIn:(FIRUser * _Nullable)user;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface UIViewController (SWIFT_EXTENSION(Kairos))
+- (void)hideKeyboardWhenTappedAround;
+- (void)dismissKeyboardView;
 @end
 
 #pragma clang diagnostic pop
