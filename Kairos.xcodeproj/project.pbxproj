@@ -24,7 +24,7 @@
 		DA3B63AD1DCFFF3C00E47396 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */; };
 		DA3B63AE1DCFFF3C00E47396 /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */; };
 		DA3C79E61DC90CE900AD5319 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA3C79E51DC90CE900AD5319 /* Podfile */; };
-		DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* sharedCode.swift */; };
+		DA84F89F1DC72A7E00890354 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* ClassExtensions.swift */; };
 		DACABE111DCFC8ED00FF7A50 /* kairos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DACABE101DCFC8ED00FF7A50 /* kairos.jpg */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		DA3B63AF1DD0141F00E47396 /* Kairos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kairos.entitlements; sourceTree = "<group>"; };
 		DA3C79E51DC90CE900AD5319 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kairos-Bridging-Header.h"; sourceTree = "<group>"; };
-		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
+		DA84F89E1DC72A7E00890354 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		DACABE101DCFC8ED00FF7A50 /* kairos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kairos.jpg; path = shared/Images.xcassets/kairos.imageset/kairos.jpg; sourceTree = "<group>"; };
 		F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +102,7 @@
 		5F5A537A1ADE67D500F81DF0 /* FriendlyChatSwift */ = {
 			isa = PBXGroup;
 			children = (
-				DA84F89E1DC72A7E00890354 /* sharedCode.swift */,
+				DA84F89E1DC72A7E00890354 /* ClassExtensions.swift */,
 				5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */,
 				2C8E6C2A1B16875B0073CE3D /* SignInViewController.swift */,
 				5F5A537F1ADE67D500F81DF0 /* FCViewController.swift */,
@@ -286,7 +286,7 @@
 			files = (
 				2C8E6C2B1B16875B0073CE3D /* SignInViewController.swift in Sources */,
 				2CA807BE1B217B21009AD7F2 /* AppState.swift in Sources */,
-				DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */,
+				DA84F89F1DC72A7E00890354 /* ClassExtensions.swift in Sources */,
 				5F5A53801ADE67D500F81DF0 /* FCViewController.swift in Sources */,
 				5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */,
 				2CA807BC1B21702E009AD7F2 /* MeasurementHelper.swift in Sources */,

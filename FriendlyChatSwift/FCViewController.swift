@@ -26,36 +26,6 @@ import GoogleMobileAds
  */
 let kBannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
 
-class timeStorage {
-    var hours: Int
-    var minutes: Int
-    var seconds: Int
-    
-    init (hrs: Int, min: Int, sec: Int) {
-        self.hours = hrs
-        self.minutes = min
-        self.seconds = sec
-    }
-    func updateTime(hrs: Int, min: Int, sec: Int) {
-        self.hours = hrs
-        self.minutes = min
-        self.seconds = sec
-    }
-    func addTime(hrs: Int, min: Int, sec: Int) {
-        self.hours += hrs
-        self.minutes += min
-        self.seconds += sec
-        
-        if self.seconds > 60{
-            self.minutes += 1
-            self.seconds -= 60
-        }
-        if self.minutes > 60{
-            self.hours += 1
-            self.minutes -= 60
-        }
-    }
-}
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -80,15 +50,18 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         self.pickerView.delegate = self;
         pickerText.text = pickerData[0]
 
-        mainClock.text = "00:00:00"
+        
+        //timer beg
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateForwardTimer), userInfo: nil, repeats: true)
-
-        
         c_hours = 23 - currentDate.hour()
-        c_minutes = 60 - currentDate.minute()
+        c_minutes = 59 - currentDate.minute()
         c_seconds = 60 - currentDate.second()
         
+        if pastActivity == 0 {
+            pastActivity = NSDate().timeIntervalSince1970
+        }
+        //timer end
         
         
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
@@ -131,54 +104,44 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var pastActivity = 0.0
     var currActivity = 0.0
     var timeDelta = 0.0
-    var startDate: NSDate = NSDate()
-    
-    // your long procedure
-    
-    var endDate: NSDate = NSDate()
-    
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //Point of switching activities
-        saveActivityData(idx: old_idx)
+        //Update UIText
         pickerText.text = pickerData[row]
-        setWatch(sec: storedTimes[row].seconds,
-                 min: storedTimes[row].minutes,
-                 hour: storedTimes[row].hours)
+        
         currentDate = NSDate()
         print("current date: \(currentDate)")
         
         
-        endDate = NSDate()
-
+        
+        //Add Cumulated Time to Previous Activity
+        currActivity = NSDate().timeIntervalSince1970
+        timeDelta = currActivity - pastActivity
+        timeArray[old_idx] += timeDelta
+        
+        //Load Old Times
+        setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
+        
+        //debug
+        dump(timeArray)
+        
+        //Load Time of New Activity Into Timer
+        
+        
         //var interval = NSDate().timeIntervalSince1970
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone(name: "EST") as TimeZone!
 
-        currActivity = NSDate().timeIntervalSince1970
-        timeDelta = currActivity - pastActivity
-
-        var timeDeltaDate = NSDate(timeIntervalSince1970: timeDelta)
-        print("prev time: \(pastActivity)")
-        print("curr time : \(currActivity)")
-        print("timedelta: \(timeDelta)")
-        print("timedelta date: \(timeDeltaDate)")
+        let elapsed_hr = timeDelta.NSDateHour()
+        let elapsed_min = timeDelta.NSDateMinute()
+        let elapsed_sec = timeDelta.NSDateSecond()
         print("formatted: \(Date(timeIntervalSince1970: timeDelta))")
-        print("timedelta hour: \(timeDeltaDate.hour())")
-        print("timedelta min: \(timeDeltaDate.minute())")
-        print("timedelta sec: \(timeDeltaDate.second())")
-        print("\(dateFormatter.string(from: timeDeltaDate as Date))")
-        
-        let elapsed_hr = timeDeltaDate.hour() - 19
-        let elapsed_min = timeDeltaDate.minute()
-        let elapsed_sec = timeDeltaDate.second()
         print("timedelta hour: \(elapsed_hr)")
         print("timedelta min: \(elapsed_min)")
         print("timedelta sec: \(elapsed_sec)")
 
+
         
-        
-        startDate = endDate
         pastActivity = currActivity
 //        print(interval)
 //        print("\(interval)")
@@ -190,13 +153,13 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         curr_hour = currentDate.hour()
         curr_min = currentDate.minute()
         curr_sec = currentDate.second()
+        let msg_str = formatTimeString(hrs: curr_hour, mins: curr_min, sec: curr_sec)
+        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(msg_str)"])
         
-        minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
-        hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
-        secondsString = curr_sec > 9 ? "\(curr_sec)" : "0\(curr_sec)"
-
-        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(hoursString):\(minutesString):\(secondsString)"])
+        //Overwrite Old Idx
         old_idx = row
+        goToBottom()
+
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -223,26 +186,28 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     
 
-    //TIMER----------------------------------------------------------------------
+    //Timer Begin-------------------------------------------------------------------
 
     //Countdown Variables
     @IBOutlet weak var mainClock: UILabel!
     var currentDate = NSDate()
-
     var c_hours: Int = 0
     var c_minutes: Int = 0
     var c_seconds: Int = 0
     var timer = Timer()
     var countdown = Timer()
     var countdownString: String = ""
-    var stopwatchString: String = ""
+    
     //Count-up variables
     var hours: Int = 0
     var minutes: Int = 0
     var seconds: Int = 0
+    var stopwatchString: String = ""
 
-    var storedTimes = (1...7).map { _ in timeStorage(hrs: 0, min: 0, sec: 0) }
+
     var laps = [String](repeating: "00:00:00", count: 7)
+
+    var timeArray = [Double](repeating: 0, count: 7)
 
     @IBOutlet weak var forwardTimer: UILabel!
     
@@ -252,7 +217,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func updateCountdown(){
-        
         c_seconds -= 1
         if c_seconds == -1{
             c_minutes -= 1
@@ -262,12 +226,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             c_hours -= 1
             c_minutes = 59
         }
-        
-        let secondsString = c_seconds > 9 ? "\(c_seconds)" : "0\(c_seconds)"
-        let minutesString = c_minutes > 9 ? "\(c_minutes)" : "0\(c_minutes)"
-        let hoursString = c_hours > 9 ? "\(c_hours)" : "0\(c_hours)"
-        countdownString = "\(hoursString):\(minutesString):\(secondsString)"
-        mainClock.text = countdownString
+        mainClock.text = formatTimeString(hrs: c_hours, mins: c_minutes, sec: c_seconds)
+
     }
 
     func updateForwardTimer(){
@@ -280,41 +240,14 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             hours += 1
             minutes = 0
         }
-        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
-        stopwatchString = "\(hoursString):\(minutesString):\(secondsString)"
-        forwardTimer.text = stopwatchString
-//        laps[activityIndex] = stopwatchString
-//        lapsTableView.reloadData()
-        //todo: increase efficiency only load one
+        forwardTimer.text = formatTimeString(hrs: hours, mins: minutes, sec: seconds)
     }
 
-    func saveActivityData(idx : Int){
-        storedTimes[idx].updateTime(hrs: hours, min: minutes, sec: seconds)
-        let sto_sec = storedTimes[idx].seconds
-        let sto_min = storedTimes[idx].minutes
-        let sto_hr = storedTimes[idx].hours
-        
-        let secondsString = sto_sec > 9 ? "\(sto_sec)" : "0\(sto_sec)"
-        let minutesString = sto_min > 9 ? "\(sto_min)" : "0\(sto_min)"
-        let hoursString = sto_hr > 9 ? "\(sto_hr)" : "0\(sto_hr)"
-        let rowStr = "\(hoursString):\(minutesString):\(secondsString)"
-        laps[idx] = rowStr
-        print(rowStr)
-//        self.ref.child("users").child(user.uid).setValue(["username": username])
-
-    }
-
-    func setWatch(sec : Int, min : Int, hour : Int){
-        seconds = sec
-        minutes = min
+    func setWatch(hour : Int, min : Int, sec : Int){
         hours = hour
-        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
-        stopwatchString = "\(hoursString):\(minutesString):\(secondsString)"
-        forwardTimer.text = stopwatchString
+        minutes = min
+        seconds = sec
+        forwardTimer.text = formatTimeString(hrs: hours, mins: minutes, sec: seconds)
     }
 
     
@@ -495,6 +428,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         let data = [Constants.MessageFields.text: text]
         textField.text = ""
         sendMessage(withData: data)
+        goToBottom()
         return true
     }
     
@@ -507,7 +441,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         }
         // Push data to Firebase Database
         self.ref.child("messages").childByAutoId().setValue(mdata)
-        goToBottom()
     }
     
     @IBOutlet weak var signOut: UIButton!

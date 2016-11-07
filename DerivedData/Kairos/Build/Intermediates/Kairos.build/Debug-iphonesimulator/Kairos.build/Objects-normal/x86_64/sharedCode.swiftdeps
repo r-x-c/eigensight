@@ -3,25 +3,30 @@ provides-top-level:
 provides-nominal:
 provides-member:
 - ["CSo6NSDate", ""]
+- ["Sd", ""]
 - ["CSo6NSDate", "hour"]
 - ["CSo6NSDate", "minute"]
 - ["CSo6NSDate", "second"]
 - ["CSo6NSDate", "toShortTimeString"]
+- ["Sd", "nsDateHour"]
 provides-dynamic-lookup:
-- "minute"
-- "toShortTimeString"
 - "second"
+- "minute"
 - "hour"
+- "toShortTimeString"
 depends-top-level:
-- !private "NSCalendar"
-- "AssignmentPrecedence"
 - "Int"
-- "CastingPrecedence"
-- "NSDate"
 - !private "Date"
+- !private "NSCalendar"
 - !private "DateFormatter"
+- "NSDate"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
 - "String"
+- "Double"
+- !private "-"
 depends-member:
+- !private ["Ps16AbsoluteValuable", "NSDate"]
 - !private ["Ps9AnyObject", "DateFormatter"]
 - !private ["Ps9AnyObject", "NSCalendar"]
 - !private ["Ps9AnyObject", "current"]
@@ -32,8 +37,10 @@ depends-member:
 - !private ["Ps9AnyObject", "string"]
 - !private ["Ps9AnyObject", "timeStyle"]
 - ["Ps9AnyObject", "toShortTimeString"]
+- !private ["Ps19BinaryFloatingPoint", "NSDate"]
 - !private ["Ps7CVarArg", "DateFormatter"]
 - !private ["Ps7CVarArg", "NSCalendar"]
+- !private ["Ps7CVarArg", "NSDate"]
 - !private ["Ps7CVarArg", "current"]
 - ["Ps7CVarArg", "hour"]
 - !private ["Ps7CVarArg", "init"]
@@ -44,12 +51,14 @@ depends-member:
 - ["Ps7CVarArg", "toShortTimeString"]
 - !private ["V10Foundation8Calendar", "component"]
 - ["V10Foundation8Calendar", "deinit"]
+- !private ["Ps10Comparable", "NSDate"]
 - ["OV10Foundation8Calendar9Component", "deinit"]
 - !private ["OV10Foundation8Calendar9Component", "hour"]
 - !private ["OV10Foundation8Calendar9Component", "minute"]
 - !private ["OV10Foundation8Calendar9Component", "second"]
 - !private ["Ps28CustomDebugStringConvertible", "DateFormatter"]
 - !private ["Ps28CustomDebugStringConvertible", "NSCalendar"]
+- !private ["Ps28CustomDebugStringConvertible", "NSDate"]
 - !private ["Ps28CustomDebugStringConvertible", "component"]
 - !private ["Ps28CustomDebugStringConvertible", "current"]
 - ["Ps28CustomDebugStringConvertible", "hour"]
@@ -61,9 +70,14 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "toShortTimeString"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "DateFormatter"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "NSCalendar"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "NSDate"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "hour"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "NSDate"]
 - !private ["Ps17CustomReflectable", "component"]
 - !private ["Ps23CustomStringConvertible", "DateFormatter"]
 - !private ["Ps23CustomStringConvertible", "NSCalendar"]
+- !private ["Ps23CustomStringConvertible", "NSDate"]
 - !private ["Ps23CustomStringConvertible", "component"]
 - !private ["Ps23CustomStringConvertible", "current"]
 - ["Ps23CustomStringConvertible", "hour"]
@@ -78,8 +92,14 @@ depends-member:
 - !private ["CSo13DateFormatter", "init"]
 - !private ["CSo13DateFormatter", "string"]
 - !private ["CSo13DateFormatter", "timeStyle"]
+- !private ["Sd", "Double"]
+- ["Sd", "Int"]
+- !private ["Sd", "NSDate"]
+- ["Sd", "deinit"]
+- ["Sd", "nsDateHour"]
 - !private ["Ps9Equatable", "DateFormatter"]
 - !private ["Ps9Equatable", "NSCalendar"]
+- !private ["Ps9Equatable", "NSDate"]
 - !private ["Ps9Equatable", "component"]
 - !private ["Ps9Equatable", "current"]
 - ["Ps9Equatable", "hour"]
@@ -90,11 +110,15 @@ depends-member:
 - !private ["Ps9Equatable", "string"]
 - !private ["Ps9Equatable", "timeStyle"]
 - ["Ps9Equatable", "toShortTimeString"]
+- !private ["Ps25ExpressibleByFloatLiteral", "NSDate"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "NSDate"]
+- !private ["Ps13FloatingPoint", "NSDate"]
 - !private ["CSo9Formatter", "init"]
 - !private ["CSo9Formatter", "string"]
 - !private ["CSo9Formatter", "timeStyle"]
 - !private ["Ps8Hashable", "DateFormatter"]
 - !private ["Ps8Hashable", "NSCalendar"]
+- !private ["Ps8Hashable", "NSDate"]
 - !private ["Ps8Hashable", "component"]
 - !private ["Ps8Hashable", "current"]
 - ["Ps8Hashable", "hour"]
@@ -106,16 +130,19 @@ depends-member:
 - !private ["Ps8Hashable", "timeStyle"]
 - ["Ps8Hashable", "toShortTimeString"]
 - ["Si", "deinit"]
+- !private ["Ps25LosslessStringConvertible", "NSDate"]
 - !private ["CSo10NSCalendar", "current"]
 - !private ["PSo8NSCoding", "DateFormatter"]
 - !private ["PSo8NSCoding", "NSCalendar"]
 - !private ["PSo8NSCoding", "current"]
+- !private ["PSo8NSCoding", "hour"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "string"]
 - !private ["PSo8NSCoding", "timeStyle"]
 - !private ["PSo9NSCopying", "DateFormatter"]
 - !private ["PSo9NSCopying", "NSCalendar"]
 - !private ["PSo9NSCopying", "current"]
+- !private ["PSo9NSCopying", "hour"]
 - !private ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "string"]
 - !private ["PSo9NSCopying", "timeStyle"]
@@ -126,6 +153,7 @@ depends-member:
 - ["CSo6NSDate", "String"]
 - ["CSo6NSDate", "deinit"]
 - ["CSo6NSDate", "hour"]
+- !private ["CSo6NSDate", "init"]
 - ["CSo6NSDate", "minute"]
 - ["CSo6NSDate", "second"]
 - ["CSo6NSDate", "toShortTimeString"]
@@ -155,16 +183,27 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "DateFormatter"]
 - !private ["PSo14NSSecureCoding", "NSCalendar"]
 - !private ["PSo14NSSecureCoding", "current"]
+- !private ["PSo14NSSecureCoding", "hour"]
+- !private ["PSo14NSSecureCoding", "init"]
 - !private ["Ps16RawRepresentable", "short"]
 - !private ["P10Foundation20ReferenceConvertible", "component"]
+- !private ["Ps12SignedNumber", "NSDate"]
+- !private ["Ps10Strideable", "NSDate"]
 - ["SS", "deinit"]
 - ["OCSo13DateFormatter5Style", "deinit"]
 - !private ["OCSo13DateFormatter5Style", "short"]
+- !private ["Ps15_CVarArgAligned", "NSDate"]
+- !private ["Ps22_CVarArgPassedAsDouble", "NSDate"]
+- !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "NSDate"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "NSDate"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "DateFormatter"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "NSCalendar"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "current"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "hour"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "DateFormatter"]
 - !private ["Ps9_Hashable", "NSCalendar"]
+- !private ["Ps9_Hashable", "NSDate"]
 - !private ["Ps9_Hashable", "component"]
 - !private ["Ps9_Hashable", "current"]
 - ["Ps9_Hashable", "hour"]
@@ -176,11 +215,16 @@ depends-member:
 - !private ["Ps9_Hashable", "timeStyle"]
 - ["Ps9_Hashable", "toShortTimeString"]
 - !private ["P10Foundation14_MutableBoxing", "component"]
+- !private ["Ps21_ObjectiveCBridgeable", "NSDate"]
 - !private ["Ps21_ObjectiveCBridgeable", "component"]
+- !private ["Ps11_Strideable", "NSDate"]
 depends-nominal:
+- !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
+- !private "Ps19BinaryFloatingPoint"
 - "Ps7CVarArg"
 - "V10Foundation8Calendar"
+- !private "Ps10Comparable"
 - "OV10Foundation8Calendar9Component"
 - "Ps28CustomDebugStringConvertible"
 - !private "Ps29CustomPlaygroundQuickLookable"
@@ -188,10 +232,15 @@ depends-nominal:
 - "Ps23CustomStringConvertible"
 - "V10Foundation4Date"
 - "CSo13DateFormatter"
+- "Sd"
 - "Ps9Equatable"
+- !private "Ps25ExpressibleByFloatLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- !private "Ps13FloatingPoint"
 - !private "CSo9Formatter"
 - "Ps8Hashable"
 - "Si"
+- !private "Ps25LosslessStringConvertible"
 - !private "CSo10NSCalendar"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
@@ -201,12 +250,19 @@ depends-nominal:
 - !private "PSo14NSSecureCoding"
 - !private "Ps16RawRepresentable"
 - !private "P10Foundation20ReferenceConvertible"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
 - "SS"
 - "OCSo13DateFormatter5Style"
+- !private "Ps15_CVarArgAligned"
+- !private "Ps22_CVarArgPassedAsDouble"
+- !private "Ps33_ExpressibleByBuiltinFloatLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "P10Foundation14_MutableBoxing"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps11_Strideable"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
@@ -369,4 +425,4 @@ depends-external:
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
-interface-hash: "743c6d06a7ee4fafecba70a18b86f398"
+interface-hash: "852f209b9433577598cec38b93d17c3b"

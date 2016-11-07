@@ -11,11 +11,11 @@ provides-dynamic-lookup:
 - "displayName"
 - "photoURL"
 depends-top-level:
-- "NSObject"
-- "BooleanLiteralType"
 - "URL"
+- "BooleanLiteralType"
 - "String"
 - "AppState"
+- "NSObject"
 depends-member:
 - ["Ps9AnyObject", "AppState"]
 - ["Ps9AnyObject", "displayName"]

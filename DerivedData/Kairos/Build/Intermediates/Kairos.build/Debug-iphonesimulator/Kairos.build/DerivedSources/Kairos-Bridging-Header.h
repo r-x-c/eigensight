@@ -153,9 +153,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 @end
 
 @class UIPickerView;
-@class NSDate;
 @class NSAttributedString;
 @class UIView;
+@class NSDate;
 @class NSTimer;
 @class FIRDatabaseReference;
 @class FIRDataSnapshot;
@@ -191,8 +191,6 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic) double pastActivity;
 @property (nonatomic) double currActivity;
 @property (nonatomic) double timeDelta;
-@property (nonatomic, strong) NSDate * _Nonnull startDate;
-@property (nonatomic, strong) NSDate * _Nonnull endDate;
 - (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component;
 - (UIView * _Nonnull)pickerView:(UIPickerView * _Nonnull)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView * _Nullable)view;
@@ -205,16 +203,16 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, strong) NSTimer * _Nonnull timer;
 @property (nonatomic, strong) NSTimer * _Nonnull countdown;
 @property (nonatomic, copy) NSString * _Nonnull countdownString;
-@property (nonatomic, copy) NSString * _Nonnull stopwatchString;
 @property (nonatomic) NSInteger hours;
 @property (nonatomic) NSInteger minutes;
 @property (nonatomic) NSInteger seconds;
+@property (nonatomic, copy) NSString * _Nonnull stopwatchString;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull laps;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull timeArray;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified forwardTimer;
 - (void)updateCountdown;
 - (void)updateForwardTimer;
-- (void)saveActivityDataWithIdx:(NSInteger)idx;
-- (void)setWatchWithSec:(NSInteger)sec min:(NSInteger)min hour:(NSInteger)hour;
+- (void)setWatchWithHour:(NSInteger)hour min:(NSInteger)min sec:(NSInteger)sec;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textField;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sendButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified topView;
