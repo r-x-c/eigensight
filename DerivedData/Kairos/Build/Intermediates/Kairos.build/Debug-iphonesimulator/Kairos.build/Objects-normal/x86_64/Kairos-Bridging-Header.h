@@ -153,9 +153,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 @end
 
 @class UIPickerView;
+@class NSDate;
 @class NSAttributedString;
 @class UIView;
-@class NSDate;
 @class NSTimer;
 @class FIRDatabaseReference;
 @class FIRDataSnapshot;
@@ -188,6 +188,11 @@ SWIFT_CLASS_NAMED("FCViewController")
 - (NSInteger)numberOfComponentsInPickerViewWithPickerView:(UIPickerView * _Nonnull)pickerView;
 - (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component;
 - (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+@property (nonatomic) double pastActivity;
+@property (nonatomic) double currActivity;
+@property (nonatomic) double timeDelta;
+@property (nonatomic, strong) NSDate * _Nonnull startDate;
+@property (nonatomic, strong) NSDate * _Nonnull endDate;
 - (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 - (NSAttributedString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component;
 - (UIView * _Nonnull)pickerView:(UIPickerView * _Nonnull)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView * _Nullable)view;

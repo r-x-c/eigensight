@@ -1,9 +1,0 @@
-#
-# Uncomment below to specify your own resources.
-# See https://github.com/jondot/blade for more information.
-#
-
-blades:
-- source: iTunesArtwork@3x.png  # this image should be the only image, and the biggest image you can use (typically for icons, 1024x1024)
-mount: shared/Images.xcassets/AppIcon.appiconset
-contents: false  # use 'false' if you want to only update existing catalog, 'true' if you want to generate a full catalog every time

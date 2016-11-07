@@ -50,6 +50,7 @@
 		DA3B63A91DCFFF3C00E47396 /* Icon-App-60x60@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@1x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@1x.png"; sourceTree = "<group>"; };
 		DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@2x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
 		DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@3x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
+		DA3B63AF1DD0141F00E47396 /* Kairos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kairos.entitlements; sourceTree = "<group>"; };
 		DA3C79E51DC90CE900AD5319 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kairos-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		5F5A53431ADE670C00F81DF0 = {
 			isa = PBXGroup;
 			children = (
+				DA3B63AF1DD0141F00E47396 /* Kairos.entitlements */,
 				DA3B63A91DCFFF3C00E47396 /* Icon-App-60x60@1x.png */,
 				DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */,
 				DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */,
@@ -181,6 +183,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
@@ -399,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88A98BDC8D104EBFB80B3D61 /* Pods-Kairos.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Kairos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77544GGKPU;
@@ -419,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 435E9B4322E11FDB24680145 /* Pods-Kairos.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Kairos.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77544GGKPU;

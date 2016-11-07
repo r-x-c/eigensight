@@ -55,25 +55,7 @@ class timeStorage {
             self.minutes -= 60
         }
     }
-//    func saveToFirebase() {
-//        let ref = FIRStorage.storage().reference()
-//        let usersRef = Firebase.child(users)
-//        let dict = ["hours": self.hours, "minutes": self.minutes, "seconds": self.seconds]
-//        
-//        let thisUserRef = usersRef.childByAutoId()
-//        thisUserRef.setValue(dict)
-//        
-//        var uid: String
-//        
-//        if let user = FIRAuth.auth()?.currentUser {
-//            uid = user.uid
-//        }
-//        let name = marker.title
-//        ref.child("users").child(uid).child("favourites").setValue(["lat": lat, "lon": lon, "name": name!])
-//
-//    }
 }
-
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -86,8 +68,6 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
-
-
 
 @objc(FCViewController)
 class FCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
@@ -151,6 +131,12 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var pastActivity = 0.0
     var currActivity = 0.0
     var timeDelta = 0.0
+    var startDate: NSDate = NSDate()
+    
+    // your long procedure
+    
+    var endDate: NSDate = NSDate()
+    
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //Point of switching activities
@@ -163,22 +149,41 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         print("current date: \(currentDate)")
         
         
+        endDate = NSDate()
+
         //var interval = NSDate().timeIntervalSince1970
-        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone(name: "EST") as TimeZone!
+
         currActivity = NSDate().timeIntervalSince1970
-        
         timeDelta = currActivity - pastActivity
+
+        var timeDeltaDate = NSDate(timeIntervalSince1970: timeDelta)
         print("prev time: \(pastActivity)")
         print("curr time : \(currActivity)")
         print("timedelta: \(timeDelta)")
+        print("timedelta date: \(timeDeltaDate)")
         print("formatted: \(Date(timeIntervalSince1970: timeDelta))")
+        print("timedelta hour: \(timeDeltaDate.hour())")
+        print("timedelta min: \(timeDeltaDate.minute())")
+        print("timedelta sec: \(timeDeltaDate.second())")
+        print("\(dateFormatter.string(from: timeDeltaDate as Date))")
+        
+        let elapsed_hr = timeDeltaDate.hour() - 19
+        let elapsed_min = timeDeltaDate.minute()
+        let elapsed_sec = timeDeltaDate.second()
+        print("timedelta hour: \(elapsed_hr)")
+        print("timedelta min: \(elapsed_min)")
+        print("timedelta sec: \(elapsed_sec)")
 
+        
+        
+        startDate = endDate
         pastActivity = currActivity
 //        print(interval)
 //        print("\(interval)")
 //        var dateTime = Date(timeIntervalSince1970: interval)
 //        print(dateTime)
-        
         
         
         
