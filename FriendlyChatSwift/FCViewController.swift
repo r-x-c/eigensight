@@ -148,29 +148,49 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         return pickerData[row]
     }
     
+    var pastActivity = 0.0
+    var currActivity = 0.0
+    var timeDelta = 0.0
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //Point of switching activities
         saveActivityData(idx: old_idx)
         pickerText.text = pickerData[row]
         setWatch(sec: storedTimes[row].seconds,
                  min: storedTimes[row].minutes,
                  hour: storedTimes[row].hours)
-        //Store info into db
+        currentDate = NSDate()
+        print("current date: \(currentDate)")
+        
+        
+        //var interval = NSDate().timeIntervalSince1970
+        
+        currActivity = NSDate().timeIntervalSince1970
+        
+        timeDelta = currActivity - pastActivity
+        print("prev time: \(pastActivity)")
+        print("curr time : \(currActivity)")
+        print("timedelta: \(timeDelta)")
+        print("formatted: \(Date(timeIntervalSince1970: timeDelta))")
+
+        pastActivity = currActivity
+//        print(interval)
+//        print("\(interval)")
+//        var dateTime = Date(timeIntervalSince1970: interval)
+//        print(dateTime)
+        
+        
+        
+        
         curr_hour = currentDate.hour()
         curr_min = currentDate.minute()
         curr_sec = currentDate.second()
-        print(NSCalendar.current)
-        print(currentDate.hour())
-        print(currentDate.minute())
-        print(currentDate.second())
-        print(NSDate(timeIntervalSince1970: 1432233446145.0/1000.0))
-        let date = NSDate(timeIntervalSince1970: 1431024488)
-        print("date is \(date)")
-
-        //NSCalendar.current.timeIntervalSinceReferenceDate
         
         minutesString = curr_min > 9 ? "\(curr_min)" : "0\(curr_min)"
         hoursString = curr_hour > 9 ? "\(curr_hour)" : "0\(curr_hour)"
-        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(hoursString):\(minutesString)"])
+        secondsString = curr_sec > 9 ? "\(curr_sec)" : "0\(curr_sec)"
+
+        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(hoursString):\(minutesString):\(secondsString)"])
         old_idx = row
     }
     
@@ -196,23 +216,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     // PICKER VIEW------------------------------------------------------
     
     
-    // Instance variables
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var topView: UIButton!
-
-
-    
-    var ref: FIRDatabaseReference!
-    var messages: [FIRDataSnapshot]! = []
-    var msglength: NSNumber = 35
-    fileprivate var _refHandle: FIRDatabaseHandle!
-    
-    var storageRef: FIRStorageReference!
-    var remoteConfig: FIRRemoteConfig!
-    
-    @IBOutlet weak var banner: GADBannerView!
-    @IBOutlet weak var clientTable: UITableView!
     
 
     //TIMER----------------------------------------------------------------------
@@ -294,6 +297,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         let rowStr = "\(hoursString):\(minutesString):\(secondsString)"
         laps[idx] = rowStr
         print(rowStr)
+//        self.ref.child("users").child(user.uid).setValue(["username": username])
+
     }
 
     func setWatch(sec : Int, min : Int, hour : Int){
@@ -310,7 +315,24 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     //TIMER----------------------------------------------------------------------
     
+    // Instance variables
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var topView: UIButton!
     
+    
+    
+    var ref: FIRDatabaseReference!
+    var messages: [FIRDataSnapshot]! = []
+    var msglength: NSNumber = 35
+    fileprivate var _refHandle: FIRDatabaseHandle!
+    
+    var storageRef: FIRStorageReference!
+    var remoteConfig: FIRRemoteConfig!
+    
+    @IBOutlet weak var banner: GADBannerView!
+    @IBOutlet weak var clientTable: UITableView!
+
     
     func configureDatabase() {
         ref = FIRDatabase.database().reference()
@@ -425,10 +447,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     //fixme
 
     @IBAction func scrollToBottom(_ sender: Any) {
-        guard messages.count > 0 else { return }
-        let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
-        clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
-        clientTable.layoutIfNeeded()
+        goToBottom()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -483,6 +502,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         }
         // Push data to Firebase Database
         self.ref.child("messages").childByAutoId().setValue(mdata)
+        goToBottom()
     }
     
     @IBOutlet weak var signOut: UIButton!

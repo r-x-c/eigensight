@@ -8,14 +8,14 @@ provides-member:
 provides-dynamic-lookup:
 - "sharedInstance"
 - "signedIn"
-- "displayName"
 - "photoURL"
+- "displayName"
 depends-top-level:
-- "String"
 - "AppState"
-- "URL"
-- "BooleanLiteralType"
 - "NSObject"
+- "URL"
+- "String"
+- "BooleanLiteralType"
 depends-member:
 - ["Ps9AnyObject", "AppState"]
 - ["Ps9AnyObject", "displayName"]

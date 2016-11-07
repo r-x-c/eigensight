@@ -19,9 +19,13 @@
 		DA137FC41DC6FF6400C9339D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */; };
 		DA1D986A1DCFB43900AF5F62 /* send-button.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1D98691DCFB43900AF5F62 /* send-button.png */; };
 		DA1D986C1DCFB44B00AF5F62 /* Down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */; };
-		DA1D986E1DCFB53600AF5F62 /* kairos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA1D986D1DCFB53600AF5F62 /* kairos.jpg */; };
+		DA3B63A81DCFFEE000E47396 /* dream_756a001fa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63A71DCFFEE000E47396 /* dream_756a001fa1.jpg */; };
+		DA3B63AC1DCFFF3C00E47396 /* Icon-App-60x60@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63A91DCFFF3C00E47396 /* Icon-App-60x60@1x.png */; };
+		DA3B63AD1DCFFF3C00E47396 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */; };
+		DA3B63AE1DCFFF3C00E47396 /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */; };
 		DA3C79E61DC90CE900AD5319 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = DA3C79E51DC90CE900AD5319 /* Podfile */; };
 		DA84F89F1DC72A7E00890354 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84F89E1DC72A7E00890354 /* sharedCode.swift */; };
+		DACABE111DCFC8ED00FF7A50 /* kairos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DACABE101DCFC8ED00FF7A50 /* kairos.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +46,14 @@
 		DA137FC31DC6FF6400C9339D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA1D98691DCFB43900AF5F62 /* send-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "send-button.png"; path = "shared/Images.xcassets/send-button.imageset/send-button.png"; sourceTree = "<group>"; };
 		DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Down-arrow.png"; path = "shared/Images.xcassets/Down-arrow.imageset/Down-arrow.png"; sourceTree = "<group>"; };
-		DA1D986D1DCFB53600AF5F62 /* kairos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kairos.jpg; path = shared/Images.xcassets/kairos.imageset/kairos.jpg; sourceTree = "<group>"; };
+		DA3B63A71DCFFEE000E47396 /* dream_756a001fa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dream_756a001fa1.jpg; path = shared/Images.xcassets/dream_756a001fa1.imageset/dream_756a001fa1.jpg; sourceTree = "<group>"; };
+		DA3B63A91DCFFF3C00E47396 /* Icon-App-60x60@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@1x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@1x.png"; sourceTree = "<group>"; };
+		DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@2x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
+		DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-60x60@3x.png"; path = "shared/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
 		DA3C79E51DC90CE900AD5319 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA3C79E71DC90E2D00AD5319 /* Kairos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kairos-Bridging-Header.h"; sourceTree = "<group>"; };
 		DA84F89E1DC72A7E00890354 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sharedCode.swift; sourceTree = "<group>"; };
+		DACABE101DCFC8ED00FF7A50 /* kairos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kairos.jpg; path = shared/Images.xcassets/kairos.imageset/kairos.jpg; sourceTree = "<group>"; };
 		F819F7F0A0B4894212149EB5 /* Pods-FriendlyChatSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendlyChatSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FriendlyChatSwift/Pods-FriendlyChatSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +72,11 @@
 		5F5A53431ADE670C00F81DF0 = {
 			isa = PBXGroup;
 			children = (
-				DA1D986D1DCFB53600AF5F62 /* kairos.jpg */,
+				DA3B63A91DCFFF3C00E47396 /* Icon-App-60x60@1x.png */,
+				DA3B63AA1DCFFF3C00E47396 /* Icon-App-60x60@2x.png */,
+				DA3B63AB1DCFFF3C00E47396 /* Icon-App-60x60@3x.png */,
+				DA3B63A71DCFFEE000E47396 /* dream_756a001fa1.jpg */,
+				DACABE101DCFC8ED00FF7A50 /* kairos.jpg */,
 				DA1D986B1DCFB44B00AF5F62 /* Down-arrow.png */,
 				DA1D98691DCFB43900AF5F62 /* send-button.png */,
 				DA3C79E51DC90CE900AD5319 /* Podfile */,
@@ -198,7 +210,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA1D986E1DCFB53600AF5F62 /* kairos.jpg in Resources */,
+				DA3B63AC1DCFFF3C00E47396 /* Icon-App-60x60@1x.png in Resources */,
+				DA3B63AD1DCFFF3C00E47396 /* Icon-App-60x60@2x.png in Resources */,
+				DA3B63AE1DCFFF3C00E47396 /* Icon-App-60x60@3x.png in Resources */,
+				DA3B63A81DCFFEE000E47396 /* dream_756a001fa1.jpg in Resources */,
+				DACABE111DCFC8ED00FF7A50 /* kairos.jpg in Resources */,
 				DA1D986C1DCFB44B00AF5F62 /* Down-arrow.png in Resources */,
 				DA1D986A1DCFB43900AF5F62 /* send-button.png in Resources */,
 				107960731C612531003DB6CC /* Main.storyboard in Resources */,

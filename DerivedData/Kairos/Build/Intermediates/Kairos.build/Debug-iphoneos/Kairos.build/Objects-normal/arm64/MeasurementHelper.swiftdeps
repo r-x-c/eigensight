@@ -10,10 +10,10 @@ provides-dynamic-lookup:
 - "sendMessageEvent"
 - "sendLogoutEvent"
 depends-top-level:
-- !private "StringLiteralType"
 - "NSObject"
-- "MeasurementHelper"
 - !private "kFIREventLogin"
+- "MeasurementHelper"
+- !private "StringLiteralType"
 - !private "FIRAnalytics"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAnalytics"]
