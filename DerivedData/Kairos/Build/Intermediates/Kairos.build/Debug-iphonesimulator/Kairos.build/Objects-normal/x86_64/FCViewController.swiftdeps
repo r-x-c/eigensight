@@ -12,158 +12,159 @@ provides-member:
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "dismissKeyboardView"]
 provides-dynamic-lookup:
-- "showAlert"
-- "pickerData"
-- "countdownString"
-- "didPressFreshConfig"
 - "sendMessage"
-- "remoteConfig"
-- "configureDatabase"
-- "didPressCrash"
-- "topView"
-- "countdown"
+- "old_idx"
+- "currentDate"
+- "countdownString"
 - "currActivity"
+- "numberOfComponentsInPickerView"
+- "tableView"
+- "tableView"
+- "hoursString"
+- "countdown"
+- "remoteConfig"
+- "clientTable"
+- "didPressFreshConfig"
+- "c_minutes"
 - "laps"
+- "didPressCrash"
+- "pickerData"
+- "mainClock"
+- "secondsString"
+- "viewDidLoad"
+- "timeArray"
+- "ref"
+- "updateCountdown"
+- "banner"
+- "messages"
+- "forwardTimer"
+- "hideKeyboardWhenTappedAround"
+- "textField"
+- "textField"
+- "stopwatchString"
+- "textFieldShouldReturn"
 - "c_hours"
 - "setWatch"
-- "mainClock"
-- "hoursString"
-- "timeDelta"
-- "hideKeyboardWhenTappedAround"
-- "logViewLoaded"
-- "banner"
-- "textFieldShouldReturn"
-- "stopwatchString"
-- "curr_sec"
-- "pickerText"
-- "configureRemoteConfig"
-- "pastActivity"
-- "messages"
-- "updateForwardTimer"
-- "seconds"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "fetchConfig"
-- "textField"
-- "textField"
-- "forwardTimer"
-- "configureStorage"
-- "curr_min"
-- "didSendMessage"
 - "msglength"
-- "tableView"
-- "tableView"
 - "scrollToBottom"
-- "secondsString"
+- "curr_sec"
+- "configureRemoteConfig"
+- "sendButton"
+- "pastActivity"
+- "showAlert"
+- "minutesString"
+- "fetchConfig"
+- "updateForwardTimer"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "seconds"
+- "logViewLoaded"
+- "storageRef"
+- "curr_hour"
+- "hours"
+- "pickerText"
+- "didSendMessage"
+- "configureDatabase"
+- "sendTimeLog"
+- "topView"
 - "numberOfComponents"
 - "c_seconds"
-- "timer"
-- "curr_hour"
+- "curr_min"
 - "minutes"
-- "signOut"
-- "signOut"
-- "storageRef"
+- "timer"
 - "dismissKeyboardView"
-- "numberOfComponentsInPickerView"
-- "currentDate"
-- "minutesString"
-- "timeArray"
-- "old_idx"
-- "viewDidLoad"
-- "hours"
-- "clientTable"
-- "updateCountdown"
-- "c_minutes"
-- "ref"
-- "sendButton"
+- "signOut"
+- "signOut"
+- "timeDelta"
+- "configureStorage"
 depends-top-level:
-- !private "UITapGestureRecognizer"
-- "UINavigationControllerDelegate"
-- !private "+="
-- "kBannerAdUnitID"
-- !private "NSForegroundColorAttributeName"
-- "UIPickerViewDataSource"
-- !private "Date"
-- !private "UIAlertController"
-- !private "FIRDatabase"
-- "UIPickerViewDelegate"
-- !private "Data"
-- "UITableViewCell"
-- "FIRStorageReference"
-- !private "print"
-- !private "FIRCrashMessage"
-- "NSRange"
-- !private "FIRAuth"
-- "Timer"
-- "FIRDatabaseReference"
-- "CGFloat"
-- "IndexPath"
-- !private "NSFontAttributeName"
-- !private "TimeZone"
-- "NSDate"
-- "UIButton"
-- "GADBannerView"
-- "String"
-- !private "BooleanLiteralType"
-- !private "Constants"
-- !private "Dictionary"
-- !private "<="
-- !private "fatalError"
-- "StringLiteralType"
-- "UITableViewDataSource"
-- !private ">"
-- !private "AppState"
-- !private "URL"
+- "Double"
 - !private "UIEdgeInsets"
-- "UITableViewDelegate"
-- !private "DispatchQueue"
-- "FIRRemoteConfig"
-- "UITextFieldDelegate"
-- !private "UIAlertAction"
-- "UIImagePickerControllerDelegate"
-- "UITextField"
+- "UIPickerView"
+- "Timer"
+- !private "/"
+- !private "Data"
+- !private "Constants"
+- "UIButton"
+- "NSDate"
+- !private "NSIndexPath"
+- !private "AppState"
+- "UIPickerViewDelegate"
 - "UILabel"
+- "kBannerAdUnitID"
+- "UIView"
+- "UINavigationControllerDelegate"
+- "Array"
+- "AnyObject"
+- "UIPickerViewDataSource"
+- "FIRRemoteConfig"
+- !private "dump"
+- !private "-"
+- !private "Dictionary"
+- "GADBannerView"
+- !private "UIColor"
+- !private "UIAlertAction"
+- !private ">"
+- !private "UIAlertController"
+- "FIRDatabaseReference"
+- !private "NSTimeZone"
+- "UITableView"
 - "CastingPrecedence"
-- "Int"
+- !private "TimeZone"
 - "AssignmentPrecedence"
 - !private "=="
-- !private "-="
-- !private "INT64_MAX"
-- !private "NSIndexPath"
-- "NSNumber"
-- !private "DateFormatter"
-- !private "Void"
-- !private "UIColor"
-- "FCViewController"
-- !private "UIFont"
-- !private "FIRApp"
-- "UITableView"
-- !private "NSTimeZone"
-- !private "FIRStorage"
-- !private "+"
-- "FIRDataSnapshot"
-- !private "!="
-- !private "UIImage"
-- !private "FIRRemoteConfigSettings"
 - "UIViewController"
-- !private "NSError"
-- "UIPickerView"
-- !private "dump"
-- !private "formatTimeString"
+- !private "print"
+- "IndexPath"
+- !private "FIRAuth"
+- !private "FIRDatabase"
+- !private "+="
+- !private "UIFont"
+- "StringLiteralType"
+- "NSRange"
+- !private "INT64_MAX"
+- "FCViewController"
+- "NSNumber"
+- "String"
 - "Bool"
-- "Double"
+- !private "NSFontAttributeName"
+- !private "formatTimeString"
+- !private "-="
+- !private "Void"
 - "NSAttributedString"
-- "AnyObject"
-- !private "-"
-- "Array"
-- "UIView"
-- "FIRDatabaseHandle"
+- !private "FIRStorage"
+- !private "UIImage"
 - "NSCoder"
+- !private "BooleanLiteralType"
+- !private "URL"
+- "UITextField"
+- "UITextFieldDelegate"
+- !private "DateFormatter"
+- "UIImagePickerControllerDelegate"
+- !private "NSForegroundColorAttributeName"
+- "Int"
+- "UITableViewDataSource"
+- "UITableViewDelegate"
+- "UITableViewCell"
+- "CGFloat"
+- "FIRDataSnapshot"
+- !private "FIRRemoteConfigSettings"
+- "FIRDatabaseHandle"
+- !private "+"
+- "FIRStorageReference"
+- !private "FIRApp"
+- !private "DispatchQueue"
+- !private "fatalError"
+- !private "UITapGestureRecognizer"
+- !private "!="
+- !private "FIRCrashMessage"
+- !private "NSError"
+- !private "<="
 depends-member:
 - !private ["Ps16AbsoluteValuable", "NSDateHour"]
 - !private ["Ps16AbsoluteValuable", "NSDateMinute"]
@@ -171,7 +172,6 @@ depends-member:
 - !private ["Ps9AnyObject", "AppState"]
 - !private ["Ps9AnyObject", "Constants"]
 - !private ["Ps9AnyObject", "Data"]
-- !private ["Ps9AnyObject", "Date"]
 - !private ["Ps9AnyObject", "DateFormatter"]
 - !private ["Ps9AnyObject", "DispatchQueue"]
 - ["Ps9AnyObject", "Double"]
@@ -331,6 +331,7 @@ depends-member:
 - ["Ps9AnyObject", "sectionIndexTitlesForTableView"]
 - ["Ps9AnyObject", "sendButton"]
 - ["Ps9AnyObject", "sendMessage"]
+- ["Ps9AnyObject", "sendTimeLog"]
 - !private ["Ps9AnyObject", "setTitleColor"]
 - !private ["Ps9AnyObject", "setValue"]
 - ["Ps9AnyObject", "setWatch"]
@@ -472,7 +473,6 @@ depends-member:
 - !private ["Ps7CVarArg", "AppState"]
 - !private ["Ps7CVarArg", "Constants"]
 - !private ["Ps7CVarArg", "Data"]
-- !private ["Ps7CVarArg", "Date"]
 - !private ["Ps7CVarArg", "DateFormatter"]
 - !private ["Ps7CVarArg", "DispatchQueue"]
 - ["Ps7CVarArg", "Double"]
@@ -648,6 +648,7 @@ depends-member:
 - ["Ps7CVarArg", "sectionIndexTitlesForTableView"]
 - ["Ps7CVarArg", "sendButton"]
 - ["Ps7CVarArg", "sendMessage"]
+- ["Ps7CVarArg", "sendTimeLog"]
 - !private ["Ps7CVarArg", "setTitleColor"]
 - !private ["Ps7CVarArg", "setValue"]
 - ["Ps7CVarArg", "setWatch"]
@@ -720,7 +721,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "AppState"]
 - !private ["Ps28CustomDebugStringConvertible", "Constants"]
 - !private ["Ps28CustomDebugStringConvertible", "Data"]
-- !private ["Ps28CustomDebugStringConvertible", "Date"]
 - !private ["Ps28CustomDebugStringConvertible", "DateFormatter"]
 - !private ["Ps28CustomDebugStringConvertible", "DispatchQueue"]
 - ["Ps28CustomDebugStringConvertible", "Double"]
@@ -895,6 +895,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "sectionIndexTitlesForTableView"]
 - ["Ps28CustomDebugStringConvertible", "sendButton"]
 - ["Ps28CustomDebugStringConvertible", "sendMessage"]
+- ["Ps28CustomDebugStringConvertible", "sendTimeLog"]
 - !private ["Ps28CustomDebugStringConvertible", "setTitleColor"]
 - !private ["Ps28CustomDebugStringConvertible", "setValue"]
 - ["Ps28CustomDebugStringConvertible", "setWatch"]
@@ -977,7 +978,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "AppState"]
 - !private ["Ps23CustomStringConvertible", "Constants"]
 - !private ["Ps23CustomStringConvertible", "Data"]
-- !private ["Ps23CustomStringConvertible", "Date"]
 - !private ["Ps23CustomStringConvertible", "DateFormatter"]
 - !private ["Ps23CustomStringConvertible", "DispatchQueue"]
 - ["Ps23CustomStringConvertible", "Double"]
@@ -1156,6 +1156,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "sectionIndexTitlesForTableView"]
 - ["Ps23CustomStringConvertible", "sendButton"]
 - ["Ps23CustomStringConvertible", "sendMessage"]
+- ["Ps23CustomStringConvertible", "sendTimeLog"]
 - !private ["Ps23CustomStringConvertible", "setTitleColor"]
 - !private ["Ps23CustomStringConvertible", "setValue"]
 - ["Ps23CustomStringConvertible", "setWatch"]
@@ -1198,8 +1199,6 @@ depends-member:
 - ["Ps23CustomStringConvertible", ""]
 - ["V10Foundation4Data", "deinit"]
 - !private ["V10Foundation4Data", "init"]
-- ["V10Foundation4Date", "deinit"]
-- !private ["V10Foundation4Date", "init"]
 - ["CSo13DateFormatter", "deinit"]
 - !private ["CSo13DateFormatter", "init"]
 - !private ["CSo13DateFormatter", "timeZone"]
@@ -1231,7 +1230,6 @@ depends-member:
 - !private ["Ps9Equatable", "AppState"]
 - !private ["Ps9Equatable", "Constants"]
 - !private ["Ps9Equatable", "Data"]
-- !private ["Ps9Equatable", "Date"]
 - !private ["Ps9Equatable", "DateFormatter"]
 - !private ["Ps9Equatable", "DispatchQueue"]
 - ["Ps9Equatable", "Double"]
@@ -1409,6 +1407,7 @@ depends-member:
 - ["Ps9Equatable", "sectionIndexTitlesForTableView"]
 - ["Ps9Equatable", "sendButton"]
 - ["Ps9Equatable", "sendMessage"]
+- ["Ps9Equatable", "sendTimeLog"]
 - !private ["Ps9Equatable", "setTitleColor"]
 - !private ["Ps9Equatable", "setValue"]
 - ["Ps9Equatable", "setWatch"]
@@ -1503,7 +1502,6 @@ depends-member:
 - ["C6Kairos16FCViewController", "CGFloat"]
 - !private ["C6Kairos16FCViewController", "Constants"]
 - !private ["C6Kairos16FCViewController", "Data"]
-- !private ["C6Kairos16FCViewController", "Date"]
 - !private ["C6Kairos16FCViewController", "DateFormatter"]
 - !private ["C6Kairos16FCViewController", "Dictionary"]
 - !private ["C6Kairos16FCViewController", "DispatchQueue"]
@@ -1629,6 +1627,7 @@ depends-member:
 - ["C6Kairos16FCViewController", "sectionIndexTitlesForTableView"]
 - ["C6Kairos16FCViewController", "sendButton"]
 - ["C6Kairos16FCViewController", "sendMessage"]
+- ["C6Kairos16FCViewController", "sendTimeLog"]
 - ["C6Kairos16FCViewController", "setWatch"]
 - ["C6Kairos16FCViewController", "showAlert"]
 - ["C6Kairos16FCViewController", "signOut"]
@@ -1710,7 +1709,6 @@ depends-member:
 - !private ["Ps8Hashable", "AppState"]
 - !private ["Ps8Hashable", "Constants"]
 - !private ["Ps8Hashable", "Data"]
-- !private ["Ps8Hashable", "Date"]
 - !private ["Ps8Hashable", "DateFormatter"]
 - !private ["Ps8Hashable", "DispatchQueue"]
 - ["Ps8Hashable", "Double"]
@@ -1886,6 +1884,7 @@ depends-member:
 - ["Ps8Hashable", "sectionIndexTitlesForTableView"]
 - ["Ps8Hashable", "sendButton"]
 - ["Ps8Hashable", "sendMessage"]
+- ["Ps8Hashable", "sendTimeLog"]
 - !private ["Ps8Hashable", "setTitleColor"]
 - !private ["Ps8Hashable", "setValue"]
 - ["Ps8Hashable", "setWatch"]
@@ -2021,7 +2020,6 @@ depends-member:
 - !private ["PSo8NSCoding", "AppState"]
 - !private ["PSo8NSCoding", "Constants"]
 - !private ["PSo8NSCoding", "Data"]
-- !private ["PSo8NSCoding", "Date"]
 - !private ["PSo8NSCoding", "DateFormatter"]
 - !private ["PSo8NSCoding", "DispatchQueue"]
 - ["PSo8NSCoding", "Double"]
@@ -2160,6 +2158,7 @@ depends-member:
 - ["PSo8NSCoding", "sectionIndexTitlesForTableView"]
 - ["PSo8NSCoding", "sendButton"]
 - ["PSo8NSCoding", "sendMessage"]
+- ["PSo8NSCoding", "sendTimeLog"]
 - !private ["PSo8NSCoding", "setTitleColor"]
 - ["PSo8NSCoding", "setWatch"]
 - ["PSo8NSCoding", "showAlert"]
@@ -2219,7 +2218,6 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "AppState"]
 - !private ["PSo26NSExtensionRequestHandling", "Constants"]
 - !private ["PSo26NSExtensionRequestHandling", "Data"]
-- !private ["PSo26NSExtensionRequestHandling", "Date"]
 - !private ["PSo26NSExtensionRequestHandling", "DateFormatter"]
 - !private ["PSo26NSExtensionRequestHandling", "DispatchQueue"]
 - ["PSo26NSExtensionRequestHandling", "Double"]
@@ -2330,6 +2328,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "sectionIndexTitlesForTableView"]
 - ["PSo26NSExtensionRequestHandling", "sendButton"]
 - ["PSo26NSExtensionRequestHandling", "sendMessage"]
+- ["PSo26NSExtensionRequestHandling", "sendTimeLog"]
 - ["PSo26NSExtensionRequestHandling", "setWatch"]
 - ["PSo26NSExtensionRequestHandling", "showAlert"]
 - ["PSo26NSExtensionRequestHandling", "signOut"]
@@ -2372,7 +2371,6 @@ depends-member:
 - ["CSo8NSObject", "CGFloat"]
 - !private ["CSo8NSObject", "Constants"]
 - !private ["CSo8NSObject", "Data"]
-- !private ["CSo8NSObject", "Date"]
 - !private ["CSo8NSObject", "DateFormatter"]
 - !private ["CSo8NSObject", "Dictionary"]
 - !private ["CSo8NSObject", "DispatchQueue"]
@@ -2550,6 +2548,7 @@ depends-member:
 - ["CSo8NSObject", "sectionIndexTitlesForTableView"]
 - ["CSo8NSObject", "sendButton"]
 - ["CSo8NSObject", "sendMessage"]
+- ["CSo8NSObject", "sendTimeLog"]
 - !private ["CSo8NSObject", "setTitleColor"]
 - !private ["CSo8NSObject", "setValue"]
 - ["CSo8NSObject", "setWatch"]
@@ -2592,7 +2591,6 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "AppState"]
 - !private ["PSo16NSObjectProtocol", "Constants"]
 - !private ["PSo16NSObjectProtocol", "Data"]
-- !private ["PSo16NSObjectProtocol", "Date"]
 - !private ["PSo16NSObjectProtocol", "DateFormatter"]
 - !private ["PSo16NSObjectProtocol", "DispatchQueue"]
 - ["PSo16NSObjectProtocol", "Double"]
@@ -2752,6 +2750,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "sectionIndexTitlesForTableView"]
 - ["PSo16NSObjectProtocol", "sendButton"]
 - ["PSo16NSObjectProtocol", "sendMessage"]
+- ["PSo16NSObjectProtocol", "sendTimeLog"]
 - !private ["PSo16NSObjectProtocol", "setTitleColor"]
 - !private ["PSo16NSObjectProtocol", "setValue"]
 - ["PSo16NSObjectProtocol", "setWatch"]
@@ -2994,7 +2993,6 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "AppState"]
 - !private ["PSo21UIAppearanceContainer", "Constants"]
 - !private ["PSo21UIAppearanceContainer", "Data"]
-- !private ["PSo21UIAppearanceContainer", "Date"]
 - !private ["PSo21UIAppearanceContainer", "DateFormatter"]
 - !private ["PSo21UIAppearanceContainer", "DispatchQueue"]
 - ["PSo21UIAppearanceContainer", "Double"]
@@ -3121,6 +3119,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "sectionIndexTitlesForTableView"]
 - ["PSo21UIAppearanceContainer", "sendButton"]
 - ["PSo21UIAppearanceContainer", "sendMessage"]
+- ["PSo21UIAppearanceContainer", "sendTimeLog"]
 - !private ["PSo21UIAppearanceContainer", "setTitleColor"]
 - ["PSo21UIAppearanceContainer", "setWatch"]
 - ["PSo21UIAppearanceContainer", "showAlert"]
@@ -3169,7 +3168,6 @@ depends-member:
 - !private ["PSo18UIContentContainer", "AppState"]
 - !private ["PSo18UIContentContainer", "Constants"]
 - !private ["PSo18UIContentContainer", "Data"]
-- !private ["PSo18UIContentContainer", "Date"]
 - !private ["PSo18UIContentContainer", "DateFormatter"]
 - !private ["PSo18UIContentContainer", "DispatchQueue"]
 - ["PSo18UIContentContainer", "Double"]
@@ -3280,6 +3278,7 @@ depends-member:
 - ["PSo18UIContentContainer", "sectionIndexTitlesForTableView"]
 - ["PSo18UIContentContainer", "sendButton"]
 - ["PSo18UIContentContainer", "sendMessage"]
+- ["PSo18UIContentContainer", "sendTimeLog"]
 - ["PSo18UIContentContainer", "setWatch"]
 - ["PSo18UIContentContainer", "showAlert"]
 - ["PSo18UIContentContainer", "signOut"]
@@ -3377,7 +3376,6 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "AppState"]
 - !private ["PSo18UIFocusEnvironment", "Constants"]
 - !private ["PSo18UIFocusEnvironment", "Data"]
-- !private ["PSo18UIFocusEnvironment", "Date"]
 - !private ["PSo18UIFocusEnvironment", "DateFormatter"]
 - !private ["PSo18UIFocusEnvironment", "DispatchQueue"]
 - ["PSo18UIFocusEnvironment", "Double"]
@@ -3504,6 +3502,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "sectionIndexTitlesForTableView"]
 - ["PSo18UIFocusEnvironment", "sendButton"]
 - ["PSo18UIFocusEnvironment", "sendMessage"]
+- ["PSo18UIFocusEnvironment", "sendTimeLog"]
 - !private ["PSo18UIFocusEnvironment", "setTitleColor"]
 - ["PSo18UIFocusEnvironment", "setWatch"]
 - ["PSo18UIFocusEnvironment", "showAlert"]
@@ -3568,7 +3567,6 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "AppState"]
 - !private ["PSo31UIImagePickerControllerDelegate", "Constants"]
 - !private ["PSo31UIImagePickerControllerDelegate", "Data"]
-- !private ["PSo31UIImagePickerControllerDelegate", "Date"]
 - !private ["PSo31UIImagePickerControllerDelegate", "DateFormatter"]
 - !private ["PSo31UIImagePickerControllerDelegate", "DispatchQueue"]
 - ["PSo31UIImagePickerControllerDelegate", "Double"]
@@ -3663,6 +3661,7 @@ depends-member:
 - ["PSo31UIImagePickerControllerDelegate", "sectionIndexTitles"]
 - ["PSo31UIImagePickerControllerDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo31UIImagePickerControllerDelegate", "sendMessage"]
+- !private ["PSo31UIImagePickerControllerDelegate", "sendTimeLog"]
 - !private ["PSo31UIImagePickerControllerDelegate", "setWatch"]
 - !private ["PSo31UIImagePickerControllerDelegate", "storageRef"]
 - ["PSo31UIImagePickerControllerDelegate", "tableView"]
@@ -3693,7 +3692,6 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "AppState"]
 - !private ["PSo30UINavigationControllerDelegate", "Constants"]
 - !private ["PSo30UINavigationControllerDelegate", "Data"]
-- !private ["PSo30UINavigationControllerDelegate", "Date"]
 - !private ["PSo30UINavigationControllerDelegate", "DateFormatter"]
 - !private ["PSo30UINavigationControllerDelegate", "DispatchQueue"]
 - ["PSo30UINavigationControllerDelegate", "Double"]
@@ -3788,6 +3786,7 @@ depends-member:
 - ["PSo30UINavigationControllerDelegate", "sectionIndexTitles"]
 - ["PSo30UINavigationControllerDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo30UINavigationControllerDelegate", "sendMessage"]
+- !private ["PSo30UINavigationControllerDelegate", "sendTimeLog"]
 - !private ["PSo30UINavigationControllerDelegate", "setWatch"]
 - !private ["PSo30UINavigationControllerDelegate", "storageRef"]
 - ["PSo30UINavigationControllerDelegate", "tableView"]
@@ -3811,7 +3810,6 @@ depends-member:
 - !private ["PSo22UIPickerViewDataSource", "AppState"]
 - !private ["PSo22UIPickerViewDataSource", "Constants"]
 - !private ["PSo22UIPickerViewDataSource", "Data"]
-- !private ["PSo22UIPickerViewDataSource", "Date"]
 - !private ["PSo22UIPickerViewDataSource", "DateFormatter"]
 - !private ["PSo22UIPickerViewDataSource", "DispatchQueue"]
 - ["PSo22UIPickerViewDataSource", "Double"]
@@ -3906,6 +3904,7 @@ depends-member:
 - ["PSo22UIPickerViewDataSource", "sectionIndexTitles"]
 - ["PSo22UIPickerViewDataSource", "sectionIndexTitlesForTableView"]
 - !private ["PSo22UIPickerViewDataSource", "sendMessage"]
+- !private ["PSo22UIPickerViewDataSource", "sendTimeLog"]
 - !private ["PSo22UIPickerViewDataSource", "setWatch"]
 - !private ["PSo22UIPickerViewDataSource", "storageRef"]
 - ["PSo22UIPickerViewDataSource", "tableView"]
@@ -3927,7 +3926,6 @@ depends-member:
 - !private ["PSo20UIPickerViewDelegate", "AppState"]
 - !private ["PSo20UIPickerViewDelegate", "Constants"]
 - !private ["PSo20UIPickerViewDelegate", "Data"]
-- !private ["PSo20UIPickerViewDelegate", "Date"]
 - !private ["PSo20UIPickerViewDelegate", "DateFormatter"]
 - !private ["PSo20UIPickerViewDelegate", "DispatchQueue"]
 - ["PSo20UIPickerViewDelegate", "Double"]
@@ -4022,6 +4020,7 @@ depends-member:
 - ["PSo20UIPickerViewDelegate", "sectionIndexTitles"]
 - ["PSo20UIPickerViewDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo20UIPickerViewDelegate", "sendMessage"]
+- !private ["PSo20UIPickerViewDelegate", "sendTimeLog"]
 - !private ["PSo20UIPickerViewDelegate", "setWatch"]
 - !private ["PSo20UIPickerViewDelegate", "storageRef"]
 - ["PSo20UIPickerViewDelegate", "tableView"]
@@ -4046,7 +4045,6 @@ depends-member:
 - ["CSo11UIResponder", "CGFloat"]
 - !private ["CSo11UIResponder", "Constants"]
 - !private ["CSo11UIResponder", "Data"]
-- !private ["CSo11UIResponder", "Date"]
 - !private ["CSo11UIResponder", "DateFormatter"]
 - !private ["CSo11UIResponder", "Dictionary"]
 - !private ["CSo11UIResponder", "DispatchQueue"]
@@ -4191,6 +4189,7 @@ depends-member:
 - ["CSo11UIResponder", "sectionIndexTitlesForTableView"]
 - ["CSo11UIResponder", "sendButton"]
 - ["CSo11UIResponder", "sendMessage"]
+- ["CSo11UIResponder", "sendTimeLog"]
 - !private ["CSo11UIResponder", "setTitleColor"]
 - ["CSo11UIResponder", "setWatch"]
 - ["CSo11UIResponder", "showAlert"]
@@ -4222,7 +4221,6 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "AppState"]
 - !private ["PSo30UIResponderStandardEditActions", "Constants"]
 - !private ["PSo30UIResponderStandardEditActions", "Data"]
-- !private ["PSo30UIResponderStandardEditActions", "Date"]
 - !private ["PSo30UIResponderStandardEditActions", "DateFormatter"]
 - !private ["PSo30UIResponderStandardEditActions", "DispatchQueue"]
 - ["PSo30UIResponderStandardEditActions", "Double"]
@@ -4349,6 +4347,7 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "sectionIndexTitlesForTableView"]
 - ["PSo30UIResponderStandardEditActions", "sendButton"]
 - ["PSo30UIResponderStandardEditActions", "sendMessage"]
+- ["PSo30UIResponderStandardEditActions", "sendTimeLog"]
 - !private ["PSo30UIResponderStandardEditActions", "setTitleColor"]
 - ["PSo30UIResponderStandardEditActions", "setWatch"]
 - ["PSo30UIResponderStandardEditActions", "showAlert"]
@@ -4386,7 +4385,6 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "AppState"]
 - !private ["PSo20UIScrollViewDelegate", "Constants"]
 - !private ["PSo20UIScrollViewDelegate", "Data"]
-- !private ["PSo20UIScrollViewDelegate", "Date"]
 - !private ["PSo20UIScrollViewDelegate", "DateFormatter"]
 - !private ["PSo20UIScrollViewDelegate", "DispatchQueue"]
 - ["PSo20UIScrollViewDelegate", "Double"]
@@ -4481,6 +4479,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "sectionIndexTitles"]
 - ["PSo20UIScrollViewDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo20UIScrollViewDelegate", "sendMessage"]
+- !private ["PSo20UIScrollViewDelegate", "sendTimeLog"]
 - !private ["PSo20UIScrollViewDelegate", "setWatch"]
 - !private ["PSo20UIScrollViewDelegate", "storageRef"]
 - ["PSo20UIScrollViewDelegate", "tableView"]
@@ -4502,7 +4501,6 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "AppState"]
 - !private ["PSo16UIStateRestoring", "Constants"]
 - !private ["PSo16UIStateRestoring", "Data"]
-- !private ["PSo16UIStateRestoring", "Date"]
 - !private ["PSo16UIStateRestoring", "DateFormatter"]
 - !private ["PSo16UIStateRestoring", "DispatchQueue"]
 - ["PSo16UIStateRestoring", "Double"]
@@ -4613,6 +4611,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "sectionIndexTitlesForTableView"]
 - ["PSo16UIStateRestoring", "sendButton"]
 - ["PSo16UIStateRestoring", "sendMessage"]
+- ["PSo16UIStateRestoring", "sendTimeLog"]
 - ["PSo16UIStateRestoring", "setWatch"]
 - ["PSo16UIStateRestoring", "showAlert"]
 - ["PSo16UIStateRestoring", "signOut"]
@@ -4648,7 +4647,6 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "AppState"]
 - !private ["PSo21UITableViewDataSource", "Constants"]
 - !private ["PSo21UITableViewDataSource", "Data"]
-- !private ["PSo21UITableViewDataSource", "Date"]
 - !private ["PSo21UITableViewDataSource", "DateFormatter"]
 - !private ["PSo21UITableViewDataSource", "DispatchQueue"]
 - ["PSo21UITableViewDataSource", "Double"]
@@ -4743,6 +4741,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "sectionIndexTitles"]
 - ["PSo21UITableViewDataSource", "sectionIndexTitlesForTableView"]
 - !private ["PSo21UITableViewDataSource", "sendMessage"]
+- !private ["PSo21UITableViewDataSource", "sendTimeLog"]
 - !private ["PSo21UITableViewDataSource", "setWatch"]
 - !private ["PSo21UITableViewDataSource", "storageRef"]
 - ["PSo21UITableViewDataSource", "tableView"]
@@ -4764,7 +4763,6 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "AppState"]
 - !private ["PSo19UITableViewDelegate", "Constants"]
 - !private ["PSo19UITableViewDelegate", "Data"]
-- !private ["PSo19UITableViewDelegate", "Date"]
 - !private ["PSo19UITableViewDelegate", "DateFormatter"]
 - !private ["PSo19UITableViewDelegate", "DispatchQueue"]
 - ["PSo19UITableViewDelegate", "Double"]
@@ -4859,6 +4857,7 @@ depends-member:
 - ["PSo19UITableViewDelegate", "sectionIndexTitles"]
 - ["PSo19UITableViewDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo19UITableViewDelegate", "sendMessage"]
+- !private ["PSo19UITableViewDelegate", "sendTimeLog"]
 - !private ["PSo19UITableViewDelegate", "setWatch"]
 - !private ["PSo19UITableViewDelegate", "storageRef"]
 - ["PSo19UITableViewDelegate", "tableView"]
@@ -4889,7 +4888,6 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "AppState"]
 - !private ["PSo19UITextFieldDelegate", "Constants"]
 - !private ["PSo19UITextFieldDelegate", "Data"]
-- !private ["PSo19UITextFieldDelegate", "Date"]
 - !private ["PSo19UITextFieldDelegate", "DateFormatter"]
 - !private ["PSo19UITextFieldDelegate", "DispatchQueue"]
 - ["PSo19UITextFieldDelegate", "Double"]
@@ -4984,6 +4982,7 @@ depends-member:
 - ["PSo19UITextFieldDelegate", "sectionIndexTitles"]
 - ["PSo19UITextFieldDelegate", "sectionIndexTitlesForTableView"]
 - !private ["PSo19UITextFieldDelegate", "sendMessage"]
+- !private ["PSo19UITextFieldDelegate", "sendTimeLog"]
 - !private ["PSo19UITextFieldDelegate", "setWatch"]
 - !private ["PSo19UITextFieldDelegate", "storageRef"]
 - ["PSo19UITextFieldDelegate", "tableView"]
@@ -5007,7 +5006,6 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "AppState"]
 - !private ["PSo18UITraitEnvironment", "Constants"]
 - !private ["PSo18UITraitEnvironment", "Data"]
-- !private ["PSo18UITraitEnvironment", "Date"]
 - !private ["PSo18UITraitEnvironment", "DateFormatter"]
 - !private ["PSo18UITraitEnvironment", "DispatchQueue"]
 - ["PSo18UITraitEnvironment", "Double"]
@@ -5134,6 +5132,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "sectionIndexTitlesForTableView"]
 - ["PSo18UITraitEnvironment", "sendButton"]
 - ["PSo18UITraitEnvironment", "sendMessage"]
+- ["PSo18UITraitEnvironment", "sendTimeLog"]
 - !private ["PSo18UITraitEnvironment", "setTitleColor"]
 - ["PSo18UITraitEnvironment", "setWatch"]
 - ["PSo18UITraitEnvironment", "showAlert"]
@@ -5194,7 +5193,6 @@ depends-member:
 - ["CSo16UIViewController", "CGFloat"]
 - !private ["CSo16UIViewController", "Constants"]
 - !private ["CSo16UIViewController", "Data"]
-- !private ["CSo16UIViewController", "Date"]
 - !private ["CSo16UIViewController", "DateFormatter"]
 - !private ["CSo16UIViewController", "Dictionary"]
 - !private ["CSo16UIViewController", "DispatchQueue"]
@@ -5324,6 +5322,7 @@ depends-member:
 - ["CSo16UIViewController", "sectionIndexTitlesForTableView"]
 - ["CSo16UIViewController", "sendButton"]
 - ["CSo16UIViewController", "sendMessage"]
+- ["CSo16UIViewController", "sendTimeLog"]
 - ["CSo16UIViewController", "setWatch"]
 - ["CSo16UIViewController", "showAlert"]
 - ["CSo16UIViewController", "signOut"]
@@ -5448,7 +5447,6 @@ depends-member:
 - !private ["Ps9_Hashable", "AppState"]
 - !private ["Ps9_Hashable", "Constants"]
 - !private ["Ps9_Hashable", "Data"]
-- !private ["Ps9_Hashable", "Date"]
 - !private ["Ps9_Hashable", "DateFormatter"]
 - !private ["Ps9_Hashable", "DispatchQueue"]
 - ["Ps9_Hashable", "Double"]
@@ -5624,6 +5622,7 @@ depends-member:
 - ["Ps9_Hashable", "sectionIndexTitlesForTableView"]
 - ["Ps9_Hashable", "sendButton"]
 - ["Ps9_Hashable", "sendMessage"]
+- ["Ps9_Hashable", "sendTimeLog"]
 - !private ["Ps9_Hashable", "setTitleColor"]
 - !private ["Ps9_Hashable", "setValue"]
 - ["Ps9_Hashable", "setWatch"]
@@ -5740,7 +5739,6 @@ depends-nominal:
 - "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - "V10Foundation4Data"
-- "V10Foundation4Date"
 - "CSo13DateFormatter"
 - !private "Vs27DefaultBidirectionalIndices"
 - !private "Vs26DefaultRandomAccessIndices"
@@ -6083,4 +6081,4 @@ depends-external:
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
-interface-hash: "b9653a23e6a63eedce9b67d9e89e0657"
+interface-hash: "12ba94c4d74fcee989d5c2815c2a2df2"

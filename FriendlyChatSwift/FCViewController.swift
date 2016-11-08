@@ -18,6 +18,8 @@ import UIKit
 
 import Firebase
 import GoogleMobileAds
+import FirebaseDatabase
+
 
 /**
  * AdMob ad unit IDs are not currently stored inside the google-services.plist file. Developers
@@ -109,47 +111,41 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         //Update UIText
         pickerText.text = pickerData[row]
         
-        currentDate = NSDate()
-        print("current date: \(currentDate)")
-        
-        
-        
         //Add Cumulated Time to Previous Activity
         currActivity = NSDate().timeIntervalSince1970
         timeDelta = currActivity - pastActivity
         timeArray[old_idx] += timeDelta
         
+        //TODO: store current activity time stamp
+        
         //Load Old Times
         setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
         
+
+        //Update DB array values
         //debug
         dump(timeArray)
         
         //Load Time of New Activity Into Timer
+        self.ref.child("timelogs").childByAutoId().setValue(timeArray)
         
+        for element in timeArray{
+            sendTimeLog(withData: element)
+        }
+
         
         //var interval = NSDate().timeIntervalSince1970
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone(name: "EST") as TimeZone!
-
-        let elapsed_hr = timeDelta.NSDateHour()
-        let elapsed_min = timeDelta.NSDateMinute()
-        let elapsed_sec = timeDelta.NSDateSecond()
-        print("formatted: \(Date(timeIntervalSince1970: timeDelta))")
-        print("timedelta hour: \(elapsed_hr)")
-        print("timedelta min: \(elapsed_min)")
-        print("timedelta sec: \(elapsed_sec)")
-
-
         
+        
+        //Update to New Timestamp
         pastActivity = currActivity
-//        print(interval)
-//        print("\(interval)")
-//        var dateTime = Date(timeIntervalSince1970: interval)
-//        print(dateTime)
         
         
-        
+        currentDate = NSDate()
+        print("current date: \(currentDate)")
+
         curr_hour = currentDate.hour()
         curr_min = currentDate.minute()
         curr_sec = currentDate.second()
@@ -173,7 +169,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             pickerLabel = UILabel()
         }
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor(hue: 0.0722, saturation: 0.7, brightness: 0.93, alpha: 1.0)])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .center
         return pickerLabel!
@@ -432,6 +428,12 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         return true
     }
     
+    func sendTimeLog(withData data: Double) {
+        var mdata = data
+        //mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+        self.ref.child("timelogs").childByAutoId().setValue(mdata)
+    }
+
     func sendMessage(withData data: [String: String]) {
         var mdata = data
 

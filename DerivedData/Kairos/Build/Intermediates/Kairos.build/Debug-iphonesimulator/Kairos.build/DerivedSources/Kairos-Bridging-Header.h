@@ -236,6 +236,7 @@ SWIFT_CLASS_NAMED("FCViewController")
 - (IBAction)scrollToBottom:(id _Nonnull)sender;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField;
+- (void)sendTimeLogWithData:(double)data;
 - (void)sendMessageWithData:(NSDictionary<NSString *, NSString *> * _Nonnull)data;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified signOut;
 - (IBAction)signOut:(UIButton * _Nonnull)sender;
