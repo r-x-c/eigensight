@@ -10,19 +10,19 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/SignInViewController.nib</key>
 		<data>
-		t5uedqARdFjjmLDEQHD6+sN71rM=
+		OYC8pfvG5MSe5I12EMMpUecsZgw=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<data>
-		GX+tbznIvM4BXTAKrmvOwHwzhAY=
+		fDVyFZ84sifEz9UZS/RxtndsJN4=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<data>
-		PKYUQUDvzNzeRpd04vwnqM67QJs=
+		wnyqzsN+FXjVr4plHLLR3BfCYFY=
 		</data>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<data>
-		Z3keLy9hq283sAOWlaObGB5VooA=
+		OLChx4lnJr3jExwt5GxpUDPyhV0=
 		</data>
 		<key>Down-arrow.png</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		XJ5a3zpOWYk7B8zzmQybar4Mkt0=
+		XNLbeOr8hkC1DoxIoOf2ofePc70=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -484,6 +484,10 @@
 		<data>
 		Ny/fIySdsHLFV3uRgyoWc6RRFmI=
 		</data>
+		<key>ocean-waves-wallpaper-1.jpg</key>
+		<data>
+		PEj7ZXkKG2pV5EN7wZcuPKHBrf0=
+		</data>
 		<key>send-button.png</key>
 		<data>
 		QwURt+tPFSSeXpIXC/H0KuUvGDw=
@@ -838,44 +842,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t5uedqARdFjjmLDEQHD6+sN71rM=
+			OYC8pfvG5MSe5I12EMMpUecsZgw=
 			</data>
 			<key>hash2</key>
 			<data>
-			XEBetdtFZP2nStTWZsI26OAn1AsKdWD/7qKROEMIyGQ=
+			w/8YRQzz4kwp5s14RMvBSf1Vo8MDytZXoN+xP2OmszQ=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GX+tbznIvM4BXTAKrmvOwHwzhAY=
+			fDVyFZ84sifEz9UZS/RxtndsJN4=
 			</data>
 			<key>hash2</key>
 			<data>
-			8kju9ZcBhhr6fkloWIkRTk54ZOrmcDMskEPFtqPKaSg=
+			rtTZzoST6vdpyx2ZpJ4htS15gbp5uGvmDHV2s1O0SoQ=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PKYUQUDvzNzeRpd04vwnqM67QJs=
+			wnyqzsN+FXjVr4plHLLR3BfCYFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			J9CVEn4fqLuQf645KRkxlUFQzC13ruyN143lGe9zzAo=
+			a1kjmwXXqDZoTgGBIyaAN+AAliEmgeZ3qoBfwEZySzw=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Z3keLy9hq283sAOWlaObGB5VooA=
+			OLChx4lnJr3jExwt5GxpUDPyhV0=
 			</data>
 			<key>hash2</key>
 			<data>
-			3W7LpN5SgtnUI5+/bigFO+Dbi8mJQ30bPRIfnR27BMI=
+			uioF+7imyI6TIwH8hU56hh61Eq1mff3f7j2Zo6am3d0=
 			</data>
 		</dict>
 		<key>Down-arrow.png</key>
@@ -1047,11 +1051,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XJ5a3zpOWYk7B8zzmQybar4Mkt0=
+			XNLbeOr8hkC1DoxIoOf2ofePc70=
 			</data>
 			<key>hash2</key>
 			<data>
-			UOr/l3KMvWU0j1EKcSOWv68q5+/K9EZvGY4j4ZQt+rg=
+			JudvwPG37i25UMY/qm12qH5FygNQJu9qSa0F4mF9TGA=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1696,6 +1700,17 @@
 			<key>hash2</key>
 			<data>
 			4hKq03lKhCBkzaHjduBVuK8RenMCbLx/VouId2Dl2Dw=
+			</data>
+		</dict>
+		<key>ocean-waves-wallpaper-1.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PEj7ZXkKG2pV5EN7wZcuPKHBrf0=
+			</data>
+			<key>hash2</key>
+			<data>
+			DPLlUstzMgNODcv7FslLTZFX3IGCQ3H7V9G/iDho8zs=
 			</data>
 		</dict>
 		<key>send-button.png</key>

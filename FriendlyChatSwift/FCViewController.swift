@@ -109,19 +109,29 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var timeDelta = 0.0
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //Update Top Label Text
-        pickerText.text = pickerData[row]
-
         //Add Cumulated Time to Previous Activity
         currActivity = NSDate().timeIntervalSince1970
         timeDelta = currActivity - pastActivity
         timeArray[old_idx] += timeDelta
         
-        //TODO: store current activity time stamp
+        //TODO: move this out?
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = DateFormatter.Style.long
+//        formatter.timeStyle = .medium
+//        formatter.dateFormat = "HH:mma"
+//        let dateString = formatter.string(from: currentDate as Date)
+//
+//        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(dateString)"])
+
         
-        //Load Old Times
+        //Update Top Label Text to Current Activity
+        pickerText.text = pickerData[row]
+        
+        //Load Current Activity Times
         setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
         
+        //TODO: store current activity time stamp
+
 
         //Update DB array values
         //debug
@@ -384,7 +394,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         guard messages.count > 0 else { return }
         let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
         clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
-        clientTable.layoutIfNeeded()
     }
     //fixme
 
