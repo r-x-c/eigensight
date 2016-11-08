@@ -14,26 +14,26 @@ provides-member:
 - ["Sd", "NSDateSecond"]
 - ["Sd", "toShortTimeString"]
 provides-dynamic-lookup:
-- "minute"
-- "hour"
 - "second"
 - "toShortTimeString"
+- "hour"
+- "minute"
 depends-top-level:
-- "CastingPrecedence"
-- "AssignmentPrecedence"
+- "String"
+- "NSDate"
+- "formatTimeString"
+- "Double"
 - !private ">"
+- !private "NSCalendar"
+- !private "StringLiteralType"
 - !private "-"
 - !private "DateFormatter"
-- "String"
-- "formatTimeString"
-- !private "UnicodeScalarType"
-- "TernaryPrecedence"
-- !private "NSCalendar"
-- !private "Date"
-- !private "StringLiteralType"
-- "Double"
 - "Int"
-- "NSDate"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- "TernaryPrecedence"
+- !private "UnicodeScalarType"
+- !private "Date"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "DateFormatter"]
 - !private ["Ps16AbsoluteValuable", "NSDate"]

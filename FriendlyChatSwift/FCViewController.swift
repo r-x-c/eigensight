@@ -74,12 +74,13 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         fetchConfig()
         //loadAd()
         logViewLoaded()
-        
         self.hideKeyboardWhenTappedAround()
+        
     }
 
     
     @IBOutlet weak var pickerView: UIPickerView!
+
     @IBOutlet weak var pickerText: UILabel!
     var curr_hour = 0, curr_min = 0, curr_sec = 0
     var secondsString = "", minutesString = "", hoursString = ""
@@ -108,9 +109,9 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var timeDelta = 0.0
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //Update UIText
+        //Update Top Label Text
         pickerText.text = pickerData[row]
-        
+
         //Add Cumulated Time to Previous Activity
         currActivity = NSDate().timeIntervalSince1970
         timeDelta = currActivity - pastActivity
@@ -127,12 +128,12 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         dump(timeArray)
         
         //Load Time of New Activity Into Timer
-        self.ref.child("timelogs").childByAutoId().setValue(timeArray)
-        
-        for element in timeArray{
-            sendTimeLog(withData: element)
-        }
-
+//        self.ref.child("timelogs").childByAutoId().setValue(timeArray)
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let key = self.ref.child("timelogs").childByAutoId().key
+        let childUpdates = ["/posts/\(key)": timeArray,
+                            "/timelogs/\(userID)/\(key)/": timeArray]
+        self.ref.updateChildValues(childUpdates)
         
         //var interval = NSDate().timeIntervalSince1970
         let dateFormatter = DateFormatter()
@@ -145,12 +146,14 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         
         currentDate = NSDate()
         print("current date: \(currentDate)")
-
-        curr_hour = currentDate.hour()
-        curr_min = currentDate.minute()
-        curr_sec = currentDate.second()
-        let msg_str = formatTimeString(hrs: curr_hour, mins: curr_min, sec: curr_sec)
-        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(msg_str)"])
+        
+        //TODO: move this out?
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.long
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "HH:mma"
+        let dateString = formatter.string(from: currentDate as Date)
+        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(dateString)"])
         
         //Overwrite Old Idx
         old_idx = row
@@ -160,7 +163,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue UltraLight", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
         return myTitle
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -169,7 +172,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             pickerLabel = UILabel()
         }
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .center
         return pickerLabel!
@@ -222,6 +225,11 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             c_hours -= 1
             c_minutes = 59
         }
+        if c_hours == -1{
+            c_hours = 0
+            c_minutes = 0
+            c_seconds = 0
+        }
         mainClock.text = formatTimeString(hrs: c_hours, mins: c_minutes, sec: c_seconds)
 
     }
@@ -258,7 +266,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     var ref: FIRDatabaseReference!
     var messages: [FIRDataSnapshot]! = []
-    var msglength: NSNumber = 35
+    var msglength: NSNumber = 23
     fileprivate var _refHandle: FIRDatabaseHandle!
     
     var storageRef: FIRStorageReference!
@@ -390,7 +398,9 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         // Unpack message from Firebase DataSnapshot
         let messageSnapshot: FIRDataSnapshot! = self.messages[indexPath.row]
         let message = messageSnapshot.value as! Dictionary<String, String>
-        let name = message[Constants.MessageFields.name] as String!
+//        let name = message[Constants.MessageFields.name] as String!
+        let name = message[Constants.MessageFields.name]?.components(separatedBy: " ")
+
         if let imageURL = message[Constants.MessageFields.imageURL] {
             if imageURL.hasPrefix("gs://") {
                 FIRStorage.storage().reference(forURL: imageURL).data(withMaxSize: INT64_MAX){ (data, error) in
@@ -406,13 +416,16 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             cell.textLabel?.text = "sent by: \(name)"
         } else {
             let text = message[Constants.MessageFields.text] as String!
-            cell.textLabel?.text = name! + ": " + text!
+            
+            cell.textLabel?.text = (name?[0])! + ": " + text!
             cell.imageView?.image = UIImage(named: "ic_account_circle")
             if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL), let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage(data: data)
             }
         }
-        cell.textLabel?.font = UIFont(name:"Avenir", size:15)
+        cell.textLabel?.font = UIFont(name:"Avenir", size:17)
+        cell.textLabel?.textColor = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1.0)
+        cell.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1.0)
         return cell
     }
     
