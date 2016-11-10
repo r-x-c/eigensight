@@ -45,33 +45,56 @@ extension UIViewController {
 class FCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
 UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate {
-    
+    var date_string = ""
+    let date_formatter = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Date Key
+        //  Formatting
+        date_formatter.dateStyle = DateFormatter.Style.long
+        date_formatter.timeStyle = .medium
+        date_formatter.dateFormat = "MMddyyyy"
+        //  Make Key
+        
+//        let userID = FIRAuth.auth()?.currentUser?.uid
+//        var usersRef = FIRDatabase.database().reference(withPath: "timelogs")
+//        print(usersRef)
+//        print("foo")
+//
+//        usersRef = FIRDatabase.database().reference(withPath: "/timelogs/\(userID)/\(date_string)/")
+//
+//        print(usersRef)
+//        print("foo")
+        
+        
+        
+//        print("current date not time: \(date_string)")
+//        print("current date: \(currentDate)")
+
+        //Default UIPickerView Settings
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
         pickerText.text = pickerData[0]
 
-        
-        //timer beg
+        //Timer Declarations
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateForwardTimer), userInfo: nil, repeats: true)
         c_hours = 23 - currentDate.hour()
         c_minutes = 59 - currentDate.minute()
         c_seconds = 60 - currentDate.second()
-        
         if pastActivity == 0 {
             pastActivity = NSDate().timeIntervalSince1970
         }
-        //timer end
-        
         
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
         
+        //Firebase Declarations
         configureDatabase()
         configureStorage()
         configureRemoteConfig()
         fetchConfig()
+        configureTimeArray()
         //loadAd()
         logViewLoaded()
         self.hideKeyboardWhenTappedAround()
@@ -114,56 +137,36 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         timeDelta = currActivity - pastActivity
         timeArray[old_idx] += timeDelta
         
-        //TODO: move this out?
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = DateFormatter.Style.long
-//        formatter.timeStyle = .medium
-//        formatter.dateFormat = "HH:mma"
-//        let dateString = formatter.string(from: currentDate as Date)
-//
-//        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(dateString)"])
-
-        
         //Update Top Label Text to Current Activity
         pickerText.text = pickerData[row]
         
         //Load Current Activity Times
         setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
         
-        //TODO: store current activity time stamp
-
-
-        //Update DB array values
-        //debug
-        dump(timeArray)
+        dump(timeArray) //debug
         
         //Load Time of New Activity Into Timer
-//        self.ref.child("timelogs").childByAutoId().setValue(timeArray)
+        currentDate = NSDate()
+
+        //Save to Database
         let userID = FIRAuth.auth()?.currentUser?.uid
         let key = self.ref.child("timelogs").childByAutoId().key
-        let childUpdates = ["/posts/\(key)": timeArray,
-                            "/timelogs/\(userID)/\(key)/": timeArray]
+        print("user id\(userID)")
+        print("key\(key)")
+        
+        let childUpdates = ["/timelogs/\(userID)/\(date_string)/": timeArray]
         self.ref.updateChildValues(childUpdates)
-        
-        //var interval = NSDate().timeIntervalSince1970
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = NSTimeZone(name: "EST") as TimeZone!
-        
-        
+
         //Update to New Timestamp
         pastActivity = currActivity
         
-        
-        currentDate = NSDate()
-        print("current date: \(currentDate)")
-        
         //TODO: move this out?
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.long
-        formatter.timeStyle = .medium
-        formatter.dateFormat = "HH:mma"
-        let dateString = formatter.string(from: currentDate as Date)
-        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(dateString)"])
+        let formatter_timestamp = DateFormatter()
+        formatter_timestamp.dateStyle = DateFormatter.Style.long
+        formatter_timestamp.timeStyle = .medium
+        formatter_timestamp.dateFormat = "HH:mma"
+        let time_string = formatter_timestamp.string(from: currentDate as Date)
+        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
         
         //Overwrite Old Idx
         old_idx = row
@@ -223,6 +226,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     deinit {
         self.ref.child("messages").removeObserver(withHandle: _refHandle)
+        self.ref.child("timelogs").removeObserver(withHandle: _refHandle)
     }
     
     func updateCountdown(){
@@ -296,6 +300,27 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         })
     }
     
+    func configureTimeArray() {
+        //Get Path
+        currentDate = NSDate()
+        date_string = date_formatter.string(from: currentDate as Date)
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        let timeArrayRef = FIRDatabase.database().reference(withPath: "/timelogs/\(userID)/\(date_string)/")
+
+        //retrieve
+        timeArrayRef.observeSingleEvent(of: .value, with: { snapshot in
+            if !snapshot.exists() { return }
+            
+            print(snapshot)
+            if let db_timeArray = snapshot.value as? [Double]{
+                if db_timeArray.count == self.timeArray.count{
+                    self.timeArray = db_timeArray
+                    print("Read of stored time array sucessful: \(self.timeArray)")
+                }
+                
+            }
+        })
+    }
     
     
     func configureStorage() {
@@ -376,26 +401,11 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         return messages.count
     }
     
-    
-    //fixme
-//    var viewHasAppeared = false
-//    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        if viewHasAppeared { goToBottom() }
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        viewHasAppeared = true
-//    }
-//    
     private func goToBottom() {
         guard messages.count > 0 else { return }
         let indexPath = NSIndexPath(row: messages.count - 1, section: 0)
         clientTable.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
     }
-    //fixme
 
     @IBAction func scrollToBottom(_ sender: Any) {
         goToBottom()
@@ -407,7 +417,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         // Unpack message from Firebase DataSnapshot
         let messageSnapshot: FIRDataSnapshot! = self.messages[indexPath.row]
         let message = messageSnapshot.value as! Dictionary<String, String>
-//        let name = message[Constants.MessageFields.name] as String!
+        //let name = message[Constants.MessageFields.name] as String!
         let name = message[Constants.MessageFields.name]?.components(separatedBy: " ")
 
         if let imageURL = message[Constants.MessageFields.imageURL] {
@@ -432,6 +442,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
                 cell.imageView?.image = UIImage(data: data)
             }
         }
+        //Formatting
         cell.textLabel?.font = UIFont(name:"Avenir", size:17)
         cell.textLabel?.textColor = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1.0)
         cell.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1.0)
@@ -480,12 +491,9 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
             setTitleColor(tintColor, for: .normal)
             setTitleColor(UIColor.white, for: .highlighted)
-     
-            //setBackgroundImage(UIImage(color: tintColor), for: .Highlighted)
         }
     }
 
-    
     
     @IBAction func signOut(_ sender: UIButton) {
         let firebaseAuth = FIRAuth.auth()

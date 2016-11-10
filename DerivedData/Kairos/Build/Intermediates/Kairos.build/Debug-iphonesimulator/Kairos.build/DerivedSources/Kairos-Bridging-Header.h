@@ -152,6 +152,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSDateFormatter;
 @class UIPickerView;
 @class NSAttributedString;
 @class UIView;
@@ -173,6 +174,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 
 SWIFT_CLASS_NAMED("FCViewController")
 @interface FCViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource>
+@property (nonatomic, copy) NSString * _Nonnull date_string;
+@property (nonatomic, readonly, strong) NSDateFormatter * _Nonnull date_formatter;
 - (void)viewDidLoad;
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified pickerView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pickerText;
@@ -224,6 +227,7 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, weak) IBOutlet GADBannerView * _Null_unspecified banner;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified clientTable;
 - (void)configureDatabase;
+- (void)configureTimeArray;
 - (void)configureStorage;
 - (void)configureRemoteConfig;
 - (void)fetchConfig;

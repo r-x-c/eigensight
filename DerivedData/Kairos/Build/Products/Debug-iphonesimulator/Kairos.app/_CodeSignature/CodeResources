@@ -10,19 +10,19 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/SignInViewController.nib</key>
 		<data>
-		OYC8pfvG5MSe5I12EMMpUecsZgw=
+		R9qD8Fo0cCYIZErniAZ370x7DLE=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<data>
-		fDVyFZ84sifEz9UZS/RxtndsJN4=
+		o7YFGcWyXkDzsHACOA6ngAfWPXw=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<data>
-		wnyqzsN+FXjVr4plHLLR3BfCYFY=
+		sOpYl9DGHRcLIXJgDsKU6MYhBLI=
 		</data>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<data>
-		OLChx4lnJr3jExwt5GxpUDPyhV0=
+		S/pQNcJn6BHsJQYYH/wxaFgIiRw=
 		</data>
 		<key>Down-arrow.png</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		XNLbeOr8hkC1DoxIoOf2ofePc70=
+		LS75/Y42+xPnwqF5fp8fgyMXqeY=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -484,10 +484,6 @@
 		<data>
 		Ny/fIySdsHLFV3uRgyoWc6RRFmI=
 		</data>
-		<key>ocean-waves-wallpaper-1.jpg</key>
-		<data>
-		PEj7ZXkKG2pV5EN7wZcuPKHBrf0=
-		</data>
 		<key>send-button.png</key>
 		<data>
 		QwURt+tPFSSeXpIXC/H0KuUvGDw=
@@ -647,18 +643,6 @@
 		<key>shared/Images.xcassets/LaunchImage.launchimage/Contents.json</key>
 		<data>
 		jvv0BoIVUV9yqtPyySk3zmaO4Dw=
-		</data>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-1.png</key>
-		<data>
-		hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
-		</data>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-3.png</key>
-		<data>
-		hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
-		</data>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-4.png</key>
-		<data>
-		hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
 		</data>
 		<key>shared/Images.xcassets/LaunchImage.launchimage/iTunesArtwork@1x.png</key>
 		<data>
@@ -820,10 +804,6 @@
 		<data>
 		5CvgMTsLJAjGFfSMy+s5qtmCMik=
 		</data>
-		<key>shared/kairos.jpg</key>
-		<data>
-		s1b0FAiIR8XFKBGb8dmKiI/Cvkc=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -842,44 +822,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OYC8pfvG5MSe5I12EMMpUecsZgw=
+			R9qD8Fo0cCYIZErniAZ370x7DLE=
 			</data>
 			<key>hash2</key>
 			<data>
-			w/8YRQzz4kwp5s14RMvBSf1Vo8MDytZXoN+xP2OmszQ=
+			Vrnr+5QLvZ2UQuSkYYZCRRKNKQmBuxgC/ecR0VRmyEw=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-uMT-A3-F60.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fDVyFZ84sifEz9UZS/RxtndsJN4=
+			o7YFGcWyXkDzsHACOA6ngAfWPXw=
 			</data>
 			<key>hash2</key>
 			<data>
-			rtTZzoST6vdpyx2ZpJ4htS15gbp5uGvmDHV2s1O0SoQ=
+			DLsXJKCtTwMcyiTxh7nxErXv59cBzTHjJ5f/OOw6d9E=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uMT-A3-F60-view-4Dk-Kp-xdq.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wnyqzsN+FXjVr4plHLLR3BfCYFY=
+			sOpYl9DGHRcLIXJgDsKU6MYhBLI=
 			</data>
 			<key>hash2</key>
 			<data>
-			a1kjmwXXqDZoTgGBIyaAN+AAliEmgeZ3qoBfwEZySzw=
+			bAKIS/4rEqllbPhjCEAxR8ijHaCNixlC6ykjefA5seI=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/zxq-GO-nHP-view-OTh-0Q-7iK.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OLChx4lnJr3jExwt5GxpUDPyhV0=
+			S/pQNcJn6BHsJQYYH/wxaFgIiRw=
 			</data>
 			<key>hash2</key>
 			<data>
-			uioF+7imyI6TIwH8hU56hh61Eq1mff3f7j2Zo6am3d0=
+			qQ9ubotIDk9D2vFWTlnn8ubv68NMGdiMgc6jQTacRq4=
 			</data>
 		</dict>
 		<key>Down-arrow.png</key>
@@ -1051,11 +1031,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XNLbeOr8hkC1DoxIoOf2ofePc70=
+			LS75/Y42+xPnwqF5fp8fgyMXqeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			JudvwPG37i25UMY/qm12qH5FygNQJu9qSa0F4mF9TGA=
+			rvjNezztOo8ElFZx6dLyE/h/kZtjJG80BuUC5q5rBuk=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -1702,17 +1682,6 @@
 			4hKq03lKhCBkzaHjduBVuK8RenMCbLx/VouId2Dl2Dw=
 			</data>
 		</dict>
-		<key>ocean-waves-wallpaper-1.jpg</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PEj7ZXkKG2pV5EN7wZcuPKHBrf0=
-			</data>
-			<key>hash2</key>
-			<data>
-			DPLlUstzMgNODcv7FslLTZFX3IGCQ3H7V9G/iDho8zs=
-			</data>
-		</dict>
 		<key>send-button.png</key>
 		<dict>
 			<key>hash</key>
@@ -2153,39 +2122,6 @@
 			UPP0dv5kCj0LzelDO2LkNXVn+zXUlFXAS2HQUNCRSqI=
 			</data>
 		</dict>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-1.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			1Z8lwtrfJx2OFMW89fhazL0P/FDB3jYH+wdpF9GtndQ=
-			</data>
-		</dict>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-3.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			1Z8lwtrfJx2OFMW89fhazL0P/FDB3jYH+wdpF9GtndQ=
-			</data>
-		</dict>
-		<key>shared/Images.xcassets/LaunchImage.launchimage/hourglass-4.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hPaBMWvPdzJQ+97kGloPRVBlQ3Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			1Z8lwtrfJx2OFMW89fhazL0P/FDB3jYH+wdpF9GtndQ=
-			</data>
-		</dict>
 		<key>shared/Images.xcassets/LaunchImage.launchimage/iTunesArtwork@1x.png</key>
 		<dict>
 			<key>hash</key>
@@ -2624,17 +2560,6 @@
 			<key>hash2</key>
 			<data>
 			x/Qeqczkm7PtNYYk3d5koaIcmRWS1/09MyDphSSmOqk=
-			</data>
-		</dict>
-		<key>shared/kairos.jpg</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			s1b0FAiIR8XFKBGb8dmKiI/Cvkc=
-			</data>
-			<key>hash2</key>
-			<data>
-			3Vpf3hIALiUAlQSGg9SQs12MD7YNnPx9MSgDZT8gt9M=
 			</data>
 		</dict>
 	</dict>

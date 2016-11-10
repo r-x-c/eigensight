@@ -27,18 +27,13 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: GIDSignInButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
-        
         // TODO(developer) Configure the sign-in button look/feel
         // ...
     }
@@ -57,13 +52,10 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 print(error?.localizedDescription)
                 return
             }
-            
+            //Success
             print("User logged in with google.")
             self.signedIn(user!)
-
         })
-        
-        
         // ...
     }
     
@@ -75,20 +67,13 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
             print(error.localizedDescription)
             return
         }
-        
         try! FIRAuth.auth()!.signOut()
-
     }
-    
-    
-    
     
     override func viewDidAppear(_ animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
             self.signedIn(user)
         }
-        
-        
     }
     
     @IBAction func didTapSignIn(_ sender: AnyObject) {
@@ -148,7 +133,6 @@ class SignInViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     func signedIn(_ user: FIRUser?) {
         MeasurementHelper.sendLoginEvent()
-        
         AppState.sharedInstance.displayName = user?.displayName ?? user?.email
         AppState.sharedInstance.photoURL = user?.photoURL
         AppState.sharedInstance.signedIn = true
