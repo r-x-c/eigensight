@@ -191,7 +191,6 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, copy) NSString * _Nonnull hoursString;
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull pickerData;
-- (NSInteger)numberOfComponentsInPickerViewWithPickerView:(UIPickerView * _Nonnull)pickerView;
 - (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component;
 - (NSString * _Nullable)pickerView:(UIPickerView * _Nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
 @property (nonatomic) double pastActivity;

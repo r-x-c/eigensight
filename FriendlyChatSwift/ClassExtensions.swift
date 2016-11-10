@@ -47,7 +47,12 @@ extension Double{
     func NSDateHour() -> Int
     {
         let date = NSDate(timeIntervalSince1970: self as Double)
-        return date.hour() - 19
+        if date.hour() < 19{
+            return date.hour()
+        }
+        else{
+            return date.hour() - 19
+        }
     }
     func NSDateMinute() -> Int
     {

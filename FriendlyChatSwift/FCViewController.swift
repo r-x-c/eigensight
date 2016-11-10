@@ -67,7 +67,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             activityIndex = Int(foo)!
             print(foo)
         }
-//        activityIndex = (UserDefaults.standard.object(forKey: defaultsKeys.keyOne) as? Int)!
         pickerText.text = pickerData[activityIndex]
 
         //Timer Declarations
@@ -76,10 +75,15 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         c_hours = 23 - currentDate.hour()
         c_minutes = 59 - currentDate.minute()
         c_seconds = 60 - currentDate.second()
+        
+        if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
+            pastActivity = Double(name)!
+            print(name)
+        }
         if pastActivity == 0 {
             pastActivity = NSDate().timeIntervalSince1970
         }
-        
+
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
         
         //Firebase Declarations
@@ -119,10 +123,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     }
     let pickerData = ["sleeping", "traveling", "studying", "eating", "socializing", "grooming", "exercising"]
     //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 2//MARK: - Delegates and data sources
-        
-    }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if component == 0 {
@@ -140,7 +140,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         }
         else {
             return "\(formatShortTimeString(hrs: timeArray[row].NSDateHour(), mins: timeArray[row].NSDateMinute())) \(NSString(format: "%.1f", percentArray[row]))%"
-
         }
     }
     
@@ -150,7 +149,11 @@ UIPickerViewDataSource, UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
+            //UI
             self.pickerView.selectRow(row, inComponent: 1, animated: true)
+            //  Update Top Label Text to Current Activity
+            pickerText.text = pickerData[row]
+
             //Add Cumulated Time to Previous Activity
             if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
                 pastActivity = Double(name)!
@@ -172,10 +175,10 @@ UIPickerViewDataSource, UIPickerViewDelegate {
                 percentArray[index] = 100 * timeArray[index] / sum
                 print(NSString(format: "%.1f", percentArray[index]))
             }
+            //Reload UI
+            self.pickerView.reloadComponent(1)
             dump(percentArray)
             
-            //Update Top Label Text to Current Activity
-            pickerText.text = pickerData[row]
             
             //Load Current Activity Times
             setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
@@ -200,24 +203,20 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             
             //Save to Database
             let userID = FIRAuth.auth()?.currentUser?.uid
-            let key = self.ref.child("timelogs").childByAutoId().key
             print("user id\(userID)")
-            print("key\(key)")
-            
             let childUpdates = ["/timelogs/\(userID)/\(date_string)/": timeArray]
             self.ref.updateChildValues(childUpdates)
             
-            //Store Recent Activity
+            if activityIndex != row{
+                let time_string = formatter_timestamp.string(from: currentDate as Date)
+                sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
+            }//Else don't send msg for same activity
+            
+            //STORE
             //  idx of current activity
             defaults.setValue(row, forKey: defaultsKeys.keyOne)
             //  timestamp of current activity
             defaults.setValue(currActivity, forKey: defaultsKeys.keyTwo)
-            
-            //TODO: move this out?
-            let time_string = formatter_timestamp.string(from: currentDate as Date)
-            sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
-            
-            
             goToBottom()
         }
         else {
@@ -255,7 +254,15 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         }
         else { //Format Time and Percentages
             titleData =  "\(formatShortTimeString(hrs: timeArray[row].NSDateHour(), mins: timeArray[row].NSDateMinute())) \(NSString(format: "%.1f", percentArray[row]))%"
-            let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
+            print("debug")
+            print(timeArray[row])
+            print(NSDate(timeIntervalSince1970: timeArray[row] as Double))
+
+            print(timeArray[row].NSDateHour())
+            print(timeArray[row].NSDateMinute())
+            print("debug")
+
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 21.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
             pickerLabel!.attributedText = myTitle
             pickerLabel!.textAlignment = .center
             return pickerLabel!
