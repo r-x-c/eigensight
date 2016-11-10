@@ -7,15 +7,15 @@ provides-member:
 - ["C6Kairos8AppState", ""]
 provides-dynamic-lookup:
 - "signedIn"
-- "sharedInstance"
 - "displayName"
 - "photoURL"
+- "sharedInstance"
 depends-top-level:
-- "BooleanLiteralType"
 - "String"
+- "BooleanLiteralType"
 - "NSObject"
-- "URL"
 - "AppState"
+- "URL"
 depends-member:
 - ["Ps9AnyObject", "AppState"]
 - ["Ps9AnyObject", "displayName"]

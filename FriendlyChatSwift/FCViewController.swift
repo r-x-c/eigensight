@@ -52,18 +52,16 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
 UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate {
     var date_string = ""
-    let date_formatter = DateFormatter()
+    let date_formatter = DateFormatter() //MMddYYYY
+    let formatter_timestamp = DateFormatter() //hh:mm a
     let defaults = UserDefaults.standard
+    
     var activityIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
-        //Default UIPickerView Settings
-        self.pickerView.dataSource = self;
-        self.pickerView.delegate = self;
-        
         //Restore Previous Index
         if let foo = defaults.string(forKey: defaultsKeys.keyOne) {
             activityIndex = Int(foo)!
@@ -97,6 +95,11 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         date_formatter.dateFormat = "MMddyyyy"
         configureTimeArray()
         
+        //Default UIPickerView Settings
+        self.pickerView.dataSource = self;
+        self.pickerView.delegate = self;
+        
+
         //loadAd()
         logViewLoaded()
         self.hideKeyboardWhenTappedAround()
@@ -112,20 +115,34 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     
     // PICKER VIEW------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     let pickerData = ["Sleeping", "Traveling", "Studying", "Eating", "Socializing", "Grooming", "Exercising"]
     //MARK: Data Sources
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1//MARK: - Delegates and data sources
+        return 2//MARK: - Delegates and data sources
         
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        
+        if component == 0 {
+            return pickerData.count
+        }
+            
+        else {
+            return timeArray.count
+        }
     }
     //MARK: Delegates
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        if component == 0 {
+            return String(pickerData[row])
+        }
+        else {
+            return formatTimeString(hrs: timeArray[row].NSDateHour(),
+                                    mins: timeArray[row].NSDateMinute(),
+                                    sec: timeArray[row].NSDateSecond())
+        }
     }
     
     var pastActivity = 0.0
@@ -133,65 +150,87 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var timeDelta = 0.0
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //Add Cumulated Time to Previous Activity
-        currActivity = NSDate().timeIntervalSince1970
-        
-        if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
-            pastActivity = Double(name)!
-            print(name)
+        if component == 0 {
+            //Add Cumulated Time to Previous Activity
+            currActivity = NSDate().timeIntervalSince1970
+            
+            if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
+                pastActivity = Double(name)!
+                print(name)
+            }
+            if let foo = defaults.string(forKey: defaultsKeys.keyOne) {
+                activityIndex = Int(foo)!
+                print(foo)
+            }
+            
+            timeDelta = currActivity - pastActivity
+            timeArray[activityIndex] += timeDelta
+            
+            //Update Top Label Text to Current Activity
+            pickerText.text = pickerData[row]
+            
+            //Load Current Activity Times
+            setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
+            
+            dump(timeArray) //debug
+            
+            formatter_timestamp.dateStyle = DateFormatter.Style.long
+            formatter_timestamp.timeStyle = .medium
+            formatter_timestamp.dateFormat = "HH:mma"
+            formatter_timestamp.timeZone = NSTimeZone(name: "EST") as TimeZone!
+            
+            //todo: DEBUG, SLEEP arithmatic IS OFF
+            for time in timeArray{
+                let bar = NSDate(timeIntervalSince1970: time)
+                print(bar)
+                let element_time = formatter_timestamp.string(from: bar as Date)
+                print(element_time)
+            }
+            
+            //Load Time of New Activity Into Timer
+            currentDate = NSDate()
+            
+            //Save to Database
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            let key = self.ref.child("timelogs").childByAutoId().key
+            print("user id\(userID)")
+            print("key\(key)")
+            
+            let childUpdates = ["/timelogs/\(userID)/\(date_string)/": timeArray]
+            self.ref.updateChildValues(childUpdates)
+            
+            //Store Recent Activity
+            //  idx of current activity
+            defaults.setValue(row, forKey: defaultsKeys.keyOne)
+            //  timestamp of current activity
+            defaults.setValue(currActivity, forKey: defaultsKeys.keyTwo)
+            
+            //TODO: move this out?
+            let time_string = formatter_timestamp.string(from: currentDate as Date)
+            sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
+            
+            
+            goToBottom()
         }
-        if let foo = defaults.string(forKey: defaultsKeys.keyOne) {
-            activityIndex = Int(foo)!
-            print(foo)
+        else {
+            
+            print("do nothing in time col")
         }
 
         
-//        pastActivity = (UserDefaults.standard.object(forKey: defaultsKeys.keyTwo) as? Double)!
-//        activityIndex = (UserDefaults.standard.object(forKey: defaultsKeys.keyOne) as? Int)!
-        timeDelta = currActivity - pastActivity
-        timeArray[activityIndex] += timeDelta
-        
-        //Update Top Label Text to Current Activity
-        pickerText.text = pickerData[row]
-    
-        //Load Current Activity Times
-        setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
-        
-        dump(timeArray) //debug
-        
-        //Load Time of New Activity Into Timer
-        currentDate = NSDate()
-
-        //Save to Database
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        let key = self.ref.child("timelogs").childByAutoId().key
-        print("user id\(userID)")
-        print("key\(key)")
-        
-        let childUpdates = ["/timelogs/\(userID)/\(date_string)/": timeArray]
-        self.ref.updateChildValues(childUpdates)
-
-        //Store Recent Activity
-        //  idx of current activity
-        defaults.setValue(row, forKey: defaultsKeys.keyOne)
-        //  timestamp of current activity
-        defaults.setValue(currActivity, forKey: defaultsKeys.keyTwo)
-        
-        //TODO: move this out?
-        let formatter_timestamp = DateFormatter()
-        formatter_timestamp.dateStyle = DateFormatter.Style.long
-        formatter_timestamp.timeStyle = .medium
-        formatter_timestamp.dateFormat = "HH:mma"
-        let time_string = formatter_timestamp.string(from: currentDate as Date)
-        sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
-        
-        
-        goToBottom()
 
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = pickerData[row]
+        var titleData = ""
+        if component == 0 {
+            titleData = pickerData[row]
+        }
+        else {
+            titleData =  formatTimeString(hrs: timeArray[row].NSDateHour(),
+                                          mins: timeArray[row].NSDateMinute(),
+                                          sec: timeArray[row].NSDateSecond())
+        }
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue UltraLight", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
         return myTitle
     }
@@ -200,7 +239,15 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         if view == nil {  //if no label there yet
             pickerLabel = UILabel()
         }
-        let titleData = pickerData[row]
+        var titleData = ""
+        if component == 0 {
+            titleData = pickerData[row]
+        }
+        else {
+            titleData =  formatTimeString(hrs: timeArray[row].NSDateHour(),
+                                          mins: timeArray[row].NSDateMinute(),
+                                          sec: timeArray[row].NSDateSecond())
+        }
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .center
@@ -331,7 +378,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             if let db_timeArray = snapshot.value as? [Double]{
                 if db_timeArray.count == self.timeArray.count{
                     self.timeArray = db_timeArray
-                    print("Read of stored time array sucessful: \(self.timeArray)")
+                    print("SUCCESSFUL: read time array from database \(self.timeArray)")
                 }
                 
             }
