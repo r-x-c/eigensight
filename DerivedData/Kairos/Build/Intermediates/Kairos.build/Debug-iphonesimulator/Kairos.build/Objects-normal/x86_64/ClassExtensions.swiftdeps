@@ -1,6 +1,7 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "formatTimeString"
+- "formatShortTimeString"
 provides-nominal:
 provides-member:
 - ["CSo6NSDate", ""]
@@ -14,26 +15,27 @@ provides-member:
 - ["Sd", "NSDateSecond"]
 - ["Sd", "toShortTimeString"]
 provides-dynamic-lookup:
-- "second"
-- "toShortTimeString"
 - "minute"
+- "toShortTimeString"
 - "hour"
+- "second"
 depends-top-level:
-- !private "StringLiteralType"
-- "formatTimeString"
-- !private "UnicodeScalarType"
-- "String"
-- "Double"
-- !private ">"
-- "Int"
-- !private "-"
-- "NSDate"
-- !private "DateFormatter"
-- "TernaryPrecedence"
 - "CastingPrecedence"
-- !private "NSCalendar"
-- !private "Date"
+- !private "-"
+- !private "DateFormatter"
 - "AssignmentPrecedence"
+- "Int"
+- "formatShortTimeString"
+- !private "Date"
+- "TernaryPrecedence"
+- !private "UnicodeScalarType"
+- "NSDate"
+- "Double"
+- "String"
+- "formatTimeString"
+- !private "StringLiteralType"
+- !private ">"
+- !private "NSCalendar"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "DateFormatter"]
 - !private ["Ps16AbsoluteValuable", "NSDate"]
@@ -536,4 +538,4 @@ depends-external:
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
-interface-hash: "566f6b80759ba6ee5735413385dcf3e3"
+interface-hash: "8f48c9c013ce895e3fc0bd1c07766649"

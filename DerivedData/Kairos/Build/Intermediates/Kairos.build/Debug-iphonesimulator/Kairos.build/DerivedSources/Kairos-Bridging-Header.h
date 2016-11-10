@@ -177,6 +177,7 @@ SWIFT_CLASS_NAMED("FCViewController")
 @interface FCViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource>
 @property (nonatomic, copy) NSString * _Nonnull date_string;
 @property (nonatomic, readonly, strong) NSDateFormatter * _Nonnull date_formatter;
+@property (nonatomic, readonly, strong) NSDateFormatter * _Nonnull formatter_timestamp;
 @property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
 @property (nonatomic) NSInteger activityIndex;
 - (void)viewDidLoad;
@@ -214,6 +215,7 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, copy) NSString * _Nonnull stopwatchString;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull laps;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull timeArray;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull percentArray;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified forwardTimer;
 - (void)updateCountdown;
 - (void)updateForwardTimer;

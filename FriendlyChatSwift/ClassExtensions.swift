@@ -80,5 +80,10 @@ func formatTimeString(hrs : Int, mins : Int, sec : Int) -> String{
     return "\(hoursString):\(minutesString):\(secondsString)"
 }
 
+func formatShortTimeString(hrs : Int, mins : Int) -> String{
+    let hoursString = hrs > 9 ? "\(hrs)" : "0\(hrs)"
+    let minutesString = mins > 9 ? "\(mins)" : "0\(mins)"
+    return "\(hoursString):\(minutesString)"
+}
 
 

@@ -1,11 +1,11 @@
 version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
 options: "7fa3bfe365ed1ddd6ed1b3bef9a732ff"
-build_time: [532109773, 332728000]
+build_time: [532121272, 127762000]
 inputs:
   "/Users/RichardChen/kairos/FriendlyChatSwift/SignInViewController.swift": [531947794, 0]
   "/Users/RichardChen/kairos/FriendlyChatSwift/AppState.swift": [531625171, 0]
-  "/Users/RichardChen/kairos/FriendlyChatSwift/ClassExtensions.swift": [531810869, 0]
-  "/Users/RichardChen/kairos/FriendlyChatSwift/FCViewController.swift": [532109772, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/ClassExtensions.swift": [532120942, 0]
+  "/Users/RichardChen/kairos/FriendlyChatSwift/FCViewController.swift": [532121270, 0]
   "/Users/RichardChen/kairos/FriendlyChatSwift/AppDelegate.swift": [531947681, 0]
   "/Users/RichardChen/kairos/FriendlyChatSwift/MeasurementHelper.swift": [531625171, 0]
   "/Users/RichardChen/kairos/FriendlyChatSwift/Constants.swift": [531625171, 0]

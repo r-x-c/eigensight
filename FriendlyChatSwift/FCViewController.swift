@@ -117,7 +117,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
-    let pickerData = ["Sleeping", "Traveling", "Studying", "Eating", "Socializing", "Grooming", "Exercising"]
+    let pickerData = ["sleeping", "traveling", "studying", "eating", "socializing", "grooming", "exercising"]
     //MARK: Data Sources
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2//MARK: - Delegates and data sources
@@ -139,9 +139,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             return String(pickerData[row])
         }
         else {
-            return formatTimeString(hrs: timeArray[row].NSDateHour(),
-                                    mins: timeArray[row].NSDateMinute(),
-                                    sec: timeArray[row].NSDateSecond())
+            return "\(formatShortTimeString(hrs: timeArray[row].NSDateHour(), mins: timeArray[row].NSDateMinute())) \(NSString(format: "%.1f", percentArray[row]))%"
+
         }
     }
     
@@ -151,9 +150,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
+            self.pickerView.selectRow(row, inComponent: 1, animated: true)
             //Add Cumulated Time to Previous Activity
-            currActivity = NSDate().timeIntervalSince1970
-            
             if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
                 pastActivity = Double(name)!
                 print(name)
@@ -162,9 +160,19 @@ UIPickerViewDataSource, UIPickerViewDelegate {
                 activityIndex = Int(foo)!
                 print(foo)
             }
-            
+            currActivity = NSDate().timeIntervalSince1970
             timeDelta = currActivity - pastActivity
             timeArray[activityIndex] += timeDelta
+            
+            let sum = timeArray.reduce(0, +)
+            print("sum\(sum)")
+            
+            
+            for (index, element) in percentArray.enumerated() {
+                percentArray[index] = 100 * timeArray[index] / sum
+                print(NSString(format: "%.1f", percentArray[index]))
+            }
+            dump(percentArray)
             
             //Update Top Label Text to Current Activity
             pickerText.text = pickerData[row]
@@ -214,7 +222,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         }
         else {
             
-            print("do nothing in time col")
+            print("do nothing when changing time columns")
         }
 
         
@@ -227,9 +235,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             titleData = pickerData[row]
         }
         else {
-            titleData =  formatTimeString(hrs: timeArray[row].NSDateHour(),
-                                          mins: timeArray[row].NSDateMinute(),
-                                          sec: timeArray[row].NSDateSecond())
+            titleData =  "\(formatShortTimeString(hrs: timeArray[row].NSDateHour(), mins: timeArray[row].NSDateMinute())) \(NSString(format: "%.1f", percentArray[row]))%"
         }
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue UltraLight", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
         return myTitle
@@ -240,18 +246,21 @@ UIPickerViewDataSource, UIPickerViewDelegate {
             pickerLabel = UILabel()
         }
         var titleData = ""
-        if component == 0 {
+        if component == 0 { //Format Selections
             titleData = pickerData[row]
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
+            pickerLabel!.attributedText = myTitle
+            pickerLabel!.textAlignment = .center
+            return pickerLabel!
         }
-        else {
-            titleData =  formatTimeString(hrs: timeArray[row].NSDateHour(),
-                                          mins: timeArray[row].NSDateMinute(),
-                                          sec: timeArray[row].NSDateSecond())
+        else { //Format Time and Percentages
+            titleData =  "\(formatShortTimeString(hrs: timeArray[row].NSDateHour(), mins: timeArray[row].NSDateMinute())) \(NSString(format: "%.1f", percentArray[row]))%"
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
+            pickerLabel!.attributedText = myTitle
+            pickerLabel!.textAlignment = .center
+            return pickerLabel!
+
         }
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 26.0)!,NSForegroundColorAttributeName:UIColor(red: 240/255, green: 109/255, blue: 48/255, alpha: 1.0)])
-        pickerLabel!.attributedText = myTitle
-        pickerLabel!.textAlignment = .center
-        return pickerLabel!
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 30.0
@@ -283,6 +292,8 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     var laps = [String](repeating: "00:00:00", count: 7)
 
     var timeArray = [Double](repeating: 0, count: 7)
+    var percentArray = [Double](repeating: 0, count: 7)
+
 
     @IBOutlet weak var forwardTimer: UILabel!
     

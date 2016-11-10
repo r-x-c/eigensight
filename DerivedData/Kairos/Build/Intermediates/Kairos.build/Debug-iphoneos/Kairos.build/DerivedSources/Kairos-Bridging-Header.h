@@ -215,6 +215,7 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, copy) NSString * _Nonnull stopwatchString;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull laps;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull timeArray;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull percentArray;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified forwardTimer;
 - (void)updateCountdown;
 - (void)updateForwardTimer;

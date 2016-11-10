@@ -15,170 +15,178 @@ provides-member:
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "dismissKeyboardView"]
 provides-dynamic-lookup:
-- "textFieldShouldReturn"
-- "banner"
-- "sendMessage"
-- "pickerData"
-- "pastActivity"
-- "curr_hour"
-- "didPressCrash"
-- "curr_min"
-- "pickerText"
-- "laps"
-- "curr_sec"
-- "remoteConfig"
-- "c_seconds"
-- "storageRef"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "sendTimeLog"
-- "secondsString"
-- "didSendMessage"
-- "sendButton"
-- "updateCountdown"
-- "clientTable"
-- "date_string"
-- "hideKeyboardWhenTappedAround"
-- "tableView"
-- "tableView"
-- "timeDelta"
-- "numberOfComponentsInPickerView"
-- "scrollToBottom"
-- "setWatch"
-- "currActivity"
-- "countdown"
-- "textField"
-- "textField"
-- "forwardTimer"
-- "showAlert"
-- "ref"
-- "activityIndex"
-- "updateForwardTimer"
-- "messages"
-- "countdownString"
-- "topView"
-- "didPressFreshConfig"
-- "dismissKeyboardView"
-- "timer"
-- "defaults"
+- "percentArray"
 - "timeArray"
-- "configureTimeArray"
-- "date_formatter"
-- "hoursString"
-- "logViewLoaded"
-- "signOut"
-- "signOut"
-- "hours"
-- "configureDatabase"
-- "minutes"
-- "configureStorage"
-- "c_minutes"
-- "viewDidLoad"
-- "configureRemoteConfig"
-- "fetchConfig"
-- "minutesString"
-- "currentDate"
-- "seconds"
+- "banner"
 - "c_hours"
+- "minutesString"
+- "updateForwardTimer"
+- "signOut"
+- "signOut"
+- "curr_sec"
+- "textField"
+- "textField"
+- "fetchConfig"
+- "curr_min"
 - "stopwatchString"
-- "msglength"
-- "numberOfComponents"
+- "currActivity"
+- "configureStorage"
+- "viewDidLoad"
+- "scrollToBottom"
+- "sendButton"
+- "hoursString"
+- "configureRemoteConfig"
+- "curr_hour"
+- "didPressFreshConfig"
+- "activityIndex"
+- "laps"
+- "timer"
+- "configureDatabase"
+- "formatter_timestamp"
+- "topView"
+- "seconds"
+- "timeDelta"
+- "ref"
+- "clientTable"
+- "updateCountdown"
 - "mainClock"
+- "tableView"
+- "tableView"
+- "defaults"
+- "dismissKeyboardView"
+- "numberOfComponentsInPickerView"
+- "date_string"
+- "minutes"
+- "countdown"
+- "messages"
+- "didSendMessage"
+- "sendTimeLog"
+- "setWatch"
+- "logViewLoaded"
+- "forwardTimer"
+- "msglength"
+- "pickerText"
+- "sendMessage"
+- "hours"
+- "pickerData"
+- "date_formatter"
+- "pastActivity"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "showAlert"
+- "didPressCrash"
+- "c_seconds"
+- "countdownString"
+- "configureTimeArray"
+- "storageRef"
+- "currentDate"
+- "secondsString"
+- "numberOfComponents"
+- "hideKeyboardWhenTappedAround"
+- "remoteConfig"
+- "textFieldShouldReturn"
+- "c_minutes"
 depends-top-level:
-- "kBannerAdUnitID"
-- "NSRange"
-- "Bool"
-- !private "Data"
-- "NSAttributedString"
-- !private "UIColor"
-- !private "+"
-- !private "Dictionary"
-- !private "Date"
-- !private "=="
-- "AssignmentPrecedence"
-- "CastingPrecedence"
-- "FIRRemoteConfig"
-- "UserDefaults"
-- "NSCoder"
-- "FIRDataSnapshot"
-- !private "/"
-- !private "UIFont"
-- "FCViewController"
-- "Double"
-- !private "-="
-- !private "NSForegroundColorAttributeName"
-- "UITextField"
-- !private "<="
-- !private "UITapGestureRecognizer"
-- !private ">"
-- !private "UIImage"
-- "Array"
-- !private "FIRApp"
-- !private "URL"
-- "DateFormatter"
-- "String"
-- "UITableViewCell"
-- !private "UIEdgeInsets"
-- !private "!="
-- !private "INT64_MAX"
-- !private "NSFontAttributeName"
-- "FIRStorageReference"
-- !private "NSError"
-- "CGFloat"
-- "UIView"
-- !private "DispatchQueue"
 - !private "Void"
-- "UIPickerViewDelegate"
-- !private "Constants"
-- !private "FIRCrashMessage"
-- !private "FIRDatabase"
-- "UIPickerViewDataSource"
-- "NSDate"
-- !private "!"
-- !private "UnicodeScalarType"
-- "UILabel"
-- "defaultsKeys"
-- !private "AppState"
-- "Int"
-- "UIPickerView"
-- "FIRDatabaseHandle"
-- !private "fatalError"
-- "AnyObject"
-- !private "+="
-- !private "UIAlertAction"
+- "NSRange"
 - "FIRDatabaseReference"
-- "UITableViewDataSource"
-- "Timer"
+- !private "-="
+- !private "!="
+- "FIRRemoteConfig"
 - !private "FIRStorage"
-- "StringLiteralType"
-- !private "NSIndexPath"
-- !private "dump"
-- !private "UIAlertController"
-- "UITableView"
-- "UIButton"
-- !private "-"
-- "NSNumber"
-- "UINavigationControllerDelegate"
+- "defaultsKeys"
+- "NSAttributedString"
+- "UITextField"
+- !private "UIImage"
+- !private "FIRDatabase"
+- "Bool"
 - "GADBannerView"
-- !private "FIRRemoteConfigSettings"
+- "NSCoder"
+- "UITableView"
+- !private "NSForegroundColorAttributeName"
+- "UIPickerViewDelegate"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- "Timer"
+- "UIPickerViewDataSource"
+- !private "=="
+- !private "UnicodeScalarType"
+- !private "UIEdgeInsets"
+- !private "NSTimeZone"
+- !private "URL"
+- !private "FIRApp"
+- "AnyObject"
+- "StringLiteralType"
 - "IndexPath"
-- "UIImagePickerControllerDelegate"
-- "UITextFieldDelegate"
-- !private "print"
-- !private "formatTimeString"
-- "UITableViewDelegate"
-- !private "FIRAuth"
-- "UIViewController"
+- "Int"
+- !private "!"
+- !private "NSError"
+- !private "NSString"
 - !private "BooleanLiteralType"
+- !private "dump"
+- !private "+="
+- !private "FIRRemoteConfigSettings"
+- "String"
+- "DateFormatter"
+- "NSNumber"
+- "UIView"
+- "CGFloat"
+- "UITableViewCell"
+- "Array"
+- "UserDefaults"
+- "NSDate"
+- "UILabel"
+- "FIRDataSnapshot"
+- "FCViewController"
+- !private "FIRAuth"
+- !private "print"
+- "kBannerAdUnitID"
+- !private "Dictionary"
+- "FIRDatabaseHandle"
+- "UIButton"
+- !private "+"
+- !private "FIRCrashMessage"
+- !private "UIAlertController"
+- !private "/"
+- !private "TimeZone"
+- "Double"
+- "UIPickerView"
+- !private "<="
+- !private "Constants"
+- !private "*"
+- "UINavigationControllerDelegate"
+- !private ">"
+- !private "fatalError"
+- "UIImagePickerControllerDelegate"
+- !private "DispatchQueue"
+- !private "UIFont"
+- !private "NSIndexPath"
+- !private "INT64_MAX"
+- "UITextFieldDelegate"
+- "FIRStorageReference"
+- !private "AppState"
+- "UIViewController"
+- "UITableViewDelegate"
+- !private "-"
+- "UITableViewDataSource"
+- !private "Date"
+- !private "UIAlertAction"
+- !private "formatTimeString"
+- !private "Data"
+- !private "UIColor"
+- !private "UITapGestureRecognizer"
+- !private "NSFontAttributeName"
+- !private "formatShortTimeString"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "NSDateHour"]
 - !private ["Ps16AbsoluteValuable", "NSDateMinute"]
 - !private ["Ps16AbsoluteValuable", "NSDateSecond"]
+- !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "AppState"]
 - !private ["Ps9AnyObject", "Constants"]
 - !private ["Ps9AnyObject", "Data"]
@@ -195,11 +203,14 @@ depends-member:
 - !private ["Ps9AnyObject", "FIRStorage"]
 - !private ["Ps9AnyObject", "INT64_MAX"]
 - !private ["Ps9AnyObject", "IndexPath"]
+- !private ["Ps9AnyObject", "Int"]
 - !private ["Ps9AnyObject", "NSAttributedString"]
 - ["Ps9AnyObject", "NSDate"]
 - !private ["Ps9AnyObject", "NSFontAttributeName"]
 - !private ["Ps9AnyObject", "NSForegroundColorAttributeName"]
 - !private ["Ps9AnyObject", "NSIndexPath"]
+- !private ["Ps9AnyObject", "NSString"]
+- !private ["Ps9AnyObject", "NSTimeZone"]
 - ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "Style"]
 - ["Ps9AnyObject", "Timer"]
@@ -279,7 +290,9 @@ depends-member:
 - !private ["Ps9AnyObject", "fetch"]
 - ["Ps9AnyObject", "fetchConfig"]
 - !private ["Ps9AnyObject", "font"]
+- !private ["Ps9AnyObject", "formatShortTimeString"]
 - !private ["Ps9AnyObject", "formatTimeString"]
+- ["Ps9AnyObject", "formatter_timestamp"]
 - ["Ps9AnyObject", "forwardTimer"]
 - ["Ps9AnyObject", "goToBottom"]
 - !private ["Ps9AnyObject", "hasPrefix"]
@@ -321,6 +334,7 @@ depends-member:
 - !private ["Ps9AnyObject", "observeSingleEvent"]
 - !private ["Ps9AnyObject", "options"]
 - ["Ps9AnyObject", "pastActivity"]
+- ["Ps9AnyObject", "percentArray"]
 - !private ["Ps9AnyObject", "photoURL"]
 - ["Ps9AnyObject", "pickerData"]
 - ["Ps9AnyObject", "pickerText"]
@@ -386,6 +400,7 @@ depends-member:
 - ["Ps9AnyObject", "timeDelta"]
 - !private ["Ps9AnyObject", "timeIntervalSince1970"]
 - !private ["Ps9AnyObject", "timeStyle"]
+- !private ["Ps9AnyObject", "timeZone"]
 - ["Ps9AnyObject", "timer"]
 - !private ["Ps9AnyObject", "tintColor"]
 - ["Ps9AnyObject", "topView"]
@@ -414,7 +429,9 @@ depends-member:
 - !private ["Sa", "append"]
 - !private ["Sa", "count"]
 - ["Sa", "deinit"]
+- !private ["Sa", "enumerated"]
 - ["Sa", "init"]
+- !private ["Sa", "reduce"]
 - !private ["Sa", "subscript"]
 - ["Ps23BidirectionalCollection", "Element"]
 - !private ["Ps23BidirectionalCollection", "Index"]
@@ -425,7 +442,9 @@ depends-member:
 - ["Ps23BidirectionalCollection", "_Element"]
 - !private ["Ps23BidirectionalCollection", "append"]
 - !private ["Ps23BidirectionalCollection", "count"]
+- !private ["Ps23BidirectionalCollection", "enumerated"]
 - ["Ps23BidirectionalCollection", "init"]
+- !private ["Ps23BidirectionalCollection", "reduce"]
 - !private ["Ps23BidirectionalCollection", "row"]
 - !private ["Ps23BidirectionalCollection", "subscript"]
 - ["Ps22BidirectionalIndexable", "Element"]
@@ -437,7 +456,9 @@ depends-member:
 - ["Ps22BidirectionalIndexable", "_Element"]
 - !private ["Ps22BidirectionalIndexable", "append"]
 - !private ["Ps22BidirectionalIndexable", "count"]
+- !private ["Ps22BidirectionalIndexable", "enumerated"]
 - ["Ps22BidirectionalIndexable", "init"]
+- !private ["Ps22BidirectionalIndexable", "reduce"]
 - !private ["Ps22BidirectionalIndexable", "row"]
 - !private ["Ps22BidirectionalIndexable", "subscript"]
 - !private ["Vs18BidirectionalSlice", "Index"]
@@ -449,9 +470,11 @@ depends-member:
 - !private ["Ps19BinaryFloatingPoint", "NSDateHour"]
 - !private ["Ps19BinaryFloatingPoint", "NSDateMinute"]
 - !private ["Ps19BinaryFloatingPoint", "NSDateSecond"]
+- !private ["Ps19BinaryFloatingPoint", "init"]
 - !private ["Ps17BitwiseOperations", "IntegerLiteralType"]
 - !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
+- !private ["Ps17BitwiseOperations", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]
 - ["CC6Kairos16FCViewController14BorderedButton", "NSCoder"]
@@ -518,6 +541,7 @@ depends-member:
 - !private ["Ps7CVarArg", "Index"]
 - !private ["Ps7CVarArg", "IndexDistance"]
 - !private ["Ps7CVarArg", "IndexPath"]
+- !private ["Ps7CVarArg", "Int"]
 - !private ["Ps7CVarArg", "IntegerLiteralType"]
 - ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "Key"]
@@ -529,6 +553,8 @@ depends-member:
 - !private ["Ps7CVarArg", "NSFontAttributeName"]
 - !private ["Ps7CVarArg", "NSForegroundColorAttributeName"]
 - !private ["Ps7CVarArg", "NSIndexPath"]
+- !private ["Ps7CVarArg", "NSString"]
+- !private ["Ps7CVarArg", "NSTimeZone"]
 - !private ["Ps7CVarArg", "Stride"]
 - ["Ps7CVarArg", "String"]
 - !private ["Ps7CVarArg", "Style"]
@@ -610,12 +636,15 @@ depends-member:
 - !private ["Ps7CVarArg", "displayName"]
 - !private ["Ps7CVarArg", "dump"]
 - !private ["Ps7CVarArg", "endEditing"]
+- !private ["Ps7CVarArg", "enumerated"]
 - !private ["Ps7CVarArg", "exists"]
 - !private ["Ps7CVarArg", "fatalError"]
 - !private ["Ps7CVarArg", "fetch"]
 - ["Ps7CVarArg", "fetchConfig"]
 - !private ["Ps7CVarArg", "font"]
+- !private ["Ps7CVarArg", "formatShortTimeString"]
 - !private ["Ps7CVarArg", "formatTimeString"]
+- ["Ps7CVarArg", "formatter_timestamp"]
 - ["Ps7CVarArg", "forwardTimer"]
 - ["Ps7CVarArg", "goToBottom"]
 - !private ["Ps7CVarArg", "hasPrefix"]
@@ -657,12 +686,14 @@ depends-member:
 - !private ["Ps7CVarArg", "observeSingleEvent"]
 - !private ["Ps7CVarArg", "options"]
 - ["Ps7CVarArg", "pastActivity"]
+- ["Ps7CVarArg", "percentArray"]
 - !private ["Ps7CVarArg", "photoURL"]
 - ["Ps7CVarArg", "pickerData"]
 - ["Ps7CVarArg", "pickerText"]
 - ["Ps7CVarArg", "pickerView"]
 - !private ["Ps7CVarArg", "present"]
 - !private ["Ps7CVarArg", "print"]
+- !private ["Ps7CVarArg", "reduce"]
 - ["Ps7CVarArg", "ref"]
 - !private ["Ps7CVarArg", "reference"]
 - !private ["Ps7CVarArg", "register"]
@@ -722,6 +753,7 @@ depends-member:
 - ["Ps7CVarArg", "timeDelta"]
 - !private ["Ps7CVarArg", "timeIntervalSince1970"]
 - !private ["Ps7CVarArg", "timeStyle"]
+- !private ["Ps7CVarArg", "timeZone"]
 - ["Ps7CVarArg", "timer"]
 - !private ["Ps7CVarArg", "tintColor"]
 - ["Ps7CVarArg", "topView"]
@@ -752,7 +784,9 @@ depends-member:
 - ["Ps10Collection", "_Element"]
 - !private ["Ps10Collection", "append"]
 - !private ["Ps10Collection", "count"]
+- !private ["Ps10Collection", "enumerated"]
 - ["Ps10Collection", "init"]
+- !private ["Ps10Collection", "reduce"]
 - !private ["Ps10Collection", "row"]
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "IntegerLiteralType"]
@@ -786,6 +820,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexPath"]
+- !private ["Ps28CustomDebugStringConvertible", "Int"]
 - ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
 - !private ["Ps28CustomDebugStringConvertible", "NSAttributedString"]
@@ -796,6 +831,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "NSFontAttributeName"]
 - !private ["Ps28CustomDebugStringConvertible", "NSForegroundColorAttributeName"]
 - !private ["Ps28CustomDebugStringConvertible", "NSIndexPath"]
+- !private ["Ps28CustomDebugStringConvertible", "NSString"]
+- !private ["Ps28CustomDebugStringConvertible", "NSTimeZone"]
 - ["Ps28CustomDebugStringConvertible", "String"]
 - !private ["Ps28CustomDebugStringConvertible", "Style"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
@@ -876,12 +913,15 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "displayName"]
 - !private ["Ps28CustomDebugStringConvertible", "dump"]
 - !private ["Ps28CustomDebugStringConvertible", "endEditing"]
+- !private ["Ps28CustomDebugStringConvertible", "enumerated"]
 - !private ["Ps28CustomDebugStringConvertible", "exists"]
 - !private ["Ps28CustomDebugStringConvertible", "fatalError"]
 - !private ["Ps28CustomDebugStringConvertible", "fetch"]
 - ["Ps28CustomDebugStringConvertible", "fetchConfig"]
 - !private ["Ps28CustomDebugStringConvertible", "font"]
+- !private ["Ps28CustomDebugStringConvertible", "formatShortTimeString"]
 - !private ["Ps28CustomDebugStringConvertible", "formatTimeString"]
+- ["Ps28CustomDebugStringConvertible", "formatter_timestamp"]
 - ["Ps28CustomDebugStringConvertible", "forwardTimer"]
 - ["Ps28CustomDebugStringConvertible", "goToBottom"]
 - !private ["Ps28CustomDebugStringConvertible", "hasPrefix"]
@@ -923,12 +963,14 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "observeSingleEvent"]
 - !private ["Ps28CustomDebugStringConvertible", "options"]
 - ["Ps28CustomDebugStringConvertible", "pastActivity"]
+- ["Ps28CustomDebugStringConvertible", "percentArray"]
 - !private ["Ps28CustomDebugStringConvertible", "photoURL"]
 - ["Ps28CustomDebugStringConvertible", "pickerData"]
 - ["Ps28CustomDebugStringConvertible", "pickerText"]
 - ["Ps28CustomDebugStringConvertible", "pickerView"]
 - !private ["Ps28CustomDebugStringConvertible", "present"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "reduce"]
 - ["Ps28CustomDebugStringConvertible", "ref"]
 - !private ["Ps28CustomDebugStringConvertible", "reference"]
 - !private ["Ps28CustomDebugStringConvertible", "register"]
@@ -989,6 +1031,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "timeDelta"]
 - !private ["Ps28CustomDebugStringConvertible", "timeIntervalSince1970"]
 - !private ["Ps28CustomDebugStringConvertible", "timeStyle"]
+- !private ["Ps28CustomDebugStringConvertible", "timeZone"]
 - ["Ps28CustomDebugStringConvertible", "timer"]
 - !private ["Ps28CustomDebugStringConvertible", "tintColor"]
 - ["Ps28CustomDebugStringConvertible", "topView"]
@@ -1039,9 +1082,11 @@ depends-member:
 - !private ["Ps17CustomReflectable", "characters"]
 - !private ["Ps17CustomReflectable", "components"]
 - !private ["Ps17CustomReflectable", "count"]
+- !private ["Ps17CustomReflectable", "enumerated"]
 - !private ["Ps17CustomReflectable", "hasPrefix"]
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "length"]
+- !private ["Ps17CustomReflectable", "reduce"]
 - !private ["Ps17CustomReflectable", "row"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "AppState"]
@@ -1063,6 +1108,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Index"]
 - !private ["Ps23CustomStringConvertible", "IndexDistance"]
 - !private ["Ps23CustomStringConvertible", "IndexPath"]
+- !private ["Ps23CustomStringConvertible", "Int"]
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "Key"]
@@ -1074,6 +1120,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSFontAttributeName"]
 - !private ["Ps23CustomStringConvertible", "NSForegroundColorAttributeName"]
 - !private ["Ps23CustomStringConvertible", "NSIndexPath"]
+- !private ["Ps23CustomStringConvertible", "NSString"]
+- !private ["Ps23CustomStringConvertible", "NSTimeZone"]
 - !private ["Ps23CustomStringConvertible", "Stride"]
 - ["Ps23CustomStringConvertible", "String"]
 - !private ["Ps23CustomStringConvertible", "Style"]
@@ -1157,12 +1205,15 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "displayName"]
 - !private ["Ps23CustomStringConvertible", "dump"]
 - !private ["Ps23CustomStringConvertible", "endEditing"]
+- !private ["Ps23CustomStringConvertible", "enumerated"]
 - !private ["Ps23CustomStringConvertible", "exists"]
 - !private ["Ps23CustomStringConvertible", "fatalError"]
 - !private ["Ps23CustomStringConvertible", "fetch"]
 - ["Ps23CustomStringConvertible", "fetchConfig"]
 - !private ["Ps23CustomStringConvertible", "font"]
+- !private ["Ps23CustomStringConvertible", "formatShortTimeString"]
 - !private ["Ps23CustomStringConvertible", "formatTimeString"]
+- ["Ps23CustomStringConvertible", "formatter_timestamp"]
 - ["Ps23CustomStringConvertible", "forwardTimer"]
 - ["Ps23CustomStringConvertible", "goToBottom"]
 - !private ["Ps23CustomStringConvertible", "hasPrefix"]
@@ -1204,12 +1255,14 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "observeSingleEvent"]
 - !private ["Ps23CustomStringConvertible", "options"]
 - ["Ps23CustomStringConvertible", "pastActivity"]
+- ["Ps23CustomStringConvertible", "percentArray"]
 - !private ["Ps23CustomStringConvertible", "photoURL"]
 - ["Ps23CustomStringConvertible", "pickerData"]
 - ["Ps23CustomStringConvertible", "pickerText"]
 - ["Ps23CustomStringConvertible", "pickerView"]
 - !private ["Ps23CustomStringConvertible", "present"]
 - !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "reduce"]
 - ["Ps23CustomStringConvertible", "ref"]
 - !private ["Ps23CustomStringConvertible", "reference"]
 - !private ["Ps23CustomStringConvertible", "register"]
@@ -1270,6 +1323,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "timeDelta"]
 - !private ["Ps23CustomStringConvertible", "timeIntervalSince1970"]
 - !private ["Ps23CustomStringConvertible", "timeStyle"]
+- !private ["Ps23CustomStringConvertible", "timeZone"]
 - ["Ps23CustomStringConvertible", "timer"]
 - !private ["Ps23CustomStringConvertible", "tintColor"]
 - ["Ps23CustomStringConvertible", "topView"]
@@ -1294,6 +1348,7 @@ depends-member:
 - ["CSo13DateFormatter", "init"]
 - !private ["CSo13DateFormatter", "string"]
 - !private ["CSo13DateFormatter", "timeStyle"]
+- !private ["CSo13DateFormatter", "timeZone"]
 - !private ["Vs27DefaultBidirectionalIndices", "Index"]
 - !private ["Vs27DefaultBidirectionalIndices", "Iterator"]
 - !private ["Vs27DefaultBidirectionalIndices", "SubSequence"]
@@ -1319,6 +1374,10 @@ depends-member:
 - !private ["Sd", "NSDateMinute"]
 - !private ["Sd", "NSDateSecond"]
 - ["Sd", "deinit"]
+- !private ["Sd", "init"]
+- !private ["Vs18EnumeratedIterator", "Element"]
+- !private ["Vs18EnumeratedSequence", "Iterator"]
+- ["Vs18EnumeratedSequence", "deinit"]
 - !private ["Ps9Equatable", "AppState"]
 - !private ["Ps9Equatable", "Constants"]
 - !private ["Ps9Equatable", "Data"]
@@ -1335,6 +1394,7 @@ depends-member:
 - !private ["Ps9Equatable", "FIRStorage"]
 - !private ["Ps9Equatable", "INT64_MAX"]
 - !private ["Ps9Equatable", "IndexPath"]
+- !private ["Ps9Equatable", "Int"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "NSAttributedString"]
 - ["Ps9Equatable", "NSDate"]
@@ -1344,6 +1404,8 @@ depends-member:
 - !private ["Ps9Equatable", "NSFontAttributeName"]
 - !private ["Ps9Equatable", "NSForegroundColorAttributeName"]
 - !private ["Ps9Equatable", "NSIndexPath"]
+- !private ["Ps9Equatable", "NSString"]
+- !private ["Ps9Equatable", "NSTimeZone"]
 - !private ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "Stride"]
 - ["Ps9Equatable", "String"]
@@ -1434,7 +1496,9 @@ depends-member:
 - !private ["Ps9Equatable", "fetch"]
 - ["Ps9Equatable", "fetchConfig"]
 - !private ["Ps9Equatable", "font"]
+- !private ["Ps9Equatable", "formatShortTimeString"]
 - !private ["Ps9Equatable", "formatTimeString"]
+- ["Ps9Equatable", "formatter_timestamp"]
 - ["Ps9Equatable", "forwardTimer"]
 - ["Ps9Equatable", "goToBottom"]
 - !private ["Ps9Equatable", "hasPrefix"]
@@ -1480,6 +1544,7 @@ depends-member:
 - !private ["Ps9Equatable", "observeSingleEvent"]
 - !private ["Ps9Equatable", "options"]
 - ["Ps9Equatable", "pastActivity"]
+- ["Ps9Equatable", "percentArray"]
 - !private ["Ps9Equatable", "photoURL"]
 - ["Ps9Equatable", "pickerData"]
 - ["Ps9Equatable", "pickerText"]
@@ -1548,6 +1613,7 @@ depends-member:
 - ["Ps9Equatable", "timeDelta"]
 - !private ["Ps9Equatable", "timeIntervalSince1970"]
 - !private ["Ps9Equatable", "timeStyle"]
+- !private ["Ps9Equatable", "timeZone"]
 - ["Ps9Equatable", "timer"]
 - !private ["Ps9Equatable", "tintColor"]
 - ["Ps9Equatable", "topView"]
@@ -1572,9 +1638,11 @@ depends-member:
 - ["Ps25ExpressibleByArrayLiteral", "_Element"]
 - !private ["Ps25ExpressibleByArrayLiteral", "append"]
 - !private ["Ps25ExpressibleByArrayLiteral", "count"]
+- !private ["Ps25ExpressibleByArrayLiteral", "enumerated"]
 - !private ["Ps25ExpressibleByArrayLiteral", "highlighted"]
 - ["Ps25ExpressibleByArrayLiteral", "init"]
 - !private ["Ps25ExpressibleByArrayLiteral", "normal"]
+- !private ["Ps25ExpressibleByArrayLiteral", "reduce"]
 - !private ["Ps25ExpressibleByArrayLiteral", "row"]
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
@@ -1591,6 +1659,7 @@ depends-member:
 - !private ["Ps25ExpressibleByFloatLiteral", "NSDateHour"]
 - !private ["Ps25ExpressibleByFloatLiteral", "NSDateMinute"]
 - !private ["Ps25ExpressibleByFloatLiteral", "NSDateSecond"]
+- !private ["Ps25ExpressibleByFloatLiteral", "init"]
 - !private ["Ps25ExpressibleByFloatLiteral", "intValue"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "NSDateHour"]
@@ -1598,6 +1667,7 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "NSDateSecond"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "intValue"]
 - !private ["Ps32ExpressibleByStringInterpolation", "characters"]
 - !private ["Ps32ExpressibleByStringInterpolation", "components"]
@@ -1648,7 +1718,10 @@ depends-member:
 - !private ["C6Kairos16FCViewController", "NSIndexPath"]
 - ["C6Kairos16FCViewController", "NSNumber"]
 - ["C6Kairos16FCViewController", "NSRange"]
+- !private ["C6Kairos16FCViewController", "NSString"]
+- !private ["C6Kairos16FCViewController", "NSTimeZone"]
 - ["C6Kairos16FCViewController", "String"]
+- !private ["C6Kairos16FCViewController", "TimeZone"]
 - ["C6Kairos16FCViewController", "Timer"]
 - !private ["C6Kairos16FCViewController", "UIAlertAction"]
 - !private ["C6Kairos16FCViewController", "UIAlertController"]
@@ -1696,7 +1769,9 @@ depends-member:
 - !private ["C6Kairos16FCViewController", "dump"]
 - !private ["C6Kairos16FCViewController", "fatalError"]
 - ["C6Kairos16FCViewController", "fetchConfig"]
+- !private ["C6Kairos16FCViewController", "formatShortTimeString"]
 - !private ["C6Kairos16FCViewController", "formatTimeString"]
+- ["C6Kairos16FCViewController", "formatter_timestamp"]
 - ["C6Kairos16FCViewController", "forwardTimer"]
 - !private ["C6Kairos16FCViewController", "goToBottom"]
 - !private ["C6Kairos16FCViewController", "hideKeyboardWhenTappedAround"]
@@ -1722,6 +1797,7 @@ depends-member:
 - ["C6Kairos16FCViewController", "numberOfSections"]
 - ["C6Kairos16FCViewController", "numberOfSectionsInTableView"]
 - ["C6Kairos16FCViewController", "pastActivity"]
+- ["C6Kairos16FCViewController", "percentArray"]
 - ["C6Kairos16FCViewController", "pickerData"]
 - ["C6Kairos16FCViewController", "pickerText"]
 - ["C6Kairos16FCViewController", "pickerView"]
@@ -1837,12 +1913,14 @@ depends-member:
 - !private ["Ps13FloatingPoint", "NSDateHour"]
 - !private ["Ps13FloatingPoint", "NSDateMinute"]
 - !private ["Ps13FloatingPoint", "NSDateSecond"]
+- !private ["Ps13FloatingPoint", "init"]
 - !private ["CSo9Formatter", "Style"]
 - !private ["CSo9Formatter", "dateFormat"]
 - !private ["CSo9Formatter", "dateStyle"]
 - ["CSo9Formatter", "init"]
 - !private ["CSo9Formatter", "string"]
 - !private ["CSo9Formatter", "timeStyle"]
+- !private ["CSo9Formatter", "timeZone"]
 - !private ["Ps8Hashable", "AppState"]
 - !private ["Ps8Hashable", "Constants"]
 - !private ["Ps8Hashable", "Data"]
@@ -1859,6 +1937,7 @@ depends-member:
 - !private ["Ps8Hashable", "FIRStorage"]
 - !private ["Ps8Hashable", "INT64_MAX"]
 - !private ["Ps8Hashable", "IndexPath"]
+- !private ["Ps8Hashable", "Int"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "NSAttributedString"]
 - ["Ps8Hashable", "NSDate"]
@@ -1868,6 +1947,8 @@ depends-member:
 - !private ["Ps8Hashable", "NSFontAttributeName"]
 - !private ["Ps8Hashable", "NSForegroundColorAttributeName"]
 - !private ["Ps8Hashable", "NSIndexPath"]
+- !private ["Ps8Hashable", "NSString"]
+- !private ["Ps8Hashable", "NSTimeZone"]
 - !private ["Ps8Hashable", "RawValue"]
 - !private ["Ps8Hashable", "Stride"]
 - ["Ps8Hashable", "String"]
@@ -1958,7 +2039,9 @@ depends-member:
 - !private ["Ps8Hashable", "fetch"]
 - ["Ps8Hashable", "fetchConfig"]
 - !private ["Ps8Hashable", "font"]
+- !private ["Ps8Hashable", "formatShortTimeString"]
 - !private ["Ps8Hashable", "formatTimeString"]
+- ["Ps8Hashable", "formatter_timestamp"]
 - ["Ps8Hashable", "forwardTimer"]
 - ["Ps8Hashable", "goToBottom"]
 - !private ["Ps8Hashable", "hasPrefix"]
@@ -2002,6 +2085,7 @@ depends-member:
 - !private ["Ps8Hashable", "observeSingleEvent"]
 - !private ["Ps8Hashable", "options"]
 - ["Ps8Hashable", "pastActivity"]
+- ["Ps8Hashable", "percentArray"]
 - !private ["Ps8Hashable", "photoURL"]
 - ["Ps8Hashable", "pickerData"]
 - ["Ps8Hashable", "pickerText"]
@@ -2070,6 +2154,7 @@ depends-member:
 - ["Ps8Hashable", "timeDelta"]
 - !private ["Ps8Hashable", "timeIntervalSince1970"]
 - !private ["Ps8Hashable", "timeStyle"]
+- !private ["Ps8Hashable", "timeZone"]
 - ["Ps8Hashable", "timer"]
 - !private ["Ps8Hashable", "tintColor"]
 - ["Ps8Hashable", "topView"]
@@ -2099,7 +2184,9 @@ depends-member:
 - ["Ps9Indexable", "_Element"]
 - !private ["Ps9Indexable", "append"]
 - !private ["Ps9Indexable", "count"]
+- !private ["Ps9Indexable", "enumerated"]
 - ["Ps9Indexable", "init"]
+- !private ["Ps9Indexable", "reduce"]
 - !private ["Ps9Indexable", "row"]
 - !private ["Ps9Indexable", "subscript"]
 - ["Ps13IndexableBase", "Element"]
@@ -2113,7 +2200,9 @@ depends-member:
 - ["Ps13IndexableBase", "_Element"]
 - !private ["Ps13IndexableBase", "append"]
 - !private ["Ps13IndexableBase", "count"]
+- !private ["Ps13IndexableBase", "enumerated"]
 - ["Ps13IndexableBase", "init"]
+- !private ["Ps13IndexableBase", "reduce"]
 - !private ["Ps13IndexableBase", "row"]
 - !private ["Ps13IndexableBase", "subscript"]
 - ["Vs16IndexingIterator", "Element"]
@@ -2121,6 +2210,7 @@ depends-member:
 - !private ["Si", "Stride"]
 - !private ["Si", "_DisabledRangeIndex"]
 - ["Si", "deinit"]
+- !private ["Si", "init"]
 - !private ["Vs5Int16", "deinit"]
 - !private ["Vs5Int32", "deinit"]
 - ["Vs5Int64", "deinit"]
@@ -2128,9 +2218,11 @@ depends-member:
 - !private ["Ps7Integer", "IntegerLiteralType"]
 - !private ["Ps7Integer", "Stride"]
 - !private ["Ps7Integer", "_DisabledRangeIndex"]
+- !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "IntegerLiteralType"]
 - !private ["Ps17IntegerArithmetic", "Stride"]
 - !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
+- !private ["Ps17IntegerArithmetic", "init"]
 - ["Ps16IteratorProtocol", "Element"]
 - !private ["Ps25LosslessStringConvertible", "NSDateHour"]
 - !private ["Ps25LosslessStringConvertible", "NSDateMinute"]
@@ -2159,7 +2251,9 @@ depends-member:
 - ["Ps17MutableCollection", "_Element"]
 - !private ["Ps17MutableCollection", "append"]
 - !private ["Ps17MutableCollection", "count"]
+- !private ["Ps17MutableCollection", "enumerated"]
 - ["Ps17MutableCollection", "init"]
+- !private ["Ps17MutableCollection", "reduce"]
 - !private ["Ps17MutableCollection", "row"]
 - !private ["Ps17MutableCollection", "subscript"]
 - ["Ps16MutableIndexable", "Element"]
@@ -2170,7 +2264,9 @@ depends-member:
 - ["Ps16MutableIndexable", "_Element"]
 - !private ["Ps16MutableIndexable", "append"]
 - !private ["Ps16MutableIndexable", "count"]
+- !private ["Ps16MutableIndexable", "enumerated"]
 - ["Ps16MutableIndexable", "init"]
+- !private ["Ps16MutableIndexable", "reduce"]
 - !private ["Ps16MutableIndexable", "row"]
 - !private ["Ps16MutableIndexable", "subscript"]
 - ["CSo18NSAttributedString", "deinit"]
@@ -2192,11 +2288,14 @@ depends-member:
 - !private ["PSo8NSCoding", "FIRStorage"]
 - !private ["PSo8NSCoding", "INT64_MAX"]
 - !private ["PSo8NSCoding", "IndexPath"]
+- !private ["PSo8NSCoding", "Int"]
 - !private ["PSo8NSCoding", "NSAttributedString"]
 - ["PSo8NSCoding", "NSDate"]
 - !private ["PSo8NSCoding", "NSFontAttributeName"]
 - !private ["PSo8NSCoding", "NSForegroundColorAttributeName"]
 - !private ["PSo8NSCoding", "NSIndexPath"]
+- !private ["PSo8NSCoding", "NSString"]
+- !private ["PSo8NSCoding", "NSTimeZone"]
 - ["PSo8NSCoding", "String"]
 - !private ["PSo8NSCoding", "Style"]
 - ["PSo8NSCoding", "Timer"]
@@ -2262,7 +2361,9 @@ depends-member:
 - !private ["PSo8NSCoding", "fatalError"]
 - ["PSo8NSCoding", "fetchConfig"]
 - !private ["PSo8NSCoding", "font"]
+- !private ["PSo8NSCoding", "formatShortTimeString"]
 - !private ["PSo8NSCoding", "formatTimeString"]
+- ["PSo8NSCoding", "formatter_timestamp"]
 - ["PSo8NSCoding", "forwardTimer"]
 - ["PSo8NSCoding", "goToBottom"]
 - !private ["PSo8NSCoding", "hasPrefix"]
@@ -2297,6 +2398,7 @@ depends-member:
 - ["PSo8NSCoding", "numberOfSections"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
 - ["PSo8NSCoding", "pastActivity"]
+- ["PSo8NSCoding", "percentArray"]
 - ["PSo8NSCoding", "pickerData"]
 - ["PSo8NSCoding", "pickerText"]
 - ["PSo8NSCoding", "pickerView"]
@@ -2350,6 +2452,7 @@ depends-member:
 - ["PSo8NSCoding", "timeDelta"]
 - !private ["PSo8NSCoding", "timeIntervalSince1970"]
 - !private ["PSo8NSCoding", "timeStyle"]
+- !private ["PSo8NSCoding", "timeZone"]
 - ["PSo8NSCoding", "timer"]
 - !private ["PSo8NSCoding", "tintColor"]
 - ["PSo8NSCoding", "topView"]
@@ -2381,6 +2484,7 @@ depends-member:
 - !private ["PSo9NSCopying", "string"]
 - !private ["PSo9NSCopying", "timeIntervalSince1970"]
 - !private ["PSo9NSCopying", "timeStyle"]
+- !private ["PSo9NSCopying", "timeZone"]
 - !private ["PSo9NSCopying", "white"]
 - ["CSo6NSDate", "deinit"]
 - !private ["CSo6NSDate", "hour"]
@@ -2406,11 +2510,14 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "FIRStorage"]
 - !private ["PSo26NSExtensionRequestHandling", "INT64_MAX"]
 - !private ["PSo26NSExtensionRequestHandling", "IndexPath"]
+- !private ["PSo26NSExtensionRequestHandling", "Int"]
 - !private ["PSo26NSExtensionRequestHandling", "NSAttributedString"]
 - ["PSo26NSExtensionRequestHandling", "NSDate"]
 - !private ["PSo26NSExtensionRequestHandling", "NSFontAttributeName"]
 - !private ["PSo26NSExtensionRequestHandling", "NSForegroundColorAttributeName"]
 - !private ["PSo26NSExtensionRequestHandling", "NSIndexPath"]
+- !private ["PSo26NSExtensionRequestHandling", "NSString"]
+- !private ["PSo26NSExtensionRequestHandling", "NSTimeZone"]
 - ["PSo26NSExtensionRequestHandling", "String"]
 - ["PSo26NSExtensionRequestHandling", "Timer"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertAction"]
@@ -2456,7 +2563,9 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "dump"]
 - !private ["PSo26NSExtensionRequestHandling", "fatalError"]
 - ["PSo26NSExtensionRequestHandling", "fetchConfig"]
+- !private ["PSo26NSExtensionRequestHandling", "formatShortTimeString"]
 - !private ["PSo26NSExtensionRequestHandling", "formatTimeString"]
+- ["PSo26NSExtensionRequestHandling", "formatter_timestamp"]
 - ["PSo26NSExtensionRequestHandling", "forwardTimer"]
 - ["PSo26NSExtensionRequestHandling", "goToBottom"]
 - !private ["PSo26NSExtensionRequestHandling", "hideKeyboardWhenTappedAround"]
@@ -2482,6 +2591,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "numberOfSections"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
 - ["PSo26NSExtensionRequestHandling", "pastActivity"]
+- ["PSo26NSExtensionRequestHandling", "percentArray"]
 - ["PSo26NSExtensionRequestHandling", "pickerData"]
 - ["PSo26NSExtensionRequestHandling", "pickerText"]
 - ["PSo26NSExtensionRequestHandling", "pickerView"]
@@ -2582,8 +2692,11 @@ depends-member:
 - !private ["CSo8NSObject", "NSIndexPath"]
 - ["CSo8NSObject", "NSNumber"]
 - ["CSo8NSObject", "NSRange"]
+- !private ["CSo8NSObject", "NSString"]
+- !private ["CSo8NSObject", "NSTimeZone"]
 - ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "Style"]
+- !private ["CSo8NSObject", "TimeZone"]
 - ["CSo8NSObject", "Timer"]
 - !private ["CSo8NSObject", "UIAlertAction"]
 - !private ["CSo8NSObject", "UIAlertController"]
@@ -2667,7 +2780,9 @@ depends-member:
 - !private ["CSo8NSObject", "fetch"]
 - ["CSo8NSObject", "fetchConfig"]
 - !private ["CSo8NSObject", "font"]
+- !private ["CSo8NSObject", "formatShortTimeString"]
 - !private ["CSo8NSObject", "formatTimeString"]
+- ["CSo8NSObject", "formatter_timestamp"]
 - ["CSo8NSObject", "forwardTimer"]
 - ["CSo8NSObject", "goToBottom"]
 - !private ["CSo8NSObject", "hasPrefix"]
@@ -2709,6 +2824,7 @@ depends-member:
 - !private ["CSo8NSObject", "observeSingleEvent"]
 - !private ["CSo8NSObject", "options"]
 - ["CSo8NSObject", "pastActivity"]
+- ["CSo8NSObject", "percentArray"]
 - !private ["CSo8NSObject", "photoURL"]
 - ["CSo8NSObject", "pickerData"]
 - ["CSo8NSObject", "pickerText"]
@@ -2774,6 +2890,7 @@ depends-member:
 - ["CSo8NSObject", "timeDelta"]
 - !private ["CSo8NSObject", "timeIntervalSince1970"]
 - !private ["CSo8NSObject", "timeStyle"]
+- !private ["CSo8NSObject", "timeZone"]
 - ["CSo8NSObject", "timer"]
 - !private ["CSo8NSObject", "tintColor"]
 - ["CSo8NSObject", "topView"]
@@ -2803,11 +2920,14 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "FIRStorage"]
 - !private ["PSo16NSObjectProtocol", "INT64_MAX"]
 - !private ["PSo16NSObjectProtocol", "IndexPath"]
+- !private ["PSo16NSObjectProtocol", "Int"]
 - !private ["PSo16NSObjectProtocol", "NSAttributedString"]
 - ["PSo16NSObjectProtocol", "NSDate"]
 - !private ["PSo16NSObjectProtocol", "NSFontAttributeName"]
 - !private ["PSo16NSObjectProtocol", "NSForegroundColorAttributeName"]
 - !private ["PSo16NSObjectProtocol", "NSIndexPath"]
+- !private ["PSo16NSObjectProtocol", "NSString"]
+- !private ["PSo16NSObjectProtocol", "NSTimeZone"]
 - ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "Style"]
 - ["PSo16NSObjectProtocol", "Timer"]
@@ -2887,7 +3007,9 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "fetch"]
 - ["PSo16NSObjectProtocol", "fetchConfig"]
 - !private ["PSo16NSObjectProtocol", "font"]
+- !private ["PSo16NSObjectProtocol", "formatShortTimeString"]
 - !private ["PSo16NSObjectProtocol", "formatTimeString"]
+- ["PSo16NSObjectProtocol", "formatter_timestamp"]
 - ["PSo16NSObjectProtocol", "forwardTimer"]
 - ["PSo16NSObjectProtocol", "goToBottom"]
 - !private ["PSo16NSObjectProtocol", "hasPrefix"]
@@ -2929,6 +3051,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "observeSingleEvent"]
 - !private ["PSo16NSObjectProtocol", "options"]
 - ["PSo16NSObjectProtocol", "pastActivity"]
+- ["PSo16NSObjectProtocol", "percentArray"]
 - !private ["PSo16NSObjectProtocol", "photoURL"]
 - ["PSo16NSObjectProtocol", "pickerData"]
 - ["PSo16NSObjectProtocol", "pickerText"]
@@ -2994,6 +3117,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "timeDelta"]
 - !private ["PSo16NSObjectProtocol", "timeIntervalSince1970"]
 - !private ["PSo16NSObjectProtocol", "timeStyle"]
+- !private ["PSo16NSObjectProtocol", "timeZone"]
 - ["PSo16NSObjectProtocol", "timer"]
 - !private ["PSo16NSObjectProtocol", "tintColor"]
 - ["PSo16NSObjectProtocol", "topView"]
@@ -3023,10 +3147,12 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "white"]
 - !private ["CSo8NSString", "characters"]
 - !private ["CSo8NSString", "components"]
+- ["CSo8NSString", "deinit"]
 - !private ["CSo8NSString", "hasPrefix"]
 - ["CSo8NSString", "init"]
 - !private ["OSC15NSTextAlignment", "center"]
 - ["OSC15NSTextAlignment", "deinit"]
+- !private ["CSo10NSTimeZone", "init"]
 - !private ["CSo7NSValue", "intValue"]
 - ["Os5Never", "deinit"]
 - !private ["CSo9OS_object", "async"]
@@ -3043,7 +3169,9 @@ depends-member:
 - ["Ps22RandomAccessCollection", "_Element"]
 - !private ["Ps22RandomAccessCollection", "append"]
 - !private ["Ps22RandomAccessCollection", "count"]
+- !private ["Ps22RandomAccessCollection", "enumerated"]
 - ["Ps22RandomAccessCollection", "init"]
+- !private ["Ps22RandomAccessCollection", "reduce"]
 - !private ["Ps22RandomAccessCollection", "row"]
 - !private ["Ps22RandomAccessCollection", "subscript"]
 - ["Ps21RandomAccessIndexable", "Element"]
@@ -3055,7 +3183,9 @@ depends-member:
 - ["Ps21RandomAccessIndexable", "_Element"]
 - !private ["Ps21RandomAccessIndexable", "append"]
 - !private ["Ps21RandomAccessIndexable", "count"]
+- !private ["Ps21RandomAccessIndexable", "enumerated"]
 - ["Ps21RandomAccessIndexable", "init"]
+- !private ["Ps21RandomAccessIndexable", "reduce"]
 - !private ["Ps21RandomAccessIndexable", "row"]
 - !private ["Ps21RandomAccessIndexable", "subscript"]
 - !private ["Vs17RandomAccessSlice", "Index"]
@@ -3072,7 +3202,9 @@ depends-member:
 - ["Ps26RangeReplaceableCollection", "_Element"]
 - !private ["Ps26RangeReplaceableCollection", "append"]
 - !private ["Ps26RangeReplaceableCollection", "count"]
+- !private ["Ps26RangeReplaceableCollection", "enumerated"]
 - ["Ps26RangeReplaceableCollection", "init"]
+- !private ["Ps26RangeReplaceableCollection", "reduce"]
 - !private ["Ps26RangeReplaceableCollection", "subscript"]
 - ["Ps25RangeReplaceableIndexable", "Element"]
 - !private ["Ps25RangeReplaceableIndexable", "Index"]
@@ -3082,7 +3214,9 @@ depends-member:
 - ["Ps25RangeReplaceableIndexable", "_Element"]
 - !private ["Ps25RangeReplaceableIndexable", "append"]
 - !private ["Ps25RangeReplaceableIndexable", "count"]
+- !private ["Ps25RangeReplaceableIndexable", "enumerated"]
 - ["Ps25RangeReplaceableIndexable", "init"]
+- !private ["Ps25RangeReplaceableIndexable", "reduce"]
 - !private ["Ps25RangeReplaceableIndexable", "subscript"]
 - !private ["Ps16RawRepresentable", "RawValue"]
 - !private ["Ps16RawRepresentable", "alert"]
@@ -3113,7 +3247,9 @@ depends-member:
 - ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "append"]
 - !private ["Ps8Sequence", "count"]
+- !private ["Ps8Sequence", "enumerated"]
 - ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "reduce"]
 - !private ["Ps8Sequence", "row"]
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps10SetAlgebra", "highlighted"]
@@ -3121,12 +3257,14 @@ depends-member:
 - !private ["Ps13SignedInteger", "IntegerLiteralType"]
 - !private ["Ps13SignedInteger", "Stride"]
 - !private ["Ps13SignedInteger", "_DisabledRangeIndex"]
+- !private ["Ps13SignedInteger", "init"]
 - !private ["Ps12SignedNumber", "IntegerLiteralType"]
 - !private ["Ps12SignedNumber", "NSDateHour"]
 - !private ["Ps12SignedNumber", "NSDateMinute"]
 - !private ["Ps12SignedNumber", "NSDateSecond"]
 - !private ["Ps12SignedNumber", "Stride"]
 - !private ["Ps12SignedNumber", "_DisabledRangeIndex"]
+- !private ["Ps12SignedNumber", "init"]
 - !private ["Vs5Slice", "Index"]
 - !private ["Vs5Slice", "Iterator"]
 - !private ["Vs5Slice", "SubSequence"]
@@ -3139,6 +3277,7 @@ depends-member:
 - !private ["Ps10Strideable", "NSDateSecond"]
 - !private ["Ps10Strideable", "Stride"]
 - !private ["Ps10Strideable", "_DisabledRangeIndex"]
+- !private ["Ps10Strideable", "init"]
 - !private ["SS", "characters"]
 - !private ["SS", "components"]
 - ["SS", "deinit"]
@@ -3235,11 +3374,14 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "FIRStorage"]
 - !private ["PSo21UIAppearanceContainer", "INT64_MAX"]
 - !private ["PSo21UIAppearanceContainer", "IndexPath"]
+- !private ["PSo21UIAppearanceContainer", "Int"]
 - !private ["PSo21UIAppearanceContainer", "NSAttributedString"]
 - ["PSo21UIAppearanceContainer", "NSDate"]
 - !private ["PSo21UIAppearanceContainer", "NSFontAttributeName"]
 - !private ["PSo21UIAppearanceContainer", "NSForegroundColorAttributeName"]
 - !private ["PSo21UIAppearanceContainer", "NSIndexPath"]
+- !private ["PSo21UIAppearanceContainer", "NSString"]
+- !private ["PSo21UIAppearanceContainer", "NSTimeZone"]
 - ["PSo21UIAppearanceContainer", "String"]
 - ["PSo21UIAppearanceContainer", "Timer"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertAction"]
@@ -3295,7 +3437,9 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "fatalError"]
 - ["PSo21UIAppearanceContainer", "fetchConfig"]
 - !private ["PSo21UIAppearanceContainer", "font"]
+- !private ["PSo21UIAppearanceContainer", "formatShortTimeString"]
 - !private ["PSo21UIAppearanceContainer", "formatTimeString"]
+- ["PSo21UIAppearanceContainer", "formatter_timestamp"]
 - ["PSo21UIAppearanceContainer", "forwardTimer"]
 - ["PSo21UIAppearanceContainer", "goToBottom"]
 - !private ["PSo21UIAppearanceContainer", "hideKeyboardWhenTappedAround"]
@@ -3325,6 +3469,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "numberOfSections"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
 - ["PSo21UIAppearanceContainer", "pastActivity"]
+- ["PSo21UIAppearanceContainer", "percentArray"]
 - ["PSo21UIAppearanceContainer", "pickerData"]
 - ["PSo21UIAppearanceContainer", "pickerText"]
 - ["PSo21UIAppearanceContainer", "pickerView"]
@@ -3416,11 +3561,14 @@ depends-member:
 - !private ["PSo18UIContentContainer", "FIRStorage"]
 - !private ["PSo18UIContentContainer", "INT64_MAX"]
 - !private ["PSo18UIContentContainer", "IndexPath"]
+- !private ["PSo18UIContentContainer", "Int"]
 - !private ["PSo18UIContentContainer", "NSAttributedString"]
 - ["PSo18UIContentContainer", "NSDate"]
 - !private ["PSo18UIContentContainer", "NSFontAttributeName"]
 - !private ["PSo18UIContentContainer", "NSForegroundColorAttributeName"]
 - !private ["PSo18UIContentContainer", "NSIndexPath"]
+- !private ["PSo18UIContentContainer", "NSString"]
+- !private ["PSo18UIContentContainer", "NSTimeZone"]
 - ["PSo18UIContentContainer", "String"]
 - ["PSo18UIContentContainer", "Timer"]
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
@@ -3466,7 +3614,9 @@ depends-member:
 - !private ["PSo18UIContentContainer", "dump"]
 - !private ["PSo18UIContentContainer", "fatalError"]
 - ["PSo18UIContentContainer", "fetchConfig"]
+- !private ["PSo18UIContentContainer", "formatShortTimeString"]
 - !private ["PSo18UIContentContainer", "formatTimeString"]
+- ["PSo18UIContentContainer", "formatter_timestamp"]
 - ["PSo18UIContentContainer", "forwardTimer"]
 - ["PSo18UIContentContainer", "goToBottom"]
 - !private ["PSo18UIContentContainer", "hideKeyboardWhenTappedAround"]
@@ -3492,6 +3642,7 @@ depends-member:
 - ["PSo18UIContentContainer", "numberOfSections"]
 - ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
 - ["PSo18UIContentContainer", "pastActivity"]
+- ["PSo18UIContentContainer", "percentArray"]
 - ["PSo18UIContentContainer", "pickerData"]
 - ["PSo18UIContentContainer", "pickerText"]
 - ["PSo18UIContentContainer", "pickerView"]
@@ -3632,11 +3783,14 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "FIRStorage"]
 - !private ["PSo18UIFocusEnvironment", "INT64_MAX"]
 - !private ["PSo18UIFocusEnvironment", "IndexPath"]
+- !private ["PSo18UIFocusEnvironment", "Int"]
 - !private ["PSo18UIFocusEnvironment", "NSAttributedString"]
 - ["PSo18UIFocusEnvironment", "NSDate"]
 - !private ["PSo18UIFocusEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UIFocusEnvironment", "NSForegroundColorAttributeName"]
 - !private ["PSo18UIFocusEnvironment", "NSIndexPath"]
+- !private ["PSo18UIFocusEnvironment", "NSString"]
+- !private ["PSo18UIFocusEnvironment", "NSTimeZone"]
 - ["PSo18UIFocusEnvironment", "String"]
 - ["PSo18UIFocusEnvironment", "Timer"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertAction"]
@@ -3692,7 +3846,9 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "fatalError"]
 - ["PSo18UIFocusEnvironment", "fetchConfig"]
 - !private ["PSo18UIFocusEnvironment", "font"]
+- !private ["PSo18UIFocusEnvironment", "formatShortTimeString"]
 - !private ["PSo18UIFocusEnvironment", "formatTimeString"]
+- ["PSo18UIFocusEnvironment", "formatter_timestamp"]
 - ["PSo18UIFocusEnvironment", "forwardTimer"]
 - ["PSo18UIFocusEnvironment", "goToBottom"]
 - !private ["PSo18UIFocusEnvironment", "hideKeyboardWhenTappedAround"]
@@ -3722,6 +3878,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "numberOfSections"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
 - ["PSo18UIFocusEnvironment", "pastActivity"]
+- ["PSo18UIFocusEnvironment", "percentArray"]
 - ["PSo18UIFocusEnvironment", "pickerData"]
 - ["PSo18UIFocusEnvironment", "pickerText"]
 - ["PSo18UIFocusEnvironment", "pickerView"]
@@ -3831,11 +3988,14 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "FIRStorage"]
 - !private ["PSo31UIImagePickerControllerDelegate", "INT64_MAX"]
 - !private ["PSo31UIImagePickerControllerDelegate", "IndexPath"]
+- !private ["PSo31UIImagePickerControllerDelegate", "Int"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSAttributedString"]
 - ["PSo31UIImagePickerControllerDelegate", "NSDate"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSFontAttributeName"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSIndexPath"]
+- !private ["PSo31UIImagePickerControllerDelegate", "NSString"]
+- !private ["PSo31UIImagePickerControllerDelegate", "NSTimeZone"]
 - ["PSo31UIImagePickerControllerDelegate", "String"]
 - ["PSo31UIImagePickerControllerDelegate", "Timer"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIAlertAction"]
@@ -3869,7 +4029,9 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "dump"]
 - !private ["PSo31UIImagePickerControllerDelegate", "fatalError"]
 - !private ["PSo31UIImagePickerControllerDelegate", "fetchConfig"]
+- !private ["PSo31UIImagePickerControllerDelegate", "formatShortTimeString"]
 - !private ["PSo31UIImagePickerControllerDelegate", "formatTimeString"]
+- !private ["PSo31UIImagePickerControllerDelegate", "formatter_timestamp"]
 - !private ["PSo31UIImagePickerControllerDelegate", "forwardTimer"]
 - !private ["PSo31UIImagePickerControllerDelegate", "goToBottom"]
 - !private ["PSo31UIImagePickerControllerDelegate", "hideKeyboardWhenTappedAround"]
@@ -3891,6 +4053,7 @@ depends-member:
 - ["PSo31UIImagePickerControllerDelegate", "numberOfSections"]
 - ["PSo31UIImagePickerControllerDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pastActivity"]
+- !private ["PSo31UIImagePickerControllerDelegate", "percentArray"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pickerData"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pickerText"]
 - ["PSo31UIImagePickerControllerDelegate", "pickerView"]
@@ -3958,11 +4121,14 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "FIRStorage"]
 - !private ["PSo30UINavigationControllerDelegate", "INT64_MAX"]
 - !private ["PSo30UINavigationControllerDelegate", "IndexPath"]
+- !private ["PSo30UINavigationControllerDelegate", "Int"]
 - !private ["PSo30UINavigationControllerDelegate", "NSAttributedString"]
 - ["PSo30UINavigationControllerDelegate", "NSDate"]
 - !private ["PSo30UINavigationControllerDelegate", "NSFontAttributeName"]
 - !private ["PSo30UINavigationControllerDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo30UINavigationControllerDelegate", "NSIndexPath"]
+- !private ["PSo30UINavigationControllerDelegate", "NSString"]
+- !private ["PSo30UINavigationControllerDelegate", "NSTimeZone"]
 - ["PSo30UINavigationControllerDelegate", "String"]
 - ["PSo30UINavigationControllerDelegate", "Timer"]
 - !private ["PSo30UINavigationControllerDelegate", "UIAlertAction"]
@@ -3996,7 +4162,9 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "dump"]
 - !private ["PSo30UINavigationControllerDelegate", "fatalError"]
 - !private ["PSo30UINavigationControllerDelegate", "fetchConfig"]
+- !private ["PSo30UINavigationControllerDelegate", "formatShortTimeString"]
 - !private ["PSo30UINavigationControllerDelegate", "formatTimeString"]
+- !private ["PSo30UINavigationControllerDelegate", "formatter_timestamp"]
 - !private ["PSo30UINavigationControllerDelegate", "forwardTimer"]
 - !private ["PSo30UINavigationControllerDelegate", "goToBottom"]
 - !private ["PSo30UINavigationControllerDelegate", "hideKeyboardWhenTappedAround"]
@@ -4018,6 +4186,7 @@ depends-member:
 - ["PSo30UINavigationControllerDelegate", "numberOfSections"]
 - ["PSo30UINavigationControllerDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo30UINavigationControllerDelegate", "pastActivity"]
+- !private ["PSo30UINavigationControllerDelegate", "percentArray"]
 - !private ["PSo30UINavigationControllerDelegate", "pickerData"]
 - !private ["PSo30UINavigationControllerDelegate", "pickerText"]
 - ["PSo30UINavigationControllerDelegate", "pickerView"]
@@ -4077,11 +4246,14 @@ depends-member:
 - !private ["PSo22UIPickerViewDataSource", "FIRStorage"]
 - !private ["PSo22UIPickerViewDataSource", "INT64_MAX"]
 - !private ["PSo22UIPickerViewDataSource", "IndexPath"]
+- !private ["PSo22UIPickerViewDataSource", "Int"]
 - !private ["PSo22UIPickerViewDataSource", "NSAttributedString"]
 - ["PSo22UIPickerViewDataSource", "NSDate"]
 - !private ["PSo22UIPickerViewDataSource", "NSFontAttributeName"]
 - !private ["PSo22UIPickerViewDataSource", "NSForegroundColorAttributeName"]
 - !private ["PSo22UIPickerViewDataSource", "NSIndexPath"]
+- !private ["PSo22UIPickerViewDataSource", "NSString"]
+- !private ["PSo22UIPickerViewDataSource", "NSTimeZone"]
 - ["PSo22UIPickerViewDataSource", "String"]
 - ["PSo22UIPickerViewDataSource", "Timer"]
 - !private ["PSo22UIPickerViewDataSource", "UIAlertAction"]
@@ -4115,7 +4287,9 @@ depends-member:
 - !private ["PSo22UIPickerViewDataSource", "dump"]
 - !private ["PSo22UIPickerViewDataSource", "fatalError"]
 - !private ["PSo22UIPickerViewDataSource", "fetchConfig"]
+- !private ["PSo22UIPickerViewDataSource", "formatShortTimeString"]
 - !private ["PSo22UIPickerViewDataSource", "formatTimeString"]
+- !private ["PSo22UIPickerViewDataSource", "formatter_timestamp"]
 - !private ["PSo22UIPickerViewDataSource", "forwardTimer"]
 - !private ["PSo22UIPickerViewDataSource", "goToBottom"]
 - !private ["PSo22UIPickerViewDataSource", "hideKeyboardWhenTappedAround"]
@@ -4137,6 +4311,7 @@ depends-member:
 - ["PSo22UIPickerViewDataSource", "numberOfSections"]
 - ["PSo22UIPickerViewDataSource", "numberOfSectionsInTableView"]
 - !private ["PSo22UIPickerViewDataSource", "pastActivity"]
+- !private ["PSo22UIPickerViewDataSource", "percentArray"]
 - !private ["PSo22UIPickerViewDataSource", "pickerData"]
 - !private ["PSo22UIPickerViewDataSource", "pickerText"]
 - ["PSo22UIPickerViewDataSource", "pickerView"]
@@ -4194,11 +4369,14 @@ depends-member:
 - !private ["PSo20UIPickerViewDelegate", "FIRStorage"]
 - !private ["PSo20UIPickerViewDelegate", "INT64_MAX"]
 - !private ["PSo20UIPickerViewDelegate", "IndexPath"]
+- !private ["PSo20UIPickerViewDelegate", "Int"]
 - !private ["PSo20UIPickerViewDelegate", "NSAttributedString"]
 - ["PSo20UIPickerViewDelegate", "NSDate"]
 - !private ["PSo20UIPickerViewDelegate", "NSFontAttributeName"]
 - !private ["PSo20UIPickerViewDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo20UIPickerViewDelegate", "NSIndexPath"]
+- !private ["PSo20UIPickerViewDelegate", "NSString"]
+- !private ["PSo20UIPickerViewDelegate", "NSTimeZone"]
 - ["PSo20UIPickerViewDelegate", "String"]
 - ["PSo20UIPickerViewDelegate", "Timer"]
 - !private ["PSo20UIPickerViewDelegate", "UIAlertAction"]
@@ -4232,7 +4410,9 @@ depends-member:
 - !private ["PSo20UIPickerViewDelegate", "dump"]
 - !private ["PSo20UIPickerViewDelegate", "fatalError"]
 - !private ["PSo20UIPickerViewDelegate", "fetchConfig"]
+- !private ["PSo20UIPickerViewDelegate", "formatShortTimeString"]
 - !private ["PSo20UIPickerViewDelegate", "formatTimeString"]
+- !private ["PSo20UIPickerViewDelegate", "formatter_timestamp"]
 - !private ["PSo20UIPickerViewDelegate", "forwardTimer"]
 - !private ["PSo20UIPickerViewDelegate", "goToBottom"]
 - !private ["PSo20UIPickerViewDelegate", "hideKeyboardWhenTappedAround"]
@@ -4254,6 +4434,7 @@ depends-member:
 - ["PSo20UIPickerViewDelegate", "numberOfSections"]
 - ["PSo20UIPickerViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo20UIPickerViewDelegate", "pastActivity"]
+- !private ["PSo20UIPickerViewDelegate", "percentArray"]
 - !private ["PSo20UIPickerViewDelegate", "pickerData"]
 - !private ["PSo20UIPickerViewDelegate", "pickerText"]
 - ["PSo20UIPickerViewDelegate", "pickerView"]
@@ -4331,7 +4512,10 @@ depends-member:
 - !private ["CSo11UIResponder", "NSIndexPath"]
 - ["CSo11UIResponder", "NSNumber"]
 - ["CSo11UIResponder", "NSRange"]
+- !private ["CSo11UIResponder", "NSString"]
+- !private ["CSo11UIResponder", "NSTimeZone"]
 - ["CSo11UIResponder", "String"]
+- !private ["CSo11UIResponder", "TimeZone"]
 - ["CSo11UIResponder", "Timer"]
 - !private ["CSo11UIResponder", "UIAlertAction"]
 - !private ["CSo11UIResponder", "UIAlertController"]
@@ -4392,7 +4576,9 @@ depends-member:
 - !private ["CSo11UIResponder", "fatalError"]
 - ["CSo11UIResponder", "fetchConfig"]
 - !private ["CSo11UIResponder", "font"]
+- !private ["CSo11UIResponder", "formatShortTimeString"]
 - !private ["CSo11UIResponder", "formatTimeString"]
+- ["CSo11UIResponder", "formatter_timestamp"]
 - ["CSo11UIResponder", "forwardTimer"]
 - ["CSo11UIResponder", "goToBottom"]
 - ["CSo11UIResponder", "hideKeyboardWhenTappedAround"]
@@ -4422,6 +4608,7 @@ depends-member:
 - ["CSo11UIResponder", "numberOfSections"]
 - ["CSo11UIResponder", "numberOfSectionsInTableView"]
 - ["CSo11UIResponder", "pastActivity"]
+- ["CSo11UIResponder", "percentArray"]
 - ["CSo11UIResponder", "pickerData"]
 - ["CSo11UIResponder", "pickerText"]
 - ["CSo11UIResponder", "pickerView"]
@@ -4496,11 +4683,14 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "FIRStorage"]
 - !private ["PSo30UIResponderStandardEditActions", "INT64_MAX"]
 - !private ["PSo30UIResponderStandardEditActions", "IndexPath"]
+- !private ["PSo30UIResponderStandardEditActions", "Int"]
 - !private ["PSo30UIResponderStandardEditActions", "NSAttributedString"]
 - ["PSo30UIResponderStandardEditActions", "NSDate"]
 - !private ["PSo30UIResponderStandardEditActions", "NSFontAttributeName"]
 - !private ["PSo30UIResponderStandardEditActions", "NSForegroundColorAttributeName"]
 - !private ["PSo30UIResponderStandardEditActions", "NSIndexPath"]
+- !private ["PSo30UIResponderStandardEditActions", "NSString"]
+- !private ["PSo30UIResponderStandardEditActions", "NSTimeZone"]
 - ["PSo30UIResponderStandardEditActions", "String"]
 - ["PSo30UIResponderStandardEditActions", "Timer"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertAction"]
@@ -4556,7 +4746,9 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "fatalError"]
 - ["PSo30UIResponderStandardEditActions", "fetchConfig"]
 - !private ["PSo30UIResponderStandardEditActions", "font"]
+- !private ["PSo30UIResponderStandardEditActions", "formatShortTimeString"]
 - !private ["PSo30UIResponderStandardEditActions", "formatTimeString"]
+- ["PSo30UIResponderStandardEditActions", "formatter_timestamp"]
 - ["PSo30UIResponderStandardEditActions", "forwardTimer"]
 - ["PSo30UIResponderStandardEditActions", "goToBottom"]
 - ["PSo30UIResponderStandardEditActions", "hideKeyboardWhenTappedAround"]
@@ -4586,6 +4778,7 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "numberOfSections"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSectionsInTableView"]
 - ["PSo30UIResponderStandardEditActions", "pastActivity"]
+- ["PSo30UIResponderStandardEditActions", "percentArray"]
 - ["PSo30UIResponderStandardEditActions", "pickerData"]
 - ["PSo30UIResponderStandardEditActions", "pickerText"]
 - ["PSo30UIResponderStandardEditActions", "pickerView"]
@@ -4665,11 +4858,14 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "FIRStorage"]
 - !private ["PSo20UIScrollViewDelegate", "INT64_MAX"]
 - !private ["PSo20UIScrollViewDelegate", "IndexPath"]
+- !private ["PSo20UIScrollViewDelegate", "Int"]
 - !private ["PSo20UIScrollViewDelegate", "NSAttributedString"]
 - ["PSo20UIScrollViewDelegate", "NSDate"]
 - !private ["PSo20UIScrollViewDelegate", "NSFontAttributeName"]
 - !private ["PSo20UIScrollViewDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo20UIScrollViewDelegate", "NSIndexPath"]
+- !private ["PSo20UIScrollViewDelegate", "NSString"]
+- !private ["PSo20UIScrollViewDelegate", "NSTimeZone"]
 - ["PSo20UIScrollViewDelegate", "String"]
 - ["PSo20UIScrollViewDelegate", "Timer"]
 - !private ["PSo20UIScrollViewDelegate", "UIAlertAction"]
@@ -4703,7 +4899,9 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "dump"]
 - !private ["PSo20UIScrollViewDelegate", "fatalError"]
 - !private ["PSo20UIScrollViewDelegate", "fetchConfig"]
+- !private ["PSo20UIScrollViewDelegate", "formatShortTimeString"]
 - !private ["PSo20UIScrollViewDelegate", "formatTimeString"]
+- !private ["PSo20UIScrollViewDelegate", "formatter_timestamp"]
 - !private ["PSo20UIScrollViewDelegate", "forwardTimer"]
 - !private ["PSo20UIScrollViewDelegate", "goToBottom"]
 - !private ["PSo20UIScrollViewDelegate", "hideKeyboardWhenTappedAround"]
@@ -4725,6 +4923,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "numberOfSections"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo20UIScrollViewDelegate", "pastActivity"]
+- !private ["PSo20UIScrollViewDelegate", "percentArray"]
 - !private ["PSo20UIScrollViewDelegate", "pickerData"]
 - !private ["PSo20UIScrollViewDelegate", "pickerText"]
 - ["PSo20UIScrollViewDelegate", "pickerView"]
@@ -4782,11 +4981,14 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "FIRStorage"]
 - !private ["PSo16UIStateRestoring", "INT64_MAX"]
 - !private ["PSo16UIStateRestoring", "IndexPath"]
+- !private ["PSo16UIStateRestoring", "Int"]
 - !private ["PSo16UIStateRestoring", "NSAttributedString"]
 - ["PSo16UIStateRestoring", "NSDate"]
 - !private ["PSo16UIStateRestoring", "NSFontAttributeName"]
 - !private ["PSo16UIStateRestoring", "NSForegroundColorAttributeName"]
 - !private ["PSo16UIStateRestoring", "NSIndexPath"]
+- !private ["PSo16UIStateRestoring", "NSString"]
+- !private ["PSo16UIStateRestoring", "NSTimeZone"]
 - ["PSo16UIStateRestoring", "String"]
 - ["PSo16UIStateRestoring", "Timer"]
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
@@ -4832,7 +5034,9 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "dump"]
 - !private ["PSo16UIStateRestoring", "fatalError"]
 - ["PSo16UIStateRestoring", "fetchConfig"]
+- !private ["PSo16UIStateRestoring", "formatShortTimeString"]
 - !private ["PSo16UIStateRestoring", "formatTimeString"]
+- ["PSo16UIStateRestoring", "formatter_timestamp"]
 - ["PSo16UIStateRestoring", "forwardTimer"]
 - ["PSo16UIStateRestoring", "goToBottom"]
 - !private ["PSo16UIStateRestoring", "hideKeyboardWhenTappedAround"]
@@ -4858,6 +5062,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "numberOfSections"]
 - ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
 - ["PSo16UIStateRestoring", "pastActivity"]
+- ["PSo16UIStateRestoring", "percentArray"]
 - ["PSo16UIStateRestoring", "pickerData"]
 - ["PSo16UIStateRestoring", "pickerText"]
 - ["PSo16UIStateRestoring", "pickerView"]
@@ -4933,11 +5138,14 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "FIRStorage"]
 - !private ["PSo21UITableViewDataSource", "INT64_MAX"]
 - !private ["PSo21UITableViewDataSource", "IndexPath"]
+- !private ["PSo21UITableViewDataSource", "Int"]
 - !private ["PSo21UITableViewDataSource", "NSAttributedString"]
 - ["PSo21UITableViewDataSource", "NSDate"]
 - !private ["PSo21UITableViewDataSource", "NSFontAttributeName"]
 - !private ["PSo21UITableViewDataSource", "NSForegroundColorAttributeName"]
 - !private ["PSo21UITableViewDataSource", "NSIndexPath"]
+- !private ["PSo21UITableViewDataSource", "NSString"]
+- !private ["PSo21UITableViewDataSource", "NSTimeZone"]
 - ["PSo21UITableViewDataSource", "String"]
 - ["PSo21UITableViewDataSource", "Timer"]
 - !private ["PSo21UITableViewDataSource", "UIAlertAction"]
@@ -4971,7 +5179,9 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "dump"]
 - !private ["PSo21UITableViewDataSource", "fatalError"]
 - !private ["PSo21UITableViewDataSource", "fetchConfig"]
+- !private ["PSo21UITableViewDataSource", "formatShortTimeString"]
 - !private ["PSo21UITableViewDataSource", "formatTimeString"]
+- !private ["PSo21UITableViewDataSource", "formatter_timestamp"]
 - !private ["PSo21UITableViewDataSource", "forwardTimer"]
 - !private ["PSo21UITableViewDataSource", "goToBottom"]
 - !private ["PSo21UITableViewDataSource", "hideKeyboardWhenTappedAround"]
@@ -4993,6 +5203,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "numberOfSections"]
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
 - !private ["PSo21UITableViewDataSource", "pastActivity"]
+- !private ["PSo21UITableViewDataSource", "percentArray"]
 - !private ["PSo21UITableViewDataSource", "pickerData"]
 - !private ["PSo21UITableViewDataSource", "pickerText"]
 - ["PSo21UITableViewDataSource", "pickerView"]
@@ -5050,11 +5261,14 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "FIRStorage"]
 - !private ["PSo19UITableViewDelegate", "INT64_MAX"]
 - !private ["PSo19UITableViewDelegate", "IndexPath"]
+- !private ["PSo19UITableViewDelegate", "Int"]
 - !private ["PSo19UITableViewDelegate", "NSAttributedString"]
 - ["PSo19UITableViewDelegate", "NSDate"]
 - !private ["PSo19UITableViewDelegate", "NSFontAttributeName"]
 - !private ["PSo19UITableViewDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo19UITableViewDelegate", "NSIndexPath"]
+- !private ["PSo19UITableViewDelegate", "NSString"]
+- !private ["PSo19UITableViewDelegate", "NSTimeZone"]
 - ["PSo19UITableViewDelegate", "String"]
 - ["PSo19UITableViewDelegate", "Timer"]
 - !private ["PSo19UITableViewDelegate", "UIAlertAction"]
@@ -5088,7 +5302,9 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "dump"]
 - !private ["PSo19UITableViewDelegate", "fatalError"]
 - !private ["PSo19UITableViewDelegate", "fetchConfig"]
+- !private ["PSo19UITableViewDelegate", "formatShortTimeString"]
 - !private ["PSo19UITableViewDelegate", "formatTimeString"]
+- !private ["PSo19UITableViewDelegate", "formatter_timestamp"]
 - !private ["PSo19UITableViewDelegate", "forwardTimer"]
 - !private ["PSo19UITableViewDelegate", "goToBottom"]
 - !private ["PSo19UITableViewDelegate", "hideKeyboardWhenTappedAround"]
@@ -5110,6 +5326,7 @@ depends-member:
 - ["PSo19UITableViewDelegate", "numberOfSections"]
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo19UITableViewDelegate", "pastActivity"]
+- !private ["PSo19UITableViewDelegate", "percentArray"]
 - !private ["PSo19UITableViewDelegate", "pickerData"]
 - !private ["PSo19UITableViewDelegate", "pickerText"]
 - ["PSo19UITableViewDelegate", "pickerView"]
@@ -5176,11 +5393,14 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "FIRStorage"]
 - !private ["PSo19UITextFieldDelegate", "INT64_MAX"]
 - !private ["PSo19UITextFieldDelegate", "IndexPath"]
+- !private ["PSo19UITextFieldDelegate", "Int"]
 - !private ["PSo19UITextFieldDelegate", "NSAttributedString"]
 - ["PSo19UITextFieldDelegate", "NSDate"]
 - !private ["PSo19UITextFieldDelegate", "NSFontAttributeName"]
 - !private ["PSo19UITextFieldDelegate", "NSForegroundColorAttributeName"]
 - !private ["PSo19UITextFieldDelegate", "NSIndexPath"]
+- !private ["PSo19UITextFieldDelegate", "NSString"]
+- !private ["PSo19UITextFieldDelegate", "NSTimeZone"]
 - ["PSo19UITextFieldDelegate", "String"]
 - ["PSo19UITextFieldDelegate", "Timer"]
 - !private ["PSo19UITextFieldDelegate", "UIAlertAction"]
@@ -5214,7 +5434,9 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "dump"]
 - !private ["PSo19UITextFieldDelegate", "fatalError"]
 - !private ["PSo19UITextFieldDelegate", "fetchConfig"]
+- !private ["PSo19UITextFieldDelegate", "formatShortTimeString"]
 - !private ["PSo19UITextFieldDelegate", "formatTimeString"]
+- !private ["PSo19UITextFieldDelegate", "formatter_timestamp"]
 - !private ["PSo19UITextFieldDelegate", "forwardTimer"]
 - !private ["PSo19UITextFieldDelegate", "goToBottom"]
 - !private ["PSo19UITextFieldDelegate", "hideKeyboardWhenTappedAround"]
@@ -5236,6 +5458,7 @@ depends-member:
 - ["PSo19UITextFieldDelegate", "numberOfSections"]
 - ["PSo19UITextFieldDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo19UITextFieldDelegate", "pastActivity"]
+- !private ["PSo19UITextFieldDelegate", "percentArray"]
 - !private ["PSo19UITextFieldDelegate", "pickerData"]
 - !private ["PSo19UITextFieldDelegate", "pickerText"]
 - ["PSo19UITextFieldDelegate", "pickerView"]
@@ -5295,11 +5518,14 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "FIRStorage"]
 - !private ["PSo18UITraitEnvironment", "INT64_MAX"]
 - !private ["PSo18UITraitEnvironment", "IndexPath"]
+- !private ["PSo18UITraitEnvironment", "Int"]
 - !private ["PSo18UITraitEnvironment", "NSAttributedString"]
 - ["PSo18UITraitEnvironment", "NSDate"]
 - !private ["PSo18UITraitEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UITraitEnvironment", "NSForegroundColorAttributeName"]
 - !private ["PSo18UITraitEnvironment", "NSIndexPath"]
+- !private ["PSo18UITraitEnvironment", "NSString"]
+- !private ["PSo18UITraitEnvironment", "NSTimeZone"]
 - ["PSo18UITraitEnvironment", "String"]
 - ["PSo18UITraitEnvironment", "Timer"]
 - !private ["PSo18UITraitEnvironment", "UIAlertAction"]
@@ -5355,7 +5581,9 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "fatalError"]
 - ["PSo18UITraitEnvironment", "fetchConfig"]
 - !private ["PSo18UITraitEnvironment", "font"]
+- !private ["PSo18UITraitEnvironment", "formatShortTimeString"]
 - !private ["PSo18UITraitEnvironment", "formatTimeString"]
+- ["PSo18UITraitEnvironment", "formatter_timestamp"]
 - ["PSo18UITraitEnvironment", "forwardTimer"]
 - ["PSo18UITraitEnvironment", "goToBottom"]
 - !private ["PSo18UITraitEnvironment", "hideKeyboardWhenTappedAround"]
@@ -5385,6 +5613,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "numberOfSections"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
 - ["PSo18UITraitEnvironment", "pastActivity"]
+- ["PSo18UITraitEnvironment", "percentArray"]
 - ["PSo18UITraitEnvironment", "pickerData"]
 - ["PSo18UITraitEnvironment", "pickerText"]
 - ["PSo18UITraitEnvironment", "pickerView"]
@@ -5506,7 +5735,10 @@ depends-member:
 - !private ["CSo16UIViewController", "NSIndexPath"]
 - ["CSo16UIViewController", "NSNumber"]
 - ["CSo16UIViewController", "NSRange"]
+- !private ["CSo16UIViewController", "NSString"]
+- !private ["CSo16UIViewController", "NSTimeZone"]
 - ["CSo16UIViewController", "String"]
+- !private ["CSo16UIViewController", "TimeZone"]
 - ["CSo16UIViewController", "Timer"]
 - !private ["CSo16UIViewController", "UIAlertAction"]
 - !private ["CSo16UIViewController", "UIAlertController"]
@@ -5558,7 +5790,9 @@ depends-member:
 - !private ["CSo16UIViewController", "dump"]
 - !private ["CSo16UIViewController", "fatalError"]
 - ["CSo16UIViewController", "fetchConfig"]
+- !private ["CSo16UIViewController", "formatShortTimeString"]
 - !private ["CSo16UIViewController", "formatTimeString"]
+- ["CSo16UIViewController", "formatter_timestamp"]
 - ["CSo16UIViewController", "forwardTimer"]
 - ["CSo16UIViewController", "goToBottom"]
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
@@ -5584,6 +5818,7 @@ depends-member:
 - ["CSo16UIViewController", "numberOfSections"]
 - ["CSo16UIViewController", "numberOfSectionsInTableView"]
 - ["CSo16UIViewController", "pastActivity"]
+- ["CSo16UIViewController", "percentArray"]
 - ["CSo16UIViewController", "pickerData"]
 - ["CSo16UIViewController", "pickerText"]
 - ["CSo16UIViewController", "pickerView"]
@@ -5656,14 +5891,18 @@ depends-member:
 - ["Ps14_ArrayProtocol", "_Element"]
 - !private ["Ps14_ArrayProtocol", "append"]
 - !private ["Ps14_ArrayProtocol", "count"]
+- !private ["Ps14_ArrayProtocol", "enumerated"]
 - ["Ps14_ArrayProtocol", "init"]
+- !private ["Ps14_ArrayProtocol", "reduce"]
 - !private ["Ps14_ArrayProtocol", "subscript"]
 - !private ["Ps15_CVarArgAligned", "NSDateHour"]
 - !private ["Ps15_CVarArgAligned", "NSDateMinute"]
 - !private ["Ps15_CVarArgAligned", "NSDateSecond"]
+- !private ["Ps15_CVarArgAligned", "init"]
 - !private ["Ps22_CVarArgPassedAsDouble", "NSDateHour"]
 - !private ["Ps22_CVarArgPassedAsDouble", "NSDateMinute"]
 - !private ["Ps22_CVarArgPassedAsDouble", "NSDateSecond"]
+- !private ["Ps22_CVarArgPassedAsDouble", "init"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIColor"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIEdgeInsets"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addGestureRecognizer"]
@@ -5698,7 +5937,9 @@ depends-member:
 - ["Ps24_DestructorSafeContainer", "_Element"]
 - !private ["Ps24_DestructorSafeContainer", "append"]
 - !private ["Ps24_DestructorSafeContainer", "count"]
+- !private ["Ps24_DestructorSafeContainer", "enumerated"]
 - ["Ps24_DestructorSafeContainer", "init"]
+- !private ["Ps24_DestructorSafeContainer", "reduce"]
 - !private ["Ps24_DestructorSafeContainer", "subscript"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "characters"]
@@ -5708,12 +5949,14 @@ depends-member:
 - !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "NSDateHour"]
 - !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "NSDateMinute"]
 - !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "NSDateSecond"]
+- !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "init"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "NSDateHour"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "NSDateMinute"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "NSDateSecond"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "characters"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "components"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "hasPrefix"]
@@ -5758,6 +6001,7 @@ depends-member:
 - !private ["Ps9_Hashable", "FIRStorage"]
 - !private ["Ps9_Hashable", "INT64_MAX"]
 - !private ["Ps9_Hashable", "IndexPath"]
+- !private ["Ps9_Hashable", "Int"]
 - !private ["Ps9_Hashable", "IntegerLiteralType"]
 - !private ["Ps9_Hashable", "NSAttributedString"]
 - ["Ps9_Hashable", "NSDate"]
@@ -5767,6 +6011,8 @@ depends-member:
 - !private ["Ps9_Hashable", "NSFontAttributeName"]
 - !private ["Ps9_Hashable", "NSForegroundColorAttributeName"]
 - !private ["Ps9_Hashable", "NSIndexPath"]
+- !private ["Ps9_Hashable", "NSString"]
+- !private ["Ps9_Hashable", "NSTimeZone"]
 - !private ["Ps9_Hashable", "RawValue"]
 - !private ["Ps9_Hashable", "Stride"]
 - ["Ps9_Hashable", "String"]
@@ -5857,7 +6103,9 @@ depends-member:
 - !private ["Ps9_Hashable", "fetch"]
 - ["Ps9_Hashable", "fetchConfig"]
 - !private ["Ps9_Hashable", "font"]
+- !private ["Ps9_Hashable", "formatShortTimeString"]
 - !private ["Ps9_Hashable", "formatTimeString"]
+- ["Ps9_Hashable", "formatter_timestamp"]
 - ["Ps9_Hashable", "forwardTimer"]
 - ["Ps9_Hashable", "goToBottom"]
 - !private ["Ps9_Hashable", "hasPrefix"]
@@ -5901,6 +6149,7 @@ depends-member:
 - !private ["Ps9_Hashable", "observeSingleEvent"]
 - !private ["Ps9_Hashable", "options"]
 - ["Ps9_Hashable", "pastActivity"]
+- ["Ps9_Hashable", "percentArray"]
 - !private ["Ps9_Hashable", "photoURL"]
 - ["Ps9_Hashable", "pickerData"]
 - ["Ps9_Hashable", "pickerText"]
@@ -5969,6 +6218,7 @@ depends-member:
 - ["Ps9_Hashable", "timeDelta"]
 - !private ["Ps9_Hashable", "timeIntervalSince1970"]
 - !private ["Ps9_Hashable", "timeStyle"]
+- !private ["Ps9_Hashable", "timeZone"]
 - ["Ps9_Hashable", "timer"]
 - !private ["Ps9_Hashable", "tintColor"]
 - ["Ps9_Hashable", "topView"]
@@ -5986,12 +6236,15 @@ depends-member:
 - !private ["Ps14_Incrementable", "IntegerLiteralType"]
 - !private ["Ps14_Incrementable", "Stride"]
 - !private ["Ps14_Incrementable", "_DisabledRangeIndex"]
+- !private ["Ps14_Incrementable", "init"]
 - !private ["Ps8_Integer", "IntegerLiteralType"]
 - !private ["Ps8_Integer", "Stride"]
 - !private ["Ps8_Integer", "_DisabledRangeIndex"]
+- !private ["Ps8_Integer", "init"]
 - !private ["Ps18_IntegerArithmetic", "IntegerLiteralType"]
 - !private ["Ps18_IntegerArithmetic", "Stride"]
 - !private ["Ps18_IntegerArithmetic", "_DisabledRangeIndex"]
+- !private ["Ps18_IntegerArithmetic", "init"]
 - !private ["P10Foundation18_MutablePairBoxing", "init"]
 - ["VSC8_NSRange", "deinit"]
 - !private ["VSC8_NSRange", "length"]
@@ -6015,21 +6268,25 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "characters"]
 - !private ["Ps21_ObjectiveCBridgeable", "components"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
+- !private ["Ps21_ObjectiveCBridgeable", "enumerated"]
 - !private ["Ps21_ObjectiveCBridgeable", "hasPrefix"]
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "length"]
+- !private ["Ps21_ObjectiveCBridgeable", "reduce"]
 - !private ["Ps21_ObjectiveCBridgeable", "row"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
 - !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps14_SignedInteger", "IntegerLiteralType"]
 - !private ["Ps14_SignedInteger", "Stride"]
 - !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
+- !private ["Ps14_SignedInteger", "init"]
 - !private ["Ps11_Strideable", "IntegerLiteralType"]
 - !private ["Ps11_Strideable", "NSDateHour"]
 - !private ["Ps11_Strideable", "NSDateMinute"]
 - !private ["Ps11_Strideable", "NSDateSecond"]
 - !private ["Ps11_Strideable", "Stride"]
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
+- !private ["Ps11_Strideable", "init"]
 - ["V6Kairos12defaultsKeys", "init"]
 - ["V6Kairos12defaultsKeys", "keyOne"]
 - ["V6Kairos12defaultsKeys", "keyTwo"]
@@ -6070,6 +6327,8 @@ depends-nominal:
 - !private "CSo14DispatchObject"
 - "CSo13DispatchQueue"
 - "Sd"
+- !private "Vs18EnumeratedIterator"
+- "Vs18EnumeratedSequence"
 - "Ps9Equatable"
 - !private "Ps5Error"
 - "Ps25ExpressibleByArrayLiteral"
@@ -6138,6 +6397,7 @@ depends-nominal:
 - "PSo14NSSecureCoding"
 - "CSo8NSString"
 - "OSC15NSTextAlignment"
+- !private "CSo10NSTimeZone"
 - !private "CSo7NSValue"
 - "Os5Never"
 - !private "CSo9OS_object"
@@ -6409,4 +6669,4 @@ depends-external:
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
-interface-hash: "fd94cbfb90f58748307c7f85692fd21f"
+interface-hash: "313337e565a0b50fb613c1d09aa1cfce"
