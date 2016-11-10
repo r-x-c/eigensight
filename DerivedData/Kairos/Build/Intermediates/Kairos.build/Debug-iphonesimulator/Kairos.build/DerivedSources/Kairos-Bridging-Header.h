@@ -153,6 +153,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppState * _
 @end
 
 @class NSDateFormatter;
+@class NSUserDefaults;
 @class UIPickerView;
 @class NSAttributedString;
 @class UIView;
@@ -176,6 +177,8 @@ SWIFT_CLASS_NAMED("FCViewController")
 @interface FCViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource>
 @property (nonatomic, copy) NSString * _Nonnull date_string;
 @property (nonatomic, readonly, strong) NSDateFormatter * _Nonnull date_formatter;
+@property (nonatomic, readonly, strong) NSUserDefaults * _Nonnull defaults;
+@property (nonatomic) NSInteger activityIndex;
 - (void)viewDidLoad;
 @property (nonatomic, weak) IBOutlet UIPickerView * _Null_unspecified pickerView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified pickerText;
@@ -185,7 +188,6 @@ SWIFT_CLASS_NAMED("FCViewController")
 @property (nonatomic, copy) NSString * _Nonnull secondsString;
 @property (nonatomic, copy) NSString * _Nonnull minutesString;
 @property (nonatomic, copy) NSString * _Nonnull hoursString;
-@property (nonatomic) NSInteger old_idx;
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull pickerData;
 - (NSInteger)numberOfComponentsInPickerViewWithPickerView:(UIPickerView * _Nonnull)pickerView;

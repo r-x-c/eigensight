@@ -41,41 +41,36 @@ extension UIViewController {
     }
 }
 
+struct defaultsKeys {
+    static let keyOne = "lastActivityKey"
+    static let keyTwo = "secondStringKey"
+}
+
+
 @objc(FCViewController)
 class FCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
 UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate {
     var date_string = ""
     let date_formatter = DateFormatter()
+    let defaults = UserDefaults.standard
+    var activityIndex: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Date Key
-        //  Formatting
-        date_formatter.dateStyle = DateFormatter.Style.long
-        date_formatter.timeStyle = .medium
-        date_formatter.dateFormat = "MMddyyyy"
-        //  Make Key
-        
-//        let userID = FIRAuth.auth()?.currentUser?.uid
-//        var usersRef = FIRDatabase.database().reference(withPath: "timelogs")
-//        print(usersRef)
-//        print("foo")
-//
-//        usersRef = FIRDatabase.database().reference(withPath: "/timelogs/\(userID)/\(date_string)/")
-//
-//        print(usersRef)
-//        print("foo")
-        
-        
-        
-//        print("current date not time: \(date_string)")
-//        print("current date: \(currentDate)")
 
         //Default UIPickerView Settings
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
-        pickerText.text = pickerData[0]
+        
+        //Restore Previous Index
+        if let foo = defaults.string(forKey: defaultsKeys.keyOne) {
+            activityIndex = Int(foo)!
+            print(foo)
+        }
+//        activityIndex = (UserDefaults.standard.object(forKey: defaultsKeys.keyOne) as? Int)!
+        pickerText.text = pickerData[activityIndex]
 
         //Timer Declarations
         countdown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(FCViewController.updateCountdown), userInfo: nil, repeats: true)
@@ -94,7 +89,14 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         configureStorage()
         configureRemoteConfig()
         fetchConfig()
+        
+        //Date Key
+        //  Formatting
+        date_formatter.dateStyle = DateFormatter.Style.long
+        date_formatter.timeStyle = .medium
+        date_formatter.dateFormat = "MMddyyyy"
         configureTimeArray()
+        
         //loadAd()
         logViewLoaded()
         self.hideKeyboardWhenTappedAround()
@@ -107,7 +109,6 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var pickerText: UILabel!
     var curr_hour = 0, curr_min = 0, curr_sec = 0
     var secondsString = "", minutesString = "", hoursString = ""
-    var old_idx = 0
     
     // PICKER VIEW------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -134,12 +135,25 @@ UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //Add Cumulated Time to Previous Activity
         currActivity = NSDate().timeIntervalSince1970
+        
+        if let name = defaults.string(forKey: defaultsKeys.keyTwo) {
+            pastActivity = Double(name)!
+            print(name)
+        }
+        if let foo = defaults.string(forKey: defaultsKeys.keyOne) {
+            activityIndex = Int(foo)!
+            print(foo)
+        }
+
+        
+//        pastActivity = (UserDefaults.standard.object(forKey: defaultsKeys.keyTwo) as? Double)!
+//        activityIndex = (UserDefaults.standard.object(forKey: defaultsKeys.keyOne) as? Int)!
         timeDelta = currActivity - pastActivity
-        timeArray[old_idx] += timeDelta
+        timeArray[activityIndex] += timeDelta
         
         //Update Top Label Text to Current Activity
         pickerText.text = pickerData[row]
-        
+    
         //Load Current Activity Times
         setWatch(hour: timeArray[row].NSDateHour(), min: timeArray[row].NSDateMinute(), sec: timeArray[row].NSDateSecond())
         
@@ -157,8 +171,11 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         let childUpdates = ["/timelogs/\(userID)/\(date_string)/": timeArray]
         self.ref.updateChildValues(childUpdates)
 
-        //Update to New Timestamp
-        pastActivity = currActivity
+        //Store Recent Activity
+        //  idx of current activity
+        defaults.setValue(row, forKey: defaultsKeys.keyOne)
+        //  timestamp of current activity
+        defaults.setValue(currActivity, forKey: defaultsKeys.keyTwo)
         
         //TODO: move this out?
         let formatter_timestamp = DateFormatter()
@@ -168,8 +185,7 @@ UIPickerViewDataSource, UIPickerViewDelegate {
         let time_string = formatter_timestamp.string(from: currentDate as Date)
         sendMessage(withData: [Constants.MessageFields.text: "\(pickerText.text!) @ \(time_string)"])
         
-        //Overwrite Old Idx
-        old_idx = row
+        
         goToBottom()
 
     }

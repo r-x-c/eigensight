@@ -6,15 +6,15 @@ provides-nominal:
 provides-member:
 - ["C6Kairos17MeasurementHelper", ""]
 provides-dynamic-lookup:
-- "sendMessageEvent"
 - "sendLoginEvent"
+- "sendMessageEvent"
 - "sendLogoutEvent"
 depends-top-level:
 - !private "kFIREventLogin"
+- "MeasurementHelper"
+- !private "StringLiteralType"
 - !private "FIRAnalytics"
 - "NSObject"
-- !private "StringLiteralType"
-- "MeasurementHelper"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAnalytics"]
 - !private ["Ps9AnyObject", "init"]

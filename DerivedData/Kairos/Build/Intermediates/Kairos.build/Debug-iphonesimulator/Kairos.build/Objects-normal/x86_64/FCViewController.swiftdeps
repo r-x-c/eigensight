@@ -1,174 +1,180 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "kBannerAdUnitID"
+- "defaultsKeys"
 - "FCViewController"
 provides-nominal:
+- "V6Kairos12defaultsKeys"
 - "C6Kairos16FCViewController"
 - "CC6Kairos16FCViewController14BorderedButton"
 provides-member:
 - ["CSo16UIViewController", ""]
+- ["V6Kairos12defaultsKeys", ""]
 - ["C6Kairos16FCViewController", ""]
 - ["CC6Kairos16FCViewController14BorderedButton", ""]
 - ["CSo16UIViewController", "hideKeyboardWhenTappedAround"]
 - ["CSo16UIViewController", "dismissKeyboardView"]
 provides-dynamic-lookup:
-- "topView"
-- "curr_min"
 - "textFieldShouldReturn"
-- "stopwatchString"
-- "currActivity"
-- "viewDidLoad"
-- "seconds"
-- "mainClock"
-- "c_seconds"
-- "forwardTimer"
-- "curr_hour"
-- "laps"
-- "didPressCrash"
-- "sendButton"
-- "minutesString"
-- "c_minutes"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "currentDate"
-- "scrollToBottom"
-- "c_hours"
-- "textField"
-- "textField"
-- "ref"
-- "dismissKeyboardView"
 - "banner"
-- "timeDelta"
-- "updateForwardTimer"
-- "sendTimeLog"
-- "logViewLoaded"
-- "tableView"
-- "tableView"
-- "configureTimeArray"
-- "hoursString"
-- "signOut"
-- "signOut"
-- "timeArray"
-- "timer"
-- "fetchConfig"
-- "configureStorage"
-- "hideKeyboardWhenTappedAround"
-- "remoteConfig"
-- "secondsString"
-- "date_formatter"
-- "numberOfComponents"
-- "didPressFreshConfig"
-- "updateCountdown"
-- "storageRef"
-- "configureDatabase"
-- "configureRemoteConfig"
-- "old_idx"
-- "countdownString"
-- "msglength"
-- "clientTable"
-- "countdown"
-- "setWatch"
-- "date_string"
-- "numberOfComponentsInPickerView"
-- "hours"
-- "pickerData"
-- "minutes"
-- "didSendMessage"
-- "pickerText"
-- "pastActivity"
-- "showAlert"
-- "curr_sec"
-- "messages"
 - "sendMessage"
+- "pickerData"
+- "pastActivity"
+- "curr_hour"
+- "didPressCrash"
+- "curr_min"
+- "pickerText"
+- "laps"
+- "curr_sec"
+- "remoteConfig"
+- "c_seconds"
+- "storageRef"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "sendTimeLog"
+- "secondsString"
+- "didSendMessage"
+- "sendButton"
+- "updateCountdown"
+- "clientTable"
+- "date_string"
+- "hideKeyboardWhenTappedAround"
+- "tableView"
+- "tableView"
+- "timeDelta"
+- "numberOfComponentsInPickerView"
+- "scrollToBottom"
+- "setWatch"
+- "currActivity"
+- "countdown"
+- "textField"
+- "textField"
+- "forwardTimer"
+- "showAlert"
+- "ref"
+- "activityIndex"
+- "updateForwardTimer"
+- "messages"
+- "countdownString"
+- "topView"
+- "didPressFreshConfig"
+- "dismissKeyboardView"
+- "timer"
+- "defaults"
+- "timeArray"
+- "configureTimeArray"
+- "date_formatter"
+- "hoursString"
+- "logViewLoaded"
+- "signOut"
+- "signOut"
+- "hours"
+- "configureDatabase"
+- "minutes"
+- "configureStorage"
+- "c_minutes"
+- "viewDidLoad"
+- "configureRemoteConfig"
+- "fetchConfig"
+- "minutesString"
+- "currentDate"
+- "seconds"
+- "c_hours"
+- "stopwatchString"
+- "msglength"
+- "numberOfComponents"
+- "mainClock"
 depends-top-level:
-- !private "URL"
-- "UIButton"
-- "FIRDataSnapshot"
-- "NSAttributedString"
-- "FIRStorageReference"
-- "DateFormatter"
-- !private "UIColor"
-- "Array"
-- !private "UIFont"
-- !private "UIAlertController"
-- !private "UIEdgeInsets"
-- !private "Constants"
-- !private "NSForegroundColorAttributeName"
-- !private "+"
-- "UITableViewCell"
-- "FCViewController"
-- "Int"
-- "CGFloat"
-- !private "formatTimeString"
-- !private "UITapGestureRecognizer"
-- "UIPickerView"
-- !private "INT64_MAX"
-- !private "AppState"
-- !private "BooleanLiteralType"
-- "NSCoder"
-- !private "UIAlertAction"
-- !private "FIRAuth"
-- "StringLiteralType"
-- "UIViewController"
-- !private "print"
-- "AnyObject"
-- !private "/"
+- "kBannerAdUnitID"
 - "NSRange"
-- !private "-="
-- !private "-"
-- !private "Void"
-- "FIRDatabaseHandle"
-- !private "dump"
-- "UIView"
-- !private "DispatchQueue"
 - "Bool"
-- "UIPickerViewDataSource"
-- "FIRDatabaseReference"
-- "UITableView"
-- "UINavigationControllerDelegate"
-- "AssignmentPrecedence"
-- "Timer"
+- !private "Data"
+- "NSAttributedString"
+- !private "UIColor"
+- !private "+"
+- !private "Dictionary"
 - !private "Date"
 - !private "=="
+- "AssignmentPrecedence"
 - "CastingPrecedence"
-- !private "FIRCrashMessage"
-- "UIPickerViewDelegate"
-- !private "Dictionary"
-- !private "FIRApp"
+- "FIRRemoteConfig"
+- "UserDefaults"
+- "NSCoder"
+- "FIRDataSnapshot"
+- !private "/"
+- !private "UIFont"
+- "FCViewController"
 - "Double"
-- "NSNumber"
-- !private "FIRDatabase"
-- !private "fatalError"
-- !private "NSIndexPath"
+- !private "-="
+- !private "NSForegroundColorAttributeName"
 - "UITextField"
+- !private "<="
+- !private "UITapGestureRecognizer"
+- !private ">"
+- !private "UIImage"
+- "Array"
+- !private "FIRApp"
+- !private "URL"
+- "DateFormatter"
+- "String"
+- "UITableViewCell"
+- !private "UIEdgeInsets"
+- !private "!="
+- !private "INT64_MAX"
+- !private "NSFontAttributeName"
+- "FIRStorageReference"
+- !private "NSError"
+- "CGFloat"
+- "UIView"
+- !private "DispatchQueue"
+- !private "Void"
+- "UIPickerViewDelegate"
+- !private "Constants"
+- !private "FIRCrashMessage"
+- !private "FIRDatabase"
+- "UIPickerViewDataSource"
+- "NSDate"
+- !private "!"
 - !private "UnicodeScalarType"
 - "UILabel"
-- !private "<="
-- !private "NSError"
-- "IndexPath"
-- !private "!"
-- !private "NSFontAttributeName"
-- "String"
-- "GADBannerView"
-- !private ">"
-- "NSDate"
-- "UITableViewDelegate"
-- "FIRRemoteConfig"
-- !private "FIRStorage"
-- "UITableViewDataSource"
+- "defaultsKeys"
+- !private "AppState"
+- "Int"
+- "UIPickerView"
+- "FIRDatabaseHandle"
+- !private "fatalError"
+- "AnyObject"
 - !private "+="
-- "kBannerAdUnitID"
-- "UIImagePickerControllerDelegate"
+- !private "UIAlertAction"
+- "FIRDatabaseReference"
+- "UITableViewDataSource"
+- "Timer"
+- !private "FIRStorage"
+- "StringLiteralType"
+- !private "NSIndexPath"
+- !private "dump"
+- !private "UIAlertController"
+- "UITableView"
+- "UIButton"
+- !private "-"
+- "NSNumber"
+- "UINavigationControllerDelegate"
+- "GADBannerView"
 - !private "FIRRemoteConfigSettings"
-- !private "!="
+- "IndexPath"
+- "UIImagePickerControllerDelegate"
 - "UITextFieldDelegate"
-- !private "UIImage"
-- !private "Data"
+- !private "print"
+- !private "formatTimeString"
+- "UITableViewDelegate"
+- !private "FIRAuth"
+- "UIViewController"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "NSDateHour"]
 - !private ["Ps16AbsoluteValuable", "NSDateMinute"]
@@ -208,8 +214,10 @@ depends-member:
 - !private ["Ps9AnyObject", "UITapGestureRecognizer"]
 - !private ["Ps9AnyObject", "UIViewController"]
 - !private ["Ps9AnyObject", "URL"]
+- ["Ps9AnyObject", "UserDefaults"]
 - ["Ps9AnyObject", "_refHandle"]
 - !private ["Ps9AnyObject", "activateFetched"]
+- ["Ps9AnyObject", "activityIndex"]
 - !private ["Ps9AnyObject", "addAction"]
 - !private ["Ps9AnyObject", "addGestureRecognizer"]
 - !private ["Ps9AnyObject", "async"]
@@ -254,6 +262,8 @@ depends-member:
 - ["Ps9AnyObject", "date_formatter"]
 - ["Ps9AnyObject", "date_string"]
 - !private ["Ps9AnyObject", "defaultApp"]
+- ["Ps9AnyObject", "defaults"]
+- !private ["Ps9AnyObject", "defaultsKeys"]
 - !private ["Ps9AnyObject", "delegate"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
 - ["Ps9AnyObject", "didPressCrash"]
@@ -309,7 +319,6 @@ depends-member:
 - !private ["Ps9AnyObject", "numberValue"]
 - !private ["Ps9AnyObject", "observe"]
 - !private ["Ps9AnyObject", "observeSingleEvent"]
-- ["Ps9AnyObject", "old_idx"]
 - !private ["Ps9AnyObject", "options"]
 - ["Ps9AnyObject", "pastActivity"]
 - !private ["Ps9AnyObject", "photoURL"]
@@ -354,6 +363,7 @@ depends-member:
 - ["Ps9AnyObject", "signOut"]
 - !private ["Ps9AnyObject", "signedIn"]
 - !private ["Ps9AnyObject", "source"]
+- ["Ps9AnyObject", "standard"]
 - ["Ps9AnyObject", "stopwatchString"]
 - !private ["Ps9AnyObject", "storage"]
 - !private ["Ps9AnyObject", "storageBucket"]
@@ -535,11 +545,13 @@ depends-member:
 - !private ["Ps7CVarArg", "UITapGestureRecognizer"]
 - !private ["Ps7CVarArg", "UIViewController"]
 - !private ["Ps7CVarArg", "URL"]
+- ["Ps7CVarArg", "UserDefaults"]
 - !private ["Ps7CVarArg", "Value"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - ["Ps7CVarArg", "_Element"]
 - ["Ps7CVarArg", "_refHandle"]
 - !private ["Ps7CVarArg", "activateFetched"]
+- ["Ps7CVarArg", "activityIndex"]
 - !private ["Ps7CVarArg", "addAction"]
 - !private ["Ps7CVarArg", "addGestureRecognizer"]
 - !private ["Ps7CVarArg", "append"]
@@ -586,6 +598,8 @@ depends-member:
 - ["Ps7CVarArg", "date_formatter"]
 - ["Ps7CVarArg", "date_string"]
 - !private ["Ps7CVarArg", "defaultApp"]
+- ["Ps7CVarArg", "defaults"]
+- !private ["Ps7CVarArg", "defaultsKeys"]
 - !private ["Ps7CVarArg", "delegate"]
 - !private ["Ps7CVarArg", "dequeueReusableCell"]
 - ["Ps7CVarArg", "didPressCrash"]
@@ -641,7 +655,6 @@ depends-member:
 - !private ["Ps7CVarArg", "numberValue"]
 - !private ["Ps7CVarArg", "observe"]
 - !private ["Ps7CVarArg", "observeSingleEvent"]
-- ["Ps7CVarArg", "old_idx"]
 - !private ["Ps7CVarArg", "options"]
 - ["Ps7CVarArg", "pastActivity"]
 - !private ["Ps7CVarArg", "photoURL"]
@@ -686,6 +699,7 @@ depends-member:
 - ["Ps7CVarArg", "signOut"]
 - !private ["Ps7CVarArg", "signedIn"]
 - !private ["Ps7CVarArg", "source"]
+- ["Ps7CVarArg", "standard"]
 - ["Ps7CVarArg", "stopwatchString"]
 - !private ["Ps7CVarArg", "storage"]
 - !private ["Ps7CVarArg", "storageBucket"]
@@ -797,11 +811,13 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "UIViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "URL"]
+- ["Ps28CustomDebugStringConvertible", "UserDefaults"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - ["Ps28CustomDebugStringConvertible", "_Element"]
 - ["Ps28CustomDebugStringConvertible", "_refHandle"]
 - !private ["Ps28CustomDebugStringConvertible", "absoluteString"]
 - !private ["Ps28CustomDebugStringConvertible", "activateFetched"]
+- ["Ps28CustomDebugStringConvertible", "activityIndex"]
 - !private ["Ps28CustomDebugStringConvertible", "addAction"]
 - !private ["Ps28CustomDebugStringConvertible", "addGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
@@ -848,6 +864,8 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "date_formatter"]
 - ["Ps28CustomDebugStringConvertible", "date_string"]
 - !private ["Ps28CustomDebugStringConvertible", "defaultApp"]
+- ["Ps28CustomDebugStringConvertible", "defaults"]
+- !private ["Ps28CustomDebugStringConvertible", "defaultsKeys"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCell"]
 - ["Ps28CustomDebugStringConvertible", "didPressCrash"]
@@ -903,7 +921,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "numberValue"]
 - !private ["Ps28CustomDebugStringConvertible", "observe"]
 - !private ["Ps28CustomDebugStringConvertible", "observeSingleEvent"]
-- ["Ps28CustomDebugStringConvertible", "old_idx"]
 - !private ["Ps28CustomDebugStringConvertible", "options"]
 - ["Ps28CustomDebugStringConvertible", "pastActivity"]
 - !private ["Ps28CustomDebugStringConvertible", "photoURL"]
@@ -949,6 +966,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "signOut"]
 - !private ["Ps28CustomDebugStringConvertible", "signedIn"]
 - !private ["Ps28CustomDebugStringConvertible", "source"]
+- ["Ps28CustomDebugStringConvertible", "standard"]
 - ["Ps28CustomDebugStringConvertible", "stopwatchString"]
 - !private ["Ps28CustomDebugStringConvertible", "storage"]
 - !private ["Ps28CustomDebugStringConvertible", "storageBucket"]
@@ -1072,6 +1090,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "UIViewController"]
 - !private ["Ps23CustomStringConvertible", "URL"]
+- ["Ps23CustomStringConvertible", "UserDefaults"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
 - ["Ps23CustomStringConvertible", "_Element"]
@@ -1079,6 +1098,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "_refHandle"]
 - !private ["Ps23CustomStringConvertible", "absoluteString"]
 - !private ["Ps23CustomStringConvertible", "activateFetched"]
+- ["Ps23CustomStringConvertible", "activityIndex"]
 - !private ["Ps23CustomStringConvertible", "addAction"]
 - !private ["Ps23CustomStringConvertible", "addGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "append"]
@@ -1125,6 +1145,8 @@ depends-member:
 - ["Ps23CustomStringConvertible", "date_formatter"]
 - ["Ps23CustomStringConvertible", "date_string"]
 - !private ["Ps23CustomStringConvertible", "defaultApp"]
+- ["Ps23CustomStringConvertible", "defaults"]
+- !private ["Ps23CustomStringConvertible", "defaultsKeys"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCell"]
 - ["Ps23CustomStringConvertible", "didPressCrash"]
@@ -1180,7 +1202,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "numberValue"]
 - !private ["Ps23CustomStringConvertible", "observe"]
 - !private ["Ps23CustomStringConvertible", "observeSingleEvent"]
-- ["Ps23CustomStringConvertible", "old_idx"]
 - !private ["Ps23CustomStringConvertible", "options"]
 - ["Ps23CustomStringConvertible", "pastActivity"]
 - !private ["Ps23CustomStringConvertible", "photoURL"]
@@ -1226,6 +1247,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "signOut"]
 - !private ["Ps23CustomStringConvertible", "signedIn"]
 - !private ["Ps23CustomStringConvertible", "source"]
+- ["Ps23CustomStringConvertible", "standard"]
 - ["Ps23CustomStringConvertible", "stopwatchString"]
 - !private ["Ps23CustomStringConvertible", "storage"]
 - !private ["Ps23CustomStringConvertible", "storageBucket"]
@@ -1338,11 +1360,13 @@ depends-member:
 - !private ["Ps9Equatable", "UITapGestureRecognizer"]
 - !private ["Ps9Equatable", "UIViewController"]
 - !private ["Ps9Equatable", "URL"]
+- ["Ps9Equatable", "UserDefaults"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - ["Ps9Equatable", "_refHandle"]
 - !private ["Ps9Equatable", "absoluteString"]
 - !private ["Ps9Equatable", "activateFetched"]
+- ["Ps9Equatable", "activityIndex"]
 - !private ["Ps9Equatable", "addAction"]
 - !private ["Ps9Equatable", "addGestureRecognizer"]
 - !private ["Ps9Equatable", "alert"]
@@ -1392,6 +1416,8 @@ depends-member:
 - ["Ps9Equatable", "date_formatter"]
 - ["Ps9Equatable", "date_string"]
 - !private ["Ps9Equatable", "defaultApp"]
+- ["Ps9Equatable", "defaults"]
+- !private ["Ps9Equatable", "defaultsKeys"]
 - !private ["Ps9Equatable", "delegate"]
 - !private ["Ps9Equatable", "dequeueReusableCell"]
 - !private ["Ps9Equatable", "destructive"]
@@ -1452,7 +1478,6 @@ depends-member:
 - !private ["Ps9Equatable", "numberValue"]
 - !private ["Ps9Equatable", "observe"]
 - !private ["Ps9Equatable", "observeSingleEvent"]
-- ["Ps9Equatable", "old_idx"]
 - !private ["Ps9Equatable", "options"]
 - ["Ps9Equatable", "pastActivity"]
 - !private ["Ps9Equatable", "photoURL"]
@@ -1498,6 +1523,7 @@ depends-member:
 - ["Ps9Equatable", "signOut"]
 - !private ["Ps9Equatable", "signedIn"]
 - !private ["Ps9Equatable", "source"]
+- ["Ps9Equatable", "standard"]
 - !private ["Ps9Equatable", "static"]
 - ["Ps9Equatable", "stopwatchString"]
 - !private ["Ps9Equatable", "storage"]
@@ -1638,8 +1664,10 @@ depends-member:
 - ["C6Kairos16FCViewController", "UITextField"]
 - ["C6Kairos16FCViewController", "UIView"]
 - !private ["C6Kairos16FCViewController", "URL"]
+- ["C6Kairos16FCViewController", "UserDefaults"]
 - !private ["C6Kairos16FCViewController", "Void"]
 - !private ["C6Kairos16FCViewController", "_refHandle"]
+- ["C6Kairos16FCViewController", "activityIndex"]
 - ["C6Kairos16FCViewController", "banner"]
 - ["C6Kairos16FCViewController", "c_hours"]
 - ["C6Kairos16FCViewController", "c_minutes"]
@@ -1658,6 +1686,8 @@ depends-member:
 - ["C6Kairos16FCViewController", "currentDate"]
 - ["C6Kairos16FCViewController", "date_formatter"]
 - ["C6Kairos16FCViewController", "date_string"]
+- ["C6Kairos16FCViewController", "defaults"]
+- !private ["C6Kairos16FCViewController", "defaultsKeys"]
 - ["C6Kairos16FCViewController", "deinit"]
 - ["C6Kairos16FCViewController", "didPressCrash"]
 - ["C6Kairos16FCViewController", "didPressFreshConfig"]
@@ -1691,7 +1721,6 @@ depends-member:
 - ["C6Kairos16FCViewController", "numberOfComponentsInPickerView"]
 - ["C6Kairos16FCViewController", "numberOfSections"]
 - ["C6Kairos16FCViewController", "numberOfSectionsInTableView"]
-- ["C6Kairos16FCViewController", "old_idx"]
 - ["C6Kairos16FCViewController", "pastActivity"]
 - ["C6Kairos16FCViewController", "pickerData"]
 - ["C6Kairos16FCViewController", "pickerText"]
@@ -1855,11 +1884,13 @@ depends-member:
 - !private ["Ps8Hashable", "UITapGestureRecognizer"]
 - !private ["Ps8Hashable", "UIViewController"]
 - !private ["Ps8Hashable", "URL"]
+- ["Ps8Hashable", "UserDefaults"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - ["Ps8Hashable", "_refHandle"]
 - !private ["Ps8Hashable", "absoluteString"]
 - !private ["Ps8Hashable", "activateFetched"]
+- ["Ps8Hashable", "activityIndex"]
 - !private ["Ps8Hashable", "addAction"]
 - !private ["Ps8Hashable", "addGestureRecognizer"]
 - !private ["Ps8Hashable", "alert"]
@@ -1909,6 +1940,8 @@ depends-member:
 - ["Ps8Hashable", "date_formatter"]
 - ["Ps8Hashable", "date_string"]
 - !private ["Ps8Hashable", "defaultApp"]
+- ["Ps8Hashable", "defaults"]
+- !private ["Ps8Hashable", "defaultsKeys"]
 - !private ["Ps8Hashable", "delegate"]
 - !private ["Ps8Hashable", "dequeueReusableCell"]
 - !private ["Ps8Hashable", "destructive"]
@@ -1967,7 +2000,6 @@ depends-member:
 - !private ["Ps8Hashable", "numberValue"]
 - !private ["Ps8Hashable", "observe"]
 - !private ["Ps8Hashable", "observeSingleEvent"]
-- ["Ps8Hashable", "old_idx"]
 - !private ["Ps8Hashable", "options"]
 - ["Ps8Hashable", "pastActivity"]
 - !private ["Ps8Hashable", "photoURL"]
@@ -2013,6 +2045,7 @@ depends-member:
 - ["Ps8Hashable", "signOut"]
 - !private ["Ps8Hashable", "signedIn"]
 - !private ["Ps8Hashable", "source"]
+- ["Ps8Hashable", "standard"]
 - !private ["Ps8Hashable", "static"]
 - ["Ps8Hashable", "stopwatchString"]
 - !private ["Ps8Hashable", "storage"]
@@ -2178,7 +2211,9 @@ depends-member:
 - !private ["PSo8NSCoding", "UITapGestureRecognizer"]
 - !private ["PSo8NSCoding", "UIViewController"]
 - !private ["PSo8NSCoding", "URL"]
+- ["PSo8NSCoding", "UserDefaults"]
 - ["PSo8NSCoding", "_refHandle"]
+- ["PSo8NSCoding", "activityIndex"]
 - !private ["PSo8NSCoding", "addAction"]
 - !private ["PSo8NSCoding", "addGestureRecognizer"]
 - !private ["PSo8NSCoding", "attributedText"]
@@ -2213,6 +2248,8 @@ depends-member:
 - !private ["PSo8NSCoding", "dateStyle"]
 - ["PSo8NSCoding", "date_formatter"]
 - ["PSo8NSCoding", "date_string"]
+- ["PSo8NSCoding", "defaults"]
+- !private ["PSo8NSCoding", "defaultsKeys"]
 - !private ["PSo8NSCoding", "delegate"]
 - !private ["PSo8NSCoding", "dequeueReusableCell"]
 - ["PSo8NSCoding", "didPressCrash"]
@@ -2259,7 +2296,6 @@ depends-member:
 - ["PSo8NSCoding", "numberOfComponentsInPickerView"]
 - ["PSo8NSCoding", "numberOfSections"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
-- ["PSo8NSCoding", "old_idx"]
 - ["PSo8NSCoding", "pastActivity"]
 - ["PSo8NSCoding", "pickerData"]
 - ["PSo8NSCoding", "pickerText"]
@@ -2388,7 +2424,9 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UITapGestureRecognizer"]
 - !private ["PSo26NSExtensionRequestHandling", "UIViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "URL"]
+- ["PSo26NSExtensionRequestHandling", "UserDefaults"]
 - ["PSo26NSExtensionRequestHandling", "_refHandle"]
+- ["PSo26NSExtensionRequestHandling", "activityIndex"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
 - ["PSo26NSExtensionRequestHandling", "banner"]
 - ["PSo26NSExtensionRequestHandling", "c_hours"]
@@ -2408,6 +2446,8 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "currentDate"]
 - ["PSo26NSExtensionRequestHandling", "date_formatter"]
 - ["PSo26NSExtensionRequestHandling", "date_string"]
+- ["PSo26NSExtensionRequestHandling", "defaults"]
+- !private ["PSo26NSExtensionRequestHandling", "defaultsKeys"]
 - ["PSo26NSExtensionRequestHandling", "didPressCrash"]
 - ["PSo26NSExtensionRequestHandling", "didPressFreshConfig"]
 - ["PSo26NSExtensionRequestHandling", "didSendMessage"]
@@ -2441,7 +2481,6 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "numberOfComponentsInPickerView"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSections"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
-- ["PSo26NSExtensionRequestHandling", "old_idx"]
 - ["PSo26NSExtensionRequestHandling", "pastActivity"]
 - ["PSo26NSExtensionRequestHandling", "pickerData"]
 - ["PSo26NSExtensionRequestHandling", "pickerText"]
@@ -2562,9 +2601,11 @@ depends-member:
 - ["CSo8NSObject", "UIView"]
 - !private ["CSo8NSObject", "UIViewController"]
 - !private ["CSo8NSObject", "URL"]
+- ["CSo8NSObject", "UserDefaults"]
 - !private ["CSo8NSObject", "Void"]
 - ["CSo8NSObject", "_refHandle"]
 - !private ["CSo8NSObject", "activateFetched"]
+- ["CSo8NSObject", "activityIndex"]
 - !private ["CSo8NSObject", "addAction"]
 - !private ["CSo8NSObject", "addGestureRecognizer"]
 - !private ["CSo8NSObject", "async"]
@@ -2609,6 +2650,8 @@ depends-member:
 - ["CSo8NSObject", "date_formatter"]
 - ["CSo8NSObject", "date_string"]
 - !private ["CSo8NSObject", "defaultApp"]
+- ["CSo8NSObject", "defaults"]
+- !private ["CSo8NSObject", "defaultsKeys"]
 - !private ["CSo8NSObject", "delegate"]
 - !private ["CSo8NSObject", "dequeueReusableCell"]
 - ["CSo8NSObject", "didPressCrash"]
@@ -2664,7 +2707,6 @@ depends-member:
 - !private ["CSo8NSObject", "numberValue"]
 - !private ["CSo8NSObject", "observe"]
 - !private ["CSo8NSObject", "observeSingleEvent"]
-- ["CSo8NSObject", "old_idx"]
 - !private ["CSo8NSObject", "options"]
 - ["CSo8NSObject", "pastActivity"]
 - !private ["CSo8NSObject", "photoURL"]
@@ -2709,6 +2751,7 @@ depends-member:
 - ["CSo8NSObject", "signOut"]
 - !private ["CSo8NSObject", "signedIn"]
 - !private ["CSo8NSObject", "source"]
+- ["CSo8NSObject", "standard"]
 - ["CSo8NSObject", "stopwatchString"]
 - !private ["CSo8NSObject", "storage"]
 - !private ["CSo8NSObject", "storageBucket"]
@@ -2779,8 +2822,10 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UITapGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "UIViewController"]
 - !private ["PSo16NSObjectProtocol", "URL"]
+- ["PSo16NSObjectProtocol", "UserDefaults"]
 - ["PSo16NSObjectProtocol", "_refHandle"]
 - !private ["PSo16NSObjectProtocol", "activateFetched"]
+- ["PSo16NSObjectProtocol", "activityIndex"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
 - !private ["PSo16NSObjectProtocol", "addGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "async"]
@@ -2825,6 +2870,8 @@ depends-member:
 - ["PSo16NSObjectProtocol", "date_formatter"]
 - ["PSo16NSObjectProtocol", "date_string"]
 - !private ["PSo16NSObjectProtocol", "defaultApp"]
+- ["PSo16NSObjectProtocol", "defaults"]
+- !private ["PSo16NSObjectProtocol", "defaultsKeys"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCell"]
 - ["PSo16NSObjectProtocol", "didPressCrash"]
@@ -2880,7 +2927,6 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "numberValue"]
 - !private ["PSo16NSObjectProtocol", "observe"]
 - !private ["PSo16NSObjectProtocol", "observeSingleEvent"]
-- ["PSo16NSObjectProtocol", "old_idx"]
 - !private ["PSo16NSObjectProtocol", "options"]
 - ["PSo16NSObjectProtocol", "pastActivity"]
 - !private ["PSo16NSObjectProtocol", "photoURL"]
@@ -2925,6 +2971,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "signOut"]
 - !private ["PSo16NSObjectProtocol", "signedIn"]
 - !private ["PSo16NSObjectProtocol", "source"]
+- ["PSo16NSObjectProtocol", "standard"]
 - ["PSo16NSObjectProtocol", "stopwatchString"]
 - !private ["PSo16NSObjectProtocol", "storage"]
 - !private ["PSo16NSObjectProtocol", "storageBucket"]
@@ -3206,7 +3253,9 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UITapGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "UIViewController"]
 - !private ["PSo21UIAppearanceContainer", "URL"]
+- ["PSo21UIAppearanceContainer", "UserDefaults"]
 - ["PSo21UIAppearanceContainer", "_refHandle"]
+- ["PSo21UIAppearanceContainer", "activityIndex"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
 - !private ["PSo21UIAppearanceContainer", "addGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "attributedText"]
@@ -3232,6 +3281,8 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "dataSource"]
 - ["PSo21UIAppearanceContainer", "date_formatter"]
 - ["PSo21UIAppearanceContainer", "date_string"]
+- ["PSo21UIAppearanceContainer", "defaults"]
+- !private ["PSo21UIAppearanceContainer", "defaultsKeys"]
 - !private ["PSo21UIAppearanceContainer", "delegate"]
 - !private ["PSo21UIAppearanceContainer", "dequeueReusableCell"]
 - ["PSo21UIAppearanceContainer", "didPressCrash"]
@@ -3273,7 +3324,6 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "numberOfComponentsInPickerView"]
 - ["PSo21UIAppearanceContainer", "numberOfSections"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
-- ["PSo21UIAppearanceContainer", "old_idx"]
 - ["PSo21UIAppearanceContainer", "pastActivity"]
 - ["PSo21UIAppearanceContainer", "pickerData"]
 - ["PSo21UIAppearanceContainer", "pickerText"]
@@ -3384,7 +3434,9 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UITapGestureRecognizer"]
 - !private ["PSo18UIContentContainer", "UIViewController"]
 - !private ["PSo18UIContentContainer", "URL"]
+- ["PSo18UIContentContainer", "UserDefaults"]
 - ["PSo18UIContentContainer", "_refHandle"]
+- ["PSo18UIContentContainer", "activityIndex"]
 - !private ["PSo18UIContentContainer", "addAction"]
 - ["PSo18UIContentContainer", "banner"]
 - ["PSo18UIContentContainer", "c_hours"]
@@ -3404,6 +3456,8 @@ depends-member:
 - ["PSo18UIContentContainer", "currentDate"]
 - ["PSo18UIContentContainer", "date_formatter"]
 - ["PSo18UIContentContainer", "date_string"]
+- ["PSo18UIContentContainer", "defaults"]
+- !private ["PSo18UIContentContainer", "defaultsKeys"]
 - ["PSo18UIContentContainer", "didPressCrash"]
 - ["PSo18UIContentContainer", "didPressFreshConfig"]
 - ["PSo18UIContentContainer", "didSendMessage"]
@@ -3437,7 +3491,6 @@ depends-member:
 - ["PSo18UIContentContainer", "numberOfComponentsInPickerView"]
 - ["PSo18UIContentContainer", "numberOfSections"]
 - ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
-- ["PSo18UIContentContainer", "old_idx"]
 - ["PSo18UIContentContainer", "pastActivity"]
 - ["PSo18UIContentContainer", "pickerData"]
 - ["PSo18UIContentContainer", "pickerText"]
@@ -3597,7 +3650,9 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "UIViewController"]
 - !private ["PSo18UIFocusEnvironment", "URL"]
+- ["PSo18UIFocusEnvironment", "UserDefaults"]
 - ["PSo18UIFocusEnvironment", "_refHandle"]
+- ["PSo18UIFocusEnvironment", "activityIndex"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
 - !private ["PSo18UIFocusEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "attributedText"]
@@ -3623,6 +3678,8 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "dataSource"]
 - ["PSo18UIFocusEnvironment", "date_formatter"]
 - ["PSo18UIFocusEnvironment", "date_string"]
+- ["PSo18UIFocusEnvironment", "defaults"]
+- !private ["PSo18UIFocusEnvironment", "defaultsKeys"]
 - !private ["PSo18UIFocusEnvironment", "delegate"]
 - !private ["PSo18UIFocusEnvironment", "dequeueReusableCell"]
 - ["PSo18UIFocusEnvironment", "didPressCrash"]
@@ -3664,7 +3721,6 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "numberOfComponentsInPickerView"]
 - ["PSo18UIFocusEnvironment", "numberOfSections"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
-- ["PSo18UIFocusEnvironment", "old_idx"]
 - ["PSo18UIFocusEnvironment", "pastActivity"]
 - ["PSo18UIFocusEnvironment", "pickerData"]
 - ["PSo18UIFocusEnvironment", "pickerText"]
@@ -3791,7 +3847,9 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "UILabel"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewCell"]
 - !private ["PSo31UIImagePickerControllerDelegate", "URL"]
+- ["PSo31UIImagePickerControllerDelegate", "UserDefaults"]
 - !private ["PSo31UIImagePickerControllerDelegate", "_refHandle"]
+- !private ["PSo31UIImagePickerControllerDelegate", "activityIndex"]
 - !private ["PSo31UIImagePickerControllerDelegate", "c_hours"]
 - !private ["PSo31UIImagePickerControllerDelegate", "c_minutes"]
 - !private ["PSo31UIImagePickerControllerDelegate", "c_seconds"]
@@ -3805,6 +3863,8 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "currentDate"]
 - !private ["PSo31UIImagePickerControllerDelegate", "date_formatter"]
 - !private ["PSo31UIImagePickerControllerDelegate", "date_string"]
+- !private ["PSo31UIImagePickerControllerDelegate", "defaults"]
+- !private ["PSo31UIImagePickerControllerDelegate", "defaultsKeys"]
 - !private ["PSo31UIImagePickerControllerDelegate", "dismiss"]
 - !private ["PSo31UIImagePickerControllerDelegate", "dump"]
 - !private ["PSo31UIImagePickerControllerDelegate", "fatalError"]
@@ -3830,7 +3890,6 @@ depends-member:
 - ["PSo31UIImagePickerControllerDelegate", "numberOfComponentsInPickerView"]
 - ["PSo31UIImagePickerControllerDelegate", "numberOfSections"]
 - ["PSo31UIImagePickerControllerDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo31UIImagePickerControllerDelegate", "old_idx"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pastActivity"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pickerData"]
 - !private ["PSo31UIImagePickerControllerDelegate", "pickerText"]
@@ -3915,7 +3974,9 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "UILabel"]
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewCell"]
 - !private ["PSo30UINavigationControllerDelegate", "URL"]
+- ["PSo30UINavigationControllerDelegate", "UserDefaults"]
 - !private ["PSo30UINavigationControllerDelegate", "_refHandle"]
+- !private ["PSo30UINavigationControllerDelegate", "activityIndex"]
 - !private ["PSo30UINavigationControllerDelegate", "c_hours"]
 - !private ["PSo30UINavigationControllerDelegate", "c_minutes"]
 - !private ["PSo30UINavigationControllerDelegate", "c_seconds"]
@@ -3929,6 +3990,8 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "currentDate"]
 - !private ["PSo30UINavigationControllerDelegate", "date_formatter"]
 - !private ["PSo30UINavigationControllerDelegate", "date_string"]
+- !private ["PSo30UINavigationControllerDelegate", "defaults"]
+- !private ["PSo30UINavigationControllerDelegate", "defaultsKeys"]
 - !private ["PSo30UINavigationControllerDelegate", "dismiss"]
 - !private ["PSo30UINavigationControllerDelegate", "dump"]
 - !private ["PSo30UINavigationControllerDelegate", "fatalError"]
@@ -3954,7 +4017,6 @@ depends-member:
 - ["PSo30UINavigationControllerDelegate", "numberOfComponentsInPickerView"]
 - ["PSo30UINavigationControllerDelegate", "numberOfSections"]
 - ["PSo30UINavigationControllerDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo30UINavigationControllerDelegate", "old_idx"]
 - !private ["PSo30UINavigationControllerDelegate", "pastActivity"]
 - !private ["PSo30UINavigationControllerDelegate", "pickerData"]
 - !private ["PSo30UINavigationControllerDelegate", "pickerText"]
@@ -4031,7 +4093,9 @@ depends-member:
 - !private ["PSo22UIPickerViewDataSource", "UILabel"]
 - !private ["PSo22UIPickerViewDataSource", "UITableViewCell"]
 - !private ["PSo22UIPickerViewDataSource", "URL"]
+- ["PSo22UIPickerViewDataSource", "UserDefaults"]
 - !private ["PSo22UIPickerViewDataSource", "_refHandle"]
+- !private ["PSo22UIPickerViewDataSource", "activityIndex"]
 - !private ["PSo22UIPickerViewDataSource", "c_hours"]
 - !private ["PSo22UIPickerViewDataSource", "c_minutes"]
 - !private ["PSo22UIPickerViewDataSource", "c_seconds"]
@@ -4045,6 +4109,8 @@ depends-member:
 - !private ["PSo22UIPickerViewDataSource", "currentDate"]
 - !private ["PSo22UIPickerViewDataSource", "date_formatter"]
 - !private ["PSo22UIPickerViewDataSource", "date_string"]
+- !private ["PSo22UIPickerViewDataSource", "defaults"]
+- !private ["PSo22UIPickerViewDataSource", "defaultsKeys"]
 - !private ["PSo22UIPickerViewDataSource", "dismiss"]
 - !private ["PSo22UIPickerViewDataSource", "dump"]
 - !private ["PSo22UIPickerViewDataSource", "fatalError"]
@@ -4070,7 +4136,6 @@ depends-member:
 - ["PSo22UIPickerViewDataSource", "numberOfComponentsInPickerView"]
 - ["PSo22UIPickerViewDataSource", "numberOfSections"]
 - ["PSo22UIPickerViewDataSource", "numberOfSectionsInTableView"]
-- !private ["PSo22UIPickerViewDataSource", "old_idx"]
 - !private ["PSo22UIPickerViewDataSource", "pastActivity"]
 - !private ["PSo22UIPickerViewDataSource", "pickerData"]
 - !private ["PSo22UIPickerViewDataSource", "pickerText"]
@@ -4145,7 +4210,9 @@ depends-member:
 - !private ["PSo20UIPickerViewDelegate", "UILabel"]
 - !private ["PSo20UIPickerViewDelegate", "UITableViewCell"]
 - !private ["PSo20UIPickerViewDelegate", "URL"]
+- ["PSo20UIPickerViewDelegate", "UserDefaults"]
 - !private ["PSo20UIPickerViewDelegate", "_refHandle"]
+- !private ["PSo20UIPickerViewDelegate", "activityIndex"]
 - !private ["PSo20UIPickerViewDelegate", "c_hours"]
 - !private ["PSo20UIPickerViewDelegate", "c_minutes"]
 - !private ["PSo20UIPickerViewDelegate", "c_seconds"]
@@ -4159,6 +4226,8 @@ depends-member:
 - !private ["PSo20UIPickerViewDelegate", "currentDate"]
 - !private ["PSo20UIPickerViewDelegate", "date_formatter"]
 - !private ["PSo20UIPickerViewDelegate", "date_string"]
+- !private ["PSo20UIPickerViewDelegate", "defaults"]
+- !private ["PSo20UIPickerViewDelegate", "defaultsKeys"]
 - !private ["PSo20UIPickerViewDelegate", "dismiss"]
 - !private ["PSo20UIPickerViewDelegate", "dump"]
 - !private ["PSo20UIPickerViewDelegate", "fatalError"]
@@ -4184,7 +4253,6 @@ depends-member:
 - ["PSo20UIPickerViewDelegate", "numberOfComponentsInPickerView"]
 - ["PSo20UIPickerViewDelegate", "numberOfSections"]
 - ["PSo20UIPickerViewDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo20UIPickerViewDelegate", "old_idx"]
 - !private ["PSo20UIPickerViewDelegate", "pastActivity"]
 - !private ["PSo20UIPickerViewDelegate", "pickerData"]
 - !private ["PSo20UIPickerViewDelegate", "pickerText"]
@@ -4281,8 +4349,10 @@ depends-member:
 - ["CSo11UIResponder", "UIView"]
 - !private ["CSo11UIResponder", "UIViewController"]
 - !private ["CSo11UIResponder", "URL"]
+- ["CSo11UIResponder", "UserDefaults"]
 - !private ["CSo11UIResponder", "Void"]
 - ["CSo11UIResponder", "_refHandle"]
+- ["CSo11UIResponder", "activityIndex"]
 - !private ["CSo11UIResponder", "addAction"]
 - !private ["CSo11UIResponder", "addGestureRecognizer"]
 - !private ["CSo11UIResponder", "attributedText"]
@@ -4308,6 +4378,8 @@ depends-member:
 - !private ["CSo11UIResponder", "dataSource"]
 - ["CSo11UIResponder", "date_formatter"]
 - ["CSo11UIResponder", "date_string"]
+- ["CSo11UIResponder", "defaults"]
+- !private ["CSo11UIResponder", "defaultsKeys"]
 - !private ["CSo11UIResponder", "delegate"]
 - !private ["CSo11UIResponder", "dequeueReusableCell"]
 - ["CSo11UIResponder", "didPressCrash"]
@@ -4349,7 +4421,6 @@ depends-member:
 - ["CSo11UIResponder", "numberOfComponentsInPickerView"]
 - ["CSo11UIResponder", "numberOfSections"]
 - ["CSo11UIResponder", "numberOfSectionsInTableView"]
-- ["CSo11UIResponder", "old_idx"]
 - ["CSo11UIResponder", "pastActivity"]
 - ["CSo11UIResponder", "pickerData"]
 - ["CSo11UIResponder", "pickerText"]
@@ -4443,7 +4514,9 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UITapGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "UIViewController"]
 - !private ["PSo30UIResponderStandardEditActions", "URL"]
+- ["PSo30UIResponderStandardEditActions", "UserDefaults"]
 - ["PSo30UIResponderStandardEditActions", "_refHandle"]
+- ["PSo30UIResponderStandardEditActions", "activityIndex"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
 - !private ["PSo30UIResponderStandardEditActions", "addGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "attributedText"]
@@ -4469,6 +4542,8 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "dataSource"]
 - ["PSo30UIResponderStandardEditActions", "date_formatter"]
 - ["PSo30UIResponderStandardEditActions", "date_string"]
+- ["PSo30UIResponderStandardEditActions", "defaults"]
+- !private ["PSo30UIResponderStandardEditActions", "defaultsKeys"]
 - !private ["PSo30UIResponderStandardEditActions", "delegate"]
 - !private ["PSo30UIResponderStandardEditActions", "dequeueReusableCell"]
 - ["PSo30UIResponderStandardEditActions", "didPressCrash"]
@@ -4510,7 +4585,6 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "numberOfComponentsInPickerView"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSections"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSectionsInTableView"]
-- ["PSo30UIResponderStandardEditActions", "old_idx"]
 - ["PSo30UIResponderStandardEditActions", "pastActivity"]
 - ["PSo30UIResponderStandardEditActions", "pickerData"]
 - ["PSo30UIResponderStandardEditActions", "pickerText"]
@@ -4607,7 +4681,9 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "UILabel"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewCell"]
 - !private ["PSo20UIScrollViewDelegate", "URL"]
+- ["PSo20UIScrollViewDelegate", "UserDefaults"]
 - !private ["PSo20UIScrollViewDelegate", "_refHandle"]
+- !private ["PSo20UIScrollViewDelegate", "activityIndex"]
 - !private ["PSo20UIScrollViewDelegate", "c_hours"]
 - !private ["PSo20UIScrollViewDelegate", "c_minutes"]
 - !private ["PSo20UIScrollViewDelegate", "c_seconds"]
@@ -4621,6 +4697,8 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "currentDate"]
 - !private ["PSo20UIScrollViewDelegate", "date_formatter"]
 - !private ["PSo20UIScrollViewDelegate", "date_string"]
+- !private ["PSo20UIScrollViewDelegate", "defaults"]
+- !private ["PSo20UIScrollViewDelegate", "defaultsKeys"]
 - !private ["PSo20UIScrollViewDelegate", "dismiss"]
 - !private ["PSo20UIScrollViewDelegate", "dump"]
 - !private ["PSo20UIScrollViewDelegate", "fatalError"]
@@ -4646,7 +4724,6 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "numberOfComponentsInPickerView"]
 - ["PSo20UIScrollViewDelegate", "numberOfSections"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo20UIScrollViewDelegate", "old_idx"]
 - !private ["PSo20UIScrollViewDelegate", "pastActivity"]
 - !private ["PSo20UIScrollViewDelegate", "pickerData"]
 - !private ["PSo20UIScrollViewDelegate", "pickerText"]
@@ -4723,7 +4800,9 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UITapGestureRecognizer"]
 - !private ["PSo16UIStateRestoring", "UIViewController"]
 - !private ["PSo16UIStateRestoring", "URL"]
+- ["PSo16UIStateRestoring", "UserDefaults"]
 - ["PSo16UIStateRestoring", "_refHandle"]
+- ["PSo16UIStateRestoring", "activityIndex"]
 - !private ["PSo16UIStateRestoring", "addAction"]
 - ["PSo16UIStateRestoring", "banner"]
 - ["PSo16UIStateRestoring", "c_hours"]
@@ -4743,6 +4822,8 @@ depends-member:
 - ["PSo16UIStateRestoring", "currentDate"]
 - ["PSo16UIStateRestoring", "date_formatter"]
 - ["PSo16UIStateRestoring", "date_string"]
+- ["PSo16UIStateRestoring", "defaults"]
+- !private ["PSo16UIStateRestoring", "defaultsKeys"]
 - ["PSo16UIStateRestoring", "didPressCrash"]
 - ["PSo16UIStateRestoring", "didPressFreshConfig"]
 - ["PSo16UIStateRestoring", "didSendMessage"]
@@ -4776,7 +4857,6 @@ depends-member:
 - ["PSo16UIStateRestoring", "numberOfComponentsInPickerView"]
 - ["PSo16UIStateRestoring", "numberOfSections"]
 - ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
-- ["PSo16UIStateRestoring", "old_idx"]
 - ["PSo16UIStateRestoring", "pastActivity"]
 - ["PSo16UIStateRestoring", "pickerData"]
 - ["PSo16UIStateRestoring", "pickerText"]
@@ -4869,7 +4949,9 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "UILabel"]
 - !private ["PSo21UITableViewDataSource", "UITableViewCell"]
 - !private ["PSo21UITableViewDataSource", "URL"]
+- ["PSo21UITableViewDataSource", "UserDefaults"]
 - !private ["PSo21UITableViewDataSource", "_refHandle"]
+- !private ["PSo21UITableViewDataSource", "activityIndex"]
 - !private ["PSo21UITableViewDataSource", "c_hours"]
 - !private ["PSo21UITableViewDataSource", "c_minutes"]
 - !private ["PSo21UITableViewDataSource", "c_seconds"]
@@ -4883,6 +4965,8 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "currentDate"]
 - !private ["PSo21UITableViewDataSource", "date_formatter"]
 - !private ["PSo21UITableViewDataSource", "date_string"]
+- !private ["PSo21UITableViewDataSource", "defaults"]
+- !private ["PSo21UITableViewDataSource", "defaultsKeys"]
 - !private ["PSo21UITableViewDataSource", "dismiss"]
 - !private ["PSo21UITableViewDataSource", "dump"]
 - !private ["PSo21UITableViewDataSource", "fatalError"]
@@ -4908,7 +4992,6 @@ depends-member:
 - ["PSo21UITableViewDataSource", "numberOfComponentsInPickerView"]
 - ["PSo21UITableViewDataSource", "numberOfSections"]
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
-- !private ["PSo21UITableViewDataSource", "old_idx"]
 - !private ["PSo21UITableViewDataSource", "pastActivity"]
 - !private ["PSo21UITableViewDataSource", "pickerData"]
 - !private ["PSo21UITableViewDataSource", "pickerText"]
@@ -4983,7 +5066,9 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "UILabel"]
 - !private ["PSo19UITableViewDelegate", "UITableViewCell"]
 - !private ["PSo19UITableViewDelegate", "URL"]
+- ["PSo19UITableViewDelegate", "UserDefaults"]
 - !private ["PSo19UITableViewDelegate", "_refHandle"]
+- !private ["PSo19UITableViewDelegate", "activityIndex"]
 - !private ["PSo19UITableViewDelegate", "c_hours"]
 - !private ["PSo19UITableViewDelegate", "c_minutes"]
 - !private ["PSo19UITableViewDelegate", "c_seconds"]
@@ -4997,6 +5082,8 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "currentDate"]
 - !private ["PSo19UITableViewDelegate", "date_formatter"]
 - !private ["PSo19UITableViewDelegate", "date_string"]
+- !private ["PSo19UITableViewDelegate", "defaults"]
+- !private ["PSo19UITableViewDelegate", "defaultsKeys"]
 - !private ["PSo19UITableViewDelegate", "dismiss"]
 - !private ["PSo19UITableViewDelegate", "dump"]
 - !private ["PSo19UITableViewDelegate", "fatalError"]
@@ -5022,7 +5109,6 @@ depends-member:
 - ["PSo19UITableViewDelegate", "numberOfComponentsInPickerView"]
 - ["PSo19UITableViewDelegate", "numberOfSections"]
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo19UITableViewDelegate", "old_idx"]
 - !private ["PSo19UITableViewDelegate", "pastActivity"]
 - !private ["PSo19UITableViewDelegate", "pickerData"]
 - !private ["PSo19UITableViewDelegate", "pickerText"]
@@ -5106,7 +5192,9 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "UILabel"]
 - !private ["PSo19UITextFieldDelegate", "UITableViewCell"]
 - !private ["PSo19UITextFieldDelegate", "URL"]
+- ["PSo19UITextFieldDelegate", "UserDefaults"]
 - !private ["PSo19UITextFieldDelegate", "_refHandle"]
+- !private ["PSo19UITextFieldDelegate", "activityIndex"]
 - !private ["PSo19UITextFieldDelegate", "c_hours"]
 - !private ["PSo19UITextFieldDelegate", "c_minutes"]
 - !private ["PSo19UITextFieldDelegate", "c_seconds"]
@@ -5120,6 +5208,8 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "currentDate"]
 - !private ["PSo19UITextFieldDelegate", "date_formatter"]
 - !private ["PSo19UITextFieldDelegate", "date_string"]
+- !private ["PSo19UITextFieldDelegate", "defaults"]
+- !private ["PSo19UITextFieldDelegate", "defaultsKeys"]
 - !private ["PSo19UITextFieldDelegate", "dismiss"]
 - !private ["PSo19UITextFieldDelegate", "dump"]
 - !private ["PSo19UITextFieldDelegate", "fatalError"]
@@ -5145,7 +5235,6 @@ depends-member:
 - ["PSo19UITextFieldDelegate", "numberOfComponentsInPickerView"]
 - ["PSo19UITextFieldDelegate", "numberOfSections"]
 - ["PSo19UITextFieldDelegate", "numberOfSectionsInTableView"]
-- !private ["PSo19UITextFieldDelegate", "old_idx"]
 - !private ["PSo19UITextFieldDelegate", "pastActivity"]
 - !private ["PSo19UITextFieldDelegate", "pickerData"]
 - !private ["PSo19UITextFieldDelegate", "pickerText"]
@@ -5224,7 +5313,9 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "UIViewController"]
 - !private ["PSo18UITraitEnvironment", "URL"]
+- ["PSo18UITraitEnvironment", "UserDefaults"]
 - ["PSo18UITraitEnvironment", "_refHandle"]
+- ["PSo18UITraitEnvironment", "activityIndex"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
 - !private ["PSo18UITraitEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "attributedText"]
@@ -5250,6 +5341,8 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "dataSource"]
 - ["PSo18UITraitEnvironment", "date_formatter"]
 - ["PSo18UITraitEnvironment", "date_string"]
+- ["PSo18UITraitEnvironment", "defaults"]
+- !private ["PSo18UITraitEnvironment", "defaultsKeys"]
 - !private ["PSo18UITraitEnvironment", "delegate"]
 - !private ["PSo18UITraitEnvironment", "dequeueReusableCell"]
 - ["PSo18UITraitEnvironment", "didPressCrash"]
@@ -5291,7 +5384,6 @@ depends-member:
 - ["PSo18UITraitEnvironment", "numberOfComponentsInPickerView"]
 - ["PSo18UITraitEnvironment", "numberOfSections"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
-- ["PSo18UITraitEnvironment", "old_idx"]
 - ["PSo18UITraitEnvironment", "pastActivity"]
 - ["PSo18UITraitEnvironment", "pickerData"]
 - ["PSo18UITraitEnvironment", "pickerText"]
@@ -5432,8 +5524,10 @@ depends-member:
 - ["CSo16UIViewController", "UIView"]
 - !private ["CSo16UIViewController", "UIViewController"]
 - !private ["CSo16UIViewController", "URL"]
+- ["CSo16UIViewController", "UserDefaults"]
 - !private ["CSo16UIViewController", "Void"]
 - ["CSo16UIViewController", "_refHandle"]
+- ["CSo16UIViewController", "activityIndex"]
 - !private ["CSo16UIViewController", "addAction"]
 - ["CSo16UIViewController", "banner"]
 - ["CSo16UIViewController", "c_hours"]
@@ -5453,6 +5547,8 @@ depends-member:
 - ["CSo16UIViewController", "currentDate"]
 - ["CSo16UIViewController", "date_formatter"]
 - ["CSo16UIViewController", "date_string"]
+- ["CSo16UIViewController", "defaults"]
+- !private ["CSo16UIViewController", "defaultsKeys"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "didPressCrash"]
 - ["CSo16UIViewController", "didPressFreshConfig"]
@@ -5487,7 +5583,6 @@ depends-member:
 - ["CSo16UIViewController", "numberOfComponentsInPickerView"]
 - ["CSo16UIViewController", "numberOfSections"]
 - ["CSo16UIViewController", "numberOfSectionsInTableView"]
-- ["CSo16UIViewController", "old_idx"]
 - ["CSo16UIViewController", "pastActivity"]
 - ["CSo16UIViewController", "pickerData"]
 - ["CSo16UIViewController", "pickerText"]
@@ -5549,6 +5644,10 @@ depends-member:
 - ["V10Foundation3URL", "deinit"]
 - !private ["V10Foundation3URL", "init"]
 - !private ["Sc", "deinit"]
+- ["CSo12UserDefaults", "deinit"]
+- !private ["CSo12UserDefaults", "setValue"]
+- ["CSo12UserDefaults", "standard"]
+- !private ["CSo12UserDefaults", "string"]
 - ["Ps14_ArrayProtocol", "Element"]
 - !private ["Ps14_ArrayProtocol", "Index"]
 - !private ["Ps14_ArrayProtocol", "IndexDistance"]
@@ -5684,11 +5783,13 @@ depends-member:
 - !private ["Ps9_Hashable", "UITapGestureRecognizer"]
 - !private ["Ps9_Hashable", "UIViewController"]
 - !private ["Ps9_Hashable", "URL"]
+- ["Ps9_Hashable", "UserDefaults"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
 - ["Ps9_Hashable", "_refHandle"]
 - !private ["Ps9_Hashable", "absoluteString"]
 - !private ["Ps9_Hashable", "activateFetched"]
+- ["Ps9_Hashable", "activityIndex"]
 - !private ["Ps9_Hashable", "addAction"]
 - !private ["Ps9_Hashable", "addGestureRecognizer"]
 - !private ["Ps9_Hashable", "alert"]
@@ -5738,6 +5839,8 @@ depends-member:
 - ["Ps9_Hashable", "date_formatter"]
 - ["Ps9_Hashable", "date_string"]
 - !private ["Ps9_Hashable", "defaultApp"]
+- ["Ps9_Hashable", "defaults"]
+- !private ["Ps9_Hashable", "defaultsKeys"]
 - !private ["Ps9_Hashable", "delegate"]
 - !private ["Ps9_Hashable", "dequeueReusableCell"]
 - !private ["Ps9_Hashable", "destructive"]
@@ -5796,7 +5899,6 @@ depends-member:
 - !private ["Ps9_Hashable", "numberValue"]
 - !private ["Ps9_Hashable", "observe"]
 - !private ["Ps9_Hashable", "observeSingleEvent"]
-- ["Ps9_Hashable", "old_idx"]
 - !private ["Ps9_Hashable", "options"]
 - ["Ps9_Hashable", "pastActivity"]
 - !private ["Ps9_Hashable", "photoURL"]
@@ -5842,6 +5944,7 @@ depends-member:
 - ["Ps9_Hashable", "signOut"]
 - !private ["Ps9_Hashable", "signedIn"]
 - !private ["Ps9_Hashable", "source"]
+- ["Ps9_Hashable", "standard"]
 - !private ["Ps9_Hashable", "static"]
 - ["Ps9_Hashable", "stopwatchString"]
 - !private ["Ps9_Hashable", "storage"]
@@ -5927,6 +6030,9 @@ depends-member:
 - !private ["Ps11_Strideable", "NSDateSecond"]
 - !private ["Ps11_Strideable", "Stride"]
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
+- ["V6Kairos12defaultsKeys", "init"]
+- ["V6Kairos12defaultsKeys", "keyOne"]
+- ["V6Kairos12defaultsKeys", "keyTwo"]
 depends-nominal:
 - !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
@@ -6113,6 +6219,7 @@ depends-nominal:
 - !private "Vs5UInt8"
 - "V10Foundation3URL"
 - !private "Sc"
+- "CSo12UserDefaults"
 - "Ps14_ArrayProtocol"
 - !private "Ps15_CVarArgAligned"
 - !private "Ps22_CVarArgPassedAsDouble"
@@ -6139,6 +6246,7 @@ depends-nominal:
 - !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
+- "V6Kairos12defaultsKeys"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
@@ -6301,4 +6409,4 @@ depends-external:
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Core-Module.h"
 - "/Users/RichardChen/kairos/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h"
-interface-hash: "c579e90118cbda6aeacb25c93341b258"
+interface-hash: "fd94cbfb90f58748307c7f85692fd21f"
