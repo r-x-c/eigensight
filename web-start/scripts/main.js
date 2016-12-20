@@ -21,6 +21,8 @@ function FriendlyChat() {
 
     // Shortcuts to DOM Elements.
     this.messageList = document.getElementById('messages');
+    //fixme
+    // this.timeList = document.getElementById('messages');
     this.messageForm = document.getElementById('message-form');
     this.messageInput = document.getElementById('message');
     this.submitButton = document.getElementById('submit');
@@ -81,6 +83,26 @@ FriendlyChat.prototype.loadMessages = function () {
 
 };
 
+/*
+ // fixme: Loads chat messages history and listens for upcoming ones.
+ FriendlyChat.prototype.loadTimes = function () {
+ // TODO(DEVELOPER): Load and listens for new messages.
+ // Reference to the /messages/ database path.
+ this.messagesRef = this.database.ref('messages');
+ // Make sure we remove all previous listeners.
+ this.messagesRef.off();
+
+ // Loads the last 12 messages and listen for new ones.
+ var setMessage = function (data) {
+ var val = data.val();
+ this.displayMessage(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+ }.bind(this);
+ this.messagesRef.limitToLast(12).on('child_added', setMessage);
+ this.messagesRef.limitToLast(12).on('child_changed', setMessage);
+
+ };
+ */
+
 // Saves a new message on the Firebase DB.
 FriendlyChat.prototype.saveMessage = function (e) {
     e.preventDefault();
@@ -113,7 +135,7 @@ FriendlyChat.prototype.setImageUrl = function (imageUri, imgElement) {
     // If the image is a Firebase Storage URI we fetch the URL.
     if (imageUri.startsWith('gs://')) {
         imgElement.src = FriendlyChat.LOADING_IMAGE_URL; // Display a loading image first.
-        this.storage.refFromURL(imageUri).getMetadata().then(function(metadata) {
+        this.storage.refFromURL(imageUri).getMetadata().then(function (metadata) {
             imgElement.src = metadata.downloadURLs[0];
         });
     } else {
@@ -149,16 +171,16 @@ FriendlyChat.prototype.saveImageMessage = function (event) {
             name: currentUser.displayName,
             imageUrl: FriendlyChat.LOADING_IMAGE_URL,
             photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
-        }).then(function(data) {
+        }).then(function (data) {
 
             // Upload the image to Firebase Storage.
             this.storage.ref(currentUser.uid + '/' + Date.now() + '/' + file.name)
                 .put(file, {contentType: file.type})
-                .then(function(snapshot) {
+                .then(function (snapshot) {
                     // Get the file's Storage URI and update the chat message placeholder.
                     var filePath = snapshot.metadata.fullPath;
                     data.update({imageUrl: this.storage.ref(filePath).toString()});
-                }.bind(this)).catch(function(error) {
+                }.bind(this)).catch(function (error) {
                 console.error('There was an error uploading a file to Firebase Storage:', error);
             });
         }.bind(this));
@@ -204,6 +226,9 @@ FriendlyChat.prototype.onAuthStateChanged = function (user) {
 
         // We load currently existing chant messages.
         this.loadMessages();
+
+        //fixme:
+        // this.loadTimes();
     } else { // User is signed out!
         // Hide user's profile and sign-out button.
         this.userName.setAttribute('hidden', 'true');
@@ -312,3 +337,23 @@ FriendlyChat.prototype.checkSetup = function () {
 window.onload = function () {
     window.friendlyChat = new FriendlyChat();
 };
+
+
+function selectActivity() {
+    // var x = document.getElementById("mySelect").length;
+    var e = document.getElementById("mySelect");
+    var foo = e.options[e.selectedIndex].value;
+    var bar = e.options[e.selectedIndex].text;
+    document.getElementById("foo").innerHTML = foo;
+    document.getElementById("bar").innerHTML = bar;
+
+    var n = new Date();
+    var y = n.getFullYear();
+    var m = n.getMonth() + 1;
+    var d = n.getDate();
+    document.getElementById("date").innerHTML = m + "" + d + "" + y;
+
+
+}
+
+
