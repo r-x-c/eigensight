@@ -43,9 +43,9 @@ function Kairos() {
     this.signInButton.addEventListener('click', this.signIn.bind(this));
 
     //fixme
-    this.activitySwitcher.addEventListener('mySelect', this.saveMessage.bind(this));
-    this.activityForm = document.getElementById('mySelect');
-    this.activityForm.addEventListener('onchange', this.selectActivity.bind(this));
+    // this.activitySwitcher.addEventListener('mySelect', this.saveMessage.bind(this));
+    // this.activityForm = document.getElementById('mySelect');
+    // this.activityForm.addEventListener('onchange', this.selectActivity.bind(this));
 
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
@@ -53,7 +53,7 @@ function Kairos() {
     this.messageInput.addEventListener('change', buttonTogglingHandler);
 
     //fixme
-    this.activitySwitcher.addEventListener('foo', buttonTogglingHandler);
+    // this.activitySwitcher.addEventListener('foo', buttonTogglingHandler);
 
 
     // Events for image upload.
@@ -348,14 +348,10 @@ window.onload = function () {
 };
 
 Kairos.prototype.selectActivity = function () {
-    // var x = document.getElementById("mySelect").length;
-    var e = document.getElementById("mySelect");
+    var e = document.getElementById("activitySelector");
     var activity_index = e.options[e.selectedIndex].value;
     var activity_name = e.options[e.selectedIndex].text;
-    document.getElementById("bar").innerHTML = activity_name;
-    document.getElementById("currentActivity").innerHTML = activity_name;
     var n = new Date();
-    // print("hawefawefawfe");
     var y = n.getFullYear();
     var m = n.getMonth() + 1;
     var d = n.getDate();
@@ -365,106 +361,93 @@ Kairos.prototype.selectActivity = function () {
     var seconds = n.getSeconds();
     var timeKey = seconds + minutes * 60 + hours * 3600;
 
+    var percentDay = ((timeKey / 86400.0) * 100).toFixed(2) + '%';
+    var timeKeyString = String(timeKey).toHHMMSS();
 
-    var f_start_time = hours + " " + minutes + " " + seconds;
-    document.getElementById("activityStartTime").innerHTML = f_start_time;
+    var f_start_time = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("currentActivity").innerHTML = "Currently: " + activity_name +
+        " since " + f_start_time + " filler " + timeKeyString + " foo " + percentDay;
     var userId = firebase.auth().currentUser.uid;
     var messageListRef = firebase.database().ref('timelogs/' + userId + "/" + formatted_date);
-
-    // var lastKey = (messageListRef + "/lastKey").value;
-    // console.log("last key: " + lastKey);
 
     document.getElementById("foo").innerHTML = timeKey;
 
     console.log("Begin DB read");
+    var events = [];
+
     messageListRef.on('child_added', function (snapshot) {
         if (snapshot.exists()) {
-
             console.log("in listener callback, snapshot exits");
             var event = snapshot.val();
-            // console.log(JSON.stringify(events[0]));
-            // console.log(JSON.stringify(events[1]));
-            // console.log(JSON.stringify(events[2]));
-
-            console.log(event);
+            if (!snapshot.val()) {
+                console.error("not found");
+            }
+            events.push({
+                event
+            });
         }
-        else{
+        else {
             console.log("event doens't exist!!!");
         }
     });
 
     console.log("end DB read");
+    console.log(JSON.stringify(events[0]));
+    console.log(JSON.stringify(events[1]));
+    console.log(JSON.stringify(events[2]));
 
-    // console.log(timeKey);
-    var foo = new Array(e.length).fill(0);
-    // console.log(foo);
-    foo[activity_index] += hours;
+    var lastActivity;
+    var lastKey;
+    var lastTimeArr = new Array(e.length).fill(0);
+    try {
+        lastActivity = Number(events[0]['event']);
+        lastKey = Number(events[1]['event']);
+        lastTimeArr = events[2]['event'];
 
-    // console.log(foo);
 
-    // var currentUser = this.auth.currentUser.userName;
-    //todo: replcae with user id
-    // var newMessageRef = messageListRef.push();
+    }
+    catch (err) {
+        console.error("failed to read into lastactivity, lastkey");
+    }
+
+    console.log(lastActivity);
+    console.log(lastKey);
+    console.log(lastTimeArr);
+
+    lastTimeArr[lastActivity] += (timeKey - lastKey);
+
     messageListRef.set({
         'lastKey': timeKey,
         'lastActivity': Number(activity_index),
-        'timeArray': foo,
+        'timeArray': lastTimeArr,
     });
 
-
-    /*
-     // Check that the user entered a message and is signed in.
-     if (this.messageInput.value && this.checkSignedInWithMessage()) {
-     var currentUser = this.auth.currentUser;
-     // Add a new message entry to the Firebase Database.
-     this.messagesRef.push({
-     name: currentUser.displayName,
-     text: bar,
-     photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
-     }).then(function () {
-     // Clear message text field and SEND button state.
-     Kairos.resetMaterialTextfield(this.messageInput);
-     this.toggleButton();
-     }.bind(this)).catch(function (error) {
-     console.error('Error writing new message to Firebase Database', error);
-     });
-
-
-     // TODO(DEVELOPER): push new message to Firebase.
-
-     }
-     */
-
-
+    displayArray(lastTimeArr);
     console.log("write sucessful");
-
 };
 
-//
-// function selectActivity() {
-//     // var x = document.getElementById("mySelect").length;
-//     var e = document.getElementById("mySelect");
-//     var foo = e.options[e.selectedIndex].value;
-//     var bar = e.options[e.selectedIndex].text;
-//     document.getElementById("foo").innerHTML = foo;
-//     document.getElementById("bar").innerHTML = bar;
-//
-//
-//     firebase.database().ref('users/' + userId).set({
-//         username: name,
-//         email: email,
-//         profile_picture : imageUrl
-//     });
-//
-//
-//     console.error('Error writing new message to Firebase Database');
-//     var n = new Date();
-//     var y = n.getFullYear();
-//     var m = n.getMonth() + 1;
-//     var d = n.getDate();
-//     document.getElementById("date").innerHTML = m + "" + d + "" + y;
-//
-//
-// }
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+};
 
 
+
+function displayArray(arr) {
+    var canvas = document.getElementById("myCanvas")
+    var context = canvas.getContext("2d")
+    context.font = "20px Georgia";
+    console.log(arr.length)
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+        context.fillText(arr[i], i * 30, 50);//Be smarter here to control where text displays
+
+    }
+}
