@@ -108,13 +108,11 @@
             </div>
 
             <div>
+                <iframe src="http://free.timeanddate.com/clock/i5ij8b1z/n179/fn3/fs26/fcf90/tc222/pc9f0/ftb/th1/ta1" frameborder="0" width="166" height="32"></iframe>
                 <h3>Timers</h3>
-                <button id="submit" disabled type="submit"
-                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                    log
-                </button>
-
-                <select id="mySelect" size="7" onchange="selectActivity()">
+                <h5 id="currentActivity">Current Activity: </h5>
+                <p id="bar"></p>
+                <select id="mySelect" size="7" onclick="Kairos.prototype.selectActivity()">
                     <option value="0">sleeping</option>
                     <option value="1">traveling</option>
                     <option value="2">studying</option>
@@ -126,10 +124,7 @@
                 <!--<button onclick="selectActivity()">Try it</button>-->
 
                 <p id="foo"></p>
-                <p id="bar"></p>
-                <p id="date">Key: </p>
-
-
+                <p id="activityStartTime"></p>
             </div>
 
         </div>

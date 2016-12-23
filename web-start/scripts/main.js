@@ -15,14 +15,13 @@
  */
 'use strict';
 
-// Initializes FriendlyChat.
-function FriendlyChat() {
+// Initializes Kairos.
+function Kairos() {
     this.checkSetup();
 
     // Shortcuts to DOM Elements.
     this.messageList = document.getElementById('messages');
     //fixme
-    // this.timeList = document.getElementById('messages');
     this.messageForm = document.getElementById('message-form');
     this.messageInput = document.getElementById('message');
     this.submitButton = document.getElementById('submit');
@@ -35,15 +34,27 @@ function FriendlyChat() {
     this.signOutButton = document.getElementById('sign-out');
     this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
+    //fixme
+    this.activitySwitcher = document.getElementById('mySelect');
+
     // Saves message on form submit.
     this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
 
+    //fixme
+    this.activitySwitcher.addEventListener('mySelect', this.saveMessage.bind(this));
+    this.activityForm = document.getElementById('mySelect');
+    this.activityForm.addEventListener('onchange', this.selectActivity.bind(this));
+
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
     this.messageInput.addEventListener('keyup', buttonTogglingHandler);
     this.messageInput.addEventListener('change', buttonTogglingHandler);
+
+    //fixme
+    this.activitySwitcher.addEventListener('foo', buttonTogglingHandler);
+
 
     // Events for image upload.
     this.submitImageButton.addEventListener('click', function () {
@@ -55,7 +66,7 @@ function FriendlyChat() {
 }
 
 // Sets up shortcuts to Firebase features and initiate firebase auth.
-FriendlyChat.prototype.initFirebase = function () {
+Kairos.prototype.initFirebase = function () {
     // Sets up shortcuts to Firebase features and initiate firebase auth.
     // Shortcuts to Firebase SDK features.
     this.auth = firebase.auth();
@@ -66,7 +77,7 @@ FriendlyChat.prototype.initFirebase = function () {
 };
 
 // Loads chat messages history and listens for upcoming ones.
-FriendlyChat.prototype.loadMessages = function () {
+Kairos.prototype.loadMessages = function () {
     // TODO(DEVELOPER): Load and listens for new messages.
     // Reference to the /messages/ database path.
     this.messagesRef = this.database.ref('messages');
@@ -85,7 +96,7 @@ FriendlyChat.prototype.loadMessages = function () {
 
 /*
  // fixme: Loads chat messages history and listens for upcoming ones.
- FriendlyChat.prototype.loadTimes = function () {
+ Kairos.prototype.loadTimes = function () {
  // TODO(DEVELOPER): Load and listens for new messages.
  // Reference to the /messages/ database path.
  this.messagesRef = this.database.ref('messages');
@@ -104,7 +115,7 @@ FriendlyChat.prototype.loadMessages = function () {
  */
 
 // Saves a new message on the Firebase DB.
-FriendlyChat.prototype.saveMessage = function (e) {
+Kairos.prototype.saveMessage = function (e) {
     e.preventDefault();
     // Check that the user entered a message and is signed in.
     if (this.messageInput.value && this.checkSignedInWithMessage()) {
@@ -116,7 +127,7 @@ FriendlyChat.prototype.saveMessage = function (e) {
             photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
         }).then(function () {
             // Clear message text field and SEND button state.
-            FriendlyChat.resetMaterialTextfield(this.messageInput);
+            Kairos.resetMaterialTextfield(this.messageInput);
             this.toggleButton();
         }.bind(this)).catch(function (error) {
             console.error('Error writing new message to Firebase Database', error);
@@ -129,12 +140,12 @@ FriendlyChat.prototype.saveMessage = function (e) {
 };
 
 // Sets the URL of the given img element with the URL of the image stored in Firebase Storage.
-FriendlyChat.prototype.setImageUrl = function (imageUri, imgElement) {
+Kairos.prototype.setImageUrl = function (imageUri, imgElement) {
     imgElement.src = imageUri;
 
     // If the image is a Firebase Storage URI we fetch the URL.
     if (imageUri.startsWith('gs://')) {
-        imgElement.src = FriendlyChat.LOADING_IMAGE_URL; // Display a loading image first.
+        imgElement.src = Kairos.LOADING_IMAGE_URL; // Display a loading image first.
         this.storage.refFromURL(imageUri).getMetadata().then(function (metadata) {
             imgElement.src = metadata.downloadURLs[0];
         });
@@ -148,7 +159,7 @@ FriendlyChat.prototype.setImageUrl = function (imageUri, imgElement) {
 
 // Saves a new message containing an image URI in Firebase.
 // This first saves the image in Firebase storage.
-FriendlyChat.prototype.saveImageMessage = function (event) {
+Kairos.prototype.saveImageMessage = function (event) {
     var file = event.target.files[0];
 
     // Clear the selection in the file picker input.
@@ -169,7 +180,7 @@ FriendlyChat.prototype.saveImageMessage = function (event) {
         var currentUser = this.auth.currentUser;
         this.messagesRef.push({
             name: currentUser.displayName,
-            imageUrl: FriendlyChat.LOADING_IMAGE_URL,
+            imageUrl: Kairos.LOADING_IMAGE_URL,
             photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
         }).then(function (data) {
 
@@ -192,23 +203,21 @@ FriendlyChat.prototype.saveImageMessage = function (event) {
 };
 
 // Signs-in Friendly Chat.
-FriendlyChat.prototype.signIn = function () {
+Kairos.prototype.signIn = function () {
     // TODO(DEVELOPER): Sign in Firebase with credential from the Google user.
     var provider = new firebase.auth.GoogleAuthProvider();
     this.auth.signInWithPopup(provider);
 };
 
 // Signs-out of Friendly Chat.
-FriendlyChat.prototype.signOut = function () {
+Kairos.prototype.signOut = function () {
     this.auth.signOut();
 };
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
-FriendlyChat.prototype.onAuthStateChanged = function (user) {
+Kairos.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
         // Get profile pic and user's name from the Firebase user object.
-        var profilePicUrl = null;   // TODO(DEVELOPER): Get profile pic.
-        var userName = null;        // TODO(DEVELOPER): Get user's name.
         var profilePicUrl = user.photoURL; // Only change these two lines!
         var userName = user.displayName;   // Only change these two lines!
 
@@ -241,7 +250,7 @@ FriendlyChat.prototype.onAuthStateChanged = function (user) {
 };
 
 // Returns true if user is signed-in. Otherwise false and displays a message.
-FriendlyChat.prototype.checkSignedInWithMessage = function () {
+Kairos.prototype.checkSignedInWithMessage = function () {
     // Return true if the user is signed in Firebase
     if (this.auth.currentUser) {
         return true;
@@ -256,13 +265,13 @@ FriendlyChat.prototype.checkSignedInWithMessage = function () {
 };
 
 // Resets the given MaterialTextField.
-FriendlyChat.resetMaterialTextfield = function (element) {
+Kairos.resetMaterialTextfield = function (element) {
     element.value = '';
     element.parentNode.MaterialTextfield.boundUpdateClassesHandler();
 };
 
 // Template for messages.
-FriendlyChat.MESSAGE_TEMPLATE =
+Kairos.MESSAGE_TEMPLATE =
     '<div class="message-container">' +
     '<div class="spacing"><div class="pic"></div></div>' +
     '<div class="message"></div>' +
@@ -270,15 +279,15 @@ FriendlyChat.MESSAGE_TEMPLATE =
     '</div>';
 
 // A loading image URL.
-FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
+Kairos.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 
 // Displays a Message in the UI.
-FriendlyChat.prototype.displayMessage = function (key, name, text, picUrl, imageUri) {
+Kairos.prototype.displayMessage = function (key, name, text, picUrl, imageUri) {
     var div = document.getElementById(key);
     // If an element for that message does not exists yet we create it.
     if (!div) {
         var container = document.createElement('div');
-        container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
+        container.innerHTML = Kairos.MESSAGE_TEMPLATE;
         div = container.firstChild;
         div.setAttribute('id', key);
         this.messageList.appendChild(div);
@@ -311,7 +320,7 @@ FriendlyChat.prototype.displayMessage = function (key, name, text, picUrl, image
 
 // Enables or disables the submit button depending on the values of the input
 // fields.
-FriendlyChat.prototype.toggleButton = function () {
+Kairos.prototype.toggleButton = function () {
     if (this.messageInput.value) {
         this.submitButton.removeAttribute('disabled');
     } else {
@@ -320,7 +329,7 @@ FriendlyChat.prototype.toggleButton = function () {
 };
 
 // Checks that the Firebase SDK has been correctly setup and configured.
-FriendlyChat.prototype.checkSetup = function () {
+Kairos.prototype.checkSetup = function () {
     if (!window.firebase || !(firebase.app instanceof Function) || !window.config) {
         window.alert('You have not configured and imported the Firebase SDK. ' +
             'Make sure you go through the codelab setup instructions.');
@@ -335,25 +344,127 @@ FriendlyChat.prototype.checkSetup = function () {
 };
 
 window.onload = function () {
-    window.friendlyChat = new FriendlyChat();
+    window.friendlyChat = new Kairos();
 };
 
-
-function selectActivity() {
+Kairos.prototype.selectActivity = function () {
     // var x = document.getElementById("mySelect").length;
     var e = document.getElementById("mySelect");
-    var foo = e.options[e.selectedIndex].value;
-    var bar = e.options[e.selectedIndex].text;
-    document.getElementById("foo").innerHTML = foo;
-    document.getElementById("bar").innerHTML = bar;
-
+    var activity_index = e.options[e.selectedIndex].value;
+    var activity_name = e.options[e.selectedIndex].text;
+    document.getElementById("bar").innerHTML = activity_name;
+    document.getElementById("currentActivity").innerHTML = activity_name;
     var n = new Date();
+    // print("hawefawefawfe");
     var y = n.getFullYear();
     var m = n.getMonth() + 1;
     var d = n.getDate();
-    document.getElementById("date").innerHTML = m + "" + d + "" + y;
+    var formatted_date = m + "" + d + "" + y;
+    var hours = n.getHours();
+    var minutes = n.getMinutes();
+    var seconds = n.getSeconds();
+    var timeKey = seconds + minutes * 60 + hours * 3600;
 
 
-}
+    var f_start_time = hours + " " + minutes + " " + seconds;
+    document.getElementById("activityStartTime").innerHTML = f_start_time;
+    var userId = firebase.auth().currentUser.uid;
+    var messageListRef = firebase.database().ref('timelogs/' + userId + "/" + formatted_date);
+
+    // var lastKey = (messageListRef + "/lastKey").value;
+    // console.log("last key: " + lastKey);
+
+    document.getElementById("foo").innerHTML = timeKey;
+
+    console.log("Begin DB read");
+    messageListRef.on('child_added', function (snapshot) {
+        if (snapshot.exists()) {
+
+            console.log("in listener callback, snapshot exits");
+            var event = snapshot.val();
+            // console.log(JSON.stringify(events[0]));
+            // console.log(JSON.stringify(events[1]));
+            // console.log(JSON.stringify(events[2]));
+
+            console.log(event);
+        }
+        else{
+            console.log("event doens't exist!!!");
+        }
+    });
+
+    console.log("end DB read");
+
+    // console.log(timeKey);
+    var foo = new Array(e.length).fill(0);
+    // console.log(foo);
+    foo[activity_index] += hours;
+
+    // console.log(foo);
+
+    // var currentUser = this.auth.currentUser.userName;
+    //todo: replcae with user id
+    // var newMessageRef = messageListRef.push();
+    messageListRef.set({
+        'lastKey': timeKey,
+        'lastActivity': Number(activity_index),
+        'timeArray': foo,
+    });
+
+
+    /*
+     // Check that the user entered a message and is signed in.
+     if (this.messageInput.value && this.checkSignedInWithMessage()) {
+     var currentUser = this.auth.currentUser;
+     // Add a new message entry to the Firebase Database.
+     this.messagesRef.push({
+     name: currentUser.displayName,
+     text: bar,
+     photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
+     }).then(function () {
+     // Clear message text field and SEND button state.
+     Kairos.resetMaterialTextfield(this.messageInput);
+     this.toggleButton();
+     }.bind(this)).catch(function (error) {
+     console.error('Error writing new message to Firebase Database', error);
+     });
+
+
+     // TODO(DEVELOPER): push new message to Firebase.
+
+     }
+     */
+
+
+    console.log("write sucessful");
+
+};
+
+//
+// function selectActivity() {
+//     // var x = document.getElementById("mySelect").length;
+//     var e = document.getElementById("mySelect");
+//     var foo = e.options[e.selectedIndex].value;
+//     var bar = e.options[e.selectedIndex].text;
+//     document.getElementById("foo").innerHTML = foo;
+//     document.getElementById("bar").innerHTML = bar;
+//
+//
+//     firebase.database().ref('users/' + userId).set({
+//         username: name,
+//         email: email,
+//         profile_picture : imageUrl
+//     });
+//
+//
+//     console.error('Error writing new message to Firebase Database');
+//     var n = new Date();
+//     var y = n.getFullYear();
+//     var m = n.getMonth() + 1;
+//     var d = n.getDate();
+//     document.getElementById("date").innerHTML = m + "" + d + "" + y;
+//
+//
+// }
 
 
