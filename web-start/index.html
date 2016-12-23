@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Learn how to use the Firebase platform on the Web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairos</title>
+    <title>Kairos - Eigensight</title>
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
@@ -59,7 +59,7 @@
     <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
             <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-                <h3><i class="material-icons">chat_bubble_outline</i> Kairos</h3>
+                <h3><i class="material-icons">chat_bubble_outline</i> EigenSight</h3>
             </div>
             <div id="user-container">
                 <div hidden id="user-pic"></div>
@@ -79,6 +79,8 @@
     <main class="mdl-layout__content mdl-color--grey-100">
         <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
 
+            <iframe src="http://free.timeanddate.com/clock/i5ij8b1z/n179/fn3/fs26/fcf90/tc222/pc9f0/ftb/th1/ta1"
+                    frameborder="0" width="166" height="32"></iframe>
 
             <!-- Messages container -->
             <div id="messages-card"
@@ -107,9 +109,7 @@
                 </div>
             </div>
 
-            <div>
-                <iframe src="http://free.timeanddate.com/clock/i5ij8b1z/n179/fn3/fs26/fcf90/tc222/pc9f0/ftb/th1/ta1" frameborder="0" width="166" height="32"></iframe>
-                <h3>Timers</h3>
+            <div id="time-card" class="mdl-card mdl-shadow--2dp">
                 <h5 id="currentActivity">Current Activity: </h5>
                 <select id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
                     <option value="0">sleeping</option>
@@ -121,40 +121,32 @@
                     <option value="6">grooming</option>
                 </select>
 
-                <canvas id="myCanvas" width="400" height="100" style="border:1px solid #000000;">
-                </canvas>
+                <table id="timeTable">
+                    <caption>Time Breakdown Table</caption>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Time Spent</th>
+                        <th>% of Passed Time</th>
+                        <th>% of Day</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
 
-                <!--<button onclick="selectActivity()">Try it</button>-->
-
-                <p id="foo"></p>
             </div>
-
         </div>
-        <!-- Insert Timer
-        <div>
-
-            <h2>A Movie </h2>
-            <script type="text/javascript">
-                function display_c() {
-                    var refresh = 1000; // Refresh rate in milli seconds
-                    mytime = setTimeout('display_ct()', refresh)
-                }
-
-                function display_ct() {
-                    var strcount
-                    var x = new Date()
-                    document.getElementById('ct').innerHTML = x;
-                    tt = display_c();
-                }
-            </script>
-            <body onload=display_ct();>
-            <span id='ct' style="background-color: #FFFF00"></span>
-            </body>
-
-            <h2>A Movie in the Park</h2>
-        </div>
-
-        -->
         <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
             <div class="mdl-snackbar__text"></div>
             <button class="mdl-snackbar__action" type="button"></button>

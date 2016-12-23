@@ -13,6 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+//http://codepen.io/anon/pen/gLyywR
+
+
 'use strict';
 
 // Initializes Kairos.
@@ -94,25 +98,6 @@ Kairos.prototype.loadMessages = function () {
 
 };
 
-/*
- // fixme: Loads chat messages history and listens for upcoming ones.
- Kairos.prototype.loadTimes = function () {
- // TODO(DEVELOPER): Load and listens for new messages.
- // Reference to the /messages/ database path.
- this.messagesRef = this.database.ref('messages');
- // Make sure we remove all previous listeners.
- this.messagesRef.off();
-
- // Loads the last 12 messages and listen for new ones.
- var setMessage = function (data) {
- var val = data.val();
- this.displayMessage(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
- }.bind(this);
- this.messagesRef.limitToLast(12).on('child_added', setMessage);
- this.messagesRef.limitToLast(12).on('child_changed', setMessage);
-
- };
- */
 
 // Saves a new message on the Firebase DB.
 Kairos.prototype.saveMessage = function (e) {
@@ -347,6 +332,8 @@ window.onload = function () {
     window.friendlyChat = new Kairos();
 };
 
+var SECONDS_IN_DAY = 86400.0;
+
 Kairos.prototype.selectActivity = function () {
     var e = document.getElementById("activitySelector");
     var activity_index = e.options[e.selectedIndex].value;
@@ -360,22 +347,18 @@ Kairos.prototype.selectActivity = function () {
     var minutes = n.getMinutes();
     var seconds = n.getSeconds();
     var timeKey = seconds + minutes * 60 + hours * 3600;
+    console.log("timeKey: " + timeKey);
 
-    var percentDay = ((timeKey / 86400.0) * 100).toFixed(2) + '%';
+    var percentDay = ((timeKey / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
     var timeKeyString = String(timeKey).toHHMMSS();
 
-    var f_start_time = hours + ":" + minutes + ":" + seconds;
     document.getElementById("currentActivity").innerHTML = "Currently: " + activity_name +
-        " since " + f_start_time + " filler " + timeKeyString + " foo " + percentDay;
+        " since " + timeKeyString + ", so far " + percentDay + " of your day has passed";
     var userId = firebase.auth().currentUser.uid;
-    var messageListRef = firebase.database().ref('timelogs/' + userId + "/" + formatted_date);
-
-    document.getElementById("foo").innerHTML = timeKey;
-
+    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + formatted_date);
     console.log("Begin DB read");
     var events = [];
-
-    messageListRef.on('child_added', function (snapshot) {
+    timeDataRef.on('child_added', function (snapshot) {
         if (snapshot.exists()) {
             console.log("in listener callback, snapshot exits");
             var event = snapshot.val();
@@ -387,7 +370,7 @@ Kairos.prototype.selectActivity = function () {
             });
         }
         else {
-            console.log("event doens't exist!!!");
+            console.error("Snapshot not found");
         }
     });
 
@@ -403,51 +386,80 @@ Kairos.prototype.selectActivity = function () {
         lastActivity = Number(events[0]['event']);
         lastKey = Number(events[1]['event']);
         lastTimeArr = events[2]['event'];
-
-
     }
     catch (err) {
-        console.error("failed to read into lastactivity, lastkey");
+        console.error("Read from DB failed");
     }
 
     console.log(lastActivity);
     console.log(lastKey);
     console.log(lastTimeArr);
 
+    //Increment Cumulative Time
     lastTimeArr[lastActivity] += (timeKey - lastKey);
 
-    messageListRef.set({
+    //Write to DB
+    timeDataRef.set({
         'lastKey': timeKey,
         'lastActivity': Number(activity_index),
         'timeArray': lastTimeArr,
     });
 
+    //Write to HTML
     displayArray(lastTimeArr);
-    console.log("write sucessful");
+    console.log("selectActivity Successful");
 };
 
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
-    var hours   = Math.floor(sec_num / 3600);
+    var hours = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-    if (hours   < 10) {hours   = "0"+hours;}
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
-    return hours+':'+minutes+':'+seconds;
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    return hours + ':' + minutes + ':' + seconds;
 };
 
 
-
 function displayArray(arr) {
-    var canvas = document.getElementById("myCanvas")
-    var context = canvas.getContext("2d")
-    context.font = "20px Georgia";
-    console.log(arr.length)
-    for (var i = 0; i < arr.length; i++) {
-        console.log(arr[i]);
-        context.fillText(arr[i], i * 30, 50);//Be smarter here to control where text displays
+    //todo: this inefficiently updates all el of table
+    var table = document.getElementById("timeTable");
+    var activities = document.getElementById("activitySelector");
+    console.log(activities);
+    var sum = arr.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    console.log("Inserting " + arr.length + " elements...");
+    var tableRows = table.getElementsByTagName('tr');
+    console.log(tableRows);
 
+    for (var i = 0; i < arr.length; i++) {
+        table.deleteRow(i + 1);
+        var row = table.insertRow(i + 1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        cell1.innerHTML = activities[i].text;
+        cell2.innerHTML = String(arr[i]).toHHMMSS();
+        cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(2) + '%';
+        cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
     }
 }
+
+function wait(ms) {
+    var start = new Date().getTime();
+    var end = start;
+    while (end < start + ms) {
+        end = new Date().getTime();
+    }
+}
+
