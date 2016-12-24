@@ -21,6 +21,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos - Eigensight</title>
 
+    <!--Import Generator Handlers-->
+    <script data-require="jquery@2.1.1" data-semver="2.1.1"
+            src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.1.1"
+            src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
@@ -56,12 +63,20 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
     <!-- Header section containing logo -->
-    <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+    <header class="mdl-layout__header mdl-color-text--black mdl-color--white-700">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
             <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
                 <h3><i class="material-icons">chat_bubble_outline</i> EigenSight</h3>
             </div>
+
             <div id="user-container">
+
+                <div>
+
+                    <button onclick="changeObjectView('piechart')">pie</button>
+                    <button onclick="changeObjectView('messages-card')">mesg card</button>
+                    <button onclick="changeObjectView('timeTable')">Try it</button>
+                </div>
                 <div hidden id="user-pic"></div>
                 <div hidden id="user-name"></div>
                 <button hidden id="sign-out"
@@ -71,6 +86,7 @@
                 <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
                     <i class="material-icons">account_circle</i>Sign-in with Google
                 </button>
+
             </div>
         </div>
     </header>
@@ -110,8 +126,10 @@
             </div>
 
             <div id="time-card" class="mdl-card mdl-shadow--2dp">
-                <h5 id="currentActivity">Current Activity: </h5>
-                <select id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
+                <p id="currentActivity" class="test1">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+                    consectetur, adipisci velit..."</p>
+
+                <select class="center" id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
                     <option value="0">sleeping</option>
                     <option value="1">traveling</option>
                     <option value="2">studying</option>
@@ -121,40 +139,48 @@
                     <option value="6">grooming</option>
                 </select>
 
-                <table id="timeTable">
-                    <caption>Time Breakdown Table</caption>
-                    <tr>
-                        <th>Activity</th>
-                        <th>Time Spent</th>
-                        <th>% of Passed Time</th>
-                        <th>% of Day</th>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                </table>
 
             </div>
+            <table id="timeTable">
+                <caption>Time Breakdown Table</caption>
+                <tr>
+                    <th>Activity</th>
+                    <th>Time Spent</th>
+                    <th>% of Passed Time</th>
+                    <th>% of Day</th>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
         </div>
         <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
             <div class="mdl-snackbar__text"></div>
             <button class="mdl-snackbar__action" type="button"></button>
         </div>
 
+
 </div>
 </main>
 </div>
+
 
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 <script>

@@ -330,85 +330,142 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
+    document.getElementById("piechart").style.display='none';
+
+
 };
+
+function changeObjectView(id){
+    var pie = document.getElementById(id);
+
+    if (pie.style.display == 'none')
+    {
+        $(pie).fadeIn('fast');
+        // pie.style.display = '';
+    }
+    else
+    {
+        $(pie).fadeOut('fast');
+    }
+}
 
 var SECONDS_IN_DAY = 86400.0;
 
+
 Kairos.prototype.selectActivity = function () {
-    var e = document.getElementById("activitySelector");
-    var activity_index = e.options[e.selectedIndex].value;
-    var activity_name = e.options[e.selectedIndex].text;
+    var selector = document.getElementById("activitySelector");
+    var activity_index = Number(selector.options[selector.selectedIndex].value);
     var n = new Date();
-    var y = n.getFullYear();
-    var m = n.getMonth() + 1;
-    var d = n.getDate();
-    var formatted_date = m + "" + d + "" + y;
-    var hours = n.getHours();
-    var minutes = n.getMinutes();
-    var seconds = n.getSeconds();
-    var timeKey = seconds + minutes * 60 + hours * 3600;
-    console.log("timeKey: " + timeKey);
-
-    var percentDay = ((timeKey / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
-    var timeKeyString = String(timeKey).toHHMMSS();
-
-    document.getElementById("currentActivity").innerHTML = "Currently: " + activity_name +
-        " since " + timeKeyString + ", so far " + percentDay + " of your day has passed";
+    var date_key = (n.getMonth() + 1) + "" + n.getDate() + "" + n.getFullYear();
+    var time_key = (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
     var userId = firebase.auth().currentUser.uid;
-    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + formatted_date);
+    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + date_key);
+    var timelineRef = firebase.database().ref('timelines/' + userId + "/" + date_key);
+
+    timelineRef.push({
+        'timekey': time_key,
+        'activity': activity_index,
+    });
+
     console.log("Begin DB read");
-    var events = [];
-    timeDataRef.on('child_added', function (snapshot) {
-        if (snapshot.exists()) {
-            console.log("in listener callback, snapshot exits");
+    // var events = [];
+    var storedActivity, storedKey, storedTimeArr;
+    timeDataRef.on('value', function (snapshot) {
+        //todo: this function calls 3 times
+        console.log("foobar");
+        if (snapshot.val() !== null) {
             var event = snapshot.val();
-            if (!snapshot.val()) {
-                console.error("not found");
-            }
-            events.push({
-                event
-            });
+            storedActivity = event['lastActivity'];
+            storedKey = event['lastKey'];
+            storedTimeArr = event['timeArray'];
+            storedTimeArr[storedActivity] += (time_key - storedKey);
+            updateFrontEnd(storedTimeArr, time_key, selector.options[Number(activity_index)].text);
         }
         else {
-            console.error("Snapshot not found");
+            console.error("Snapshot not found,  injecting blank values");
+            timeDataRef.set({
+                'lastKey': time_key,
+                'lastActivity': activity_index,
+                'timeArray': new Array(selector.length).fill(0)
+            });
+            storedKey = time_key;
+            storedActivity = activity_index;
+            storedTimeArr = new Array(selector.length).fill(0);
+
         }
+        console.log("Array: " + JSON.stringify(storedTimeArr));
+        console.log("Activity Idx: " + storedActivity);
+        console.log("Key: " + storedKey);
+    });
+
+
+    //Write to DB
+    timeDataRef.update({
+        'lastKey': time_key,
+        'lastActivity': Number(activity_index),
+        'timeArray': storedTimeArr
     });
 
     console.log("end DB read");
-    console.log(JSON.stringify(events[0]));
-    console.log(JSON.stringify(events[1]));
-    console.log(JSON.stringify(events[2]));
+    //todo: math from yesterday
+    // var yesterday = new Date();
+    // yesterday.setDate(yesterday.getDate() - 1);
+    // console.log(yesterday);
+    // var historicalRef = firebase.database().ref('timelogs/' + userId + "/" + yesterday);
 
-    var lastActivity;
-    var lastKey;
-    var lastTimeArr = new Array(e.length).fill(0);
-    try {
-        lastActivity = Number(events[0]['event']);
-        lastKey = Number(events[1]['event']);
-        lastTimeArr = events[2]['event'];
-    }
-    catch (err) {
-        console.error("Read from DB failed");
-    }
+    //fixme smooth calculations between days, temp calc
+    // lastActivity = 0;
+    // lastKey = time_key;
+    // lastTimeArr = new Array(selector.length).fill(0);
+    // }
 
-    console.log(lastActivity);
-    console.log(lastKey);
-    console.log(lastTimeArr);
-
-    //Increment Cumulative Time
-    lastTimeArr[lastActivity] += (timeKey - lastKey);
-
-    //Write to DB
-    timeDataRef.set({
-        'lastKey': timeKey,
-        'lastActivity': Number(activity_index),
-        'timeArray': lastTimeArr,
-    });
-
-    //Write to HTML
-    displayArray(lastTimeArr);
-    console.log("selectActivity Successful");
 };
+
+
+function handleError(xhr, status, error) {
+    console.error(xhr + status + error);
+}
+
+function updateFrontEnd(timeArray, time_key, activity_text) {
+    console.log("Array: " + JSON.stringify(timeArray));
+    $.when(displayArray(timeArray)).then(drawChart(timeArray));
+    //Write to table
+    // displayArray(timeArray);
+
+    var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
+    document.getElementById("currentActivity").innerHTML = "Currently: " + activity_text +
+        " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
+
+    //Create Pie Chart
+    // drawChart(timeArray);
+}
+
+
+//Pie Chart
+// google.charts.setOnLoadCallback(drawChart);
+function drawChart(dataArr) {
+    google.charts.load('current', {'packages': ['corechart']});
+    //todo: support dynamically set activities
+    var labels = document.getElementById("activitySelector");
+    // var data = google.visualization.arrayToDataTable(dataArr);
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Seconds per Day'],
+        [labels[0].text, dataArr[0]],
+        [labels[1].text, dataArr[1]],
+        [labels[2].text, dataArr[2]],
+        [labels[3].text, dataArr[3]],
+        [labels[4].text, dataArr[4]],
+        [labels[5].text, dataArr[5]],
+        [labels[6].text, dataArr[6]]
+    ]);
+
+    var options = {
+        title: 'Activity Breakdown'
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+}
+
 
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
