@@ -331,8 +331,7 @@ Kairos.prototype.checkSetup = function () {
 window.onload = function () {
     window.friendlyChat = new Kairos();
     document.getElementById("piechart").style.display='none';
-
-
+    startTime();
 };
 
 function changeObjectView(id){
@@ -433,7 +432,7 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     // displayArray(timeArray);
 
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
-    document.getElementById("currentActivity").innerHTML = "Currently: " + activity_text +
+    document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
 
     //Create Pie Chart
@@ -519,4 +518,21 @@ function wait(ms) {
         end = new Date().getTime();
     }
 }
+
+
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('pageClock').innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
 

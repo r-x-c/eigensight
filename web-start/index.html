@@ -66,16 +66,17 @@
     <header class="mdl-layout__header mdl-color-text--black mdl-color--white-700">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
             <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-                <h3><i class="material-icons">chat_bubble_outline</i> EigenSight</h3>
+                <h3><img src="/images/hourglass.png" class="material-icons" width="30px" height="30px"/> EigenSight</h3>
             </div>
 
             <div id="user-container">
 
                 <div>
+                    <strong id="pageClock"></strong>
 
-                    <button onclick="changeObjectView('piechart')">pie</button>
-                    <button onclick="changeObjectView('messages-card')">mesg card</button>
-                    <button onclick="changeObjectView('timeTable')">Try it</button>
+                    <button onclick="changeObjectView('piechart')">Day Breakdown</button>
+                    <button onclick="changeObjectView('messages-card')">Messenger</button>
+                    <button onclick="changeObjectView('timeTable')">Table Breakdown</button>
                 </div>
                 <div hidden id="user-pic"></div>
                 <div hidden id="user-name"></div>
@@ -92,14 +93,35 @@
     </header>
 
 
+
+
+
+
+
+    <h3 id="currentActivity">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+        consectetur, adipisci velit..."</h3>
+
     <main class="mdl-layout__content mdl-color--grey-100">
         <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
 
-            <iframe src="http://free.timeanddate.com/clock/i5ij8b1z/n179/fn3/fs26/fcf90/tc222/pc9f0/ftb/th1/ta1"
-                    frameborder="0" width="166" height="32"></iframe>
+
+            <div id="time-card" class="mdl-card mdl-shadow--2dp">
+
+                <select class="center" id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
+                    <option value="0">sleeping</option>
+                    <option value="1">traveling</option>
+                    <option value="2">studying</option>
+                    <option value="3">eating</option>
+                    <option value="4">exercising</option>
+                    <option value="5">socializing</option>
+                    <option value="6">grooming</option>
+                </select>
+
+
+            </div>
 
             <!-- Messages container -->
-            <div id="messages-card"
+        <div id="messages-card" style="display: none"
                  class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                     <div id="messages">
@@ -125,52 +147,37 @@
                 </div>
             </div>
 
-            <div id="time-card" class="mdl-card mdl-shadow--2dp">
-                <p id="currentActivity" class="test1">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-                    consectetur, adipisci velit..."</p>
-
-                <select class="center" id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
-                    <option value="0">sleeping</option>
-                    <option value="1">traveling</option>
-                    <option value="2">studying</option>
-                    <option value="3">eating</option>
-                    <option value="4">exercising</option>
-                    <option value="5">socializing</option>
-                    <option value="6">grooming</option>
-                </select>
-
-
-            </div>
-            <table id="timeTable">
-                <caption>Time Breakdown Table</caption>
-                <tr>
-                    <th>Activity</th>
-                    <th>Time Spent</th>
-                    <th>% of Passed Time</th>
-                    <th>% of Day</th>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-            </table>
-
-
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="piechart" style="width: 900px; height: 500px;"></div>
-
 
         </div>
+        <table id="timeTable" style="display: none;">
+            <caption>Time Breakdown Table</caption>
+            <tr>
+                <th>Activity</th>
+                <th>Time Spent</th>
+                <th>% of Passed Time</th>
+                <th>% of Day</th>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="piechart" style="width: 900px; height: 500px;display: none;"></div>
+
+
         <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
             <div class="mdl-snackbar__text"></div>
             <button class="mdl-snackbar__action" type="button"></button>
