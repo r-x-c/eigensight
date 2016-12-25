@@ -330,32 +330,37 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
-    document.getElementById("piechart").style.display='none';
+    document.getElementById("piechart").style.display = 'none';
     startTime();
+    console.log("fix this error! below doesn't owkr");
+
+    // window.friendlyChat.loadData();
+    // Kairos.prototype.loadData();
 };
 
-function changeObjectView(id){
-    var pie = document.getElementById(id);
-
-    if (pie.style.display == 'none')
-    {
-        $(pie).fadeIn('fast');
-        // pie.style.display = '';
-    }
-    else
-    {
-        $(pie).fadeOut('fast');
-    }
-}
 
 var SECONDS_IN_DAY = 86400.0;
 
+function get_time_key(offset) {
+    var n = new Date();
+    n.setDate(n.getDate() + offset);
+    var date_key = (n.getMonth() + 1) + "" + n.getDate() + "" + n.getFullYear();
+    return date_key;
+}
+
+
+Kairos.prototype.loadData = function () {
+    var userId = firebase.auth().currentUser.uid;
+    console.log(userID);
+    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + get_time_key(0));
+    console.log(timeDataRef);
+};
 
 Kairos.prototype.selectActivity = function () {
     var selector = document.getElementById("activitySelector");
     var activity_index = Number(selector.options[selector.selectedIndex].value);
     var n = new Date();
-    var date_key = (n.getMonth() + 1) + "" + n.getDate() + "" + n.getFullYear();
+    var date_key = get_time_key(0);
     var time_key = (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
     var userId = firebase.auth().currentUser.uid;
     var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + date_key);
@@ -431,7 +436,7 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     //Write to table
     // displayArray(timeArray);
 
-    var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
+    var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
 
@@ -531,8 +536,12 @@ function startTime() {
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    if (i < 10) {
+        i = "0" + i
+    }
     return i;
 }
+
+
 
 
