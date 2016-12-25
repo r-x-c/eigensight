@@ -5,24 +5,18 @@
     /*padding: 10px 15px;*/
     font-size: 40px;
     cursor: pointer;
-    -moz-box-shadow: 0px 0px 0px 0px #3dc21b;
-    -webkit-box-shadow: 0px 0px 0px 0px #3dc21b;
-    box-shadow: 0px 0px 0px 0px #3dc21b;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     display: inline-block;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
     height: 50px;
-    width:200px;
-    border: 2px solid black;
+    width: 200px;
+    /*border: 2px solid black;*/
     padding: 7px 10px;
     line-height: 10px;
     align-self: center;
-
-}
-
+    border:none;
 }
 
 .dropdown {
@@ -39,14 +33,15 @@
 }
 
 .dropdown-content a {
-    color: black;
+    color: white;
+    background-color: #607d8b;
     padding: 5px 6px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #399aaa
 }
 
 .dropdown:hover .dropdown-content {
@@ -54,13 +49,13 @@
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #e54a37;
+    background-color: #445765;
 }
 
 /*Overhead timer*/
 
 p.round1 {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     border-radius: 5px;
     font-size: 40px;
     padding: 7px 10px;

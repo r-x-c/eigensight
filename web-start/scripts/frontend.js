@@ -2,15 +2,6 @@
  * Created by richard on 12/24/16.
  */
 
-
-$.getScript("my_lovely_script.js", function(){
-
-    alert("Script loaded but not necessarily executed.");
-
-});
-
-
-
 function changeObjectView(id) {
     var pie = document.getElementById(id);
 
@@ -23,110 +14,113 @@ function changeObjectView(id) {
 }
 
 
-
-$(document).ready(function(){
-    var quoteSource=[
+$(document).ready(function () {
+    var quoteSource = [
         {
             quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
-            name:"Francis of Assisi"
+            name: "Francis of Assisi"
         },
         {
-            quote:"Believe you can and you're halfway there.",
-            name:"Theodore Roosevelt"
+            quote: "He'll run...when he has somewhere to run",
+            name: "The Flash's Mom"
         },
         {
-            quote:"It does not matter how slowly you go as long as you do not stop.",
-            name:"Confucius"
+            quote: "Believe you can and you're halfway there.",
+            name: "Theodore Roosevelt"
         },
         {
-            quote:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
-            name:"Thomas A. Edison"
+            quote: "It does not matter how slowly you go as long as you do not stop.",
+            name: "Confucius"
         },
         {
-            quote:"The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
-            name:"Confucius"
+            quote: "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+            name: "Thomas A. Edison"
         },
         {
-            quote:"Don't watch the clock; do what it does. Keep going.",
-            name:"Sam Levenson"
+            quote: "The will to win, the desire to succeed, the urge to reach your full potential... these are the keys that will unlock the door to personal excellence.",
+            name: "Confucius"
         },
         {
-            quote:"A creative man is motivated by the desire to achieve, not by the desire to beat others.",
-            name:"Ayn Rand"
+            quote: "Don't watch the clock; do what it does. Keep going.",
+            name: "Sam Levenson"
         },
         {
-            quote:"A creative man is motivated by the desire to achieve, not by the desire to beat others.",
-            name:"Ayn Rand"
+            quote: "A creative man is motivated by the desire to achieve, not by the desire to beat others.",
+            name: "Ayn Rand"
         },
         {
-            quote:"Expect problems and eat them for breakfast.",
-            name:"Alfred A. Montapert"
+            quote: "A creative man is motivated by the desire to achieve, not by the desire to beat others.",
+            name: "Ayn Rand"
         },
         {
-            quote:"Start where you are. Use what you have. Do what you can.",
-            name:"Arthur Ashe"
+            quote: "Expect problems and eat them for breakfast.",
+            name: "Alfred A. Montapert"
         },
         {
-            quote:"Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.",
-            name:"Samuel Beckett"
+            quote: "Start where you are. Use what you have. Do what you can.",
+            name: "Arthur Ashe"
         },
         {
-            quote:"Be yourself; everyone else is already taken.",
-            name:"Oscar Wilde"
+            quote: "Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.",
+            name: "Samuel Beckett"
         },
         {
-            quote:"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
-            name:"Albert Einstein"
+            quote: "Be yourself; everyone else is already taken.",
+            name: "Oscar Wilde"
         },
         {
-            quote:"Always remember that you are absolutely unique. Just like everyone else.",
-            name:"Margaret Mead"
+            quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            name: "Albert Einstein"
         },
         {
-            quote:"Do not take life too seriously. You will never get out of it alive.",
-            name:"Elbert Hubbard"
+            quote: "Always remember that you are absolutely unique. Just like everyone else.",
+            name: "Margaret Mead"
         },
         {
-            quote:"People who think they know everything are a great annoyance to those of us who do.",
-            name:"Isaac Asimov"
+            quote: "Do not take life too seriously. You will never get out of it alive.",
+            name: "Elbert Hubbard"
         },
         {
-            quote:"Procrastination is the art of keeping up with yesterday.",
-            name:"Don Marquis"
+            quote: "People who think they know everything are a great annoyance to those of us who do.",
+            name: "Isaac Asimov"
         },
         {
-            quote:"Get your facts first, then you can distort them as you please.",
-            name:"Mark Twain"
+            quote: "Procrastination is the art of keeping up with yesterday.",
+            name: "Don Marquis"
         },
         {
-            quote:"A day without sunshine is like, you know, night.",
-            name:"Steve Martin"
+            quote: "Get your facts first, then you can distort them as you please.",
+            name: "Mark Twain"
         },
         {
-            quote:"My grandmother started walking five miles a day when she was sixty. She's ninety-seven now, and we don't know where the hell she is.",
-            name:"Ellen DeGeneres"
+            quote: "A day without sunshine is like, you know, night.",
+            name: "Steve Martin"
         },
         {
-            quote:"Don't sweat the petty things and don't pet the sweaty things.",
-            name:"George Carlin"
+            quote: "My grandmother started walking five miles a day when she was sixty. She's ninety-seven now, and we don't know where the hell she is.",
+            name: "Ellen DeGeneres"
         },
         {
-            quote:"Always do whatever's next.",
-            name:"George Carlin"
+            quote: "Don't sweat the petty things and don't pet the sweaty things.",
+            name: "George Carlin"
         },
         {
-            quote:"Atheism is a non-prophet organization.",
-            name:"George Carlin"
+            quote: "Always do whatever's next.",
+            name: "George Carlin"
         },
         {
-            quote:"Hapiness is not something ready made. It comes from your own actions.",
-            name:"Dalai Lama"
+            quote: "Atheism is a non-prophet organization.",
+            name: "George Carlin"
+        },
+        {
+            quote: "Hapiness is not something ready made. It comes from your own actions.",
+            name: "Dalai Lama"
         }
 
     ];
 
 
-    $('#quoteButton').click(function(evt){
+    $('#quoteButton').click(function (evt) {
         //define the containers of the info we target
         var quote = $('#quoteContainer p').text();
         var quoteGenius = $('#quoteGenius').text();
@@ -134,33 +128,34 @@ $(document).ready(function(){
         evt.preventDefault();
         //getting a new random number to attach to a quote and setting a limit
         var sourceLength = quoteSource.length;
-        var randomNumber= Math.floor(Math.random()*sourceLength);
+        var randomNumber = Math.floor(Math.random() * sourceLength);
         //set a new quote
-        for(var i=0;i<=sourceLength;i+=1){
+        for (var i = 0; i <= sourceLength; i += 1) {
             var newQuoteText = quoteSource[randomNumber].quote;
             var newQuoteGenius = quoteSource[randomNumber].name;
             //console.log(newQuoteText,newQuoteGenius);
             var timeAnimation = 500;
             var quoteContainer = $('#quoteContainer');
             //fade out animation with callback
-            quoteContainer.fadeOut(timeAnimation, function(){
+            quoteContainer.fadeOut(timeAnimation, function () {
                 quoteContainer.html('');
-                quoteContainer.append('<p>'+newQuoteText+'</p>'+'<p id="quoteGenius">'+'-								'+newQuoteGenius+'</p>');
+                quoteContainer.append('<p>' + newQuoteText + '</p>' + '<p id="quoteGenius">' + '-								' + newQuoteGenius + '</p>');
 
                 //fadein animation.
                 quoteContainer.fadeIn(timeAnimation);
             });
 
             break;
-        };//end for loop
+        }
+        ;//end for loop
 
     });//end quoteButton function
 
 
 });//end document ready
 
-$(document).ready(function(){
-    $(".flip").on("click", function(e) {
+$(document).ready(function () {
+    $(".flip").on("click", function (e) {
 
 
         var target = $(this).attr("href");

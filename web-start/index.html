@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Copyright 2015 Google Inc. All rights reserved.
+  Copyright 2016 Google Inc. All rights reserved.
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
@@ -17,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Learn how to use the Firebase platform on the Web">
+    <meta name="description" content="This is your life, and it’s ending one minute at a time.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairos - Eigensight</title>
 
@@ -66,29 +66,27 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
     <!-- Header section containing logo -->
-    <header class="mdl-layout__header mdl-color-text--black mdl-color--white-700">
+    <header class="mdl-layout__header mdl-color-text--white mdl-color--blue-grey">
         <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
             <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-                <h4><img src="/images/hourglass.png" class="material-icons" width="27px" height="27px"/> EigenSight</h4>
+                <h4><img src="/images/hourglass.png" class="material-icons" width="28px" height="27px"/> EigenSight</h4>
             </div>
-
             <div id="user-container">
-
-                <!--<strong id="pageClock" class="round1" style="font-size: 150%;"></strong>-->
                 <div>
                     <p class="round1" id="pageClock" align="center"></p>
                 </div>
                 <p></p>
-                <div class="dropdown" id="foo">
-                    <button class="dropbtn" id="dropdown-topbar" align="center">#Activity#</button>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropdown-topbar" align="center"></button>
                     <div class="dropdown-content" id="dropdown-options">
                         <a href="#" onclick="Kairos.prototype.selectActivity(0)"> sleeping</a>
                         <a href="#" onclick="Kairos.prototype.selectActivity(1)">traveling</a>
                         <a href="#" onclick="Kairos.prototype.selectActivity(2)">studying</a>
                         <a href="#" onclick="Kairos.prototype.selectActivity(3)">eating</a>
                         <a href="#" onclick="Kairos.prototype.selectActivity(4)">exercising</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(5)">socializing</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(6)">grooming</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(5)">unwinding</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(6)">socializing</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(7)">grooming</a>
                     </div>
                 </div>
                 <button class="myButton" onclick="changeObjectView('messages-card')">Messenger</button>
@@ -132,9 +130,7 @@
         <div id="layer" align="center">
 
             <div class="panel" id="panel1">
-                <div>
-                    <div id="piechart" style="width: 900px; height: 500px;"></div>
-                </div>
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
             </div>
             <div class="panel" id="panel2">
                 <table id="timeTable">
@@ -144,6 +140,8 @@
                         <th>Time Spent</th>
                         <th>% of Passed Time</th>
                         <th>% of Day</th>
+                    </tr>
+                    <tr>
                     </tr>
                     <tr>
                     </tr>
@@ -212,8 +210,6 @@
                     </form>
                 </div>
             </div>
-
-
         </div>
         <div class="mdl-card">
         </div>

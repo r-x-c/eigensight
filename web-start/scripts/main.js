@@ -20,7 +20,7 @@
 'use strict';
 
 //Load Dependencies
-$.getScript("/scripts/helpers.js", function(){
+$.getScript("/scripts/helpers.js", function () {
 
 });
 
@@ -318,7 +318,8 @@ window.onload = function () {
 };
 
 var SECONDS_IN_DAY = 86400.0;
-var activityLabels = ["sleeping", "traveling", "studying","eating", "exercising", "socializing", "grooming"];
+var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising",  "unwinding", "socializing", "grooming"];
+var ACTIVITY_SIZE = 8;
 
 Kairos.prototype.loadData = function () {
     var userId = firebase.auth().currentUser.uid;
@@ -326,7 +327,6 @@ Kairos.prototype.loadData = function () {
     var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + get_time_key(0));
     console.log(timeDataRef);
 };
-
 
 
 Kairos.prototype.selectActivity = function (activity_index) {
@@ -364,11 +364,11 @@ Kairos.prototype.selectActivity = function (activity_index) {
             timeDataRef.set({
                 'lastKey': time_key,
                 'lastActivity': activity_index,
-                'timeArray': new Array(selector.length).fill(0)
+                'timeArray': new Array(ACTIVITY_SIZE).fill(0)
             });
             storedKey = time_key;
             storedActivity = activity_index;
-            storedTimeArr = new Array(selector.length).fill(0);
+            storedTimeArr = new Array(ACTIVITY_SIZE).fill(0);
 
         }
         console.log("Array: " + JSON.stringify(storedTimeArr));
@@ -412,4 +412,12 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
 
 }
+
+var SECOND = 1000;
+var MINUTE = 60000;
+var HOUR = 3600000;
+
+setInterval(function () {
+    alert("Hi! How do you feel? Please keep your activities updated");
+}, HOUR);
 

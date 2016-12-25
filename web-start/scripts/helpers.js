@@ -67,7 +67,8 @@ function drawChart(dataArr) {
         [activityLabels[3], dataArr[3]],
         [activityLabels[4], dataArr[4]],
         [activityLabels[5], dataArr[5]],
-        [activityLabels[6], dataArr[6]]
+        [activityLabels[6], dataArr[6]],
+        [activityLabels[7], dataArr[7]]
     ]);
 
     var options = {
