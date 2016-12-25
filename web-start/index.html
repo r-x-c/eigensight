@@ -59,6 +59,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
 </head>
 <body>
 
@@ -74,13 +75,24 @@
             <div id="user-container">
 
                 <!--<strong id="pageClock" class="round1" style="font-size: 150%;"></strong>-->
-                <p class="round1" id="pageClock" align="center" style="font-size: 150%;">>Round border</p>
-
-
+                <div>
+                    <p class="round1" id="pageClock" align="center" style="font-size: 40px;"></p>
+                </div>
                 <p></p>
-
-
+                <div class="dropdown">
+                    <button class="dropbtn myButton">Activity##</button>
+                    <div class="dropdown-content">
+                        <a href="#">sleeping</a>
+                        <a href="#">traveling</a>
+                        <a href="#">studying</a>
+                        <a href="#">eating</a>
+                        <a href="#">exercising</a>
+                        <a href="#">socializing</a>
+                        <a href="#">grooming</a>
+                    </div>
+                </div>
                 <button class="myButton" onclick="changeObjectView('messages-card')">Messenger</button>
+                <button class="myButton" onclick="changeObjectView('piechart')">pie bug</button>
                 <p style="clear:both"><br></p>
 
                 <div hidden id="user-pic"></div>
@@ -109,9 +121,9 @@
     <nav>
         <ul>
             <li><a class="flip" href="#panel1" style="color: #0e0e0e">Pie Chart</a></li>
-            <li><a class="flip" href="#panel2"  style="color: #0e0e0e">Tabular Form</a></li>
-            <li><a class="flip" href="#panel3"style="color: #0e0e0e">null</a></li>
-            <li><a class="flip" href="#panel4">Motivational</a></li>
+            <li><a class="flip" href="#panel2" style="color: #0e0e0e">Tabular Form</a></li>
+            <li><a class="flip" href="#panel3" style="color: #0e0e0e">null</a></li>
+            <li><a class="flip" href="#panel4" style="color: #0e0e0e">Motivational</a></li>
         </ul>
     </nav>
 
@@ -223,8 +235,7 @@
         </div>
 
 
-</div>
-</main>
+    </main>
 </div>
 
 

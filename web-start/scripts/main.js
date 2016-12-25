@@ -439,6 +439,7 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
 
+
     //Create Pie Chart
     // drawChart(timeArray);
 }
@@ -522,25 +523,5 @@ function wait(ms) {
         end = new Date().getTime();
     }
 }
-
-
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('pageClock').innerHTML = h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i
-    }
-    return i;
-}
-
-
 
 
