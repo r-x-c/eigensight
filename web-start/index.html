@@ -79,19 +79,8 @@
 
                 <p></p>
 
-                <nav>
-                    <ul>
-                        <li><a class="flip" href="#panel1">Home</a></li>
-                        <li><a class="flip" href="#panel2">Agenda</a></li>
-                        <li><a class="flip" href="#panel3">Media</a></li>
-                        <li><a class="flip" href="#panel4">Contact</a></li>
-                    </ul>
-                </nav>
 
-                <button class="myButton" onclick="changeObjectView('piechart')">Pie Chart</button>
                 <button class="myButton" onclick="changeObjectView('messages-card')">Messenger</button>
-                <button class="myButton" onclick="changeObjectView('timeTable')">Table View</button>
-                <button class="myButton" onclick="changeObjectView('container')">m. Quote</button>
                 <p style="clear:both"><br></p>
 
                 <div hidden id="user-pic"></div>
@@ -117,16 +106,46 @@
             consectetur, adipisci velit..."</h4>
 
     </div>
+    <nav>
+        <ul>
+            <li><a class="flip" href="#panel1" style="color: #0e0e0e">Pie Chart</a></li>
+            <li><a class="flip" href="#panel2"  style="color: #0e0e0e">Tabular Form</a></li>
+            <li><a class="flip" href="#panel3"style="color: #0e0e0e">null</a></li>
+            <li><a class="flip" href="#panel4">Motivational</a></li>
+        </ul>
+    </nav>
 
     <div id="panelContainer">
 
         <div id="layer" align="center">
 
             <div class="panel" id="panel1">
-                <div id="piechart" style="width: 900px; height: 500px;display: none;"></div>
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
             </div>
             <div class="panel" id="panel2">
-                <div>Anatomy is</div>
+                <table id="timeTable">
+                    <caption>Time Breakdown Table</caption>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Time Spent</th>
+                        <th>% of Passed Time</th>
+                        <th>% of Day</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
 
             </div>
             <div class="panel" id="panel3">
@@ -142,8 +161,6 @@
                     <div id="buttonContainer">
                         <a href="#" id="quoteButton">Quote Me</a>
                     </div><!--end buttonContainer-->
-
-
                 </div><!--end container-->
             </div>
 
@@ -197,29 +214,6 @@
 
         </div>
         <div class="mdl-card">
-            <table id="timeTable" style="display: none;">
-                <caption>Time Breakdown Table</caption>
-                <tr>
-                    <th>Activity</th>
-                    <th>Time Spent</th>
-                    <th>% of Passed Time</th>
-                    <th>% of Day</th>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-                <tr>
-                </tr>
-            </table>
         </div>
 
 

@@ -338,7 +338,6 @@ window.onload = function () {
     // Kairos.prototype.loadData();
 };
 
-
 var SECONDS_IN_DAY = 86400.0;
 
 function get_time_key(offset) {

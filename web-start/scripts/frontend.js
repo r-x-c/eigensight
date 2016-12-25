@@ -8,7 +8,6 @@ function changeObjectView(id) {
 
     if (pie.style.display == 'none') {
         $(pie).fadeIn('fast');
-        // pie.style.display = '';
     }
     else {
         $(pie).fadeOut('fast');
