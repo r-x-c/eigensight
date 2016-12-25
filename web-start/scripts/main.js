@@ -19,13 +19,17 @@
 
 'use strict';
 
+//Load Dependencies
+$.getScript("/scripts/helpers.js", function(){
+
+});
+
 // Initializes Kairos.
 function Kairos() {
     this.checkSetup();
 
     // Shortcuts to DOM Elements.
     this.messageList = document.getElementById('messages');
-    //fixme
     this.messageForm = document.getElementById('message-form');
     this.messageInput = document.getElementById('message');
     this.submitButton = document.getElementById('submit');
@@ -38,27 +42,15 @@ function Kairos() {
     this.signOutButton = document.getElementById('sign-out');
     this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
-    //fixme
-    this.activitySwitcher = document.getElementById('mySelect');
-
     // Saves message on form submit.
     this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
 
-    //fixme
-    // this.activitySwitcher.addEventListener('mySelect', this.saveMessage.bind(this));
-    // this.activityForm = document.getElementById('mySelect');
-    // this.activityForm.addEventListener('onchange', this.selectActivity.bind(this));
-
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
     this.messageInput.addEventListener('keyup', buttonTogglingHandler);
     this.messageInput.addEventListener('change', buttonTogglingHandler);
-
-    //fixme
-    // this.activitySwitcher.addEventListener('foo', buttonTogglingHandler);
-
 
     // Events for image upload.
     this.submitImageButton.addEventListener('click', function () {
@@ -82,7 +74,6 @@ Kairos.prototype.initFirebase = function () {
 
 // Loads chat messages history and listens for upcoming ones.
 Kairos.prototype.loadMessages = function () {
-    // TODO(DEVELOPER): Load and listens for new messages.
     // Reference to the /messages/ database path.
     this.messagesRef = this.database.ref('messages');
     // Make sure we remove all previous listeners.
@@ -117,10 +108,6 @@ Kairos.prototype.saveMessage = function (e) {
         }.bind(this)).catch(function (error) {
             console.error('Error writing new message to Firebase Database', error);
         });
-
-
-        // TODO(DEVELOPER): push new message to Firebase.
-
     }
 };
 
@@ -137,9 +124,6 @@ Kairos.prototype.setImageUrl = function (imageUri, imgElement) {
     } else {
         imgElement.src = imageUri;
     }
-
-
-    // TODO(DEVELOPER): If image is on Firebase Storage, fetch image URL and set img element's src.
 };
 
 // Saves a new message containing an image URI in Firebase.
@@ -180,10 +164,6 @@ Kairos.prototype.saveImageMessage = function (event) {
                 console.error('There was an error uploading a file to Firebase Storage:', error);
             });
         }.bind(this));
-
-
-        // TODO(DEVELOPER): Upload image to Firebase storage and add message.
-
     }
 };
 
@@ -220,7 +200,6 @@ Kairos.prototype.onAuthStateChanged = function (user) {
 
         // We load currently existing chant messages.
         this.loadMessages();
-
         //fixme:
         // this.loadTimes();
     } else { // User is signed out!
@@ -339,14 +318,7 @@ window.onload = function () {
 };
 
 var SECONDS_IN_DAY = 86400.0;
-
-function get_time_key(offset) {
-    var n = new Date();
-    n.setDate(n.getDate() + offset);
-    var date_key = (n.getMonth() + 1) + "" + n.getDate() + "" + n.getFullYear();
-    return date_key;
-}
-
+var activityLabels = ["sleeping", "traveling", "studying","eating", "exercising", "socializing", "grooming"];
 
 Kairos.prototype.loadData = function () {
     var userId = firebase.auth().currentUser.uid;
@@ -355,9 +327,12 @@ Kairos.prototype.loadData = function () {
     console.log(timeDataRef);
 };
 
-Kairos.prototype.selectActivity = function () {
-    var selector = document.getElementById("activitySelector");
-    var activity_index = Number(selector.options[selector.selectedIndex].value);
+
+
+Kairos.prototype.selectActivity = function (activity_index) {
+    // console.log("foobar"+activity_idx);
+    // var selector = document.getElementById("activitySelector");
+    // var activity_index = Number(selector.options[selector.selectedIndex].value);
     var n = new Date();
     var date_key = get_time_key(0);
     var time_key = (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
@@ -382,7 +357,7 @@ Kairos.prototype.selectActivity = function () {
             storedKey = event['lastKey'];
             storedTimeArr = event['timeArray'];
             storedTimeArr[storedActivity] += (time_key - storedKey);
-            updateFrontEnd(storedTimeArr, time_key, selector.options[Number(activity_index)].text);
+            updateFrontEnd(storedTimeArr, time_key, activityLabels[activity_index]);
         }
         else {
             console.error("Snapshot not found,  injecting blank values");
@@ -424,104 +399,17 @@ Kairos.prototype.selectActivity = function () {
 
 };
 
-
-function handleError(xhr, status, error) {
-    console.error(xhr + status + error);
-}
-
 function updateFrontEnd(timeArray, time_key, activity_text) {
     console.log("Array: " + JSON.stringify(timeArray));
-    $.when(displayArray(timeArray)).then(drawChart(timeArray));
     //Write to table
-    // displayArray(timeArray);
+    //Create Pie Chart
+    $.when(displayArray(timeArray)).then(drawChart(timeArray));
 
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
 
+    document.getElementById("dropdown-topbar").innerHTML = activity_text;
 
-    //Create Pie Chart
-    // drawChart(timeArray);
 }
-
-
-//Pie Chart
-// google.charts.setOnLoadCallback(drawChart);
-function drawChart(dataArr) {
-    google.charts.load('current', {'packages': ['corechart']});
-    //todo: support dynamically set activities
-    var labels = document.getElementById("activitySelector");
-    // var data = google.visualization.arrayToDataTable(dataArr);
-    var data = google.visualization.arrayToDataTable([
-        ['Task', 'Seconds per Day'],
-        [labels[0].text, dataArr[0]],
-        [labels[1].text, dataArr[1]],
-        [labels[2].text, dataArr[2]],
-        [labels[3].text, dataArr[3]],
-        [labels[4].text, dataArr[4]],
-        [labels[5].text, dataArr[5]],
-        [labels[6].text, dataArr[6]]
-    ]);
-
-    var options = {
-        title: 'Activity Breakdown'
-    };
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    chart.draw(data, options);
-}
-
-
-String.prototype.toHHMMSS = function () {
-    var sec_num = parseInt(this, 10); // don't forget the second param
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    return hours + ':' + minutes + ':' + seconds;
-};
-
-
-function displayArray(arr) {
-    //todo: this inefficiently updates all el of table
-    var table = document.getElementById("timeTable");
-    var activities = document.getElementById("activitySelector");
-    console.log(activities);
-    var sum = arr.reduce(function (a, b) {
-        return a + b;
-    }, 0);
-    console.log("Inserting " + arr.length + " elements...");
-    var tableRows = table.getElementsByTagName('tr');
-    console.log(tableRows);
-
-    for (var i = 0; i < arr.length; i++) {
-        table.deleteRow(i + 1);
-        var row = table.insertRow(i + 1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        cell1.innerHTML = activities[i].text;
-        cell2.innerHTML = String(arr[i]).toHHMMSS();
-        cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(2) + '%';
-        cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
-    }
-}
-
-function wait(ms) {
-    var start = new Date().getTime();
-    var end = start;
-    while (end < start + ms) {
-        end = new Date().getTime();
-    }
-}
-
 

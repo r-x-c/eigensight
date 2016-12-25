@@ -3,6 +3,14 @@
  */
 
 
+$.getScript("my_lovely_script.js", function(){
+
+    alert("Script loaded but not necessarily executed.");
+
+});
+
+
+
 function changeObjectView(id) {
     var pie = document.getElementById(id);
 
@@ -179,9 +187,4 @@ function checkTime(i) {
     }
     return i;
 }
-
-
-
-
-
 

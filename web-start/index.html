@@ -79,16 +79,16 @@
                     <p class="round1" id="pageClock" align="center" style="font-size: 40px;"></p>
                 </div>
                 <p></p>
-                <div class="dropdown">
-                    <button class="dropbtn myButton">Activity##</button>
-                    <div class="dropdown-content">
-                        <a href="#">sleeping</a>
-                        <a href="#">traveling</a>
-                        <a href="#">studying</a>
-                        <a href="#">eating</a>
-                        <a href="#">exercising</a>
-                        <a href="#">socializing</a>
-                        <a href="#">grooming</a>
+                <div class="dropdown" id="foo">
+                    <button class="dropbtn" id="dropdown-topbar" align="center">#Activity#</button>
+                    <div class="dropdown-content" id="dropdown-options">
+                        <a href="#" onclick="Kairos.prototype.selectActivity(0)"> sleeping</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(1)">traveling</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(2)">studying</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(3)">eating</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(4)">exercising</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(5)">socializing</a>
+                        <a href="#" onclick="Kairos.prototype.selectActivity(6)">grooming</a>
                     </div>
                 </div>
                 <button class="myButton" onclick="changeObjectView('messages-card')">Messenger</button>
@@ -132,7 +132,9 @@
         <div id="layer" align="center">
 
             <div class="panel" id="panel1">
-                <div id="piechart" style="width: 900px; height: 500px;"></div>
+                <div>
+                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+                </div>
             </div>
             <div class="panel" id="panel2">
                 <table id="timeTable">
@@ -183,18 +185,6 @@
 
     <main class="mdl-layout__content mdl-color--grey-100">
         <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
-
-
-            <select class="center" id="activitySelector" size="7" onclick="Kairos.prototype.selectActivity()">
-                <option value="0">sleeping</option>
-                <option value="1">traveling</option>
-                <option value="2">studying</option>
-                <option value="3">eating</option>
-                <option value="4">exercising</option>
-                <option value="5">socializing</option>
-                <option value="6">grooming</option>
-            </select>
-
 
             <!-- Messages container -->
             <div id="messages-card" style="display: none"
@@ -254,5 +244,6 @@
 
 <script src="scripts/main.js"></script>
 <script src="scripts/frontend.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
