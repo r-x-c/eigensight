@@ -91,6 +91,7 @@
                 </div>
                 <button class="myButton" onclick="changeObjectView('messages-card')">Messenger</button>
                 <button class="myButton" onclick="changeObjectView('piechart')">pie bug</button>
+
                 <p style="clear:both"><br></p>
 
                 <div hidden id="user-pic"></div>
@@ -111,107 +112,120 @@
     <!--<script src="jquery-1.11.2.min.js" type="text/javascript"></script>-->
 
 
-    <div align="center">
-        <h4 id="currentActivity">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-            consectetur, adipisci velit..."</h4>
-
-    </div>
-    <nav>
-        <ul>
-            <li><a class="flip" href="#panel1" style="color: #0e0e0e">Pie Chart</a></li>
-            <li><a class="flip" href="#panel2" style="color: #0e0e0e">Tabular Form</a></li>
-            <li><a class="flip" href="#panel3" style="color: #0e0e0e">null</a></li>
-            <li><a class="flip" href="#panel4" style="color: #0e0e0e">Motivational</a></li>
-        </ul>
-    </nav>
-
-    <div id="panelContainer">
-
-        <div id="layer" align="center">
-
-            <div class="panel" id="panel1">
-                <div id="piechart" style="width: 900px; height: 500px;"></div>
-            </div>
-            <div class="panel" id="panel2">
-                <table id="timeTable">
-                    <caption>Time Breakdown Table</caption>
-                    <tr>
-                        <th>Activity</th>
-                        <th>Time Spent</th>
-                        <th>% of Passed Time</th>
-                        <th>% of Day</th>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="panel" id="panel3">
-                <div>Anatomy is destiny.</div>
-            </div>
-            <div class="panel" id="panel4">
-                <div id="container">
-                    <div id="quoteContainer">
-                        <p></p>
-                        <p id="quoteGenius"></p>
-                    </div><!--end quoteContainer-->
-
-                    <div id="buttonContainer">
-                        <a href="#" id="quoteButton">Quote Me</a>
-                    </div><!--end buttonContainer-->
-                </div><!--end container-->
-            </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div align="center">
+            <h4 id="currentActivity">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit..."</h4>
 
         </div>
+        <nav>
+            <ul>
+                <li><a class="flip" href="#panel1" style="color: #0e0e0e">Pie Chart</a></li>
+                <li><a class="flip" href="#panel2" style="color: #0e0e0e">Tabular Form</a></li>
+                <li><a class="flip" href="#panel3" style="color: #0e0e0e">null</a></li>
+                <li><a class="flip" href="#panel4" style="color: #0e0e0e">Motivational</a></li>
+            </ul>
+        </nav>
 
-    </div>
+        <div id="panelContainer">
 
+            <div id="layer" align="center">
 
-    <main class="mdl-layout__content mdl-color--grey-100">
-        <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+                <div class="panel" id="panel1">
+                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+                </div>
+                <div class="panel" id="panel2">
+                    <table id="timeTable">
+                        <caption>Time Breakdown Table</caption>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Time Spent</th>
+                            <th>% of Passed Time</th>
+                            <th>% of Day</th>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
 
-            <!-- Messages container -->
-            <div id="messages-card" style="display: none"
-                 class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    <div id="messages">
-                        <span id="message-filler"></span>
-                    </div>
-                    <form id="message-form" action="#">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="message">
-                            <label class="mdl-textfield__label" for="message">Message...</label>
+                </div>
+                <div class="panel" id="panel3">
+                    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+
+                        <!-- Messages container -->
+                        <div id="messages-card" style="display: none"
+                             class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+                            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                                <div id="messages">
+                                    <span id="message-filler"></span>
+                                </div>
+                                <form id="message-form" action="#">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="message">
+                                        <label class="mdl-textfield__label" for="message">Message...</label>
+                                    </div>
+                                    <button id="submit" disabled type="submit"
+                                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                                        Send
+                                    </button>
+                                </form>
+                                <form id="image-form" action="#">
+                                    <input id="mediaCapture" type="file" accept="image/*,capture=camera">
+                                    <button id="submitImage" title="Add an image"
+                                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+                                        <i class="material-icons">image</i>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                        <button id="submit" disabled type="submit"
-                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                            Send
-                        </button>
-                    </form>
-                    <form id="image-form" action="#">
-                        <input id="mediaCapture" type="file" accept="image/*,capture=camera">
-                        <button id="submitImage" title="Add an image"
-                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
-                            <i class="material-icons">image</i>
-                        </button>
-                    </form>
+                    </div>
+
+
+                </div>
+                <div class="panel" id="panel4">
+                    <div id="container">
+                        <div id="quoteContainer">
+                            <p></p>
+                            <p id="quoteGenius"></p>
+                        </div><!--end quoteContainer-->
+
+                        <div id="buttonContainer">
+                            <a href="#" id="quoteButton">Quote Me</a>
+                        </div><!--end buttonContainer-->
+                    </div><!--end container-->
+                </div>
+
+            </div> <!--layer containerr-->
+
+        </div> <!--panel Conatainer-->
+
+
+        <div class="mdl-card">
+        </div>
+
+        <div class="cell">
+            <div class="share-wrapper bottom">
+                <div class="rc50 share-action icon-share"></div>
+                <div class="share-container rc50">
+                    <a class="share-btn tl icon-google-plus" href='#'></a>
+                    <a class="share-btn tr icon-twitter" href='#'></a>
+                    <a class="share-btn br icon-facebook" href='#'></a>
+                    <a class="share-btn bl icon-pinterest" href='#'></a>
                 </div>
             </div>
-        </div>
-        <div class="mdl-card">
         </div>
 
 
