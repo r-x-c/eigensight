@@ -309,9 +309,8 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
-    document.getElementById("piechart").style.display = 'none';
     startTime();
-    console.log("fix this error! below doesn't owkr");
+    // console.log("fix this error! below doesn't owkr");
 
     // window.friendlyChat.loadData();
     // Kairos.prototype.loadData();
