@@ -1,9 +1,10 @@
 /*Dropdown Button*/
 .dropbtn {
+    display:inline-block;
     background-color: Transparent;
     color: white;
     /*padding: 10px 15px;*/
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -13,7 +14,7 @@
     height: 50px;
     width: 200px;
     /*border: 2px solid black;*/
-    padding: 7px 10px;
+    padding: 25px;
     line-height: 10px;
     align-self: center;
     border:none;
