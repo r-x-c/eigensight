@@ -356,8 +356,9 @@ var ACTIVITY_SIZE = activityLabels.length;
 Kairos.prototype.addActivity = function () {
     var x = document.getElementById("new_activity_value");
     var defaultVal = x.defaultValue;
-    var currentVal = x.value.toLowerCase();
+    var currentVal = x.value;
     if (defaultVal != currentVal) {
+        currentVal = currentVal.toLowerCase();
         console.log("attempting to add..." + currentVal);
         var userId = firebase.auth().currentUser.uid;
         console.log(userId);
@@ -387,11 +388,12 @@ Kairos.prototype.addActivity = function () {
             //Do something with the data
         });
         activityRef.set({'activity_array': read_activity_array});
-        var activities_in_modal = document.getElementById("adjust_activities");
-        for (var i = 0; i < read_activity_array.length; i++) {
-            text += cars[i] + "<br>";
-        }
-
+        // var activities_in_modal = document.getElementById("adjust_activities");
+        // for (var i = 0; i < read_activity_array.length; i++) {
+        //     append_li_to_ul()
+        //     text += cars[i] + "<br>";
+        // }
+        append_li_to_ul(read_activity_array);
     }
     else {
         alert("enter a val first please");
