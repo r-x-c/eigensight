@@ -27,7 +27,6 @@ $.getScript("/scripts/helpers.js", function () {
 // Initializes Kairos.
 function Kairos() {
     this.checkSetup();
-
     // Shortcuts to DOM Elements.
     this.messageList = document.getElementById('messages');
     this.messageForm = document.getElementById('message-form');
@@ -312,13 +311,51 @@ window.onload = function () {
     startTime();
     // console.log("fix this error! below doesn't owkr");
 
-    // window.friendlyChat.loadData();
+    window.friendlyChat.loadData();
     // Kairos.prototype.loadData();
 };
 
+//fixme: runs this twice
+$("ul").on("click", "button", function (e) {
+    $(this).unbind("click");
+    e.preventDefault();
+    // console.log($(this).parent());
+    if (this.innerHTML == 'delete') {
+        console.log("deleting stuff @ " + $(this).parent().index());
+        $(this).parent().remove();
+    }
+    else if (this.innerHTML == 'add') {
+        var x = document.getElementById("new_activity_value");
+        var defaultVal = x.defaultValue;
+        var currentVal = x.value;
+        var foobar = new Kairos();
+        if (defaultVal != currentVal) {
+            console.log("calling kairos func");
+            foobar.addActivity(currentVal);
+            console.log("calling kairos func lol");
+            Kairos.prototype.addActivity(currentVal);
+        }
+        else {
+            alert("enter a val first please");
+        }
+
+    }
+});
+
 var SECONDS_IN_DAY = 86400.0;
-var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising",  "unwinding", "socializing", "grooming"];
-var ACTIVITY_SIZE = 8;
+var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
+
+var ACTIVITY_SIZE = activityLabels.length;
+
+Kairos.prototype.addActivity = function (activity_label) {
+    console.log("attempting to add..." + activity_label);
+    var userId = firebase.auth().currentUser.uid;
+    console.log(userID);
+    var activityRef = firebase.database().ref('activities' + userID);
+    console.log(activityRef);
+};
+//todo: delete activity
+
 
 Kairos.prototype.loadData = function () {
     var userId = firebase.auth().currentUser.uid;
@@ -412,11 +449,11 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
 
 }
 
-var SECOND = 1000;
-var MINUTE = 60000;
-var HOUR = 3600000;
+var SECOND_IN_MS = 1000;
+var MINUTE_IN_MS = 60000;
+var HOUR_IN_MS = 3600000;
 
 setInterval(function () {
     alert("Hi! How do you feel? Please keep your activities updated");
-}, HOUR);
+}, HOUR_IN_MS);
 

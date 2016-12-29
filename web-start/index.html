@@ -115,10 +115,11 @@
             <ul class="menu non-html5 big">
                 <li><a href="#">Profilex <span class="pink">2</span></a></li>
 
-                <li><a href="#" data-toggle="modal" data-target="#settings_modal">Settings<span class="yellow">3</span></a>
+                <li><a href="#" data-toggle="modal" data-target="#settings_modal" onclick="Kairos.prototype.loadData()">Settings<span
+                        class="yellow">3</span></a>
                 </li>
                 <li><a href="#">Notifications<span class="blue"></span></a></li>
-                <li><a href="#">Logout</a></li>
+                <!--<li><a href="#">Logout</a></li>-->
             </ul>
         </div>
         <!--</div>-->
@@ -255,9 +256,7 @@
 
 </div>
 <div class="container">
-    <h2>Modal Example</h2>
     <!-- Trigger the modal with a button -->
-
     <!-- Modal -->
     <div class="modal fade" id="settings_modal" role="dialog">
         <div class="modal-dialog">
@@ -268,7 +267,31 @@
                     <h4 class="modal-title">Settings</h4>
                 </div>
                 <div class="modal-body">
-                    <p>todo: adjust activities list for user here</p>
+                    <h5>Adjust Activities</h5>
+                    <ul id="adjust_activities">
+                        <li>
+                            <input type="text" id="new_activity_value" value="Enter Label Here">
+                            <button onclick="Kairos.prototype.addActivity('swimming')">add</button>
+                        </li>
+                        <li>
+                            <label>Volvo</label>
+                            <button>delete</button>
+                        </li>
+                        <li>
+                            <label>Saab</label>
+                            <button>delete</button>
+                        </li>
+                        <li>
+                            <label>Mercedes</label>
+                            <button>delete</button>
+                        </li>
+                        <li>
+                            <label>Mercedes</label>
+                            <button>delete</button>
+                        </li>
+                    </ul>
+                    <p id="demo"></p>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
