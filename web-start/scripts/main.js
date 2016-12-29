@@ -40,11 +40,15 @@ function Kairos() {
     this.signInButton = document.getElementById('sign-in');
     this.signOutButton = document.getElementById('sign-out');
     this.signInSnackbar = document.getElementById('must-signin-snackbar');
+    this.submitActivity = document.getElementById('submit_activity');
 
     // Saves message on form submit.
     this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
+
+    //fixme:
+    this.submitActivity.addEventListener('click', this.addActivity.bind(this));
 
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
@@ -311,57 +315,97 @@ window.onload = function () {
     startTime();
     // console.log("fix this error! below doesn't owkr");
 
-    window.friendlyChat.loadData();
+    // window.friendlyChat.loadData();
     // Kairos.prototype.loadData();
 };
 
 //fixme: runs this twice
-$("ul").on("click", "button", function (e) {
-    $(this).unbind("click");
-    e.preventDefault();
-    // console.log($(this).parent());
-    if (this.innerHTML == 'delete') {
-        console.log("deleting stuff @ " + $(this).parent().index());
-        $(this).parent().remove();
-    }
-    else if (this.innerHTML == 'add') {
-        var x = document.getElementById("new_activity_value");
-        var defaultVal = x.defaultValue;
-        var currentVal = x.value;
-        var foobar = new Kairos();
-        if (defaultVal != currentVal) {
-            console.log("calling kairos func");
-            foobar.addActivity(currentVal);
-            console.log("calling kairos func lol");
-            Kairos.prototype.addActivity(currentVal);
-        }
-        else {
-            alert("enter a val first please");
-        }
+/*
+ $("ul").on("click", "button", function (e) {
+ $(this).unbind("click");
+ e.preventDefault();
+ // console.log($(this).parent());
+ if (this.innerHTML == 'delete') {
+ console.log("deleting stuff @ " + $(this).parent().index());
+ $(this).parent().remove();
+ }
+ else if (this.innerHTML == 'add') {
+ var x = document.getElementById("new_activity_value");
+ var defaultVal = x.defaultValue;
+ var currentVal = x.value;
+ var foobar = new Kairos();
+ if (defaultVal != currentVal) {
+ console.log("calling kairos func");
+ foobar.addActivity(currentVal);
+ Kairos.prototype.addActivity(currentVal);
+ }
+ else {
+ alert("enter a val first please");
+ }
 
-    }
-});
+ }
+ });
+ */
 
 var SECONDS_IN_DAY = 86400.0;
 var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
+var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 
 var ACTIVITY_SIZE = activityLabels.length;
 
-Kairos.prototype.addActivity = function (activity_label) {
-    console.log("attempting to add..." + activity_label);
-    var userId = firebase.auth().currentUser.uid;
-    console.log(userID);
-    var activityRef = firebase.database().ref('activities' + userID);
-    console.log(activityRef);
+Kairos.prototype.addActivity = function () {
+    var x = document.getElementById("new_activity_value");
+    var defaultVal = x.defaultValue;
+    var currentVal = x.value.toLowerCase();
+    if (defaultVal != currentVal) {
+        console.log("attempting to add..." + currentVal);
+        var userId = firebase.auth().currentUser.uid;
+        console.log(userId);
+        var activityRef = firebase.database().ref('activities/' + userId);
+        // var foo = firebase.database().ref().child('activities/' + userId).push().key;
+        // console.log(foo);
+        // activityRef.push({
+        //     'activity_array': currentVal
+        // });
+        var activities = [];
+        var read_activity_array;
+        console.log('foo');
+        activityRef.on('value', function (snapshot) {
+            if (snapshot.val() !== null) {
+                console.log('foo');
+                var event = snapshot.val();
+                read_activity_array = event['activity_array'];
+                read_activity_array.push(currentVal);
+                console.log(read_activity_array);
+                return;
+            }
+            else {
+                console.log("Snapshot not found,  injecting blank values");
+                activityRef.set({'activity_array': DEFAULT_ACTIVITIES});
+            }
+            // activities.push(snapshot.val());
+            //Do something with the data
+        });
+        activityRef.set({'activity_array': read_activity_array});
+        var activities_in_modal = document.getElementById("adjust_activities");
+        for (var i = 0; i < read_activity_array.length; i++) {
+            text += cars[i] + "<br>";
+        }
+
+    }
+    else {
+        alert("enter a val first please");
+    }
 };
 //todo: delete activity
 
 
 Kairos.prototype.loadData = function () {
     var userId = firebase.auth().currentUser.uid;
-    console.log(userID);
+    console.log(userId);
     var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + get_time_key(0));
     console.log(timeDataRef);
+    console.log('end loadData');
 };
 
 
