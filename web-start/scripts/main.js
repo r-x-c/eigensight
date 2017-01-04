@@ -20,6 +20,10 @@
 'use strict';
 
 //Load Dependencies
+$.getScript("/scripts/class_helpers.js", function () {
+
+});
+
 $.getScript("/scripts/helpers.js", function () {
 
 });
@@ -201,7 +205,7 @@ Kairos.prototype.onAuthStateChanged = function (user) {
         // Hide sign-in button.
         this.signInButton.setAttribute('hidden', 'true');
 
-        // We load currently existing chant messages.
+        // We load currently existing chat messages.
         this.loadMessages();
         //fixme:
         // this.loadTimes();
@@ -320,32 +324,15 @@ window.onload = function () {
 };
 
 //fixme: runs this twice
-/*
- $("ul").on("click", "button", function (e) {
- $(this).unbind("click");
- e.preventDefault();
- // console.log($(this).parent());
- if (this.innerHTML == 'delete') {
- console.log("deleting stuff @ " + $(this).parent().index());
- $(this).parent().remove();
- }
- else if (this.innerHTML == 'add') {
- var x = document.getElementById("new_activity_value");
- var defaultVal = x.defaultValue;
- var currentVal = x.value;
- var foobar = new Kairos();
- if (defaultVal != currentVal) {
- console.log("calling kairos func");
- foobar.addActivity(currentVal);
- Kairos.prototype.addActivity(currentVal);
- }
- else {
- alert("enter a val first please");
- }
-
- }
- });
- */
+$("ul").on("click", "button", function (e) {
+    $(this).unbind("click");
+    e.preventDefault();
+    // console.log($(this).parent());
+    if (this.innerHTML == 'delete') {
+        console.log("deleting stuff @ " + $(this).parent().index());
+        $(this).parent().remove();
+    }
+});
 
 var SECONDS_IN_DAY = 86400.0;
 var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
@@ -353,7 +340,9 @@ var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exerci
 
 var ACTIVITY_SIZE = activityLabels.length;
 
+//Dependencies: Settings Modal
 Kairos.prototype.addActivity = function () {
+    console.log("appending an activity to settings modal ");
     var x = document.getElementById("new_activity_value");
     var defaultVal = x.defaultValue;
     var currentVal = x.value;
@@ -378,6 +367,7 @@ Kairos.prototype.addActivity = function () {
                 read_activity_array = event['activity_array'];
                 read_activity_array.push(currentVal);
                 console.log(read_activity_array);
+                append_li_to_ul(read_activity_array);
                 return;
             }
             else {
@@ -393,7 +383,6 @@ Kairos.prototype.addActivity = function () {
         //     append_li_to_ul()
         //     text += cars[i] + "<br>";
         // }
-        append_li_to_ul(read_activity_array);
     }
     else {
         alert("enter a val first please");
@@ -401,17 +390,52 @@ Kairos.prototype.addActivity = function () {
 };
 //todo: delete activity
 
-
+//Dependencies: Initial page load
+//refresh buttonn?
 Kairos.prototype.loadData = function () {
+    console.log("Loading user data");
     var userId = firebase.auth().currentUser.uid;
-    console.log(userId);
     var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + get_time_key(0));
     console.log(timeDataRef);
-    console.log('end loadData');
+
+    //todo: use helper function instead
+
+    var storedActivity, storedKey, storedTimeArr;
+    timeDataRef.on('value', function (snapshot) {
+        //todo: this function calls 3 times
+        console.log("foobar");
+        if (snapshot.val() !== null) {
+            var event = snapshot.val();
+            storedActivity = event['lastActivity'];
+            storedKey = event['lastKey'];
+            storedTimeArr = event['timeArray'];
+            storedTimeArr[storedActivity] += (time_key - storedKey);
+            updateFrontEnd(storedTimeArr, time_key, activityLabels[activity_index]);
+        }
+        else {
+            console.error("Snapshot not found,  injecting blank values");
+            timeDataRef.set({
+                'lastKey': time_key,
+                'lastActivity': activity_index,
+                'timeArray': new Array(ACTIVITY_SIZE).fill(0)
+            });
+            storedKey = time_key;
+            storedActivity = activity_index;
+            storedTimeArr = new Array(ACTIVITY_SIZE).fill(0);
+
+        }
+        console.log("Array: " + JSON.stringify(storedTimeArr));
+        console.log("Activity Idx: " + storedActivity);
+        console.log("Key: " + storedKey);
+    });
+
+
 };
 
 
+//Dependencies: changing current activity within header
 Kairos.prototype.selectActivity = function (activity_index) {
+    console.log("Logging new user activity");
     // console.log("foobar"+activity_idx);
     // var selector = document.getElementById("activitySelector");
     // var activity_index = Number(selector.options[selector.selectedIndex].value);

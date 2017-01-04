@@ -103,7 +103,13 @@ function append_li_to_ul(activity_array) {
     }
 }
 
-
+function extract_ul_to_array() {
+    var ul = document.getElementById("adjust_activities");
+    $( "ul.adjust_activities" ).children();
+    for(var i = 0; i < ul.length; i++){
+        console.log(ul[i]);
+    }
+}
 
 
 

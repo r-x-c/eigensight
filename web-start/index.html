@@ -142,6 +142,7 @@
                 <li><a class="flip" href="#panel2" style="color: #0e0e0e">Tabular Form</a></li>
                 <li><a class="flip" href="#panel3" style="color: #0e0e0e">Messenger</a></li>
                 <li><a class="flip" href="#panel4" style="color: #0e0e0e">Motivational</a></li>
+                <li><a class="flip" href="#panel5" style="color: #0e0e0e">Mindfulness</a></li>
             </ul>
         </nav>
         <div id="panel_container" align="center">
@@ -220,6 +221,12 @@
                     </div><!--end buttonContainer-->
                 </div><!--end container-->
             </div>
+            <div class="panel" id="panel5">
+                <div>
+                    <!--todo: breathing exercises, neutral sounds-->
+                    <h4>Letting the present escape you?</h4>
+                </div>
+            </div>
 
 
         </div> <!--panel Conatainer-->
@@ -267,27 +274,15 @@
                     <h4 class="modal-title">Settings</h4>
                 </div>
                 <div class="modal-body">
+
+                    <button id="save_activities"
+                            onclick="javascript:alert(1);try{extract_ul_to_array()}catch(e){alert(e)}">save
+                    </button>
                     <h5>Adjust Activities</h5>
                     <ul id="adjust_activities">
                         <li>
                             <input type="text" id="new_activity_value" value="Enter Label Here">
                             <button id="submit_activity">add</button>
-                        </li>
-                        <li>
-                            <label>Volvo</label>
-                            <button>delete</button>
-                        </li>
-                        <li>
-                            <label>Saab</label>
-                            <button>delete</button>
-                        </li>
-                        <li>
-                            <label>Mercedes</label>
-                            <button>delete</button>
-                        </li>
-                        <li>
-                            <label>Mercedes</label>
-                            <button>delete</button>
                         </li>
                     </ul>
                     <p id="demo"></p>
@@ -319,6 +314,6 @@
 
 <script src="scripts/main.js"></script>
 <script src="scripts/frontend.js"></script>
-<script src="scripts/main.js"></script>
+<script src="scripts/helpers.js"></script>
 </body>
 </html>
