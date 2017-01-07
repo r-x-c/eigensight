@@ -76,41 +76,52 @@
             <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
                 <h4><i class="material-icons">chat_bubble_outline</i> EigenSight</h4>
             </div>
+            <div id="clockdiv">
+                <!--<div>-->
+                <!--<span class="days"></span>-->
+                <!--<div class="smalltext">Days</div>-->
+                <!--</div>-->
+                <div>
+                    <span class="hours"></span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div>
+            <div class="wrapper">
+
+                <ul class="menu non-html5 big">
+                    <li><a href="#">Profilex <span class="pink">2</span></a></li>
+
+                    <li><a href="#" data-toggle="modal" data-target="#settings_modal"
+                           onclick="Kairos.prototype.refresh_page_data()">Settings<span
+                            class="yellow">3</span></a>
+                    </li>
+                    <li><a href="#">Notifications<span class="blue"></span></a></li>
+                    <!--<li><a href="#">Logout</a></li>-->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn" id="dropdown-topbar" align="center"></button>
+                <div class="dropdown-content" id="dropdown-options">
+                    <a href="#" onclick="Kairos.prototype.selectActivity(0)"> sleeping</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(1)">traveling</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(2)">studying</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(3)">eating</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(4)">exercising</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(5)">unwinding</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(6)">socializing</a>
+                    <a href="#" onclick="Kairos.prototype.selectActivity(7)">grooming</a>
+                </div>
+            </div>
+
             <div id="user-container">
-
-                <div id="clockdiv">
-                    <!--<div>-->
-                        <!--<span class="days"></span>-->
-                        <!--<div class="smalltext">Days</div>-->
-                    <!--</div>-->
-                    <div>
-                        <span class="hours"></span>
-                        <div class="smalltext">Hours</div>
-                    </div>
-                    <div>
-                        <span class="minutes"></span>
-                        <div class="smalltext">Minutes</div>
-                    </div>
-                    <div>
-                        <span class="seconds"></span>
-                        <div class="smalltext">Seconds</div>
-                    </div>
-                </div>
-
-
-                <div class="dropdown">
-                    <button class="dropbtn" id="dropdown-topbar" align="center"></button>
-                    <div class="dropdown-content" id="dropdown-options">
-                        <a href="#" onclick="Kairos.prototype.selectActivity(0)"> sleeping</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(1)">traveling</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(2)">studying</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(3)">eating</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(4)">exercising</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(5)">unwinding</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(6)">socializing</a>
-                        <a href="#" onclick="Kairos.prototype.selectActivity(7)">grooming</a>
-                    </div>
-                </div>
                 <div hidden id="user-pic"></div>
                 <div hidden id="user-name"></div>
                 <button hidden id="sign-out"
@@ -126,18 +137,6 @@
         </div>
 
         <!--<div class="mdl-layout__header-row mdl-cell mdl-cell&#45;&#45;12-col mdl-cell&#45;&#45;12-col-tablet mdl-cell&#45;&#45;12-col-desktop">-->
-        <div class="wrapper">
-
-            <ul class="menu non-html5 big">
-                <li><a href="#">Profilex <span class="pink">2</span></a></li>
-
-                <li><a href="#" data-toggle="modal" data-target="#settings_modal" onclick="Kairos.prototype.refresh_page_data()">Settings<span
-                        class="yellow">3</span></a>
-                </li>
-                <li><a href="#">Notifications<span class="blue"></span></a></li>
-                <!--<li><a href="#">Logout</a></li>-->
-            </ul>
-        </div>
         <!--</div>-->
 
     </header>
@@ -148,8 +147,7 @@
 
     <main class="mdl-layout__content mdl-color--grey-100">
         <div align="center">
-            <h4 id="currentActivity">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit..."</h4>
+            <h5 id="currentActivity"></h5>
 
         </div>
         <nav>

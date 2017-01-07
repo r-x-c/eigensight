@@ -11,3 +11,16 @@ Kairos.prototype.get_activity_from_day = function(day_offset){
  };
 
 
+Kairos.prototype.fetch_data = function (ref_in) {
+    var elements = [];
+    ref_in.on('value', function (snapshot) {
+        if (snapshot.val() !== null) {
+            elements.push(snapshot.val());
+        }
+        else {
+            console.error("Snapshot not found");
+            return null;
+        }
+    });
+    return elements;
+};

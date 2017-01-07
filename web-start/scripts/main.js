@@ -387,72 +387,29 @@ Kairos.prototype.addActivity = function () {
         alert("enter a val first please");
     }
 };
-//todo: delete activity
-
-//Dependencies: Initial page load
-//refresh buttonn?
-
-Kairos.prototype.fetch_data = function (ref_in) {
-    var elements = [];
-    ref_in.on('value', function (snapshot) {
-        if (snapshot.val() !== null) {
-            elements.push(snapshot.val());
-        }
-        else {
-            console.error("Snapshot not found");
-            return null;
-        }
-    });
-    return elements;
-};
 
 Kairos.prototype.refresh_page_data = function () {
     console.log("Loading user data");
     var userId = this.auth.currentUser.uid;
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
-    var newPromise = $.Deferred();
-    var data;
-    var foo = this.timeRef;
-    console.log(foo);
-    newPromise.then(function () {
-        data = Kairos.prototype.fetch_data(foo);
-        alert("1st then!");
 
-    }).always(function () {
-        if (!data) {
+    this.timeRef.on('value', function (snapshot) {
+        if (!snapshot.val()) {
             console.log("no values found, setting blank ones");
             var last_activity = this.get_activity_from_day(-1);
             if (!last_activity) {
                 console.log("tried retrieving yesterday's activity idx, failed");
                 last_activity = 0;
             }
-            foo.set({
+            this.timeRef.set({
                 'lastKey': get_s_key(),
                 'lastActivity': last_activity,
                 'timeArray': new Array(ACTIVITY_SIZE).fill(0)
             });
 
         }
-
-        updateFrontEnd(data[0]['timeArray'], data[0]['lastKey'], activityLabels[data[0]['lastActivity']]);
-        alert("1st always!");
-    }).always(function () {
-        alert("2nd always!");
-    }).then(function () {
-        alert("2nd then!");
+        updateFrontEnd(snapshot.val()['timeArray'], snapshot.val()['lastKey'], activityLabels[snapshot.val()['lastActivity']])
     });
-
-    newPromise.resolve();
-
-
-    // var data = this.fetch_data(this.timeRef).then(function () {
-    //
-    // }.bind(this)).catch(function (error) {
-    //     console.error('Error refreshing data ', error);
-    // });
-    // console.log(data);
-    console.log("end!! Loading user data");
-
 };
 
 
@@ -532,13 +489,14 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     console.log("Array: " + JSON.stringify(timeArray));
     //Write to table
     //Create Pie Chart
-    $.when(displayArray(timeArray)).then(drawChart(timeArray));
+    displayArray(timeArray);
 
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
 
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
+    drawChart(timeArray);
 
 }
 
