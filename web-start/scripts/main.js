@@ -207,8 +207,7 @@ Kairos.prototype.onAuthStateChanged = function (user) {
 
         // We load currently existing chat messages.
         this.loadMessages();
-        //fixme:
-        // this.loadTimes();
+        this.refresh_page_data();
     } else { // User is signed out!
         // Hide user's profile and sign-out button.
         this.userName.setAttribute('hidden', 'true');
@@ -316,11 +315,11 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
-    startTime();
+    // startTime();
     // console.log("fix this error! below doesn't owkr");
 
-    // window.friendlyChat.loadData();
-    // Kairos.prototype.loadData();
+    // window.friendlyChat.refresh_page_data();
+    // Kairos.prototype.refresh_page_data();
 };
 
 //fixme: runs this twice
@@ -392,43 +391,67 @@ Kairos.prototype.addActivity = function () {
 
 //Dependencies: Initial page load
 //refresh buttonn?
-Kairos.prototype.loadData = function () {
-    console.log("Loading user data");
-    var userId = firebase.auth().currentUser.uid;
-    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + get_time_key(0));
-    console.log(timeDataRef);
 
-    //todo: use helper function instead
-
-    var storedActivity, storedKey, storedTimeArr;
-    timeDataRef.on('value', function (snapshot) {
-        //todo: this function calls 3 times
-        console.log("foobar");
+Kairos.prototype.fetch_data = function (ref_in) {
+    var elements = [];
+    ref_in.on('value', function (snapshot) {
         if (snapshot.val() !== null) {
-            var event = snapshot.val();
-            storedActivity = event['lastActivity'];
-            storedKey = event['lastKey'];
-            storedTimeArr = event['timeArray'];
-            storedTimeArr[storedActivity] += (time_key - storedKey);
-            updateFrontEnd(storedTimeArr, time_key, activityLabels[activity_index]);
+            elements.push(snapshot.val());
         }
         else {
-            console.error("Snapshot not found,  injecting blank values");
-            timeDataRef.set({
-                'lastKey': time_key,
-                'lastActivity': activity_index,
+            console.error("Snapshot not found");
+            return null;
+        }
+    });
+    return elements;
+};
+
+Kairos.prototype.refresh_page_data = function () {
+    console.log("Loading user data");
+    var userId = this.auth.currentUser.uid;
+    this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
+    var newPromise = $.Deferred();
+    var data;
+    var foo = this.timeRef;
+    console.log(foo);
+    newPromise.then(function () {
+        data = Kairos.prototype.fetch_data(foo);
+        alert("1st then!");
+
+    }).always(function () {
+        if (!data) {
+            console.log("no values found, setting blank ones");
+            var last_activity = this.get_activity_from_day(-1);
+            if (!last_activity) {
+                console.log("tried retrieving yesterday's activity idx, failed");
+                last_activity = 0;
+            }
+            foo.set({
+                'lastKey': get_s_key(),
+                'lastActivity': last_activity,
                 'timeArray': new Array(ACTIVITY_SIZE).fill(0)
             });
-            storedKey = time_key;
-            storedActivity = activity_index;
-            storedTimeArr = new Array(ACTIVITY_SIZE).fill(0);
 
         }
-        console.log("Array: " + JSON.stringify(storedTimeArr));
-        console.log("Activity Idx: " + storedActivity);
-        console.log("Key: " + storedKey);
+
+        updateFrontEnd(data[0]['timeArray'], data[0]['lastKey'], activityLabels[data[0]['lastActivity']]);
+        alert("1st always!");
+    }).always(function () {
+        alert("2nd always!");
+    }).then(function () {
+        alert("2nd then!");
     });
 
+    newPromise.resolve();
+
+
+    // var data = this.fetch_data(this.timeRef).then(function () {
+    //
+    // }.bind(this)).catch(function (error) {
+    //     console.error('Error refreshing data ', error);
+    // });
+    // console.log(data);
+    console.log("end!! Loading user data");
 
 };
 

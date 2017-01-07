@@ -78,10 +78,26 @@
             </div>
             <div id="user-container">
 
-
-                <div>
-                    <p class="round1" id="pageClock" align="center"></p>
+                <div id="clockdiv">
+                    <!--<div>-->
+                        <!--<span class="days"></span>-->
+                        <!--<div class="smalltext">Days</div>-->
+                    <!--</div>-->
+                    <div>
+                        <span class="hours"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
                 </div>
+
+
                 <div class="dropdown">
                     <button class="dropbtn" id="dropdown-topbar" align="center"></button>
                     <div class="dropdown-content" id="dropdown-options">
@@ -115,7 +131,7 @@
             <ul class="menu non-html5 big">
                 <li><a href="#">Profilex <span class="pink">2</span></a></li>
 
-                <li><a href="#" data-toggle="modal" data-target="#settings_modal" onclick="Kairos.prototype.loadData()">Settings<span
+                <li><a href="#" data-toggle="modal" data-target="#settings_modal" onclick="Kairos.prototype.refresh_page_data()">Settings<span
                         class="yellow">3</span></a>
                 </li>
                 <li><a href="#">Notifications<span class="blue"></span></a></li>

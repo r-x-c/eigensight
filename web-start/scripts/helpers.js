@@ -24,9 +24,23 @@ String.prototype.toHHMMSS = function () {
 function get_time_key(offset) {
     var n = new Date();
     n.setDate(n.getDate() + offset);
-    var date_key = (n.getMonth() + 1) + "" + n.getDate() + "" + n.getFullYear();
-    return date_key;
+    var m = n.getMonth() + 1;
+    var d = n.getDate();
+    if (m < 10) {
+        m = "0" + m;
+    }
+    if (d < 10) {
+        d = "0" + d;
+    }
+    return m + "" + d + "" + n.getFullYear();
 }
+
+function get_s_key() {
+    var n = new Date();
+    return (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
+
+}
+
 
 function displayArray(arr) {
     //todo: this inefficiently updates all el of table
@@ -105,8 +119,8 @@ function append_li_to_ul(activity_array) {
 
 function extract_ul_to_array() {
     var ul = document.getElementById("adjust_activities");
-    $( "ul.adjust_activities" ).children();
-    for(var i = 0; i < ul.length; i++){
+    $("ul.adjust_activities").children();
+    for (var i = 0; i < ul.length; i++) {
         console.log(ul[i]);
     }
 }

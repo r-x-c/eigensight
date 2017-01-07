@@ -166,20 +166,56 @@ $(document).ready(function () {
 });
 
 
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('pageClock').innerHTML = h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
 }
-function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i
+
+function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    // var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        // daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
     }
-    return i;
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
 }
+
+function get_remainder_ms() {
+    var today = new Date();
+    var h = 23 - today.getHours();
+    var m = 59 - today.getMinutes();
+    var s = 59 - today.getSeconds();
+    var today_in_ms = h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000;
+    return today_in_ms;
+
+}
+var today_in_ms = get_remainder_ms();
+var deadline = new Date(Date.parse(new Date()) + today_in_ms);
+initializeClock('clockdiv', deadline);
+
 

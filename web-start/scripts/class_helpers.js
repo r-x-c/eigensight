@@ -2,17 +2,12 @@
  * Created by richard on 1/4/17.
  */
 
-Kairos.prototype.load_data_from_ref = function (ref_in) {
-    var events;
-    ref_in.on('value', function (snapshot) {
-        if (snapshot.val() !== null) {
-            var event = snapshot.val();
-            events.push(event);
-        }
-        else {
-            console.error("Snapshot not found,  injecting blank values");
-        }
-    });
-    return events;
-};
+
+Kairos.prototype.get_activity_from_day = function(day_offset){
+    var userId = this.auth.currentUser.uid;
+    this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(day_offset));
+    var data = this.fetch_data(this.timeRef);
+    return data[0]['lastActivity'];
+ };
+
 
