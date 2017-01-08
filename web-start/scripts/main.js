@@ -315,11 +315,6 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
-    // startTime();
-    // console.log("fix this error! below doesn't owkr");
-
-    // window.friendlyChat.refresh_page_data();
-    // Kairos.prototype.refresh_page_data();
 };
 
 //fixme: runs this twice
@@ -329,6 +324,7 @@ $("ul").on("click", "button", function (e) {
     // console.log($(this).parent());
     if (this.innerHTML == 'delete') {
         console.log("deleting stuff @ " + $(this).parent().index());
+        window.friendlyChat.remove_activity($(this).parent().index() - 1);
         $(this).parent().remove();
     }
 });
@@ -336,6 +332,7 @@ $("ul").on("click", "button", function (e) {
 var SECONDS_IN_DAY = 86400.0;
 var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
+var activity_labels;
 
 var ACTIVITY_SIZE = activityLabels.length;
 
@@ -365,6 +362,7 @@ Kairos.prototype.addActivity = function () {
                 var event = snapshot.val();
                 read_activity_array = event['activity_array'];
                 read_activity_array.push(currentVal);
+                activity_labels.push(currentVal);
                 console.log(read_activity_array);
                 append_li_to_ul(read_activity_array);
                 return;
@@ -377,15 +375,31 @@ Kairos.prototype.addActivity = function () {
             //Do something with the data
         });
         activityRef.set({'activity_array': read_activity_array});
-        // var activities_in_modal = document.getElementById("adjust_activities");
-        // for (var i = 0; i < read_activity_array.length; i++) {
-        //     append_li_to_ul()
-        //     text += cars[i] + "<br>";
-        // }
     }
     else {
         alert("enter a val first please");
     }
+};
+
+Kairos.prototype.remove_activity = function (index) {
+    console.log("deleting at index");
+    console.log(index);
+    if (index > -1) {
+        activity_labels.splice(index, 1);
+        console.log(activity_labels);
+    }
+    console.log(this.activityRef);
+    this.activityRef.on('value', function (snapshot) {
+        console.log("in snapshot");
+        console.log(snapshot.val());
+        this.activityRef.push({
+            'foo': activityLabels
+        });
+
+    });
+    console.log("out of snapshot");
+
+
 };
 
 Kairos.prototype.refresh_page_data = function () {
@@ -393,8 +407,9 @@ Kairos.prototype.refresh_page_data = function () {
     var userId = this.auth.currentUser.uid;
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
 
+    //Time Data
     this.timeRef.on('value', function (snapshot) {
-        if (!snapshot.val()) {
+        if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
             var last_activity = this.get_activity_from_day(-1);
             if (!last_activity) {
@@ -410,6 +425,23 @@ Kairos.prototype.refresh_page_data = function () {
         }
         updateFrontEnd(snapshot.val()['timeArray'], snapshot.val()['lastKey'], activityLabels[snapshot.val()['lastActivity']])
     });
+
+    //Activity Data
+
+    this.activityRef = this.database.ref('activities/' + userId);
+    console.log(this.activityRef);
+    this.activityRef.on('value', function (snapshot) {
+        if (snapshot.val() === null) {
+            console.log("no values found, setting blank ones");
+            console.log(this.activityRef);
+            this.activityRef.set({
+                'activity_array': DEFAULT_ACTIVITIES
+            });
+        }
+        append_li_to_ul(snapshot.val()['activity_array']);
+        activity_labels = snapshot.val()['activity_array'];
+    });
+
 };
 
 

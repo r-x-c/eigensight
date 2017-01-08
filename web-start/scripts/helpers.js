@@ -105,7 +105,7 @@ function wait(ms) {
 function append_li_to_ul(activity_array) {
     var ul = document.getElementById("adjust_activities");
     $('#adjust_activities').find('li').not('li:first').remove();
-    for (i = 0; i < activity_array.length - 1; i++) {
+    for (i = 0; i < activity_array.length; i++) {
         var li = document.createElement("li");
         var label = document.createElement("label");
         var button = document.createElement("button")

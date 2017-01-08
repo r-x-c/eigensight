@@ -1,6 +1,6 @@
 /*Dropdown Button*/
 .dropbtn {
-    display:inline-block;
+    display: inline-block;
     background-color: Transparent;
     color: white;
     /*padding: 10px 15px;*/
@@ -17,7 +17,7 @@
     padding: 25px;
     line-height: 10px;
     align-self: center;
-    border:none;
+    border: none;
 }
 
 .dropdown {
@@ -67,17 +67,17 @@ body {
     color: #000;
 }
 
-
 /*Selector*/
 .wrapper {
     width: 70%;
     margin: 5px auto;
 }
+
 h1 {
-    font-family:'Helvetica Neue';
-    font-size:1.5em;
-    color:#4c4c4c;
-    float:left;
+    font-family: 'Helvetica Neue';
+    font-size: 1.5em;
+    color: #4c4c4c;
+    float: left;
     width: 100%;
     margin-bottom: 50px;
 }
@@ -90,78 +90,78 @@ h1 {
     background-image: -o-linear-gradient(top, rgb(249, 249, 249), rgb(240, 240, 240));
     background-image: -ms-linear-gradient(top, rgb(249, 249, 249), rgb(240, 240, 240));
     background-image: linear-gradient(top, rgb(249, 249, 249), rgb(240, 240, 240));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f9f9f9', EndColorStr='#f0f0f0');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#f9f9f9', EndColorStr='#f0f0f0');
 
-    -webkit-border-radius:0.2em;
-    -moz-border-radius:0.2em;
-    border-radius:0.2em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
 
-    border:1px solid #cecece;
+    border: 1px solid #cecece;
 
-    -webkit-box-shadow:
-            inset 0px 1px 0px #fff,
-            0px 1px 2px rgba(0,0,0,.06);
-    -moz-box-shadow:
-            inset 0px 1px 0px #fff,
-            0px 1px 2px rgba(0,0,0,.06);
-    box-shadow:
-            inset 0px 1px 0px #fff,
-            0px 1px 2px rgba(0,0,0,.06);
+    -webkit-box-shadow: inset 0px 1px 0px #fff,
+    0px 1px 2px rgba(0, 0, 0, .06);
+    -moz-box-shadow: inset 0px 1px 0px #fff,
+    0px 1px 2px rgba(0, 0, 0, .06);
+    box-shadow: inset 0px 1px 0px #fff,
+    0px 1px 2px rgba(0, 0, 0, .06);
 }
 
 .non-html5.menu li {
-    float:left;
-    position:relative;
+    float: left;
+    position: relative;
 
-    border-right:1px solid #d8d8d8;
-    border-left:1px solid #ffffff;
+    border-right: 1px solid #d8d8d8;
+    border-left: 1px solid #ffffff;
 }
-.non-html5.menu li:first-child { border-left:none; }
-.non-html5.menu li:last-child  { border-right:none;}
+
+.non-html5.menu li:first-child {
+    border-left: none;
+}
+
+.non-html5.menu li:last-child {
+    border-right: none;
+}
 
 .non-html5.menu li a {
-    font-family:'Helvetica Neue', Helvetica, sans-serif;
-    font-size:0.75em;
-    font-weight:bold;
-    color:#666666;
-    text-shadow:0px 1px 0px #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #666666;
+    text-shadow: 0px 1px 0px #ffffff;
 
     display: block;
-    padding:0 1em;
-    line-height:2.5em;
+    padding: 0 1em;
+    line-height: 2.5em;
 }
 
 .non-html5.menu li a span {
-    position:absolute;
-    top:-2em;
+    position: absolute;
+    top: -2em;
     right: 0.5em;
 
     width: 1.5em;
     height: 1.5em;
 
-    line-height:1.5em;
-    text-align:center;
+    line-height: 1.5em;
+    text-align: center;
 
-    font-family:"Helvetica Neue";
-    font-weight:bold;
-    color:#fff;
-    text-shadow:0px 1px 0px rgba(0,0,0,.15);
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .15);
 
-    -webkit-box-shadow:
-            inset 0px 1px 0px rgba(255,255,255,35),
-            0px 1px 1px rgba(0,0,0,.2);
-    -moz-box-shadow:
-            inset 0px 1px 0px rgba(255,255,255,.35),
-            0px 1px 1px rgba(0,0,0,.2);
-    box-shadow:
-            inset 0px 1px 0px rgba(255,255,255,.35),
-            0px 1px 1px rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 35),
+    0px 1px 1px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .35),
+    0px 1px 1px rgba(0, 0, 0, .2);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, .35),
+    0px 1px 1px rgba(0, 0, 0, .2);
 
-    -webkit-border-radius:4em;
-    -moz-border-radius:4em;
-    border-radius:4em;
+    -webkit-border-radius: 4em;
+    -moz-border-radius: 4em;
+    border-radius: 4em;
 
-    opacity:0;
+    opacity: 0;
     filter: alpha(opacity=0);
 
     -webkit-transition: .3s top ease-in, .3s opacity ease-in;
@@ -177,51 +177,40 @@ h1 {
     background-image: -o-linear-gradient(top, rgb(247, 130, 151), rgb(244, 102, 119));
     background-image: -ms-linear-gradient(top, rgb(247, 130, 151), rgb(244, 102, 119));
     background-image: linear-gradient(top, rgb(247, 130, 151), rgb(244, 102, 119));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f78297', EndColorStr='#f46677');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#f78297', EndColorStr='#f46677');
 
-    border:1px solid #ce4f5e;
+    border: 1px solid #ce4f5e;
 }
+
 .non-html5.menu li a span.yellow {
     background-image: -webkit-linear-gradient(top, rgb(254, 218, 113), rgb(254, 186, 72));
     background-image: -moz-linear-gradient(top, rgb(254, 218, 113), rgb(254, 186, 72));
     background-image: -o-linear-gradient(top, rgb(254, 218, 113), rgb(254, 186, 72));
     background-image: -ms-linear-gradient(top, rgb(254, 218, 113), rgb(254, 186, 72));
     background-image: linear-gradient(top, rgb(254, 218, 113), rgb(254, 186, 72));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#feda71', EndColorStr='#feba48');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#feda71', EndColorStr='#feba48');
 
-    border:1px solid #dea94f;
+    border: 1px solid #dea94f;
 }
+
 .non-html5.menu li a span.blue {
     background-image: -webkit-linear-gradient(top, rgb(172, 228, 248), rgb(108, 205, 243));
     background-image: -moz-linear-gradient(top, rgb(172, 228, 248), rgb(108, 205, 243));
     background-image: -o-linear-gradient(top, rgb(172, 228, 248), rgb(108, 205, 243));
     background-image: -ms-linear-gradient(top, rgb(172, 228, 248), rgb(108, 205, 243));
     background-image: linear-gradient(top, rgb(172, 228, 248), rgb(108, 205, 243));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ace4f8', EndColorStr='#6ccdf3');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#ace4f8', EndColorStr='#6ccdf3');
 
-    border:1px solid #79b5cb;
+    border: 1px solid #79b5cb;
 }
+
 .non-html5.menu li:hover a span {
-    top:-1em;
-    opacity:1;
+    top: -1em;
+    opacity: 1;
     filter: alpha(opacity=100);
 }
 
 /*end selector*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*Share Button*/
 /*http://codepen.io/dievardump/pen/nDthr*/
@@ -237,18 +226,16 @@ h1 {
     text-align: center;
 }
 
-
 .share-container {
     margin-left: 0px;
-    margin-top:  0px;
+    margin-top: 0px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(.05,.93,.61,1.6);
+    transition: all 0.3s cubic-bezier(.05, .93, .61, 1.6);
     box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
     width: 0px;
     height: 0px;
     background: #fff;
 }
-
 
 .share-action:hover ~ .share-container,
 .share-container:hover {
@@ -258,20 +245,18 @@ h1 {
     overflow: visible;
 }
 
-
-
 .share-container:after,
 .share-container:before {
     position: absolute;
-    background:  linear-gradient(rgba(136, 221, 255, 0.5) 0%, rgba(34, 153, 221, 0.5) 50%, rgba(136, 221, 255, 0.5) 100%);
-    z-index:4;
+    background: linear-gradient(rgba(136, 221, 255, 0.5) 0%, rgba(34, 153, 221, 0.5) 50%, rgba(136, 221, 255, 0.5) 100%);
+    z-index: 4;
     margin: 0;
     transition: all 0.5s ease-in-out;
     content: '';
 }
 
 .share-container:before {
-    background:  linear-gradient(left, rgba(136, 221, 255, 0.5) 0%, rgba(34, 153, 221, 0.5) 50%, rgba(136, 221, 255, 0.5) 100%);
+    background: linear-gradient(left, rgba(136, 221, 255, 0.5) 0%, rgba(34, 153, 221, 0.5) 50%, rgba(136, 221, 255, 0.5) 100%);
     height: 1px;
     margin: 50% 50%;
     width: 0%;
@@ -283,7 +268,6 @@ h1 {
     left: 0px;
     margin: 50% 7%;
 }
-
 
 .share-container:after {
     left: -1px;
@@ -310,11 +294,11 @@ h1 {
 }
 
 .share-btn {
-    display:inline-block;
+    display: inline-block;
     width: 49%;
     height: 49%;
     position: absolute;
-    z-indez:1;
+    z-indez: 1;
     border-color: #92888f;
     border-style: solid;
     border-width: 0;
@@ -323,14 +307,14 @@ h1 {
     overflow: hidden;
 }
 
-.share-action:hover ~ .share-container .share-btn ,
-.share-container:hover .share-btn  {
+.share-action:hover ~ .share-container .share-btn,
+.share-container:hover .share-btn {
     overflow: visible;
     font-size: 25px;
 }
 
 .share-btn:hover {
-    background:linear-gradient(#8df 0%, #29d 100%);
+    background: linear-gradient(#8df 0%, #29d 100%);
     color: #ffffff;
     text-shadow: 0 -1px #4298e0;
 }
@@ -340,16 +324,19 @@ h1 {
     bottom: 50%;
 
 }
+
 .share-btn.tr {
     left: 50%;
     bottom: 50%;
 
 }
+
 .share-btn.br {
     left: 50%;
     top: 50%;
 
 }
+
 .share-btn.bl {
     right: 50%;
     top: 50%;
@@ -360,14 +347,15 @@ h1 {
     line-height: 50px;
 }
 
-
 .rc10 {
     border-radius: 10%;
 }
+
 .below .share-btn.tl,
 .rc10 .share-btn.tl {
     line-height: 50px;
 }
+
 .below .share-btn.tr,
 .rc10 .share-btn.tr {
     line-height: 45px;
@@ -384,9 +372,11 @@ h1 {
     text-indent: -2px;
     line-height: 55px;
 }
+
 .rc10 .share-btn.tl {
     border-top-left-radius: 20%;
 }
+
 .rc10 .share-btn.tr {
     border-top-right-radius: 20%;
 }
@@ -405,6 +395,7 @@ h1 {
     margin: 50% auto;
     top: -16px;
 }
+
 .bottom.share-wrapper {
     margin: 25% auto 0;
 }
@@ -457,7 +448,7 @@ h1 {
 .top .share-container,
 .right .share-container,
 .bottom .share-container {
-    top : 0%;
+    top: 0%;
     left: 50%;
 }
 
@@ -473,14 +464,15 @@ h1 {
     left: -100%;
     top: 50px;
 }
+
 .bottom .rc10 .share-btn {
     text-indent: 0;
     line-height: 50px;
 }
+
 .bottom .share-container .share-btn.tl {
     line-height: 55px;
 }
-
 
 /*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
@@ -505,14 +497,15 @@ h1 {
     Work: http://lemonwi.se co-fobottom
 
     */
-@font-face{
-    font-family:FontAwesome;
-    src:url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.eot?#iefix) format('eot'),
+@font-face {
+    font-family: FontAwesome;
+    src: url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.eot?#iefix) format('eot'),
     url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.woff) format('woff'),
     url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.ttf) format('truetype'),
     url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.svg#FontAwesome) format('svg');
-    font-weight:400;font-style:normal;}
-
+    font-weight: 400;
+    font-style: normal;
+}
 
 /*  Font Awesome styles
     ------------------------------------------------------- */
@@ -523,49 +516,71 @@ h1 {
     display: inline-block;
     text-decoration: inherit;
 }
+
 a [class^="icon-"], a [class*=" icon-"] {
     display: inline-block;
     text-decoration: inherit;
 }
+
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
     vertical-align: top;
     font-size: 1.3333333333333333em;
 }
+
 .btn [class^="icon-"], .btn [class*=" icon-"] {
     /* keeps button heights with and without icons the same */
 
     line-height: .9em;
 }
+
 li [class^="icon-"], li [class*=" icon-"] {
     display: inline-block;
     width: 1.25em;
     text-align: center;
 }
+
 li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
     /* 1.5 increased font size for icon-large * 1.25 width */
 
     width: 1.875em;
 }
+
 li[class^="icon-"], li[class*=" icon-"] {
     margin-left: 0;
     list-style-type: none;
 }
+
 li[class^="icon-"]:before, li[class*=" icon-"]:before {
     text-indent: -2em;
     text-align: center;
 }
+
 li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     text-indent: -1.3333333333333333em;
 }
+
 /*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
     readers do not read off random characters that represent icons */
-.icon-facebook:before             { content: "\f09a"; }
-.icon-twitter:before              { content: "\f099"; }
-.icon-pinterest:before            { content: "\f0d2"; }
-.icon-google-plus:before          { content: "\f0d5"; }
+.icon-facebook:before {
+    content: "\f09a";
+}
 
-.icon-share:before                { content: "\f045"; }
+.icon-twitter:before {
+    content: "\f099";
+}
+
+.icon-pinterest:before {
+    content: "\f0d2";
+}
+
+.icon-google-plus:before {
+    content: "\f0d5";
+}
+
+.icon-share:before {
+    content: "\f045";
+}
 
 /* global */
 
@@ -576,18 +591,15 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     position: relative;
 }
 
-
 .debug .share-container {
     width: 100px;
     height: 100px;
 }
 
-
-
 /*Clock Again*/
 /*http://codepen.io/SitePoint/pen/MwNPVq*/
 
-#clockdiv{
+#clockdiv {
     font-family: sans-serif;
     color: #fff;
     display: inline-block;
@@ -596,30 +608,71 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     font-size: 20px;
 }
 
-#clockdiv > div{
-    padding: 5px;
+#clockdiv > div {
+    padding: 3px;
     border-radius: 3px;
-    background: #00BF96;
+    background: #3f5660;
     display: inline-block;
 }
 
-#clockdiv div > span{
-    padding: 5px;
+#clockdiv div > span {
+    padding: 3px;
     border-radius: 3px;
-    background: #00816A;
+    background: #607d8b;
     display: inline-block;
 }
 
-.smalltext{
-    padding-top: 5px;
-    font-size: 16px;
+.smalltext {
+    /*padding-top: 5px;*/
+    font-size: 12px;
+}
+
+/*header div container*/
+
+#user-dashboard {
+    /*position: absolute;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*top: 22px;*/
+    /*padding-left: 10px;*/
+    /*justify-content: flex-end;*/
+    width: 900px;
+    border: 1px solid red;
+    padding: 4px;
+    margin: 4px;
+
+    /*padding-right: 10px;*/
+    display: inline-block
+}
+
+/*#user-container #btn {*/
+    /*display: inline-block;*/
+    /*margin-right: 6px;*/
+    /*background-color: #EEE;*/
+/*}*/
+#user-container #clear {
+    clear: both;
 }
 
 
+#clockdiv {
+    float:left;
+    /*width:100px;*/
+    /*height: 20px;*/
+}
 
+#center {
+    display: inline-block;
+    margin:0 auto;
+    /*width:100px;*/
+    /*height: 20px;*/
+}
 
-
-
+#right {
+    float:right;
+    /*width:100px;*/
+    /*height: 20px;*/
+}
 
 
 
