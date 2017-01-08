@@ -323,9 +323,13 @@ $("ul").on("click", "button", function (e) {
     e.preventDefault();
     // console.log($(this).parent());
     if (this.innerHTML == 'delete') {
-        console.log("deleting stuff @ " + $(this).parent().index());
-        window.friendlyChat.remove_activity($(this).parent().index() - 1);
-        $(this).parent().remove();
+        console.log("deleting stuff @ " + $(this).parent().index() - 1);
+        if(window.friendlyChat.remove_activity($(this).parent().index() - 1) === true){
+            $(this).parent().remove();
+        }
+        else{
+            alert("didn't successfully remove it");
+        }
     }
 });
 
@@ -348,33 +352,22 @@ Kairos.prototype.addActivity = function () {
         var userId = firebase.auth().currentUser.uid;
         console.log(userId);
         var activityRef = firebase.database().ref('activities/' + userId);
-        // var foo = firebase.database().ref().child('activities/' + userId).push().key;
-        // console.log(foo);
-        // activityRef.push({
-        //     'activity_array': currentVal
-        // });
         var activities = [];
-        var read_activity_array;
         console.log('foo');
         activityRef.on('value', function (snapshot) {
             if (snapshot.val() !== null) {
                 console.log('foo');
                 var event = snapshot.val();
-                read_activity_array = event['activity_array'];
-                read_activity_array.push(currentVal);
+                activity_labels = event['activity_array'];
                 activity_labels.push(currentVal);
-                console.log(read_activity_array);
-                append_li_to_ul(read_activity_array);
-                return;
+                append_li_to_ul(activity_labels);
             }
             else {
                 console.log("Snapshot not found,  injecting blank values");
                 activityRef.set({'activity_array': DEFAULT_ACTIVITIES});
             }
-            // activities.push(snapshot.val());
-            //Do something with the data
         });
-        activityRef.set({'activity_array': read_activity_array});
+        activityRef.set({'activity_array': activity_labels});
     }
     else {
         alert("enter a val first please");
@@ -382,23 +375,28 @@ Kairos.prototype.addActivity = function () {
 };
 
 Kairos.prototype.remove_activity = function (index) {
-    console.log("deleting at index");
-    console.log(index);
+    //remove from local array
     if (index > -1) {
         activity_labels.splice(index, 1);
         console.log(activity_labels);
     }
+    var userId = this.auth.currentUser.uid;
+    this.activityRef = this.database.ref('activities/' + userId);
     console.log(this.activityRef);
+    //wrong function call for write db
     this.activityRef.on('value', function (snapshot) {
+
+
         console.log("in snapshot");
-        console.log(snapshot.val());
         this.activityRef.push({
-            'foo': activityLabels
+            'foo': activity_labels
         });
+        return true;
 
     });
     console.log("out of snapshot");
 
+    return false;
 
 };
 
@@ -406,6 +404,21 @@ Kairos.prototype.refresh_page_data = function () {
     console.log("Loading user data");
     var userId = this.auth.currentUser.uid;
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
+    //Activity Data
+    this.activityRef = this.database.ref('activities/' + userId);
+    console.log(this.activityRef);
+    this.activityRef.on('value', function (snapshot) {
+        if (snapshot.val() === null) {
+            console.log("no values found, setting blank ones");
+            console.log(this.activityRef);
+            this.activityRef.set({
+                'activity_array': DEFAULT_ACTIVITIES
+            });
+        }
+        append_li_to_ul(snapshot.val()['activity_array']);
+        activity_labels = snapshot.val()['activity_array'];
+    });
+    // this.activityRef.off();
 
     //Time Data
     this.timeRef.on('value', function (snapshot) {
@@ -423,25 +436,9 @@ Kairos.prototype.refresh_page_data = function () {
             });
 
         }
-        updateFrontEnd(snapshot.val()['timeArray'], snapshot.val()['lastKey'], activityLabels[snapshot.val()['lastActivity']])
+        updateFrontEnd(snapshot.val()['timeArray'], snapshot.val()['lastKey'], activity_labels[snapshot.val()['lastActivity']])
     });
-
-    //Activity Data
-
-    this.activityRef = this.database.ref('activities/' + userId);
-    console.log(this.activityRef);
-    this.activityRef.on('value', function (snapshot) {
-        if (snapshot.val() === null) {
-            console.log("no values found, setting blank ones");
-            console.log(this.activityRef);
-            this.activityRef.set({
-                'activity_array': DEFAULT_ACTIVITIES
-            });
-        }
-        append_li_to_ul(snapshot.val()['activity_array']);
-        activity_labels = snapshot.val()['activity_array'];
-    });
-
+    // this.timeRef.off();
 };
 
 
@@ -519,8 +516,6 @@ Kairos.prototype.selectActivity = function (activity_index) {
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
     console.log("Array: " + JSON.stringify(timeArray));
-    //Write to table
-    //Create Pie Chart
     displayArray(timeArray);
 
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';

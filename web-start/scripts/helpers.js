@@ -68,21 +68,23 @@ function displayArray(arr) {
     }
 }
 
+google.charts.load('current', {'packages': ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
 function drawChart(dataArr) {
-    google.charts.load('current', {'packages': ['corechart']});
     //todo: support dynamically set activities
     // var labels = document.getElementById("activitySelector");
     // var data = google.visualization.arrayToDataTable(dataArr);
     var data = google.visualization.arrayToDataTable([
         ['Task', 'Seconds per Day'],
-        [activityLabels[0], dataArr[0]],
-        [activityLabels[1], dataArr[1]],
-        [activityLabels[2], dataArr[2]],
-        [activityLabels[3], dataArr[3]],
-        [activityLabels[4], dataArr[4]],
-        [activityLabels[5], dataArr[5]],
-        [activityLabels[6], dataArr[6]],
-        [activityLabels[7], dataArr[7]]
+        [activity_labels[0], dataArr[0]],
+        [activity_labels[1], dataArr[1]],
+        [activity_labels[2], dataArr[2]],
+        [activity_labels[3], dataArr[3]],
+        [activity_labels[4], dataArr[4]],
+        [activity_labels[5], dataArr[5]],
+        [activity_labels[6], dataArr[6]],
+        [activity_labels[7], dataArr[7]]
     ]);
 
     var options = {
