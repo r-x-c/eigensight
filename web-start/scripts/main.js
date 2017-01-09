@@ -324,10 +324,11 @@ $("ul").on("click", "button", function (e) {
     // console.log($(this).parent());
     if (this.innerHTML == 'delete') {
         console.log("deleting stuff @ " + $(this).parent().index() - 1);
-        if(window.friendlyChat.remove_activity($(this).parent().index() - 1) === true){
+        try
+            window.friendlyChat.remove_activity($(this).parent().index() - 1);
             $(this).parent().remove();
         }
-        else{
+        catch (err) {
             alert("didn't successfully remove it");
         }
     }
@@ -381,23 +382,9 @@ Kairos.prototype.remove_activity = function (index) {
         console.log(activity_labels);
     }
     var userId = this.auth.currentUser.uid;
-    this.activityRef = this.database.ref('activities/' + userId);
-    console.log(this.activityRef);
-    //wrong function call for write db
-    this.activityRef.on('value', function (snapshot) {
-
-
-        console.log("in snapshot");
-        this.activityRef.push({
-            'foo': activity_labels
-        });
-        return true;
-
-    });
-    console.log("out of snapshot");
-
-    return false;
-
+    var updates = {};
+    updates['/activities/' + userId] = {'activity_array': activity_labels};
+    return firebase.database().ref().update(updates);
 };
 
 Kairos.prototype.refresh_page_data = function () {
