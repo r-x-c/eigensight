@@ -45,6 +45,8 @@ function Kairos() {
     this.signOutButton = document.getElementById('sign-out');
     this.signInSnackbar = document.getElementById('must-signin-snackbar');
     this.submitActivity = document.getElementById('submit_activity');
+    this.activitySelector = document.getElementById('dropdown-options');
+    this.resetActivity = document.getElementById('reset_activity_list');
 
     // Saves message on form submit.
     this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
@@ -53,6 +55,8 @@ function Kairos() {
 
     //fixme:
     this.submitActivity.addEventListener('click', this.addActivity.bind(this));
+    this.activitySelector.addEventListener('click', this.switch_activity.bind(this));
+    this.resetActivity.addEventListener('click', this.reset_activities.bind(this));
 
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
@@ -332,12 +336,41 @@ $("ul").on("click", "button", function (e) {
     }
 });
 
+$('div[class="dropdown-content"]').click(function () {
+    // `this` is the DOM element that was clicked
+    var index = $("div").index(this);
+    alert(index);
+    alert($(this).parent().index());
+    console.log("foobar");
+    // $( "span" ).text( "That was div index #" + index );
+});
+
+
 var SECONDS_IN_DAY = 86400.0;
 var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var activity_labels;
 
 var ACTIVITY_SIZE = activityLabels.length;
+
+
+Kairos.prototype.switch_activity = function () {
+
+    alert("fooba4A");
+    console.log("deleting acitivty at index " + $(this).index());
+    console.log("deleting acitivty at index " + this.activitySelector.selectedIndex);
+
+
+};
+
+
+Kairos.prototype.reset_activities = function () {
+    console.log('resetting activities list');
+    var userId = this.auth.currentUser.uid;
+    var updates = {};
+    updates['/activities/' + userId] = {'activity_array': DEFAULT_ACTIVITIES};
+    return firebase.database().ref().update(updates);
+};
 
 //Dependencies: Settings Modal
 Kairos.prototype.addActivity = function () {
@@ -364,13 +397,13 @@ Kairos.prototype.addActivity = function () {
                     activity_labels.push(currentVal);
                     append_li_to_ul(activity_labels);
                 }
-                else{
+                else {
                     alert("You already have this activity!");
                 }
             }
             else {
                 console.log("Snapshot not found,  injecting blank values");
-                activityRef.set({'activity_array': DEFAULT_ACTIVITIES});
+                activity_labels = DEFAULT_ACTIVITIES;
             }
         });
         activityRef.set({'activity_array': activity_labels});
@@ -456,8 +489,6 @@ Kairos.prototype.selectActivity = function (activity_index) {
     // var events = [];
     var storedActivity, storedKey, storedTimeArr;
     timeDataRef.on('value', function (snapshot) {
-        //todo: this function calls 3 times
-        console.log("foobar");
         if (snapshot.val() !== null) {
             var event = snapshot.val();
             storedActivity = event['lastActivity'];
