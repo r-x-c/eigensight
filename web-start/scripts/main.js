@@ -336,15 +336,6 @@ $("ul").on("click", "button", function (e) {
     }
 });
 
-$('div[class="dropdown-content"]').click(function () {
-    // `this` is the DOM element that was clicked
-    var index = $("div").index(this);
-    alert(index);
-    alert($(this).parent().index());
-    console.log("foobar");
-    // $( "span" ).text( "That was div index #" + index );
-});
-
 
 var SECONDS_IN_DAY = 86400.0;
 var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
@@ -356,9 +347,21 @@ var ACTIVITY_SIZE = activityLabels.length;
 
 Kairos.prototype.switch_activity = function () {
 
-    alert("fooba4A");
-    console.log("deleting acitivty at index " + $(this).index());
-    console.log("deleting acitivty at index " + this.activitySelector.selectedIndex);
+    console.log("switching activity in new func");
+    // alert("fooba4A");
+    // console.log("deleting acitivty at index " + $(this).index());
+    // console.log("deleting acitivty at index " + this.activitySelector.selectedIndex);
+
+    var g = document.getElementById('dropdown-options');
+    for (var i = 0, len = g.children.length; i < len; i++) {
+
+        (function (index) {
+            g.children[i].onclick = function () {
+                alert(index);
+            }
+        })(i);
+
+    }
 
 
 };
