@@ -317,19 +317,17 @@ window.onload = function () {
     window.friendlyChat = new Kairos();
 };
 
-//fixme: runs this twice
 $("ul").on("click", "button", function (e) {
     $(this).unbind("click");
     e.preventDefault();
-    // console.log($(this).parent());
     if (this.innerHTML == 'delete') {
-        console.log("deleting stuff @ " + $(this).parent().index() - 1);
-        try
+        console.log("deleting acitivty at index " + $(this).parent().index() - 1);
+        try {
             window.friendlyChat.remove_activity($(this).parent().index() - 1);
             $(this).parent().remove();
         }
         catch (err) {
-            alert("didn't successfully remove it");
+            alert(err);
         }
     }
 });
@@ -360,8 +358,15 @@ Kairos.prototype.addActivity = function () {
                 console.log('foo');
                 var event = snapshot.val();
                 activity_labels = event['activity_array'];
-                activity_labels.push(currentVal);
-                append_li_to_ul(activity_labels);
+                console.log($.inArray(currentVal, activity_labels));
+                if ($.inArray(currentVal, activity_labels) === -1) {
+                    console.log("dewfa");
+                    activity_labels.push(currentVal);
+                    append_li_to_ul(activity_labels);
+                }
+                else{
+                    alert("You already have this activity!");
+                }
             }
             else {
                 console.log("Snapshot not found,  injecting blank values");
@@ -371,7 +376,7 @@ Kairos.prototype.addActivity = function () {
         activityRef.set({'activity_array': activity_labels});
     }
     else {
-        alert("enter a val first please");
+        alert("Edit the text field first");
     }
 };
 

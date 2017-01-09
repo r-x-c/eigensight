@@ -110,7 +110,7 @@ function append_li_to_ul(activity_array) {
     for (i = 0; i < activity_array.length; i++) {
         var li = document.createElement("li");
         var label = document.createElement("label");
-        var button = document.createElement("button")
+        var button = document.createElement("button");
         button.innerHTML = "delete";
         label.innerHTML = activity_array[i];
         li.appendChild(label);
