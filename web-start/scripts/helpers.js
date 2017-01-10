@@ -20,6 +20,12 @@ String.prototype.toHHMMSS = function () {
     return hours + ':' + minutes + ':' + seconds;
 };
 
+Array.prototype.resize = function(newSize, defaultValue) {
+    while(newSize > this.length)
+        this.push(defaultValue);
+    this.length = newSize;
+};
+
 
 function get_time_key(offset) {
     var n = new Date();
@@ -43,25 +49,22 @@ function get_s_key() {
 
 
 function displayArray(arr) {
-    //todo: this inefficiently updates all el of table
+    console.log("Inserting " + arr.length + " elements into table view");
+    console.log(arr);
     var table = document.getElementById("timeTable");
-    // var activities = document.getElementById("activitySelector");
-    // console.log(activities);
     var sum = arr.reduce(function (a, b) {
         return a + b;
     }, 0);
-    console.log("Inserting " + arr.length + " elements...");
-    var tableRows = table.getElementsByTagName('tr');
-    console.log(tableRows);
+
+    $('#timeTable').find('tr').not('tr:first').remove();
 
     for (var i = 0; i < arr.length; i++) {
-        table.deleteRow(i + 1);
         var row = table.insertRow(i + 1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
-        cell1.innerHTML = activityLabels[i];
+        cell1.innerHTML = activity_labels[i];
         cell2.innerHTML = String(arr[i]).toHHMMSS();
         cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(2) + '%';
         cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
@@ -100,22 +103,6 @@ function wait(ms) {
     var end = start;
     while (end < start + ms) {
         end = new Date().getTime();
-    }
-}
-
-
-function append_li_to_ul(activity_array) {
-    var ul = document.getElementById("adjust_activities");
-    $('#adjust_activities').find('li').not('li:first').remove();
-    for (i = 0; i < activity_array.length; i++) {
-        var li = document.createElement("li");
-        var label = document.createElement("label");
-        var button = document.createElement("button");
-        button.innerHTML = "delete";
-        label.innerHTML = activity_array[i];
-        li.appendChild(label);
-        li.appendChild(button);
-        ul.appendChild(li);
     }
 }
 

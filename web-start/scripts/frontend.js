@@ -219,3 +219,19 @@ var deadline = new Date(Date.parse(new Date()) + today_in_ms);
 initializeClock('clockdiv', deadline);
 
 
+
+function append_li_to_ul(activity_array) {
+    var ul = document.getElementById("adjust_activities");
+    $('#adjust_activities').find('li').not('li:first').remove();
+    for (i = 0; i < activity_array.length; i++) {
+        var li = document.createElement("li");
+        var label = document.createElement("label");
+        var button = document.createElement("button");
+        button.innerHTML = "delete";
+        label.innerHTML = activity_array[i];
+        li.appendChild(label);
+        li.appendChild(button);
+        ul.appendChild(li);
+    }
+}
+

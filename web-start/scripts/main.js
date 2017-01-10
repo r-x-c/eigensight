@@ -337,12 +337,11 @@ $("ul").on("click", "button", function (e) {
 });
 
 
+//Globals
 var SECONDS_IN_DAY = 86400.0;
-var activityLabels = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
-var activity_labels;
-
-var ACTIVITY_SIZE = activityLabels.length;
+var DEFAULT_ACTIVITY_SIZE = DEFAULT_ACTIVITIES.length;
+var activity_labels, activity_labels_size;
 
 
 Kairos.prototype.switch_activity = function () {
@@ -430,16 +429,22 @@ Kairos.prototype.refresh_page_data = function () {
     this.activityRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
-            console.log(this.activityRef);
             this.activityRef.set({
                 'activity_array': DEFAULT_ACTIVITIES
             });
         }
         append_li_to_ul(snapshot.val()['activity_array']);
         activity_labels = snapshot.val()['activity_array'];
+        activity_labels_size = activity_labels.length;
+        //Update frontend activity selector
+        var activity_list_frontend = document.getElementById('dropdown-options');
+        $('#dropdown-options').find('a').remove();
+        for (var i = 0; i < activity_labels.length; i++) {
+            var a = document.createElement("a");
+            a.innerHTML = activity_labels[i];
+            activity_list_frontend.appendChild(a);
+        }
     });
-    // this.activityRef.off();
-
     //Time Data
     this.timeRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
@@ -452,7 +457,7 @@ Kairos.prototype.refresh_page_data = function () {
             this.timeRef.set({
                 'lastKey': get_s_key(),
                 'lastActivity': last_activity,
-                'timeArray': new Array(ACTIVITY_SIZE).fill(0)
+                'timeArray': new Array(DEFAULT_ACTIVITY_SIZE).fill(0)
             });
 
         }
@@ -465,22 +470,19 @@ Kairos.prototype.refresh_page_data = function () {
 //Dependencies: changing current activity within header
 Kairos.prototype.selectActivity = function (activity_index) {
     console.log("Logging new user activity");
-    // console.log("foobar"+activity_idx);
-    // var selector = document.getElementById("activitySelector");
-    // var activity_index = Number(selector.options[selector.selectedIndex].value);
     var n = new Date();
     var date_key = get_time_key(0);
     var time_key = (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
-    var userId = firebase.auth().currentUser.uid;
-    var timeDataRef = firebase.database().ref('timelogs/' + userId + "/" + date_key);
-    var timelineRef = firebase.database().ref('timelines/' + userId + "/" + date_key);
+    var userId = this.auth.currentUser.uid;
+    var timeDataRef = this.database.ref('timelogs/' + userId + "/" + date_key);
+    var timelineRef = this.database.ref('timelines/' + userId + "/" + date_key);
 
+    //record order of activities during day
     timelineRef.push({
         'timekey': time_key,
         'activity': activity_index,
     });
 
-    console.log("Begin DB read");
     // var events = [];
     var storedActivity, storedKey, storedTimeArr;
     timeDataRef.on('value', function (snapshot) {
@@ -490,18 +492,19 @@ Kairos.prototype.selectActivity = function (activity_index) {
             storedKey = event['lastKey'];
             storedTimeArr = event['timeArray'];
             storedTimeArr[storedActivity] += (time_key - storedKey);
-            updateFrontEnd(storedTimeArr, time_key, activityLabels[activity_index]);
+            storedTimeArr.resize(activity_labels_size, 0);
+            updateFrontEnd(storedTimeArr, time_key, activity_labels[activity_index]);
         }
         else {
             console.error("Snapshot not found,  injecting blank values");
             timeDataRef.set({
                 'lastKey': time_key,
                 'lastActivity': activity_index,
-                'timeArray': new Array(ACTIVITY_SIZE).fill(0)
+                'timeArray': new Array(activity_labels_size).fill(0)
             });
             storedKey = time_key;
             storedActivity = activity_index;
-            storedTimeArr = new Array(ACTIVITY_SIZE).fill(0);
+            storedTimeArr = new Array(activity_labels_size).fill(0);
 
         }
         console.log("Array: " + JSON.stringify(storedTimeArr));
