@@ -50,7 +50,6 @@ function get_s_key() {
 
 function displayArray(arr) {
     console.log("Inserting " + arr.length + " elements into table view");
-    console.log(arr);
     var table = document.getElementById("timeTable");
     var sum = arr.reduce(function (a, b) {
         return a + b;

@@ -72,12 +72,12 @@
 
     <!-- Header section containing logo -->
     <header class="mdl-layout__header mdl-color-text--white mdl-color--blue-grey">
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-            <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid row">
+            <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop col">
                 <h4><i class="material-icons">chat_bubble_outline</i> EigenSight</h4>
             </div>
 
-            <div id="user-dashboard">
+            <div id="user-dashboard" class="col">
                 <div id="clockdiv">
                     <!--<div>-->
                     <!--<span class="days"></span>-->
@@ -96,32 +96,32 @@
                         <div class="smalltext">Seconds</div>
                     </div>
                 </div>
-                <div class="wrapper" id="center">
-
-                    <ul class="menu non-html5 big">
-                        <li><a href="#">Profile<span class="pink">2</span></a></li>
-
-                        <li><a href="#" data-toggle="modal" data-target="#settings_modal">Settings<span
-                                class="yellow">3</span></a>
-                        </li>
-                        <li><a href="#">Notifications<span class="blue"></span></a></li>
-                        <!--<li><a href="#">Logout</a></li>-->
-                    </ul>
-                </div>
-                <div class="dropdown" id="right">
-                    <button class="dropbtn" id="dropdown-topbar" align="center"></button>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropdown-topbar"></button>
                     <div class="dropdown-content" id="dropdown-options">
                     </div>
                 </div>
             </div>
 
-            <div id="user-container">
+            <div id="user-container" class="col">
                 <div hidden id="user-pic"></div>
                 <div hidden id="user-name"></div>
-                <button hidden id="sign-out"
-                        class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                    Sign-out
-                </button>
+                <ul class="menu non-html5 big">
+                    <li><a href="#">Profile<span class="pink">2</span></a></li>
+
+                    <li><a href="#" data-toggle="modal" data-target="#settings_modal">Settings<span
+                            class="yellow">3</span></a>
+                    </li>
+                    <li><a href="#">Notifications<span class="blue"></span></a></li>
+                    <li>
+                        <button hidden id="sign-out"
+                                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey">
+                            Sign-out
+                        </button>
+                    </li>
+                    <!--<li><a href="#">Logout</a></li>-->
+                </ul>
+
                 <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
                     <i class="material-icons">account_circle</i>Sign-in with Google
                 </button>
@@ -267,9 +267,19 @@
                 <div class="modal-body">
                     <h5>Adjust Activities</h5>
                     <button id="reset_activity_list">reset</button>
+                    <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent">-->
+                    <!--Button-->
+                    <!--</button>-->
+
                     <ul id="adjust_activities">
                         <li>
-                            <input type="text" id="new_activity_value" value="Enter Label Here">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text"
+                                       id="new_activity_value">
+                                <label class="mdl-textfield__label" for="new_activity_value">New Activity...</label>
+                                <span class="mdl-textfield__error">Letters and spaces only</span>
+                            </div>
+                            <!--<input type="text" id="new_activity_value" value="Enter Label Here">-->
                             <button id="submit_activity">add</button>
                         </li>
                     </ul>

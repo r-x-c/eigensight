@@ -401,6 +401,7 @@ Kairos.prototype.addActivity = function () {
             }
         });
         activityRef.set({'activity_array': activity_labels});
+        x.value = "";
     }
     else {
         alert("Edit the text field first");
@@ -461,9 +462,14 @@ Kairos.prototype.refresh_page_data = function () {
             });
 
         }
-        updateFrontEnd(snapshot.val()['timeArray'], snapshot.val()['lastKey'], activity_labels[snapshot.val()['lastActivity']])
+        console.log(activity_labels);
+        console.log(activity_labels_size);
+        var read_time_array = snapshot.val()['timeArray'].resize(activity_labels_size, 0);
+        updateFrontEnd(read_time_array, snapshot.val()['lastKey'], activity_labels[snapshot.val()['lastActivity']])
     });
     // this.timeRef.off();
+    console.log("deubg:");
+
 };
 
 
@@ -536,16 +542,12 @@ Kairos.prototype.selectActivity = function (activity_index) {
 };
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
-    console.log("Array: " + JSON.stringify(timeArray));
     displayArray(timeArray);
-
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
-
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
     drawChart(timeArray);
-
 }
 
 var SECOND_IN_MS = 1000;
