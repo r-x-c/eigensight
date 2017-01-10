@@ -218,8 +218,6 @@ var today_in_ms = get_remainder_ms();
 var deadline = new Date(Date.parse(new Date()) + today_in_ms);
 initializeClock('clockdiv', deadline);
 
-
-
 function append_li_to_ul(activity_array) {
     var ul = document.getElementById("adjust_activities");
     $('#adjust_activities').find('li').not('li:first').remove();

@@ -20,8 +20,8 @@ String.prototype.toHHMMSS = function () {
     return hours + ':' + minutes + ':' + seconds;
 };
 
-Array.prototype.resize = function(newSize, defaultValue) {
-    while(newSize > this.length)
+Array.prototype.resize = function (newSize, defaultValue) {
+    while (newSize > this.length)
         this.push(defaultValue);
     this.length = newSize;
 };
@@ -75,21 +75,17 @@ google.charts.load('current', {'packages': ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart(dataArr) {
-    //todo: support dynamically set activities
-    // var labels = document.getElementById("activitySelector");
-    // var data = google.visualization.arrayToDataTable(dataArr);
-    var data = google.visualization.arrayToDataTable([
-        ['Task', 'Seconds per Day'],
-        [activity_labels[0], dataArr[0]],
-        [activity_labels[1], dataArr[1]],
-        [activity_labels[2], dataArr[2]],
-        [activity_labels[3], dataArr[3]],
-        [activity_labels[4], dataArr[4]],
-        [activity_labels[5], dataArr[5]],
-        [activity_labels[6], dataArr[6]],
-        [activity_labels[7], dataArr[7]]
-    ]);
+    console.log("drawing to pie chart");
+    if (dataArr.length !== activity_labels.length) {
+        alert("data array length is not the same as activity label arrray length");
+    }
 
+    var formatted_data = [];
+    formatted_data.push(['Task', 'Seconds']);
+    for (var i = 0; i < dataArr.length; i++) {
+        formatted_data.push([activity_labels[i], dataArr[i]]);
+    }
+    var data = google.visualization.arrayToDataTable(formatted_data);
     var options = {
         title: 'Activity Breakdown'
     };
