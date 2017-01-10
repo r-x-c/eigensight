@@ -215,92 +215,71 @@
 
 
     <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
-
-            <div align="center">
-                <h5 id="currentActivity"></h5>
-            </div>
-            <nav>
-                <ul>
-                    <li><a class="flip" href="#panel2" style="color: #0e0e0e">Tabular Form</a></li>
-                    <li><a class="flip" href="#panel3" style="color: #0e0e0e">Messenger</a></li>
-                    <li><a class="flip" href="#panel4" style="color: #0e0e0e">Motivational</a></li>
-                    <li><a class="flip" href="#panel5" style="color: #0e0e0e">Mindfulness</a></li>
-                </ul>
-            </nav>
-            <div id="panel_container" align="center">
-                <div class="panel" id="panel2">
-                    <div class="mdl-grid demo-content">
-                        <table id="timeTable">
-                            <caption>Time Breakdown Table</caption>
-                            <tr>
-                                <th>Activity</th>
-                                <th>Time Spent</th>
-                                <th>% of Passed Time</th>
-                                <th>% of Day</th>
-                        </table>
-                    </div>
-
-                </div>
-                <div class="panel" id="panel3">
-                    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
-                        <!-- Messages container -->
-                        <div id="messages-card" align="center"
-                             class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-                            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                                <div id="messages">
-                                    <span id="message-filler"></span>
-                                </div>
-                                <form id="message-form" action="#">
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="message">
-                                        <label class="mdl-textfield__label" for="message">Message...</label>
-                                    </div>
-                                    <button id="submit" disabled type="submit"
-                                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                                        Send
-                                    </button>
-                                </form>
-                                <form id="image-form" action="#">
-                                    <input id="mediaCapture" type="file" accept="image/*,capture=camera">
-                                    <button id="submitImage" title="Add an image"
-                                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
-                                        <i class="material-icons">image</i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="panel" id="panel4">
-                    <div id="container">
-                        <div id="quoteContainer">
-                            <p></p>
-                            <p id="quoteGenius"></p>
-                        </div><!--end quoteContainer-->
-
-                        <div id="buttonContainer">
-                            <a href="#" id="quoteButton">Quote Me</a>
-                        </div><!--end buttonContainer-->
-                    </div><!--end container-->
-                </div>
-                <div class="panel" id="panel5">
-                    <!--todo: breathing exercises, neutral sounds-->
-                    <h4>Letting the present escape you?</h4>
-                </div>
-            </div>
-
-
-        </div> <!--panel Conatainer-->
-
+        <h4 id="currentActivity"></h4>
         <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
 
-            <div id="piechart" style="width: 900px; height: 500px;"></div>
+            <div id="piechart"></div>
         </div>
-        <h5>features below have no functionality, unfortunately:</h5>
 
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell">
+            <div class="mdl-grid demo-content">
+                <table id="timeTable">
+                    <caption>Time Breakdown Table</caption>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Time Spent</th>
+                        <th>% of Passed Time</th>
+                        <th>% of Day</th>
+                </table>
+            </div>
+        </div>
+
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+            <div id="container">
+                <div id="quoteContainer">
+                    <p></p>
+                    <p id="quoteGenius"></p>
+                </div><!--end quoteContainer-->
+
+                <div id="buttonContainer">
+                    <a href="#" id="quoteButton">Quote Me</a>
+                </div><!--end buttonContainer-->
+            </div><!--end container-->
+        </div>
+
+        <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+            <!-- Messages container -->
+            <div id="messages-card" align="center"
+                 class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                    <div id="messages">
+                        <span id="message-filler"></span>
+                    </div>
+                    <form id="message-form" action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="message">
+                            <label class="mdl-textfield__label" for="message">Message...</label>
+                        </div>
+                        <button id="submit" disabled type="submit"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                            Send
+                        </button>
+                    </form>
+                    <form id="image-form" action="#">
+                        <input id="mediaCapture" type="file" accept="image/*,capture=camera">
+                        <button id="submitImage" title="Add an image"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+                            <i class="material-icons">image</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h5>features below have no functionality yet, unfortunately:</h5>
+
+        <!--todo: breathing exercises, neutral sounds-->
+        <p>mindfulness plugin todo</p>
         <div class="mdl-grid demo-content">
             <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
                 <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1"
@@ -331,8 +310,7 @@
         </div>
 
 
-</div>
-</main>
+    </main>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
      style="position: fixed; left: -1000px;">
