@@ -216,6 +216,18 @@
 
     <main class="mdl-layout__content mdl-color--grey-100">
         <h4 id="currentActivity"></h4>
+
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell">
+            <div id="authorize-div">
+                <span>Authorize access to Google Calendar API</span>
+                <!--Button for the user to click to initiate auth sequence -->
+                <button id="authorize-button" onclick="handleAuthClick(event)">
+                    Authorize
+                </button>
+            </div>
+            <pre id="output"></pre>
+
+        </div>
         <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
 
             <div id="piechart"></div>
@@ -422,8 +434,10 @@
 
 </div>
 
-
+<script src="https://apis.google.com/js/client.js?onload=checkAuth">
+</script>
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
 <script>
     // Initialize Firebase
     var config = {
@@ -437,6 +451,7 @@
 </script>
 
 <script src="scripts/main.js"></script>
+<script src="scripts/google_calendar.js"></script>
 <script src="scripts/frontend.js"></script>
 <script src="scripts/helpers.js"></script>
 </body>

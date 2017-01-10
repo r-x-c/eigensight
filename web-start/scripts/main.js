@@ -23,6 +23,9 @@
 $.getScript("/scripts/class_helpers.js", function () {
 
 });
+$.getScript("/scripts/google_calendar.js", function () {
+
+});
 
 $.getScript("/scripts/helpers.js", function () {
 
@@ -319,6 +322,8 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
+    //todo: auth on load
+    handleAuthClick(event);
 };
 
 $("ul").on("click", "button", function (e) {
