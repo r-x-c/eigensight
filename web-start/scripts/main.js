@@ -341,7 +341,7 @@ $("ul").on("click", "button", function (e) {
 var SECONDS_IN_DAY = 86400.0;
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITY_SIZE = DEFAULT_ACTIVITIES.length;
-var activity_labels, activity_labels_size;
+var activity_labels;
 
 
 Kairos.prototype.switch_activity = function () {
@@ -424,7 +424,8 @@ Kairos.prototype.refresh_page_data = function () {
     console.log("Loading user data");
     var userId = this.auth.currentUser.uid;
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
-    //Activity Data
+
+    //Load Custom Activity options
     this.activityRef = this.database.ref('activities/' + userId);
     console.log(this.activityRef);
     this.activityRef.on('value', function (snapshot) {
@@ -436,7 +437,6 @@ Kairos.prototype.refresh_page_data = function () {
         }
         append_li_to_ul(snapshot.val()['activity_array']);
         activity_labels = snapshot.val()['activity_array'];
-        activity_labels_size = activity_labels.length;
         //Update frontend activity selector
         var activity_list_frontend = document.getElementById('dropdown-options');
         $('#dropdown-options').find('a').remove();
@@ -446,7 +446,9 @@ Kairos.prototype.refresh_page_data = function () {
             activity_list_frontend.appendChild(a);
         }
     });
-    //Time Data
+
+    //Load Time Data
+    var foo = this;
     this.timeRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
@@ -455,21 +457,17 @@ Kairos.prototype.refresh_page_data = function () {
                 console.log("tried retrieving yesterday's activity idx, failed");
                 last_activity = 0;
             }
-            this.timeRef.set({
+            foo.timeRef.set({
                 'lastKey': get_s_key(),
                 'lastActivity': last_activity,
                 'timeArray': new Array(DEFAULT_ACTIVITY_SIZE).fill(0)
             });
 
         }
-        console.log(activity_labels);
-        console.log(activity_labels_size);
-        var read_time_array = snapshot.val()['timeArray'].resize(activity_labels_size, 0);
+        var read_time_array = snapshot.val()['timeArray'];
+        read_time_array.resize(activity_labels.length, 0);
         updateFrontEnd(read_time_array, snapshot.val()['lastKey'], activity_labels[snapshot.val()['lastActivity']])
     });
-    // this.timeRef.off();
-    console.log("deubg:");
-
 };
 
 
@@ -498,7 +496,7 @@ Kairos.prototype.selectActivity = function (activity_index) {
             storedKey = event['lastKey'];
             storedTimeArr = event['timeArray'];
             storedTimeArr[storedActivity] += (time_key - storedKey);
-            storedTimeArr.resize(activity_labels_size, 0);
+            storedTimeArr.resize(activity_labels.length, 0);
             updateFrontEnd(storedTimeArr, time_key, activity_labels[activity_index]);
         }
         else {
@@ -506,11 +504,11 @@ Kairos.prototype.selectActivity = function (activity_index) {
             timeDataRef.set({
                 'lastKey': time_key,
                 'lastActivity': activity_index,
-                'timeArray': new Array(activity_labels_size).fill(0)
+                'timeArray': new Array(activity_labels.length).fill(0)
             });
             storedKey = time_key;
             storedActivity = activity_index;
-            storedTimeArr = new Array(activity_labels_size).fill(0);
+            storedTimeArr = new Array(activity_labels.length).fill(0);
 
         }
         console.log("Array: " + JSON.stringify(storedTimeArr));

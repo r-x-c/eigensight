@@ -367,16 +367,16 @@ body {
     text-align: center;
 }
 
-.panel {
-
+/*.panel {*/
+/**/
     /*text-align: left;*/
-    width: 900px;
-    height: 500px;
-
-}
-
+    /*width: 900px;*/
+    /*height: 500px;*/
+/**/
+/*}*/
+/**/
 .panel {
-    padding-bottom: 50px;
+    /*padding-bottom: 50px;*/
     display: none;
     /*border-style:solid;*/
     /*border-width:1px;*/

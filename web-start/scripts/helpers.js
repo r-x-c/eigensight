@@ -72,7 +72,7 @@ function displayArray(arr) {
 }
 
 google.charts.load('current', {'packages': ['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+// google.charts.setOnLoadCallback(drawChart);
 
 function drawChart(dataArr) {
     console.log("drawing to pie chart");

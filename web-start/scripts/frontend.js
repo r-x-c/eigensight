@@ -225,7 +225,10 @@ function append_li_to_ul(activity_array) {
         var li = document.createElement("li");
         var label = document.createElement("label");
         var button = document.createElement("button");
+        // var button_format =  create('<i class="mdl-color-text--blue-grey-400 material-icons"' +
+        //     ' role="presentation">delete</i>');
         button.innerHTML = "delete";
+        // button.appendChild(button_format);
         label.innerHTML = activity_array[i];
         li.appendChild(label);
         li.appendChild(button);
