@@ -346,24 +346,16 @@ var ACTIVITY_SIZE = activityLabels.length;
 
 
 Kairos.prototype.switch_activity = function () {
-
     console.log("switching activity in new func");
-    // alert("fooba4A");
-    // console.log("deleting acitivty at index " + $(this).index());
-    // console.log("deleting acitivty at index " + this.activitySelector.selectedIndex);
-
+    var that = this;
     var g = document.getElementById('dropdown-options');
     for (var i = 0, len = g.children.length; i < len; i++) {
-
         (function (index) {
             g.children[i].onclick = function () {
-                alert(index);
+                that.selectActivity(index);
             }
         })(i);
-
     }
-
-
 };
 
 
