@@ -2,6 +2,15 @@
  * Created by richard on 12/24/16.
  */
 
+function updateFrontEnd(timeArray, time_key, activity_text) {
+    displayArray(timeArray);
+    var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
+    document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
+        " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
+    document.getElementById("dropdown-topbar").innerHTML = activity_text;
+    drawChart(timeArray);
+}
+
 function changeObjectView(id) {
     var pie = document.getElementById(id);
 

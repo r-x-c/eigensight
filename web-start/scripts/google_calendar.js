@@ -93,30 +93,38 @@ function listUpcomingEvents() {
                 // Get today's date
                 var todaysDate = new Date();
                 //Today
-                if(when.setHours(0,0,0,0) == new Date().setHours(0,0,0,0)) {
+                if (when.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0)) {
                     calendar_hours_today += (end - start);
-                    appendPre(event.summary + ' (at ' + formatAMPM(start) + ' for '+ msToTime(end - start) + ')');
+                    appendPre(event.summary + ' (at ' + formatAMPM(start) + ' for ' + msToTime(end - start) + ')');
                     debug(todaysDate);
                     debug(start);
                     debug(end);
                     //event has passed or begun
-                    if(todaysDate > start){
+                    if (todaysDate > start) {
                         debug("event has already passed");
                         //currently in session
-                        if(end > todaysDate){
+                        if (end > todaysDate) {
                             debug("but still in session");
-                            pending_calendar_hours += (end - todaysDate);
+                            //adjustment to not overflow bedtime
+                            if ((end.getHours() * 60 + end.getMinutes()) > (bedtime.getHours() * 60 + bedtime.getMinutes()) || end.getDate() !== todaysDate.getDate()) {
+                                end = todaysDate;
+                                end.setHours(bedtime.getHours(), bedtime.getMinutes());
+                            }
+                            pending_calendar_hours += (end - start);
                         }
                     }
                     //event is in future
-                    else{
+                    else {
                         debug("event has not begun ");
+                        //adj to not overflow bedtime
+                        if ((end.getHours() * 60 + end.getMinutes()) > (bedtime.getHours() * 60 + bedtime.getMinutes()) || end.getDate() !== todaysDate.getDate()) {
+                            end = todaysDate;
+                            end.setHours(bedtime.getHours(), bedtime.getMinutes());
+                        }
                         pending_calendar_hours += (end - start);
-
                     }
-
                 }
-                else{
+                else {
                     //only worry about events happening today
                     break;
                 }
@@ -127,10 +135,17 @@ function listUpcomingEvents() {
         }
         console.log("total calendar hours today");
         console.log(msToTime(calendar_hours_today));
+        console.log("pending cal hrs");
         console.log(msToTime(pending_calendar_hours));
+
+        //frontend
         var h_text = document.getElementById('calendarTime');
         h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
-
+        var bedtime_text = document.getElementById('bedTime');
+        bedtime_text.innerHTML = formatAMPM(bedtime);
+        var foo = document.getElementById('pendingCalendarTime');
+        foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events before' +
+            ' you go to bed';
     });
 }
 

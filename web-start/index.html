@@ -84,7 +84,8 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Home</span>
+            <span class="mdl-layout-title" style="border:dotted">Home</span>
+            <span class="mdl-layout-title" style="border:dotted">Home</span>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -95,9 +96,9 @@
                     <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
             </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
-                <i class="material-icons">more_vert</i>
-            </button>
+            <!--<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button&#45;&#45;icon" id="hdrbtn">-->
+                <!--<i class="material-icons">more_vert</i>-->
+            <!--</button>-->
             <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
                 <li class="mdl-menu__item">About</li>
                 <li class="mdl-menu__item">Contact</li>
@@ -119,7 +120,7 @@
     </header>
     <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-500 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-            <div id="user-container">
+            <div id="user-container" style="border:dotted">
                 <div hidden id="user-pic"></div>
                 <div hidden id="user-name"></div>
                 <button hidden id="sign-in"
@@ -217,6 +218,7 @@
     <main class="mdl-layout__content mdl-color--grey-100">
         <h4 id="currentActivity"></h4>
         <h5 id="calendarTime"></h5>
+        <h5 id="pendingCalendarTime"></h5>
 
         <div class="mdl-color--white mdl-shadow--2dp mdl-cell">
             <div id="authorize-div">
@@ -288,6 +290,7 @@
                 </div>
             </div>
         </div>
+
 
         <h5>features below have no functionality yet, unfortunately:</h5>
 
@@ -389,8 +392,8 @@
     </defs>
 </svg>
 
-<a href="https://github.com/r-x-c" target="_blank" id="view-source"
-   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">LinkedIn</a>
+<!--<a href="https://github.com/r-x-c" target="_blank" id="view-source"-->
+<!--class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;colored mdl-color-text&#45;&#45;white">LinkedIn</a>-->
 
 <div class="container">
     <!-- Trigger the modal with a button -->
@@ -423,6 +426,13 @@
                         </li>
                     </ul>
                     <p id="demo"></p>
+
+                    <h5>Adjust bed time</h5>
+                    <h6 id="bedTime"></h6>
+                    <div class="content__subsection picker-container">
+                        <h4>Twelve hour clock:</h4>
+                        <input type="text" id="timepicker-12-hr" name="timepicker-12-hr" class="timepicker-12-hr">
+                    </div>
 
                 </div>
                 <div class="modal-footer">

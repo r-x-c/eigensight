@@ -10,8 +10,6 @@ function debug(text){
     }
 }
 
-
-
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
     var hours = Math.floor(sec_num / 3600);
@@ -131,14 +129,6 @@ function wait(ms) {
     var end = start;
     while (end < start + ms) {
         end = new Date().getTime();
-    }
-}
-
-function extract_ul_to_array() {
-    var ul = document.getElementById("adjust_activities");
-    $("ul.adjust_activities").children();
-    for (var i = 0; i < ul.length; i++) {
-        console.log(ul[i]);
     }
 }
 

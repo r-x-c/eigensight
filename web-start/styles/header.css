@@ -221,7 +221,6 @@ h1 {
 }
 
 .share-wrapper {
-    font: 14px, 'FontAwesome';
     position: relative;
     text-align: center;
 }
@@ -497,25 +496,6 @@ h1 {
     Work: http://lemonwi.se co-fobottom
 
     */
-@font-face {
-    font-family: FontAwesome;
-    src: url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.eot?#iefix) format('eot'),
-    url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.woff) format('woff'),
-    url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.ttf) format('truetype'),
-    url(http://netdna.bootstrapcdn.com/font-awesome/2.0/font//fontawesome-webfont.svg#FontAwesome) format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/*  Font Awesome styles
-    ------------------------------------------------------- */
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    text-decoration: inherit;
-}
 
 a [class^="icon-"], a [class*=" icon-"] {
     display: inline-block;

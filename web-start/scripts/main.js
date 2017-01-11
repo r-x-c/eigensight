@@ -30,6 +30,9 @@ $.getScript("/scripts/google_calendar.js", function () {
 $.getScript("/scripts/helpers.js", function () {
 
 });
+$.getScript("/scripts/frontend.js", function () {
+
+});
 
 // Initializes Kairos.
 function Kairos() {
@@ -344,10 +347,18 @@ $("ul").on("click", "button", function (e) {
 
 //Globals
 var SECONDS_IN_DAY = 86400.0;
+var SECOND_IN_MS = 1000;
+var MINUTE_IN_MS = 60000;
+var HOUR_IN_MS = 3600000;
+
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITY_SIZE = DEFAULT_ACTIVITIES.length;
 var activity_labels;
 
+// 10:30pm
+var TIMEZONE_OFFSET = 5;
+var DEFAULT_BEDTIME = new Date(HOUR_IN_MS * (22 + TIMEZONE_OFFSET) + MINUTE_IN_MS * 30);
+var bedtime = DEFAULT_BEDTIME;
 
 Kairos.prototype.switch_activity = function () {
     console.log("switching activity in new func");
@@ -367,7 +378,7 @@ Kairos.prototype.reset_activities = function () {
     console.log('resetting activities list');
     var userId = this.auth.currentUser.uid;
     var updates = {};
-    updates['/activities/' + userId] = {'activity_array': DEFAULT_ACTIVITIES};
+    updates['/settings/' + userId] = {'activity_array': DEFAULT_ACTIVITIES};
     return firebase.database().ref().update(updates);
 };
 
@@ -382,7 +393,7 @@ Kairos.prototype.addActivity = function () {
         console.log("attempting to add..." + currentVal);
         var userId = firebase.auth().currentUser.uid;
         console.log(userId);
-        var activityRef = firebase.database().ref('activities/' + userId);
+        var activityRef = firebase.database().ref('settings/' + userId);
         var activities = [];
         console.log('foo');
         activityRef.on('value', function (snapshot) {
@@ -421,7 +432,7 @@ Kairos.prototype.remove_activity = function (index) {
     }
     var userId = this.auth.currentUser.uid;
     var updates = {};
-    updates['/activities/' + userId] = {'activity_array': activity_labels};
+    updates['/settings/' + userId] = {'activity_array': activity_labels};
     return firebase.database().ref().update(updates);
 };
 
@@ -431,7 +442,7 @@ Kairos.prototype.refresh_page_data = function () {
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
 
     //Load Custom Activity options
-    this.activityRef = this.database.ref('activities/' + userId);
+    this.activityRef = this.database.ref('settings/' + userId);
     console.log(this.activityRef);
     this.activityRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
@@ -544,18 +555,7 @@ Kairos.prototype.selectActivity = function (activity_index) {
 
 };
 
-function updateFrontEnd(timeArray, time_key, activity_text) {
-    displayArray(timeArray);
-    var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
-    document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
-        " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
-    document.getElementById("dropdown-topbar").innerHTML = activity_text;
-    drawChart(timeArray);
-}
 
-var SECOND_IN_MS = 1000;
-var MINUTE_IN_MS = 60000;
-var HOUR_IN_MS = 3600000;
 
 setInterval(function () {
     alert("Hi! How do you feel? Please keep your activities updated");
