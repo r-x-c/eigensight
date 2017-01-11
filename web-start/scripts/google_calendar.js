@@ -75,43 +75,59 @@ function listUpcomingEvents() {
 
     request.execute(function (resp) {
         var events = resp.items;
-        appendPre('Upcoming events:');
+        appendPre("Today's events:");
 
         var calendar_hours_today = 0;
+        var pending_calendar_hours = 0;
+
         if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
                 var event = events[i];
-                // console.log(event);
                 var when = new Date(event.start.dateTime);
                 var end = new Date(event.end.dateTime);
                 var start = new Date(when);
-                // console.log(start);
-                // console.log(end);
-                // console.log(start - end);
-                // console.log(end - start);
-                // console.log(msToTime(end - start));
-                // console.log(formatAMPM(when));
                 if (!when) {
                     when = event.start.date;
                 }
-                appendPre(event.summary + ' (at ' + formatAMPM(when) + ' for '+ msToTime(end - start) + ')')
 
                 // Get today's date
                 var todaysDate = new Date();
-                //sum of calendar events today
-                if(when.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {
-                    // Date equals today's date
-                    // console.log('this event happens today');
+                //Today
+                if(when.setHours(0,0,0,0) == new Date().setHours(0,0,0,0)) {
                     calendar_hours_today += (end - start);
+                    appendPre(event.summary + ' (at ' + formatAMPM(start) + ' for '+ msToTime(end - start) + ')');
+                    debug(todaysDate);
+                    debug(start);
+                    debug(end);
+                    //event has passed or begun
+                    if(todaysDate > start){
+                        debug("event has already passed");
+                        //currently in session
+                        if(end > todaysDate){
+                            debug("but still in session");
+                            pending_calendar_hours += (end - todaysDate);
+                        }
+                    }
+                    //event is in future
+                    else{
+                        debug("event has not begun ");
+                        pending_calendar_hours += (end - start);
+
+                    }
+
+                }
+                else{
+                    //only worry about events happening today
+                    break;
                 }
 
             }
         } else {
             appendPre('No upcoming events found.');
         }
-        // console.log("total calendar hours today");
-        console.log(calendar_hours_today);
+        console.log("total calendar hours today");
         console.log(msToTime(calendar_hours_today));
+        console.log(msToTime(pending_calendar_hours));
         var h_text = document.getElementById('calendarTime');
         h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
 

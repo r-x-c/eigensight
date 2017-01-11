@@ -2,6 +2,16 @@
  * Created by richard on 12/25/16.
  */
 
+DEBUG = true;
+
+function debug(text){
+    if(DEBUG){
+        console.log(text);
+    }
+}
+
+
+
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
     var hours = Math.floor(sec_num / 3600);
