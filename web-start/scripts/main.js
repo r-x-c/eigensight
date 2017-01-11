@@ -327,6 +327,7 @@ window.onload = function () {
     window.friendlyChat = new Kairos();
     //todo: auth on load
     handleAuthClick(event);
+
 };
 
 $("ul").on("click", "button", function (e) {
