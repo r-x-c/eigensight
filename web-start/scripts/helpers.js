@@ -20,6 +20,28 @@ String.prototype.toHHMMSS = function () {
     return hours + ':' + minutes + ':' + seconds;
 };
 
+function msToTime(s) {
+    var ms = s % 1000;
+    s = (s - ms) / 1000;
+    var secs = s % 60;
+    s = (s - secs) / 60;
+    var mins = s % 60;
+    var hrs = (s - mins) / 60;
+    return hrs + ' hours ' + mins + ' mins';
+}
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
+
 Array.prototype.resize = function (newSize, defaultValue) {
     while (newSize > this.length)
         this.push(defaultValue);

@@ -77,18 +77,43 @@ function listUpcomingEvents() {
         var events = resp.items;
         appendPre('Upcoming events:');
 
+        var calendar_hours_today = 0;
         if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
                 var event = events[i];
-                var when = event.start.dateTime;
+                // console.log(event);
+                var when = new Date(event.start.dateTime);
+                var end = new Date(event.end.dateTime);
+                var start = new Date(when);
+                // console.log(start);
+                // console.log(end);
+                // console.log(start - end);
+                // console.log(end - start);
+                // console.log(msToTime(end - start));
+                // console.log(formatAMPM(when));
                 if (!when) {
                     when = event.start.date;
                 }
-                appendPre(event.summary + ' (' + when + ')')
+                appendPre(event.summary + ' (at ' + formatAMPM(when) + ' for '+ msToTime(end - start) + ')')
+
+                // Get today's date
+                var todaysDate = new Date();
+                //sum of calendar events today
+                if(when.setHours(0,0,0,0) == todaysDate.setHours(0,0,0,0)) {
+                    // Date equals today's date
+                    // console.log('this event happens today');
+                    calendar_hours_today += (end - start);
+                }
+
             }
         } else {
             appendPre('No upcoming events found.');
         }
+        // console.log("total calendar hours today");
+        console.log(calendar_hours_today);
+        console.log(msToTime(calendar_hours_today));
+        var h_text = document.getElementById('calendarTime');
+        h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
 
     });
 }
