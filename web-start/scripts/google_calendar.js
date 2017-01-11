@@ -143,7 +143,9 @@ function listUpcomingEvents() {
         h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
         var bedtime_text = document.getElementById('bedTime');
         bedtime_text.innerHTML = formatAMPM(bedtime);
+        debug("hi");
         var foo = document.getElementById('pendingCalendarTime');
+        debug("foo");
         foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events before' +
             ' you go to bed';
     });
