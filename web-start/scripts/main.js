@@ -55,7 +55,7 @@ function Kairos() {
     this.resetActivity = document.getElementById('reset_activity_list');
 
     // Saves message on form submit.
-    this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
+    // this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
 
@@ -66,14 +66,14 @@ function Kairos() {
 
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
-    this.messageInput.addEventListener('keyup', buttonTogglingHandler);
-    this.messageInput.addEventListener('change', buttonTogglingHandler);
+    // this.messageInput.addEventListener('keyup', buttonTogglingHandler);
+    // this.messageInput.addEventListener('change', buttonTogglingHandler);
 
     // Events for image upload.
-    this.submitImageButton.addEventListener('click', function () {
-        this.mediaCapture.click();
-    }.bind(this));
-    this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
+    // this.submitImageButton.addEventListener('click', function () {
+    //     this.mediaCapture.click();
+    // }.bind(this));
+    // this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
 
     this.initFirebase();
 }
@@ -216,7 +216,7 @@ Kairos.prototype.onAuthStateChanged = function (user) {
         this.signInButton.setAttribute('hidden', 'true');
 
         // We load currently existing chat messages.
-        this.loadMessages();
+        // this.loadMessages();
         this.refresh_page_data();
     } else { // User is signed out!
         // Hide user's profile and sign-out button.
