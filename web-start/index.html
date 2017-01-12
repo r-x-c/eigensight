@@ -225,7 +225,14 @@
 
         </div>
         <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--7-col mdl-grid">
-           <pre id="output"></pre>
+            <div id="authorize-div">
+                <span>Authorize access to Google Calendar API</span>
+                <!--Button for the user to click to initiate auth sequence -->
+                <button id="authorize-button" onclick="handleAuthClick(event)">
+                    Authorize
+                </button>
+            </div>
+            <pre id="output"></pre>
 
         </div>
 
