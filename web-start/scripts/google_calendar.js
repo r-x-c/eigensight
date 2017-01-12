@@ -26,15 +26,16 @@ function checkAuth() {
  * @param {Object} authResult Authorization result.
  */
 function handleAuthResult(authResult) {
-    var authorizeDiv = document.getElementById('authorize-div');
+    // var authorizeDiv = document.getElementById('authorize-div');
     if (authResult && !authResult.error) {
         // Hide auth UI, then load client library.
-        authorizeDiv.style.display = 'none';
+        // authorizeDiv.style.display = 'none';
         loadCalendarApi();
     } else {
         // Show auth UI, allowing the user to initiate authorization by
         // clicking authorize button.
-        authorizeDiv.style.display = 'inline';
+        // authorizeDiv.style.display = 'inline';
+        alert('failed to load calendar');
     }
 }
 
@@ -143,11 +144,15 @@ function listUpcomingEvents() {
         h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
         var bedtime_text = document.getElementById('bedTime');
         bedtime_text.innerHTML = formatAMPM(bedtime);
-        debug("hi");
         var foo = document.getElementById('pendingCalendarTime');
-        debug("foo");
-        foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events before' +
-            ' you go to bed';
+        if(pending_calendar_hours > 0){
+            debug(pending_calendar_hours);
+            foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events today';
+        }
+        else{
+
+            foo.innerHTML = 'you have no events left :)';
+        }
     });
 }
 

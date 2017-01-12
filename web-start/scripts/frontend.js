@@ -8,7 +8,14 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
-    drawChart(timeArray);
+
+    debug('initializing count-up clock');
+    var time_spent_on_activity = get_time_key() - time_key;
+    debug(String(time_spent_on_activity).toHHMMSS());
+
+    // initializeClock('forward_timer', time_spent_on_activity);
+    // document.getElementById('forward_timer').innerHTML = String(time_spent_on_activity).toHHMMSS();
+    drawChart(timeArray)
 }
 
 function changeObjectView(id) {

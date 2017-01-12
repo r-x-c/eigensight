@@ -28,6 +28,7 @@ String.prototype.toHHMMSS = function () {
     return hours + ':' + minutes + ':' + seconds;
 };
 
+
 function msToTime(s) {
     var ms = s % 1000;
     s = (s - ms) / 1000;
@@ -57,7 +58,8 @@ Array.prototype.resize = function (newSize, defaultValue) {
 };
 
 
-function get_time_key(offset) {
+
+function get_date_key(offset) {
     var n = new Date();
     n.setDate(n.getDate() + offset);
     var m = n.getMonth() + 1;
@@ -71,7 +73,7 @@ function get_time_key(offset) {
     return m + "" + d + "" + n.getFullYear();
 }
 
-function get_s_key() {
+function get_time_key() {
     var n = new Date();
     return (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
 

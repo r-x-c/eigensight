@@ -98,6 +98,21 @@
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">Home</span>
+
+            <div id="forward_timer">
+
+                <div>
+                    <span class="hours"></span>
+                </div>
+                <div>
+                    <span class="minutes"></span>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                </div>
+
+
+            </div>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -201,28 +216,24 @@
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-        <h4 id="currentActivity"></h4>
-        <h5 id="calendarTime"></h5>
-        <h5 id="pendingCalendarTime">test</h5>
-
-
-        <div class="mdl-color--white mdl-shadow--2dp mdl-cell">
-            <div id="authorize-div">
-                <span>Authorize access to Google Calendar API</span>
-                <!--Button for the user to click to initiate auth sequence -->
-                <button id="authorize-button" onclick="handleAuthClick(event)">
-                    Authorize
-                </button>
-            </div>
-            <pre id="output"></pre>
-
-        </div>
         <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
 
+            <h4 id="currentActivity"></h4>
+            <h5 id="calendarTime"></h5>
+            <h5 id="pendingCalendarTime">test</h5>
+
+
+        </div>
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--7-col mdl-grid">
+           <pre id="output"></pre>
+
+        </div>
+
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--8-col">
             <div id="piechart"></div>
         </div>
 
-        <div class="mdl-color--white mdl-shadow--2dp mdl-cell">
+        <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <div class="mdl-grid demo-content">
                 <table id="timeTable">
                     <caption>Time Breakdown Table</caption>
@@ -249,32 +260,32 @@
         </div>
 
         <!--<div id="messages-card-container" class="mdl-cell mdl-cell&#45;&#45;12-col mdl-grid">-->
-            <!-- Messages container -->
-            <!--<div id="messages-card" align="center"-->
-                 <!--class="mdl-card mdl-shadow&#45;&#45;2dp mdl-cell mdl-cell&#45;&#45;12-col mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;6-col-desktop">-->
-                <!--<div class="mdl-card__supporting-text mdl-color-text&#45;&#45;grey-600">-->
-                    <!--<div id="messages">-->
-                        <!--<span id="message-filler"></span>-->
-                    <!--</div>-->
-                    <!--<form id="message-form" action="#">-->
-                        <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield&#45;&#45;floating-label">-->
-                            <!--<input class="mdl-textfield__input" type="text" id="message">-->
-                            <!--<label class="mdl-textfield__label" for="message">Message...</label>-->
-                        <!--</div>-->
-                        <!--<button id="submit" disabled type="submit"-->
-                                <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect">-->
-                            <!--Send-->
-                        <!--</button>-->
-                    <!--</form>-->
-                    <!--<form id="image-form" action="#">-->
-                        <!--<input id="mediaCapture" type="file" accept="image/*,capture=camera">-->
-                        <!--<button id="submitImage" title="Add an image"-->
-                                <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-color&#45;&#45;amber-400 mdl-color-text&#45;&#45;white">-->
-                            <!--<i class="material-icons">image</i>-->
-                        <!--</button>-->
-                    <!--</form>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!-- Messages container -->
+        <!--<div id="messages-card" align="center"-->
+        <!--class="mdl-card mdl-shadow&#45;&#45;2dp mdl-cell mdl-cell&#45;&#45;12-col mdl-cell&#45;&#45;6-col-tablet mdl-cell&#45;&#45;6-col-desktop">-->
+        <!--<div class="mdl-card__supporting-text mdl-color-text&#45;&#45;grey-600">-->
+        <!--<div id="messages">-->
+        <!--<span id="message-filler"></span>-->
+        <!--</div>-->
+        <!--<form id="message-form" action="#">-->
+        <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield&#45;&#45;floating-label">-->
+        <!--<input class="mdl-textfield__input" type="text" id="message">-->
+        <!--<label class="mdl-textfield__label" for="message">Message...</label>-->
+        <!--</div>-->
+        <!--<button id="submit" disabled type="submit"-->
+        <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect">-->
+        <!--Send-->
+        <!--</button>-->
+        <!--</form>-->
+        <!--<form id="image-form" action="#">-->
+        <!--<input id="mediaCapture" type="file" accept="image/*,capture=camera">-->
+        <!--<button id="submitImage" title="Add an image"-->
+        <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-color&#45;&#45;amber-400 mdl-color-text&#45;&#45;white">-->
+        <!--<i class="material-icons">image</i>-->
+        <!--</button>-->
+        <!--</form>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
 
 

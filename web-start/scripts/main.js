@@ -440,7 +440,7 @@ Kairos.prototype.remove_activity = function (index) {
 Kairos.prototype.refresh_page_data = function () {
     console.log("Loading user data");
     var userId = this.auth.currentUser.uid;
-    this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_time_key(0));
+    this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_date_key(0));
 
     //Load Custom Activity options
     this.activityRef = this.database.ref('settings/' + userId);
@@ -475,7 +475,7 @@ Kairos.prototype.refresh_page_data = function () {
                 last_activity = 0;
             }
             foo.timeRef.set({
-                'lastKey': get_s_key(),
+                'lastKey': get_time_key(),
                 'lastActivity': last_activity,
                 'timeArray': new Array(DEFAULT_ACTIVITY_SIZE).fill(0)
             });
@@ -492,8 +492,8 @@ Kairos.prototype.refresh_page_data = function () {
 Kairos.prototype.selectActivity = function (activity_index) {
     console.log("Logging new user activity");
     var n = new Date();
-    var date_key = get_time_key(0);
-    var time_key = (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
+    var date_key = get_date_key(0);
+    var time_key = get_time_key();
     var userId = this.auth.currentUser.uid;
     var timeDataRef = this.database.ref('timelogs/' + userId + "/" + date_key);
     var timelineRef = this.database.ref('timelines/' + userId + "/" + date_key);
