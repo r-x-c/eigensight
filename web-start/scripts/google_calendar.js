@@ -75,7 +75,7 @@ function listUpcomingEvents() {
 
     request.execute(function (resp) {
         var events = resp.items;
-        appendPre("Today's events:");
+        appendPre("Today's Agenda");
 
         var calendar_hours_today = 0;
         var pending_calendar_hours = 0;

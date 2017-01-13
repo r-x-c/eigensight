@@ -36,7 +36,6 @@ function myFunction() {
 }
 
 
-
 function changeObjectView(id) {
     var pie = document.getElementById(id);
 
@@ -189,16 +188,24 @@ $(document).ready(function () {
 
 });//end document ready
 
-$(document).ready(function () {
-    $(".flip").on("click", function (e) {
 
+jQuery(document).ready(function ($) {
+    // Your code here
+    $.simpleWeather({
+        location: 'Austin, TX',
+        woeid: '',
+        unit: 'f',
+        success: function (weather) {
+            html = '<p>' + weather.temp + '&deg;' + weather.units.temp + '</p>';
 
-        var target = $(this).attr("href");
-        $(target).slideToggle("fast");
-        $(".panel").not(target).hide();
-        e.preventDefault();
+            $("#weather").html(html);
+        },
+        error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+        }
     });
 });
+
 
 
 function getTimeRemaining(endtime) {
