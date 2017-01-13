@@ -35,7 +35,6 @@ function handleAuthResult(authResult) {
         // Show auth UI, allowing the user to initiate authorization by
         // clicking authorize button.
         authorizeDiv.style.display = 'inline';
-        alert('failed to load google calendar');
     }
 }
 

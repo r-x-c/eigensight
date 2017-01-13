@@ -490,7 +490,7 @@ Kairos.prototype.refresh_page_data = function () {
 
 //Dependencies: changing current activity within header
 Kairos.prototype.selectActivity = function (activity_index) {
-    console.log("Logging new user activity");
+    console.log("Logging activity switch");
     var n = new Date();
     var date_key = get_date_key(0);
     var time_key = get_time_key();
@@ -528,9 +528,6 @@ Kairos.prototype.selectActivity = function (activity_index) {
             storedTimeArr = new Array(activity_labels.length).fill(0);
 
         }
-        console.log("Array: " + JSON.stringify(storedTimeArr));
-        console.log("Activity Idx: " + storedActivity);
-        console.log("Key: " + storedKey);
     });
 
 
@@ -554,6 +551,8 @@ Kairos.prototype.selectActivity = function (activity_index) {
     // lastTimeArr = new Array(selector.length).fill(0);
     // }
 
+
+    resetTimer();
 };
 
 

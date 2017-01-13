@@ -1,6 +1,9 @@
 /**
  * Created by richard on 12/24/16.
  */
+function pad(val) {
+    return val > 9 ? val : "0" + val;
+}
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
@@ -8,15 +11,31 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
+    var time_spent_on_activity = Math.floor(get_time_key() - time_key);
+    drawChart(timeArray);
+    //Countdown for day
+    var today_in_ms = get_remainder_ms();
+    var deadline = new Date(Date.parse(new Date()) + today_in_ms);
+    initializeClock('clockdiv', deadline);
+    //Time spent on current activity
+    var sec = time_spent_on_activity;
+    var timer = setInterval(function () {
+        document.getElementById("cu_timer").innerHTML = pad(parseInt(sec / 3600, 10)) + ':' + pad(parseInt(sec / 60, 10) % 60) + ':' + pad(++sec % 60);
+    }, 1000);
+    setTimeout(function () {
+        clearInterval(timer);
+    }, 11000);
 
-    debug('initializing count-up clock');
-    var time_spent_on_activity = get_time_key() - time_key;
-    debug(String(time_spent_on_activity).toHHMMSS());
-
-    // initializeClock('forward_timer', time_spent_on_activity);
-    // document.getElementById('forward_timer').innerHTML = String(time_spent_on_activity).toHHMMSS();
-    drawChart(timeArray)
+    //timeout to remind you to change activities
+    setTimeout(myFunction, MINUTE_IN_MS * 45);
 }
+
+
+function myFunction() {
+    alert('Hello');
+}
+
+
 
 function changeObjectView(id) {
     var pie = document.getElementById(id);
@@ -230,9 +249,6 @@ function get_remainder_ms() {
     return today_in_ms;
 
 }
-var today_in_ms = get_remainder_ms();
-var deadline = new Date(Date.parse(new Date()) + today_in_ms);
-initializeClock('clockdiv', deadline);
 
 function append_li_to_ul(activity_array) {
     var ul = document.getElementById("adjust_activities");

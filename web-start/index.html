@@ -21,6 +21,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache" />
+
     <title>EigenSight</title>
 
     <!-- Add to homescreen for Chrome on Android -->
@@ -98,21 +100,9 @@
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">Home</span>
+            <div class="clock"></div>
 
-            <div id="forward_timer">
-
-                <div>
-                    <span class="hours"></span>
-                </div>
-                <div>
-                    <span class="minutes"></span>
-                </div>
-                <div>
-                    <span class="seconds"></span>
-                </div>
-
-
-            </div>
+            <span id="cu_timer"></span>
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
