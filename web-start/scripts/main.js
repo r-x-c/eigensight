@@ -325,9 +325,7 @@ Kairos.prototype.checkSetup = function () {
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
-    //todo: auth on load
-    handleAuthClick(event);
-
+    display_weather();
 };
 
 $("ul").on("click", "button", function (e) {
@@ -360,6 +358,11 @@ var activity_labels;
 var TIMEZONE_OFFSET = 5;
 var DEFAULT_BEDTIME = new Date(HOUR_IN_MS * (22 + TIMEZONE_OFFSET) + MINUTE_IN_MS * 30);
 var bedtime = DEFAULT_BEDTIME;
+
+// Var Location
+
+var DEFAULT_STATE = 'MI';
+var DEFAULT_CITY = 'ann_arbor';
 
 Kairos.prototype.switch_activity = function () {
     console.log("switching activity in new func");

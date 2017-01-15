@@ -110,6 +110,8 @@ function listUpcomingEvents() {
                                 end = todaysDate;
                                 end.setHours(bedtime.getHours(), bedtime.getMinutes());
                             }
+                            //cut off passed time
+                            start.setHours(todaysDate.getHours(), todaysDate.getMinutes());
                             pending_calendar_hours += (end - start);
                         }
                     }
@@ -133,10 +135,10 @@ function listUpcomingEvents() {
         } else {
             appendPre('No upcoming events found.');
         }
-        console.log("total calendar hours today");
-        console.log(msToTime(calendar_hours_today));
-        console.log("pending cal hrs");
-        console.log(msToTime(pending_calendar_hours));
+        // console.log("total calendar hours today");
+        // console.log(msToTime(calendar_hours_today));
+        // console.log("pending cal hrs");
+        // console.log(msToTime(pending_calendar_hours));
 
         //frontend
         var h_text = document.getElementById('calendarTime');

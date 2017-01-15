@@ -5,6 +5,7 @@ function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
+
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
     var percentRemaining = ((1 - time_key / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
@@ -24,10 +25,59 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     }, 1000);
     setTimeout(function () {
         clearInterval(timer);
-    }, 11000);
+    }, 1 * HOUR_IN_MS);
 
     //timeout to remind you to change activities
     setTimeout(myFunction, MINUTE_IN_MS * 45);
+}
+
+
+function display_weather() {
+    //http://jsfiddle.net/xxk7S/
+
+    /* Edit these variables */
+    var api = "2ea138a9dd52eabe";
+    var state = "NY";
+    var city = "Bronx";
+
+    state = DEFAULT_STATE;
+    city = DEFAULT_CITY;
+
+    debug(state + city);
+    $.ajax({
+        url: "http://api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
+        dataType: "jsonp",
+        success: function (parsed_json) {
+            console.log(parsed_json);
+            var icon_url_json = "http://icons.wxug.com/i/c/f/" + parsed_json['current_observation']['icon'] + ".gif";
+            var icon_json = '<img src ="' + icon_url_json + '" />';
+            var temp_json = parsed_json['current_observation']['temp_f'];
+            temp_json += "<span>°F</span>";
+            var condition_json = parsed_json['current_observation']['weather'];
+            var real_feel_json = "Feels Like " + parsed_json['current_observation']['feelslike_f'] + "°F";
+            var wind_json = 'Winds are ' + parsed_json['current_observation']['wind_string'];
+            var location_json = city + ', ' + state;
+            console.log(parsed_json.forecast.txt_forecast.forecastday);
+            console.log("-------");
+            for (var some in parsed_json.forecast.txt_forecast.forecastday) {
+                // console.log("*************");
+                $("#nxtDays").append("<b>" + parsed_json.forecast.txt_forecast.forecastday[some].title + " </b> <br />" +
+                    parsed_json.forecast.txt_forecast.forecastday[some].fcttext + "<br />");
+                console.log(parsed_json.forecast.txt_forecast.forecastday[some].title);
+            }
+
+            document.getElementById("weather-icon").innerHTML = icon_json;
+            // document.getElementById("temp").innerHTML = temp_json;
+            // document.getElementById("condition").innerHTML = condition_json;
+            document.getElementById("real-feel").innerHTML = real_feel_json;
+            document.getElementById("wind").innerHTML = wind_json;
+            document.getElementById("location").innerHTML = location_json;
+
+
+        }
+    });
+
+
 }
 
 
@@ -187,25 +237,6 @@ $(document).ready(function () {
 
 
 });//end document ready
-
-
-jQuery(document).ready(function ($) {
-    // Your code here
-    $.simpleWeather({
-        location: 'Austin, TX',
-        woeid: '',
-        unit: 'f',
-        success: function (weather) {
-            html = '<p>' + weather.temp + '&deg;' + weather.units.temp + '</p>';
-
-            $("#weather").html(html);
-        },
-        error: function (error) {
-            $("#weather").html('<p>' + error + '</p>');
-        }
-    });
-});
-
 
 
 function getTimeRemaining(endtime) {
