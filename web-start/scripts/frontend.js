@@ -49,7 +49,7 @@ function display_weather() {
 
     debug(state + city);
     $.ajax({
-        url: "api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
+        url: "//api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
         dataType: "jsonp",
         success: function (parsed_json) {
             console.log(parsed_json);
