@@ -117,42 +117,36 @@ function listUpcomingEvents() {
                     }
                     //event is in future
                     else {
-                        debug("event has not begun ");
-                        //adj to not overflow bedtime
+                        debug("event has not begun");
                         if ((end.getHours() * 60 + end.getMinutes()) > (bedtime.getHours() * 60 + bedtime.getMinutes()) || end.getDate() !== todaysDate.getDate()) {
+                            //trim event to bedtime
                             end = todaysDate;
                             end.setHours(bedtime.getHours(), bedtime.getMinutes());
                         }
-                        pending_calendar_hours += (end - start);
+                        if (end > start) {
+                            pending_calendar_hours += (end - start);
+                        }
                     }
                 }
                 else {
                     //only worry about events happening today
                     break;
                 }
-
             }
         } else {
             appendPre('No upcoming events found.');
         }
-        // console.log("total calendar hours today");
-        // console.log(msToTime(calendar_hours_today));
-        // console.log("pending cal hrs");
-        // console.log(msToTime(pending_calendar_hours));
-
         //frontend
         var h_text = document.getElementById('calendarTime');
-        h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your calendar';
-        var bedtime_text = document.getElementById('bedTime');
-        bedtime_text.innerHTML = formatAMPM(bedtime);
         var foo = document.getElementById('pendingCalendarTime');
-        if(pending_calendar_hours > 0){
+        if (pending_calendar_hours > 0) {
+            h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your' +
+                ' calendar \n';
             debug(pending_calendar_hours);
             foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events today';
         }
-        else{
-
-            foo.innerHTML = 'you have no events left :)';
+        else {
+            foo.innerHTML = 'Your calendar is empty!';
         }
     });
 }

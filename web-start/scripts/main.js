@@ -329,6 +329,16 @@ window.onload = function () {
 
     window.friendlyChat = new Kairos();
     display_weather();
+
+    //Countdown for day
+    var today_in_ms = get_remainder_ms();
+    var deadline = new Date(Date.parse(new Date()) + today_in_ms);
+    initializeClock('clockdiv', deadline);
+
+    document.getElementsByClassName("tablink")[0].click();
+    document.getElementById('bedtime_hour').value = 0;
+    document.getElementById('bedtime_minute').value = 0;
+    google.charts.load('current', {'packages': ['corechart']});
 };
 
 $("ul").on("click", "button", function (e) {
@@ -352,6 +362,7 @@ var SECONDS_IN_DAY = 86400.0;
 var SECOND_IN_MS = 1000;
 var MINUTE_IN_MS = 60000;
 var HOUR_IN_MS = 3600000;
+var DEBUG = true;
 
 var DEFAULT_ACTIVITIES = ["sleeping", "traveling", "studying", "eating", "exercising", "unwinding", "socializing", "grooming"];
 var DEFAULT_ACTIVITY_SIZE = DEFAULT_ACTIVITIES.length;
@@ -386,7 +397,16 @@ Kairos.prototype.save_bedtime = function () {
     var updates = {};
     var bt_hours = document.getElementById('bedtime_hour').value;
     var bt_minutes = document.getElementById('bedtime_minute').value;
-    var new_bedtime = new Date(HOUR_IN_MS * (bt_hours + TIMEZONE_OFFSET) + MINUTE_IN_MS * bt_minutes);
+    debug(bt_hours + ' ' + bt_minutes);
+
+    //adjust for time zone
+    var offset = -300; //Timezone offset for EST in minutes.
+    var new_bedtime = new Date(new Date().setHours(bt_hours, bt_minutes, 0));
+    debug(new_bedtime);
+    // var new_bedtime = new Date((HOUR_IN_MS * bt_hours + MINUTE_IN_MS * bt_minutes));
+    var estDate = new Date(new_bedtime.getTime() + offset * 60 * 1000);
+    console.log(estDate); //Gives Mon Mar 21 2016 23:00:00 GMT+0530 (IST)
+
     updates['/settings/' + userId] = {
         'bed_time': new_bedtime,
         'activity_array': activity_labels
@@ -489,7 +509,7 @@ Kairos.prototype.refresh_page_data = function () {
 
         bedtime = new Date(snapshot.val()['bed_time']);
         debug(bedtime);
-        
+
         var bedtime_text = document.getElementById('bedTime');
         bedtime_text.innerHTML = formatAMPM(bedtime);
 
@@ -582,8 +602,6 @@ Kairos.prototype.selectActivity = function (activity_index) {
     // lastTimeArr = new Array(selector.length).fill(0);
     // }
 
-
-    resetTimer();
 };
 
 

@@ -179,8 +179,10 @@
                 </div>
             </div>
 
-            <a class="mdl-navigation__link" href="#settings"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                 role="presentation">settings</i>Settings</a>
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Settings
+            </button>
 
             <!--<p><a href="#about">Open Modal Window</a>cursus nunc</p>-->
 
@@ -212,7 +214,7 @@
 
             <h4 id="currentActivity"></h4>
             <h5 id="calendarTime"></h5>
-            <h5 id="pendingCalendarTime">test</h5>
+            <h5 id="pendingCalendarTime"></h5>
 
 
         </div>
@@ -238,6 +240,10 @@
                 <div id="location">&nbsp;</div>
             </div>
         </div>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
         <div
                 class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--7-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
             <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
@@ -245,25 +251,25 @@
                 <ul>
                     <li>
                         <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                            <input type="checkbox" id="" class="mdl-checkbox__input">
+                            <input type="checkbox" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">Make Bed</span>
                         </label>
                     </li>
                     <li>
                         <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                            <input type="checkbox" id="" class="mdl-checkbox__input">
+                            <input type="checkbox" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">Drink Water</span>
                         </label>
                     </li>
                     <li>
                         <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                            <input type="checkbox" id="" class="mdl-checkbox__input">
+                            <input type="checkbox" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">Eat Breakfast</span>
                         </label>
                     </li>
                     <li>
                         <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                            <input type="checkbox" id="" class="mdl-checkbox__input">
+                            <input type="checkbox" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">Get Productive</span>
                         </label>
                     </li>
@@ -515,35 +521,68 @@
     <div class="content vertical-align-middle mdl-color--blue-grey-600">
         <a class="close-btn" href="#start">X</a>
         <h5>Adjust Activities</h5>
-        <button id="reset_activity_list"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                            role="presentation">arrow back</i>reset
-        </button>
-        <ul id="adjust_activities">
-            <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text"
-                           id="new_activity_value">
-                    <label class="mdl-textfield__label" for="new_activity_value">New
-                        Activity...</label>
-                    <span class="mdl-textfield__error">Letters and spaces only</span>
-                </div>
-                <!--<input type="text" id="new_activity_value" value="Enter Label Here">-->
-                <button id="submit_activity">add</button>
-            </li>
-        </ul>
-        <p id="demo"></p>
-
-        <!--<h5>Adjust bed time</h5>-->
-        <h6 id="bedTime"></h6>
-        <!--<div class="content__subsection picker-container">-->
-        <!--<h4>Twelve hour clock:</h4>-->
-        <!--<input type="text" id="timepicker-12-hr" name="timepicker-12-hr" class="timepicker-12-hr">-->
-        <!--</div>-->
-
-        <a class="close-btn" href="#start">X</a>
-
     </div>
 </div>
+
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+        <header class="w3-container w3-blue">
+   <span onclick="document.getElementById('id01').style.display='none'"
+         class="w3-closebtn w3-padding-top">&times;</span>
+            <h2>Settings</h2>
+        </header>
+
+        <ul class="w3-pagination w3-white w3-border-bottom" style="width:100%;">
+            <li><a href="#" class="tablink" onclick="openCity(event, 'Activity_Settings')">Activities</a></li>
+            <li><a href="#" class="tablink" onclick="openCity(event, 'Bed_Time_Settings')">Bed Time</a></li>
+            <li><a href="#" class="tablink" onclick="openCity(event, 'Tokyo')">Tokyo</a></li>
+        </ul>
+
+        <div id="Activity_Settings" class="w3-container city">
+            <button id="reset_activity_list">Reset
+            </button>
+            <ul id="adjust_activities">
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                         style="align-content: center">
+                        <input class="mdl-textfield__input" type="text"
+                               id="new_activity_value">
+                        <label class="mdl-textfield__label" for="new_activity_value">New
+                            Activity...</label>
+                        <span class="mdl-textfield__error">Letters and spaces only</span>
+                    </div>
+                    <!--<input type="text" id="new_activity_value" value="Enter Label Here">-->
+                    <button id="submit_activity">add</button>
+                </li>
+            </ul>
+        </div>
+
+        <div id="Bed_Time_Settings" class="w3-container city">
+            <p>Current Bedtime</p>
+            <h6 id="bedTime"></h6>
+            <p>Change Bedtime (24hr)</p>
+            <button onclick="foo('bedtime_hour', 1)">+Hour</button>
+            <button onclick="foo('bedtime_hour', -1)">-Hour</button>
+            <button onclick="foo('bedtime_minute', 15)">+Minute</button>
+            <button onclick="foo('bedtime_minute', -15)">-Minute</button>
+            <span id="bedtime_hour">00</span>:<span id="bedtime_minute">00</span>
+            <button id="set_new_bedtime">Save New Bedtime</button>
+        </div>
+
+        <div id="Tokyo" class="w3-container city">
+            <h1>Tokyo</h1>
+            <p>Tokyo is the capital of Japan.</p><br>
+        </div>
+
+        <div class="w3-container w3-light-grey w3-padding">
+            <button class="w3-btn w3-right w3-white w3-border"
+                    onclick="document.getElementById('id01').style.display='none'">Close
+            </button>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>

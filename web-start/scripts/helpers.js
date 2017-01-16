@@ -2,7 +2,6 @@
  * Created by richard on 12/25/16.
  */
 
-DEBUG = true;
 
 function debug(text){
     if(DEBUG){
@@ -103,7 +102,6 @@ function displayArray(arr) {
     }
 }
 
-google.charts.load('current', {'packages': ['corechart']});
 // google.charts.setOnLoadCallback(drawChart);
 
 function drawChart(dataArr) {

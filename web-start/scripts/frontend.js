@@ -5,7 +5,7 @@ function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
-function foo(id, change){
+function foo(id, change) {
     debug("changing bedtime values");
     var value = parseInt(document.getElementById(id).value, 10);
     value = isNaN(value) ? 0 : value;
@@ -13,7 +13,6 @@ function foo(id, change){
     debug(value);
     document.getElementById(id).value = value;
     document.getElementById(id).innerHTML = value;
-    debug(value);
 }
 
 
@@ -23,14 +22,14 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     document.getElementById("currentActivity").innerHTML = "You have been " + activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
-    var time_spent_on_activity = Math.floor(get_time_key() - time_key);
     drawChart(timeArray);
-    //Countdown for day
-    var today_in_ms = get_remainder_ms();
-    var deadline = new Date(Date.parse(new Date()) + today_in_ms);
-    initializeClock('clockdiv', deadline);
+    var bedtime_text = document.getElementById('bedTime');
+    bedtime_text.innerHTML = formatAMPM(bedtime);
+    debug('bedtime:');
+    debug(bedtime);
+
     //Time spent on current activity
-    var sec = time_spent_on_activity;
+    var sec = Math.floor(get_time_key() - time_key);
     var timer = setInterval(function () {
         document.getElementById("cu_timer").innerHTML = pad(parseInt(sec / 3600, 10)) + ':' + pad(parseInt(sec / 60, 10) % 60) + ':' + pad(++sec % 60);
     }, 1000);
@@ -47,7 +46,6 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
 }
 
 
-document.getElementsByClassName("tablink")[0].click();
 
 function openCity(evt, cityName) {
     var i, x, tablinks;
