@@ -29,6 +29,10 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
 
     //timeout to remind you to change activities
     setTimeout(myFunction, MINUTE_IN_MS * 45);
+    setInterval(function () {
+        alert("Hi! How do you feel? Please keep your activities updated");
+    }, HOUR_IN_MS);
+
 }
 
 
@@ -45,7 +49,7 @@ function display_weather() {
 
     debug(state + city);
     $.ajax({
-        url: "https://api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
+        url: "api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
         dataType: "jsonp",
         success: function (parsed_json) {
             console.log(parsed_json);
