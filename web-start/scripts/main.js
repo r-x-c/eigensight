@@ -53,6 +53,7 @@ function Kairos() {
     this.submitActivity = document.getElementById('submit_activity');
     this.activitySelector = document.getElementById('dropdown-options');
     this.resetActivity = document.getElementById('reset_activity_list');
+    this.saveBedtime = document.getElementById('set_new_bedtime');
 
     // Saves message on form submit.
     // this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
@@ -63,6 +64,7 @@ function Kairos() {
     this.submitActivity.addEventListener('click', this.addActivity.bind(this));
     this.activitySelector.addEventListener('click', this.switch_activity.bind(this));
     this.resetActivity.addEventListener('click', this.reset_activities.bind(this));
+    this.saveBedtime.addEventListener('click', this.save_bedtime.bind(this));
 
     // Toggle for the button.
     var buttonTogglingHandler = this.toggleButton.bind(this);
@@ -324,6 +326,7 @@ Kairos.prototype.checkSetup = function () {
 };
 
 window.onload = function () {
+
     window.friendlyChat = new Kairos();
     display_weather();
 };
@@ -377,12 +380,29 @@ Kairos.prototype.switch_activity = function () {
     }
 };
 
+Kairos.prototype.save_bedtime = function () {
+    debug('saving new bedtime to db');
+    var userId = this.auth.currentUser.uid;
+    var updates = {};
+    var bt_hours = document.getElementById('bedtime_hour').value;
+    var bt_minutes = document.getElementById('bedtime_minute').value;
+    var new_bedtime = new Date(HOUR_IN_MS * (bt_hours + TIMEZONE_OFFSET) + MINUTE_IN_MS * bt_minutes);
+    updates['/settings/' + userId] = {
+        'bed_time': new_bedtime,
+        'activity_array': activity_labels
+    };
+    return firebase.database().ref().update(updates);
+};
 
 Kairos.prototype.reset_activities = function () {
     console.log('resetting activities list');
     var userId = this.auth.currentUser.uid;
     var updates = {};
-    updates['/settings/' + userId] = {'activity_array': DEFAULT_ACTIVITIES};
+    updates['/settings/' + userId] = {
+        'bed_time': bedtime,
+        'activity_array': DEFAULT_ACTIVITIES
+    };
+
     return firebase.database().ref().update(updates);
 };
 
@@ -452,7 +472,8 @@ Kairos.prototype.refresh_page_data = function () {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
             this.activityRef.set({
-                'activity_array': DEFAULT_ACTIVITIES
+                'activity_array': DEFAULT_ACTIVITIES,
+                'bed_time': DEFAULT_BEDTIME
             });
         }
         append_li_to_ul(snapshot.val()['activity_array']);
@@ -465,6 +486,13 @@ Kairos.prototype.refresh_page_data = function () {
             a.innerHTML = activity_labels[i];
             activity_list_frontend.appendChild(a);
         }
+
+        bedtime = new Date(snapshot.val()['bed_time']);
+        debug(bedtime);
+        
+        var bedtime_text = document.getElementById('bedTime');
+        bedtime_text.innerHTML = formatAMPM(bedtime);
+
     });
 
     //Load Time Data
@@ -560,7 +588,4 @@ Kairos.prototype.selectActivity = function (activity_index) {
 
 
 
-setInterval(function () {
-    alert("Hi! How do you feel? Please keep your activities updated");
-}, HOUR_IN_MS);
 

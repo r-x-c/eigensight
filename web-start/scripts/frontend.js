@@ -5,6 +5,17 @@ function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
+function foo(id, change){
+    debug("changing bedtime values");
+    var value = parseInt(document.getElementById(id).value, 10);
+    value = isNaN(value) ? 0 : value;
+    value += change;
+    debug(value);
+    document.getElementById(id).value = value;
+    document.getElementById(id).innerHTML = value;
+    debug(value);
+}
+
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
@@ -35,6 +46,22 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
 
 }
 
+
+document.getElementsByClassName("tablink")[0].click();
+
+function openCity(evt, cityName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+        tablinks[i].classList.remove("w3-light-grey");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.classList.add("w3-light-grey");
+}
 
 function display_weather() {
     //http://jsfiddle.net/xxk7S/
