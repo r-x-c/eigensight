@@ -137,13 +137,10 @@ function listUpcomingEvents() {
             appendPre('No upcoming events found.');
         }
         //frontend
-        var h_text = document.getElementById('calendarTime');
         var foo = document.getElementById('pendingCalendarTime');
         if (pending_calendar_hours > 0) {
-            h_text.innerHTML = 'today you have ' + msToTime(calendar_hours_today) + ' of scheduled events on your' +
-                ' calendar \n';
             debug(pending_calendar_hours);
-            foo.innerHTML = 'before you sleep you still have ' + msToTime(pending_calendar_hours) + ' of events today';
+            foo.innerHTML = msToTime(pending_calendar_hours) + ' of remaining scheduled events on your calendar';
         }
         else {
             foo.innerHTML = 'Your calendar is empty!';

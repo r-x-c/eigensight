@@ -208,3 +208,41 @@ _:-ms-input-placeholder, :root .demo-graph {
     -ms-flex-align: center;
     align-items: center;
 }
+
+.ap-pax {
+    position: relative;
+    width:300px;
+    height: 100px;
+    border: 1px solid #111;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+#myform {
+    text-align: left;
+    padding: 10px;
+    border: 1px dotted #ccc;
+    /*margin: 2%;*/
+    top:20px;width:100%;
+}
+
+#myform li {
+    padding: 5px 0;
+}
+
+.pax {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+input.paxplus { width:25px; height:25px; margin-right: 10px;}
+input.paxminus { width:25px; height:25px;}
+
+.dropdown-menu {
+    min-width: 248px;
+}
+input, button, select, textarea {
+    line-height: normal;
+}

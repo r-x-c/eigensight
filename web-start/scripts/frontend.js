@@ -6,15 +6,21 @@ function pad(val) {
 }
 
 function foo(id, change) {
-    debug("changing bedtime values");
     var value = parseInt(document.getElementById(id).value, 10);
     value = isNaN(value) ? 0 : value;
     value += change;
-    debug(value);
     document.getElementById(id).value = value;
     document.getElementById(id).innerHTML = value;
 }
 
+function update_bedtime_frontend(bedtime_in) {
+    var bedtime_text = document.getElementById('bedTime');
+    bedtime_text.innerHTML = formatAMPM(bedtime_in);
+
+
+    var sleep_target_text = document.getElementById('sleepTarget');
+    sleep_target_text.innerHTML = String(sleep_target / 1000).toHHMMSS();
+}
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
@@ -23,13 +29,10 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
     drawChart(timeArray);
-    var bedtime_text = document.getElementById('bedTime');
-    bedtime_text.innerHTML = formatAMPM(bedtime);
-    debug('bedtime:');
-    debug(bedtime);
-
     //Time spent on current activity
     var sec = Math.floor(get_time_key() - time_key);
+    //fixme
+    clearInterval(timer);
     var timer = setInterval(function () {
         document.getElementById("cu_timer").innerHTML = pad(parseInt(sec / 3600, 10)) + ':' + pad(parseInt(sec / 60, 10) % 60) + ':' + pad(++sec % 60);
     }, 1000);
@@ -39,12 +42,7 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
 
     //timeout to remind you to change activities
     setTimeout(myFunction, MINUTE_IN_MS * 45);
-    setInterval(function () {
-        alert("Hi! How do you feel? Please keep your activities updated");
-    }, HOUR_IN_MS);
-
 }
-
 
 
 function openCity(evt, cityName) {
@@ -111,7 +109,7 @@ function display_weather() {
 
 
 function myFunction() {
-    alert('Hello');
+    alert('Its been 45 minutes, want to try something else? be sure to keep your activities updated');
 }
 
 
@@ -334,4 +332,84 @@ function append_li_to_ul(activity_array) {
         ul.appendChild(li);
     }
 }
+
+jQuery(document).ready(function () {
+
+    // This button will increment the value
+    $('.paxplus').click(function (e) {
+        debug('incrementing');
+        // Stop acting like a button
+        e.preventDefault();
+
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its default input
+        var defaultInp = jQuery('input[name=' + fieldName + ']');
+        // Get its min value
+        var minVal = jQuery('input[name=' + fieldName + ']').data('min');
+        // Get its current value
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            if (defaultInp.val() < jQuery(defaultInp).data('max'))
+            //if I put "var _val = " here
+            //I get - [object Object] Chocolate. Why?
+                $('input[name=' + fieldName + ']').val(currentVal + 1);
+            //save for display in ext div
+            var _val = currentVal + 1;
+            //show in div
+            //$(".count-pax").text(_val+' '+fieldName);
+            console.log(currentVal);
+            if (defaultInp.val() == jQuery(defaultInp).data('max'))
+                $(this).prop('disabled', true);
+            $(".paxminus").removeAttr("disabled");
+        } else {
+            // Otherwise put a 0 there
+
+            $('input[name=' + fieldName + ']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".paxminus").click(function (e) {
+        debug('decrementing');
+
+        // Stop acting like a button
+        e.preventDefault();
+
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its default input
+        var defaultInp = jQuery('input[name=' + fieldName + ']');
+        // Get its min value
+        var minVal = jQuery('input[name=' + fieldName + ']').data('min');
+        // Get its current value
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            if (defaultInp.val() > minVal)
+            //if I put "var _val = " here
+            //I get - [object Object] Chocolate. Why?
+                $('input[name=' + fieldName + ']').val(currentVal - 1);
+            var _val = currentVal - 1;
+            //$(".count-pax").text(_val+' '+fieldName);
+            if (defaultInp.val() == jQuery(defaultInp).data('min'))
+                $(this).prop('disabled', true);
+            $(".paxplus").removeAttr("disabled");
+        } else {
+            // Otherwise put a 0 there
+
+            $('input[name=' + fieldName + ']').val(0);
+        }
+    });
+    // $('#myform').bind('click', function (e) {
+    //     e.stopPropagation()
+    // });
+    $('#sleep_target').bind('click', function (e) {
+        e.stopPropagation()
+    });
+});
+
+
 

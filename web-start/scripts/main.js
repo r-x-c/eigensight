@@ -54,29 +54,15 @@ function Kairos() {
     this.activitySelector = document.getElementById('dropdown-options');
     this.resetActivity = document.getElementById('reset_activity_list');
     this.saveBedtime = document.getElementById('set_new_bedtime');
+    this.saveSleepTarget = document.getElementById('set_new_sleep_target');
 
-    // Saves message on form submit.
-    // this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
     this.signOutButton.addEventListener('click', this.signOut.bind(this));
     this.signInButton.addEventListener('click', this.signIn.bind(this));
-
-    //fixme:
     this.submitActivity.addEventListener('click', this.addActivity.bind(this));
     this.activitySelector.addEventListener('click', this.switch_activity.bind(this));
     this.resetActivity.addEventListener('click', this.reset_activities.bind(this));
     this.saveBedtime.addEventListener('click', this.save_bedtime.bind(this));
-
-    // Toggle for the button.
-    var buttonTogglingHandler = this.toggleButton.bind(this);
-    // this.messageInput.addEventListener('keyup', buttonTogglingHandler);
-    // this.messageInput.addEventListener('change', buttonTogglingHandler);
-
-    // Events for image upload.
-    // this.submitImageButton.addEventListener('click', function () {
-    //     this.mediaCapture.click();
-    // }.bind(this));
-    // this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
-
+    this.saveSleepTarget.addEventListener('click', this.save_sleep_target.bind(this));
     this.initFirebase();
 }
 
@@ -373,6 +359,9 @@ var TIMEZONE_OFFSET = 5;
 var DEFAULT_BEDTIME = new Date(HOUR_IN_MS * (22 + TIMEZONE_OFFSET) + MINUTE_IN_MS * 30);
 var bedtime = DEFAULT_BEDTIME;
 
+var DEFAULT_SLEEP_TARGET = 7 * HOUR_IN_MS + 30 * MINUTE_IN_MS;
+var sleep_target = DEFAULT_SLEEP_TARGET;
+
 // Var Location
 
 var DEFAULT_STATE = 'MI';
@@ -407,12 +396,32 @@ Kairos.prototype.save_bedtime = function () {
     var estDate = new Date(new_bedtime.getTime() + offset * 60 * 1000);
     console.log(estDate); //Gives Mon Mar 21 2016 23:00:00 GMT+0530 (IST)
 
+    bedtime = new_bedtime;
     updates['/settings/' + userId] = {
-        'bed_time': new_bedtime,
+        'bed_time': bedtime,
+        'sleep_target': sleep_target,
+        'activity_array': activity_labels
+    };
+    update_bedtime_frontend(new_bedtime);
+    return firebase.database().ref().update(updates);
+};
+
+Kairos.prototype.save_sleep_target = function () {
+    debug('saving new sleep target to db');
+    var userId = this.auth.currentUser.uid;
+    var updates = {};
+    var st_hours = document.getElementById('sleep_target_hour').value;
+    var st_minutes = document.getElementById('sleep_target_min').value;
+    debug(st_hours + ' ' + st_minutes);
+    sleep_target = HOUR_IN_MS * st_hours + MINUTE_IN_MS * st_minutes;
+    updates['/settings/' + userId] = {
+        'bed_time': bedtime,
+        'sleep_target': sleep_target,
         'activity_array': activity_labels
     };
     return firebase.database().ref().update(updates);
 };
+
 
 Kairos.prototype.reset_activities = function () {
     console.log('resetting activities list');
@@ -420,6 +429,7 @@ Kairos.prototype.reset_activities = function () {
     var updates = {};
     updates['/settings/' + userId] = {
         'bed_time': bedtime,
+        'sleep_target' : sleep_target,
         'activity_array': DEFAULT_ACTIVITIES
     };
 
@@ -486,12 +496,12 @@ Kairos.prototype.refresh_page_data = function () {
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_date_key(0));
 
     //Load Custom Activity options
-    this.activityRef = this.database.ref('settings/' + userId);
-    console.log(this.activityRef);
-    this.activityRef.on('value', function (snapshot) {
+    this.settingRef = this.database.ref('settings/' + userId);
+    console.log(this.settingRef);
+    this.settingRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
-            this.activityRef.set({
+            this.settingRef.set({
                 'activity_array': DEFAULT_ACTIVITIES,
                 'bed_time': DEFAULT_BEDTIME
             });
@@ -507,12 +517,9 @@ Kairos.prototype.refresh_page_data = function () {
             activity_list_frontend.appendChild(a);
         }
 
+        sleep_target = snapshot.val()['sleep_target'];
         bedtime = new Date(snapshot.val()['bed_time']);
-        debug(bedtime);
-
-        var bedtime_text = document.getElementById('bedTime');
-        bedtime_text.innerHTML = formatAMPM(bedtime);
-
+        update_bedtime_frontend(bedtime);
     });
 
     //Load Time Data
