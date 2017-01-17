@@ -22,6 +22,7 @@
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="cache-control" content="no-cache"/>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 
     <title>EigenSight</title>
 
@@ -236,6 +237,8 @@
                 <div id="location">&nbsp;</div>
             </div>
         </div>
+
+        <div id="map"></div>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div
@@ -597,14 +600,14 @@
                 <input type='text' name='sleep_target_max_h' id='sleep_target_hour' value='10' class='pax' size="3"
                        maxlength="2"
                        data-max="10"
-                       data-min="3" disabled/>
+                       data-min="3"/>
                 <input type='button' value='+' class='paxplus' field='sleep_target_h'/>
                 <b>Hours</b>
                 <input type='button' value='-' class='paxminus' field='sleep_target_m'/>
                 <input type='text' name='sleep_target_m' id='sleep_target_min' value='30' class='pax' size="3"
                        maxlength="2"
                        data-max="59"
-                       data-min="0" disabled/>
+                       data-min="0"/>
                 <input type='button' value='+' class='paxplus' field='sleep_target_m'/>
                 <b>Minutes</b>
 
@@ -622,6 +625,9 @@
 
 
 <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1ECbYUNiLdYo43b5aWWJtg8DCrBWpQuM">
+</script>
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 <script>
     // Initialize Firebase

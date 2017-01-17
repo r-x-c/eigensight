@@ -80,8 +80,7 @@ function get_time_key() {
 
 
 function displayArray(arr) {
-    console.log("Inserting " + arr.length + " elements into table view");
-    console.log(arr);
+    debug('Loading table view');
     var table = document.getElementById("timeTable");
     var sum = arr.reduce(function (a, b) {
         return a + b;
@@ -105,11 +104,10 @@ function displayArray(arr) {
 // google.charts.setOnLoadCallback(drawChart);
 
 function drawChart(dataArr) {
-    console.log("drawing to pie chart");
+    debug('Loading pie chart');
     if (dataArr.length !== activity_labels.length) {
         alert("data array length is not the same as activity label arrray length");
     }
-
     var formatted_data = [];
     formatted_data.push(['Task', 'Seconds']);
     for (var i = 0; i < dataArr.length; i++) {

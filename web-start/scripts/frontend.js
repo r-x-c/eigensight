@@ -13,13 +13,31 @@ function foo(id, change) {
     document.getElementById(id).innerHTML = value;
 }
 
-function update_bedtime_frontend(bedtime_in) {
+function update_bedtime_frontend(bedtime_in, sleep_target_in) {
     var bedtime_text = document.getElementById('bedTime');
     bedtime_text.innerHTML = formatAMPM(bedtime_in);
-
-
     var sleep_target_text = document.getElementById('sleepTarget');
-    sleep_target_text.innerHTML = String(sleep_target / 1000).toHHMMSS();
+    sleep_target_text.innerHTML = String(sleep_target_in / 1000).toHHMMSS();
+
+    //Countdown for day
+    var today_in_ms = get_remainder_ms();
+    var deadline = new Date(Date.parse(new Date()) + today_in_ms);
+    initializeClock('clockdiv', deadline);
+
+}
+
+function update_activity_array_frontend(activity_labels) {
+
+    append_li_to_ul(activity_labels);
+    var activity_list_frontend = document.getElementById('dropdown-options');
+    $('#dropdown-options').find('a').remove();
+    for (var i = 0; i < activity_labels.length; i++) {
+        var a = document.createElement("a");
+        a.innerHTML = activity_labels[i];
+        activity_list_frontend.appendChild(a);
+    }
+
+
 }
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
@@ -59,6 +77,12 @@ function openCity(evt, cityName) {
     evt.currentTarget.classList.add("w3-light-grey");
 }
 
+
+function retrieve_gov_weather() {
+
+}
+
+
 function display_weather() {
     //http://jsfiddle.net/xxk7S/
 
@@ -70,12 +94,12 @@ function display_weather() {
     state = DEFAULT_STATE;
     city = DEFAULT_CITY;
 
-    debug(state + city);
+    debug('Loading weather data for ' + state + ', ' + city);
     $.ajax({
         url: "//api.wunderground.com/api/" + api + "/forecast/conditions/q/" + state + "/" + city + ".json",
         dataType: "jsonp",
         success: function (parsed_json) {
-            console.log(parsed_json);
+            // console.log(parsed_json);
             var icon_url_json = "http://icons.wxug.com/i/c/f/" + parsed_json['current_observation']['icon'] + ".gif";
             var icon_json = '<img src ="' + icon_url_json + '" />';
             var temp_json = parsed_json['current_observation']['temp_f'];
@@ -84,27 +108,22 @@ function display_weather() {
             var real_feel_json = "Feels Like " + parsed_json['current_observation']['feelslike_f'] + "°F";
             var wind_json = 'Winds are ' + parsed_json['current_observation']['wind_string'];
             var location_json = city + ', ' + state;
-            console.log(parsed_json.forecast.txt_forecast.forecastday);
-            console.log("-------");
+            // console.log(parsed_json.forecast.txt_forecast.forecastday);
+            // console.log("-------");
             for (var some in parsed_json.forecast.txt_forecast.forecastday) {
                 // console.log("*************");
                 $("#nxtDays").append("<b>" + parsed_json.forecast.txt_forecast.forecastday[some].title + " </b> <br />" +
                     parsed_json.forecast.txt_forecast.forecastday[some].fcttext + "<br />");
-                console.log(parsed_json.forecast.txt_forecast.forecastday[some].title);
+                // console.log(parsed_json.forecast.txt_forecast.forecastday[some].title);
             }
-
             document.getElementById("weather-icon").innerHTML = icon_json;
             // document.getElementById("temp").innerHTML = temp_json;
             // document.getElementById("condition").innerHTML = condition_json;
             document.getElementById("real-feel").innerHTML = real_feel_json;
             document.getElementById("wind").innerHTML = wind_json;
             document.getElementById("location").innerHTML = location_json;
-
-
         }
     });
-
-
 }
 
 
@@ -306,13 +325,7 @@ function initializeClock(id, endtime) {
 }
 
 function get_remainder_ms() {
-    var today = new Date();
-    var h = 23 - today.getHours();
-    var m = 59 - today.getMinutes();
-    var s = 59 - today.getSeconds();
-    var today_in_ms = h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000;
-    return today_in_ms;
-
+    return new Date().setHours(bedtime.getHours(), bedtime.getMinutes(), 0) - new Date();
 }
 
 function append_li_to_ul(activity_array) {
@@ -410,6 +423,7 @@ jQuery(document).ready(function () {
         e.stopPropagation()
     });
 });
+
 
 
 
