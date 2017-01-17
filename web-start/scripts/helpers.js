@@ -3,8 +3,8 @@
  */
 
 
-function debug(text){
-    if(DEBUG){
+function debug(text) {
+    if (DEBUG) {
         console.log(text);
     }
 }
@@ -44,7 +44,7 @@ function formatAMPM(date) {
     var ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }
@@ -55,7 +55,6 @@ Array.prototype.resize = function (newSize, defaultValue) {
         this.push(defaultValue);
     this.length = newSize;
 };
-
 
 
 function get_date_key(offset) {
@@ -72,17 +71,14 @@ function get_date_key(offset) {
     return m + "" + d + "" + n.getFullYear();
 }
 
-function get_time_key() {
-    var n = new Date();
-    return (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
-
-}
 
 function get_time_key(n) {
+    if (n === undefined) {
+        n = new Date();
+    }
     return (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
 
 }
-
 
 
 function displayArray(arr) {
