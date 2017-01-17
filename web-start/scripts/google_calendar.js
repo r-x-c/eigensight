@@ -95,7 +95,7 @@ function listUpcomingEvents() {
                 //Today
                 if (when.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0)) {
                     calendar_hours_today += (end - start);
-                    appendPre(event.summary + ' (at ' + formatAMPM(start) + ' for ' + msToTime(end - start) + ')');
+                    appendPre(formatAMPM(start) + ': ' + event.summary + ' (' + msToTime(end - start) + ')');
                     //event has passed or begun
                     if (todaysDate > start) {
                         debug("event has already passed");
