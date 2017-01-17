@@ -784,6 +784,17 @@ button {
     transform: scale(1, 1);
 }
 
+#wrapper{
+    margin-left:auto;
+    margin-right:auto;
+    height:auto;
+    width:auto;
+
+    text-align: left;
+}
+
+
+
 
 
 

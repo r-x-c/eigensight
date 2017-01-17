@@ -137,7 +137,7 @@ function listUpcomingEvents() {
         var foo = document.getElementById('pendingCalendarTime');
         if (pending_calendar_hours > 0) {
             debug(pending_calendar_hours);
-            foo.innerHTML = msToTime(pending_calendar_hours) + ' of remaining scheduled events on your calendar';
+            foo.innerHTML = msToTime(pending_calendar_hours) + ' of remaining calendar events';
         }
         else {
             foo.innerHTML = 'Your calendar is empty!';

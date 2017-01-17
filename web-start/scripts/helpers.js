@@ -78,6 +78,12 @@ function get_time_key() {
 
 }
 
+function get_time_key(n) {
+    return (n.getMilliseconds() * .001) + n.getSeconds() + (n.getMinutes() * 60) + (n.getHours()) * 3600;
+
+}
+
+
 
 function displayArray(arr) {
     debug('Loading table view');

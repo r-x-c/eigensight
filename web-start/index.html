@@ -212,18 +212,23 @@
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <h5 id="currentActivity"></h5>
-            <p id="pendingCalendarTime"></p>
-            <div id="authorize-div">
-                <span>Authorize access to Google Calendar API</span>
-                <!--Button for the user to click to initiate auth sequence -->
-                <button id="authorize-button" onclick="handleAuthClick(event)">
-                    Authorize
-                </button>
-            </div>
-            <div>
-                <pre id="output"></pre>
+        <div class="mdl-color--blue-grey-900 mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+            <div id="wrapper">
+                <h5 class="mdl-color-text--blue-grey-50"
+                    id="currentActivity"></h5>
+
+                <h6 class="mdl-color-text--blue-grey-50"
+                    id="pendingCalendarTime"></h6>
+                <div class="mdl-color-text--blue-grey-50" id="authorize-div">
+                    <span>Authorize access to Google Calendar API</span>
+                    <!--Button for the user to click to initiate auth sequence -->
+                    <button id="authorize-button" onclick="handleAuthClick(event)">
+                        Authorize
+                    </button>
+                </div>
+                <div class="mdl-color-text--blue-grey-50">
+                    <pre style="text-align: left;" id="output"></pre>
+                </div>
             </div>
         </div>
 
