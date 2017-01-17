@@ -402,19 +402,6 @@ Kairos.prototype.update_settings = function (bedTime, sleepTarget, activityArray
 };
 
 
-Kairos.prototype.switch_activity = function () {
-    console.log("switching activity in new func");
-    var that = this;
-    var g = document.getElementById('dropdown-options');
-    for (var i = 0, len = g.children.length; i < len; i++) {
-        (function (index) {
-            g.children[i].onclick = function () {
-                that.selectActivity(index);
-            }
-        })(i);
-    }
-};
-
 Kairos.prototype.save_bedtime = function () {
     debug('saving new bedtime to db');
     var bt_hours = document.getElementById('bedtime_hour').value;
@@ -534,11 +521,14 @@ Kairos.prototype.refresh_page_data = function () {
     });
 };
 
+Kairos.prototype.switch_activity = function (e) {
+    debug('Switching Activity...');
+    var a = activity_labels.indexOf(e.target.innerHTML);
+    this.selectActivity(a);
+};
 
-//Dependencies: changing current activity within header
 Kairos.prototype.selectActivity = function (activity_index) {
-    console.log("Logging activity switch");
-    var n = new Date();
+    debug('Loading ' + activity_labels[activity_index] + ' into database...');
     var date_key = get_date_key(0);
     var time_key = get_time_key();
     var userId = this.auth.currentUser.uid;

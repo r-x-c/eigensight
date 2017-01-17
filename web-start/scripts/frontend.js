@@ -34,6 +34,8 @@ function update_activity_array_frontend(activity_labels) {
     for (var i = 0; i < activity_labels.length; i++) {
         var a = document.createElement("a");
         a.innerHTML = activity_labels[i];
+        a.setAttribute("name", "activity_obj");
+        a.setAttribute("class", "activity_obj");
         activity_list_frontend.appendChild(a);
     }
 
