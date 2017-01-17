@@ -100,7 +100,7 @@ function display_weather() {
         dataType: "jsonp",
         success: function (parsed_json) {
             // console.log(parsed_json);
-            var icon_url_json = "http://icons.wxug.com/i/c/f/" + parsed_json['current_observation']['icon'] + ".gif";
+            var icon_url_json = "//icons.wxug.com/i/c/f/" + parsed_json['current_observation']['icon'] + ".gif";
             var icon_json = '<img src ="' + icon_url_json + '" />';
             var temp_json = parsed_json['current_observation']['temp_f'];
             temp_json += "<span>°F</span>";
@@ -319,7 +319,6 @@ function initializeClock(id, endtime) {
             clearInterval(timeinterval);
         }
     }
-
     updateClock();
     var timeinterval = setInterval(updateClock, 1000);
 }
