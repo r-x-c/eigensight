@@ -313,20 +313,24 @@ Kairos.prototype.checkSetup = function () {
 
 
 /*
-//fixme
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-}
-//Get the latitude and the longitude;
-function successFunction(position) {
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
-    debug(lat + ' ' + lng);
-}
-function errorFunction() {
-    alert("Geocoder failed");
-}
-*/
+ //fixme
+ if (navigator.geolocation) {
+ navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+ }
+ //Get the latitude and the longitude;
+ function successFunction(position) {
+ var lat = position.coords.latitude;
+ var lng = position.coords.longitude;
+ debug(lat + ' ' + lng);
+ }
+ function errorFunction() {
+ alert("Geocoder failed");
+ }
+ */
+
+google.charts.load('current', {'packages': ['corechart']});
+// google.charts.setOnLoadCallback(draw_percentage_chart);
+
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
@@ -528,6 +532,8 @@ Kairos.prototype.switch_activity = function (e) {
     debug('Switching Activity...');
     var a = activity_labels.indexOf(e.target.innerHTML);
     this.selectActivity(a);
+    // document.getElementById('dropdown-options').style.visibility='hidden';
+    // document.getElementById('dropdown-options').style.visibility='visible';
 };
 
 Kairos.prototype.selectActivity = function (activity_index) {

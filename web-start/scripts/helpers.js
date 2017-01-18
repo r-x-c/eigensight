@@ -101,9 +101,36 @@ function displayArray(arr) {
         cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(0) + '%';
         cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(0) + '%';
     }
+
 }
 
 // google.charts.setOnLoadCallback(drawChart);
+
+function draw_google_chart(dataArr) {
+    var data = Charts.newDataTable()
+        .addColumn(Charts.ColumnType.STRING, "Month")
+        .addColumn(Charts.ColumnType.NUMBER, "In Store")
+        .addColumn(Charts.ColumnType.NUMBER, "Online")
+        .addRow(["January", 10, 1])
+        .addRow(["February", 12, 1])
+        .addRow(["March", 20, 2])
+        .addRow(["April", 25, 3])
+        .addRow(["May", 30, 4])
+        .build();
+
+    var chart = Charts.newAreaChart()
+        .setDataTable(data)
+        .setStacked()
+        .setRange(0, 40)
+        .setTitle("Sales per Month")
+        .build();
+
+    var uiApp = UiApp.createApplication().setTitle("My Chart");
+    uiApp.add(chart);
+    return uiApp;
+
+}
+
 
 function drawChart(dataArr) {
     debug('Loading pie chart');
@@ -117,10 +144,32 @@ function drawChart(dataArr) {
     }
     var data = google.visualization.arrayToDataTable(formatted_data);
     var options = {
+        backgroundColor: 'transparent',
         title: 'Activity Breakdown'
     };
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
     chart.draw(data, options);
+}
+
+function draw_percentage_chart() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Effort', 'Amount given'],
+        ['My all', 100],
+    ]);
+
+    var options = {
+        backgroundColor: 'transparent',
+        pieHole: 0.5,
+        pieSliceTextStyle: {
+            color: 'black',
+        },
+        legend: 'none'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+    chart.draw(data, options);
+
 }
 
 

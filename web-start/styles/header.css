@@ -1,20 +1,23 @@
 /*Dropdown Button*/
 .dropbtn {
-    display: inline-block;
+    /*display: inline-block;*/
     color: #f21e69;
     /*padding: 10px 15px;*/
     font-size: 21px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     /*-moz-border-radius: 10px;*/
     /*-webkit-border-radius: 10px;*/
     border-radius: 10px;
-    text-decoration: none;
-    height: 30px;
-    width: 200px;
+    /*text-decoration: none;*/
+    height: 26px;
+    /*width: 200px;*/
     /*border: 2px solid black;*/
-    padding: 20px;
-    line-height: 10px;
-    border: none;
+    /*padding: 2px;*/
+    /*line-height: 10px;*/
+    /*border: none;*/
+    /*border: dashed;*/
+    padding-right: 15%;
+
 }
 
 .dropdown {
