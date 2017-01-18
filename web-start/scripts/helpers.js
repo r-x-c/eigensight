@@ -92,7 +92,7 @@ function get_time_key(n) {
 }
 
 
-function displayArray(arr) {
+function displayArray(arr, goal_arr) {
     debug('Loading table view');
     var table = document.getElementById("timeTable");
     var sum = arr.reduce(function (a, b) {
@@ -112,7 +112,12 @@ function displayArray(arr) {
         cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(0) + '%';
         cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(0) + '%';
     }
+    for(var x = 0; x < DEFAULT_DISTRIBUTION_GOALS.length; x++){
+        debug(DEFAULT_DISTRIBUTION_GOALS[x]);
+    }
+    var distr_sum = goal_arr.reduce(function(a, b) { return a + b; }, 0);
 
+    debug(distr_sum);
 }
 
 // google.charts.setOnLoadCallback(drawChart);

@@ -44,8 +44,8 @@ function update_activity_array_frontend(activity_labels) {
 }
 
 
-function updateFrontEnd(timeArray, time_key, activity_text) {
-    displayArray(timeArray);
+function updateFrontEnd(timeArray, time_key, activity_text, distr_goal_arr) {
+    displayArray(timeArray, distr_goal_arr);
     var percentRemaining = (((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";

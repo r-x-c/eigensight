@@ -36,6 +36,8 @@
     background-color: #f5f5f5;
     padding: 5px 6px;
     text-decoration: none;
+
+    color: #f21e69;
     display: block;
 }
 
@@ -593,7 +595,6 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     display: inline-block;
 }
 
-
 .smalltext {
     padding-top: 2px;
     font-size: 10px;
@@ -602,31 +603,29 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 /*header div container*/
 
 #user-dashboard {
-    white-space:nowrap;
+    white-space: nowrap;
     padding: 10px;
     margin: 4px;
-    max-height:65px;
-    width:50px; /* or whatever width you want. */
+    max-height: 65px;
+    width: 50px; /* or whatever width you want. */
     display: inline-block;
-    padding-right:300px;
+    padding-right: 300px;
     /*border-style: dotted;*/
 
 }
 
 /*#user-container #btn {*/
-    /*display: inline-block;*/
-    /*margin-right: 6px;*/
-    /*background-color: #EEE;*/
+/*display: inline-block;*/
+/*margin-right: 6px;*/
+/*background-color: #EEE;*/
 /*}*/
 #user-container #clear {
     clear: both;
 }
 
-
 #clockdiv {
-    float:left;
+    float: left;
 }
-
 
 .row {
     display: flex; /* equal height of the children */

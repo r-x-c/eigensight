@@ -376,12 +376,16 @@ var DEFAULT_BEDTIME = new Date(HOUR_IN_MS * (22 + TIMEZONE_OFFSET) + MINUTE_IN_M
 var DEFAULT_SLEEP_TARGET = 7 * HOUR_IN_MS + 30 * MINUTE_IN_MS;
 var DEFAULT_STATE = 'MI';
 var DEFAULT_CITY = 'ann_arbor';
+var HOURS_IN_DAY = 24;
+var DEFAULT_DISTRIBUTION_GOALS =[7.5/HOURS_IN_DAY, 1/HOURS_IN_DAY, 5/HOURS_IN_DAY, 2.5/HOURS_IN_DAY, 1.5/HOURS_IN_DAY, 2/HOURS_IN_DAY, 3/HOURS_IN_DAY, 1/HOURS_IN_DAY];
+
 
 //Variable Globals
 var activity_labels;
 var bedtime;
 var sleep_target;
 var cu_timer;
+var distr_goal_arr = DEFAULT_DISTRIBUTION_GOALS;
 
 Kairos.prototype.validate_settings = function (bedTime, sleepTarget, activityArray) {
     debug('Validating settings...');
@@ -559,7 +563,7 @@ Kairos.prototype.refresh_page_data = function () {
         lastKey = clean_data[1];
         lastActivity = clean_data[2];
         that.update_time_data(timeArray, lastKey, lastActivity);
-        updateFrontEnd(timeArray, lastKey, activity_labels[lastActivity]);
+        updateFrontEnd(timeArray, lastKey, activity_labels[lastActivity], distr_goal_arr);
     });
 };
 
@@ -604,7 +608,7 @@ Kairos.prototype.selectActivity = function (activity_index) {
     storedTimeArr= clean_data[0];
     storedKey = clean_data[1];
     storedActivity = clean_data[2];
-    updateFrontEnd(storedTimeArr, storedKey, storedActivity);
+    updateFrontEnd(storedTimeArr, storedKey, storedActivity, distr_goal_arr);
     this.update_time_data(storedTimeArr, storedKey, storedActivity);
 };
 
