@@ -42,6 +42,7 @@ function update_activity_array_frontend(activity_labels) {
 
 }
 
+
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
     var waking_seconds_in_day = SECONDS_IN_DAY - (sleep_target / 1000);
@@ -67,9 +68,8 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     drawChart(timeArray);
     //Time spent on current activity
     var sec = Math.floor(get_time_key() - time_key);
-    //fixme
-    clearInterval(timer);
-    var timer = setInterval(function () {
+    clearInterval(cu_timer);
+    cu_timer = setInterval(function () {
         document.getElementById("cu_timer").innerHTML = pad(parseInt(sec / 3600, 10)) + ':' + pad(parseInt(sec / 60, 10) % 60) + ':' + pad(++sec % 60);
     }, 1000);
     setTimeout(function () {

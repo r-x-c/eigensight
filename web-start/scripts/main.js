@@ -312,6 +312,7 @@ Kairos.prototype.checkSetup = function () {
 };
 
 
+/*
 //fixme
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
@@ -325,6 +326,7 @@ function successFunction(position) {
 function errorFunction() {
     alert("Geocoder failed");
 }
+*/
 
 window.onload = function () {
     window.friendlyChat = new Kairos();
@@ -375,6 +377,7 @@ var DEFAULT_CITY = 'ann_arbor';
 var activity_labels;
 var bedtime;
 var sleep_target;
+var cu_timer;
 
 Kairos.prototype.validate_settings = function (bedTime, sleepTarget, activityArray) {
     debug('Validating settings...');

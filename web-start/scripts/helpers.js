@@ -98,8 +98,8 @@ function displayArray(arr) {
         var cell4 = row.insertCell(3);
         cell1.innerHTML = activity_labels[i];
         cell2.innerHTML = String(arr[i]).toHHMMSS();
-        cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(2) + '%';
-        cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(2) + '%';
+        cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(0) + '%';
+        cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(0) + '%';
     }
 }
 
