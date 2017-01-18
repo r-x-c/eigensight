@@ -2,6 +2,16 @@
  * Created by richard on 12/25/16.
  */
 
+function switchVisible(id) {
+    if (document.getElementById(id) !== undefined) {
+        if (document.getElementById(id).style.display == 'block') {
+            document.getElementById(id).style.display = 'none';
+        } else {
+            document.getElementById(id).style.display = 'block';
+        }
+    }
+}
+
 
 function debug(text) {
     if (DEBUG) {

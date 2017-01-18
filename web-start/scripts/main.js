@@ -610,6 +610,7 @@ Kairos.prototype.selectActivity = function (activity_index) {
     storedActivity = clean_data[2];
     updateFrontEnd(storedTimeArr, storedKey, storedActivity, distr_goal_arr);
     this.update_time_data(storedTimeArr, storedKey, storedActivity);
+    document.getElementById('dropdown-options').style.display = 'none';
 };
 
 
