@@ -5,6 +5,7 @@ function pad(val) {
     return val > 9 ? val : "0" + val;
 }
 
+
 function foo(id, change) {
     var value = parseInt(document.getElementById(id).value, 10);
     value = isNaN(value) ? 0 : value;
