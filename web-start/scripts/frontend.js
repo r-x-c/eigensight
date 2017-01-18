@@ -46,21 +46,11 @@ function update_activity_array_frontend(activity_labels) {
 
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
-    var waking_seconds_in_day = SECONDS_IN_DAY - (sleep_target / 1000);
-    // debug(bedtime);
-    // debug('% awake' + waking_seconds_in_day / SECONDS_IN_DAY);
-    // debug('sec in a day');
-    // debug(get_time_key(bedtime) - time_key);
-    // debug((get_time_key(bedtime) - time_key) / waking_seconds_in_day);
-    // debug((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY);
     var percentRemaining = (((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
-
     document.getElementById("currentActivity").innerHTML = activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
     drawChart(timeArray);
-    draw_percentage_chart();
-
     //Time spent on current activity
     var sec = Math.floor(get_time_key() - time_key);
     clearInterval(cu_timer);
@@ -70,7 +60,6 @@ function updateFrontEnd(timeArray, time_key, activity_text) {
     setTimeout(function () {
         clearInterval(timer);
     }, 1 * HOUR_IN_MS);
-
     //timeout to remind you to change activities
     setTimeout(myFunction, MINUTE_IN_MS * 45);
 }
@@ -158,8 +147,6 @@ function changeObjectView(id) {
 
 
 $(document).ready(function () {
-
-
 
 
 });//end document ready
@@ -303,6 +290,7 @@ jQuery(document).ready(function () {
         e.stopPropagation()
     });
 });
+
 
 
 

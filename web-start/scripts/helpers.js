@@ -35,8 +35,19 @@ function msToTime(s) {
     s = (s - secs) / 60;
     var mins = s % 60;
     var hrs = (s - mins) / 60;
-    return hrs + ' hours ' + mins + ' mins';
+    return hrs + 'h ' + mins + 'm';
 }
+
+function msToTime_plain(s) {
+    var ms = s % 1000;
+    s = (s - ms) / 1000;
+    var secs = s % 60;
+    s = (s - secs) / 60;
+    var mins = s % 60;
+    var hrs = (s - mins) / 60;
+    return pad(hrs) + ':' + pad(mins);
+}
+
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -97,7 +108,7 @@ function displayArray(arr) {
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         cell1.innerHTML = activity_labels[i];
-        cell2.innerHTML = String(arr[i]).toHHMMSS();
+        cell2.innerHTML =  msToTime_plain(arr[i] * 1000);
         cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(0) + '%';
         cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(0) + '%';
     }

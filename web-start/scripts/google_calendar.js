@@ -64,6 +64,7 @@ function loadCalendarApi() {
  * appropriate message is printed.
  */
 function listUpcomingEvents() {
+    debug('loading events from calendar api');
     var request = gapi.client.calendar.events.list({
         'calendarId': 'primary',
         'timeMin': (new Date()).toISOString(),

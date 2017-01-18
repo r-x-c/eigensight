@@ -583,26 +583,20 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
     display: inline-block;
     font-weight: 100;
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
 }
 
 #clockdiv > div {
-    padding: 3px;
-    border-radius: 3px;
-    background: #3f5660;
+    padding: 8px;
+    border-radius: 20px;
+    background: #5a34a4;
     display: inline-block;
 }
 
-#clockdiv div > span {
-    padding: 3px;
-    border-radius: 3px;
-    background: #607d8b;
-    display: inline-block;
-}
 
 .smalltext {
-    /*padding-top: 5px;*/
-    font-size: 12px;
+    padding-top: 2px;
+    font-size: 10px;
 }
 
 /*header div container*/
