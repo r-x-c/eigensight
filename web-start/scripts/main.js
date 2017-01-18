@@ -408,6 +408,36 @@ Kairos.prototype.update_settings = function (bedTime, sleepTarget, activityArray
     return this.database.ref().update(updates);
 };
 
+Kairos.prototype.validate_time_data = function (timeArray, lastKey, lastActivity) {
+    debug('Validating time data...');
+    if (lastActivity === undefined) {
+        lastActivity = 0;
+    }
+    if (lastKey === undefined) {
+        lastKey = 0;
+    }
+    if (timeArray === undefined) {
+        debug('foo');
+        timeArray = new Array(activity_labels.length).fill(0);
+    }
+    timeArray.resize(activity_labels.length, 0);
+    return [timeArray, lastKey, lastActivity];
+};
+
+
+Kairos.prototype.update_time_data = function (timeArray, lastKey, lastActivity) {
+    debug('Saving time data...');
+    var userId = this.auth.currentUser.uid;
+    var updates = {};
+
+    updates['/timelogs/' + userId + '/' + get_date_key(0)] = {
+        'lastKey': lastKey,
+        'lastActivity': lastActivity,
+        'timeArray': timeArray
+    };
+    return this.database.ref().update(updates);
+};
+
 
 Kairos.prototype.save_bedtime = function () {
     debug('saving new bedtime to db');
@@ -495,7 +525,7 @@ Kairos.prototype.refresh_page_data = function () {
     this.settingRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
-            this.update_settings(DEFAULT_BEDTIME, DEFAULT_SLEEP_TARGET, DEFAULT_ACTIVITIES);
+            that.update_settings(DEFAULT_BEDTIME, DEFAULT_SLEEP_TARGET, DEFAULT_ACTIVITIES);
         }
         activity_labels = snapshot.val()['activity_array'];
         sleep_target = snapshot.val()['sleep_target'];
@@ -508,23 +538,28 @@ Kairos.prototype.refresh_page_data = function () {
 
     //Load Time Data
     this.timeRef = this.database.ref('timelogs/' + userId + "/" + get_date_key(0));
+    var timeArray, lastKey, lastActivity;
     this.timeRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
-            var last_activity = this.get_activity_from_day(-1);
+            var last_activity = that.get_activity_from_day(-1);
+            debug(activity_labels[last_activity]);
             if (!last_activity) {
                 console.log("tried retrieving yesterday's activity idx, failed");
-                last_activity = 0;
+                lastActivity = 0;
             }
-            that.timeRef.set({
-                'lastKey': get_time_key(),
-                'lastActivity': last_activity,
-                'timeArray': new Array(DEFAULT_ACTIVITIES.length).fill(0)
-            });
         }
-        var read_time_array = snapshot.val()['timeArray'];
-        read_time_array.resize(activity_labels.length, 0);
-        updateFrontEnd(read_time_array, snapshot.val()['lastKey'], activity_labels[snapshot.val()['lastActivity']])
+        else {
+            timeArray = snapshot.val()['timeArray'];
+            lastKey = snapshot.val()['lastKey'];
+            lastActivity = snapshot.val()['lastActivity'];
+        }
+        var clean_data = that.validate_time_data(timeArray, lastKey, lastActivity);
+        timeArray = clean_data[0];
+        lastKey = clean_data[1];
+        lastActivity = clean_data[2];
+        that.update_time_data(timeArray, lastKey, lastActivity);
+        updateFrontEnd(timeArray, lastKey, activity_labels[lastActivity]);
     });
 };
 
@@ -537,20 +572,20 @@ Kairos.prototype.switch_activity = function (e) {
 };
 
 Kairos.prototype.selectActivity = function (activity_index) {
-    debug('Loading ' + activity_labels[activity_index] + ' into database...');
+    debug('Updating to ' + activity_labels[activity_index] + ', writing into database...');
     var date_key = get_date_key(0);
     var time_key = get_time_key();
     var userId = this.auth.currentUser.uid;
     var timeDataRef = this.database.ref('timelogs/' + userId + "/" + date_key);
     var timelineRef = this.database.ref('timelines/' + userId + "/" + date_key);
+    var that = this;
 
     //record order of activities during day
     timelineRef.push({
         'timekey': time_key,
-        'activity': activity_index,
+        'activity': activity_labels[activity_index],
     });
 
-    // var events = [];
     var storedActivity, storedKey, storedTimeArr;
     timeDataRef.on('value', function (snapshot) {
         if (snapshot.val() !== null) {
@@ -559,44 +594,18 @@ Kairos.prototype.selectActivity = function (activity_index) {
             storedKey = event['lastKey'];
             storedTimeArr = event['timeArray'];
             storedTimeArr[storedActivity] += (time_key - storedKey);
-            storedTimeArr.resize(activity_labels.length, 0);
-            updateFrontEnd(storedTimeArr, time_key, activity_labels[activity_index]);
         }
         else {
-            console.error("Snapshot not found,  injecting blank values");
-            timeDataRef.set({
-                'lastKey': time_key,
-                'lastActivity': activity_index,
-                'timeArray': new Array(activity_labels.length).fill(0)
-            });
-            storedKey = time_key;
-            storedActivity = activity_index;
-            storedTimeArr = new Array(activity_labels.length).fill(0);
-
+            console.error('Time data was not loaded properly');
+            this.refresh_page_data();
         }
     });
-
-
-    //Write to DB
-    timeDataRef.update({
-        'lastKey': time_key,
-        'lastActivity': Number(activity_index),
-        'timeArray': storedTimeArr
-    });
-
-    console.log("end DB read");
-    //todo: math from yesterday
-    // var yesterday = new Date();
-    // yesterday.setDate(yesterday.getDate() - 1);
-    // console.log(yesterday);
-    // var historicalRef = firebase.database().ref('timelogs/' + userId + "/" + yesterday);
-
-    //fixme smooth calculations between days, temp calc
-    // lastActivity = 0;
-    // lastKey = time_key;
-    // lastTimeArr = new Array(selector.length).fill(0);
-    // }
-
+    var clean_data = this.validate_time_data(storedTimeArr, time_key, activity_index);
+    storedTimeArr= clean_data[0];
+    storedKey = clean_data[1];
+    storedActivity = clean_data[2];
+    updateFrontEnd(storedTimeArr, storedKey, storedActivity);
+    this.update_time_data(storedTimeArr, storedKey, storedActivity);
 };
 
 

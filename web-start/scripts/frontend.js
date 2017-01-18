@@ -46,12 +46,12 @@ function update_activity_array_frontend(activity_labels) {
 function updateFrontEnd(timeArray, time_key, activity_text) {
     displayArray(timeArray);
     var waking_seconds_in_day = SECONDS_IN_DAY - (sleep_target / 1000);
-    debug(bedtime);
-    debug('% awake' + waking_seconds_in_day / SECONDS_IN_DAY);
-    debug('sec in a day');
-    debug(get_time_key(bedtime) - time_key);
-    debug((get_time_key(bedtime) - time_key) / waking_seconds_in_day);
-    debug((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY);
+    // debug(bedtime);
+    // debug('% awake' + waking_seconds_in_day / SECONDS_IN_DAY);
+    // debug('sec in a day');
+    // debug(get_time_key(bedtime) - time_key);
+    // debug((get_time_key(bedtime) - time_key) / waking_seconds_in_day);
+    // debug((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY);
     var percentRemaining = (((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
 
     document.getElementById("currentActivity").innerHTML = activity_text +
