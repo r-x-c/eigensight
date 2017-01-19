@@ -65,17 +65,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
 
-    <!-- App Styling -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-    <!--<link rel="stylesheet" href="styles/responsive.css">-->
-    <!--<link rel="stylesheet" href="styles/header.css">-->
-
-
-    <!--modal fixme-->
-    <!--<link rel="stylesheet" href="styles/main.css">-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-
-
     <script data-require="jquery@2.1.1" data-semver="2.1.1"
             src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script data-require="bootstrap@*" data-semver="3.1.1"
@@ -96,8 +85,12 @@
     </style>
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<div id="hori_navbar" class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <!--<script>-->
+            <!--$("#hori_navbar").load("horizontal_nav_bar.html");-->
+<!--//        </script>-->
+
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title" style="color:#f21e69">Home</span>
             <div class="mdl-layout-spacer"></div>
@@ -127,40 +120,10 @@
             </ul>
         </div>
     </header>
-    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-            <button hidden id="sign-in"
-                    class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-                <i class="material-icons">account_circle</i>Sign-in
-            </button>
-            <img hidden id="user-pic" class="demo-avatar">
-            <div class="demo-avatar-dropdown">
-                <span id="user-name"></span>
-                <!--<span>hello@example.com</span>-->
-                <div class="mdl-layout-spacer"></div>
-                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                    <i class="material-icons" role="presentation">arrow_drop_down</i>
-                    <span class="visuallyhidden">Accounts</span>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                    <li hidden id="sign-out"
-                        class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey">
-                        Sign-out
-                    </li>
-                    <!--<li class="mdl-menu__item">hello@example.com</li>-->
-                    <!--<li class="mdl-menu__item">info@example.com</li>-->
-                    <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>-->
-                </ul>
-            </div>
-        </header>
-
-
-        <nav id="vert_navbar" class="demo-navigation mdl-navigation mdl-color--grey-300 mdl-color-text--pink-A400">
-            <script>
-                $("#vert_navbar").load("vertical_nav_bar.html");
-            </script>
-
-        </nav>
+    <div id="vert_navbar" class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <script>
+            $("#vert_navbar").load("vertical_nav_bar.html");
+        </script>
     </div>
     <main class="mdl-layout__content mdl-color--blue-grey-900">
 

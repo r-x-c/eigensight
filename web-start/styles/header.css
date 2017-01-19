@@ -5,17 +5,11 @@
     border-radius: 10px;
     height: 30px;
     text-align: right;
-    margin:0 10px 10px 0;
+    margin: 0 10px 10px 0;
 }
 
 .dropdown {
     display: inline-block;
-}
-
-.cuTimer{
-    align-self: center;
-    color: #f21e69;
-
 }
 
 .dropdown-content {
@@ -40,6 +34,12 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.cuTimer {
+    align-self: center;
+    color: #f21e69;
+
 }
 
 /*Overhead timer*/

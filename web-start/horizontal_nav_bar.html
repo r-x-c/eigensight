@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="mdl-layout__header-row">
+    <span class="mdl-layout-title" style="color:#f21e69">Home</span>
+    <div class="mdl-layout-spacer"></div>
+    <div style="max-height:30px; margin: 10px;">
+        <div class="dropdown">
+                    <span class="dropbtn mdl-card__title-text" style="color:#f21e69" id="dropdown-topbar"
+                          onclick="switchVisible('dropdown-options')"></span>
+            <div class="dropdown-content" id="dropdown-options">
+            </div>
+        </div>
+    </div>
+    <div id="cu_timer" style="align-self: center; color:#f21e69" class="mdl-card__title-text cuTimer"></div>
+
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+        <i class="material-icons">more_vert</i>
+    </button>
+    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+        <a href="https://github.com/r-x-c">
+            <li class="mdl-menu__item">Github</li>
+        </a>
+        <a href="mailto:rxc@umich.edu?Subject=Eigensight">
+            <li class="mdl-menu__item">Email</li>
+        </a>
+        <a href="">
+            <li class="mdl-menu__item">Donate (TBD)</li>
+        </a>
+    </ul>
+</div>
+
+</html>

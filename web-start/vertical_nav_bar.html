@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<header class="demo-drawer-header">
+    <button hidden id="sign-in"
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+        <i class="material-icons">account_circle</i>Sign-in
+    </button>
+    <img hidden id="user-pic" class="demo-avatar">
+    <div class="demo-avatar-dropdown">
+        <span id="user-name"></span>
+        <!--<span>hello@example.com</span>-->
+        <div class="mdl-layout-spacer"></div>
+        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">arrow_drop_down</i>
+            <span class="visuallyhidden">Accounts</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+            <li hidden id="sign-out"
+                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey">
+                Sign-out
+            </li>
+            <!--<li class="mdl-menu__item">hello@example.com</li>-->
+            <!--<li class="mdl-menu__item">info@example.com</li>-->
+            <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>-->
+        </ul>
+    </div>
+</header>
+
+<nav id="vert_navbar" class="demo-navigation mdl-navigation mdl-color--grey-300 mdl-color-text--pink-A400">
     <a class="mdl-navigation__link"><i class="mdl-color-text--pink-A400 material-icons"
                                        role="presentation">home</i>Home</a>
     <a class="mdl-navigation__link" onclick="document.getElementById('id01').style.display='block'"><i
@@ -19,5 +46,6 @@
     <a class="mdl-navigation__link"><i class="mdl-color-text--pink-A400 material-icons"
                                        role="presentation">help_outline</i><span
             class="visuallyhidden">Help</span></a>
+</nav>
 
 </html>

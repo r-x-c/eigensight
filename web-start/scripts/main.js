@@ -332,22 +332,37 @@ google.charts.load('current', {'packages': ['corechart']});
 // google.charts.setOnLoadCallback(draw_percentage_chart);
 
 
-window.onload = function () {
+$("#vert_navbar").on("load", function () {
+    // do something once the iframe is loaded
+    console.log("iframe loaded");
+});
+
+~function () {
+    console.log("iframe loaded");
+    var loaded = 0;
+
+    $('#vert_navbar, #hori_navbar').load(function () {
+        if (++loaded === 2) {
+            alert('loaded!');
+        }
+    });
+}();
+
+
+$(window).on("load", function () {
+    console.log("window loaded");
     window.friendlyChat = new Kairos();
     display_weather();
-
-    //Google Cal
+    // Google Cal
     gapi.auth.authorize(
         {client_id: CLIENT_ID, scope: SCOPES, immediate: true},
         handleAuthResult);
-
-
-    //Set Variables
+    // Set Variables
     document.getElementsByClassName("tablink")[0].click();
     document.getElementById('bedtime_hour').value = 0;
     document.getElementById('bedtime_minute').value = 0;
-    google.charts.load('current', {'packages': ['corechart']});
-};
+});
+
 
 $("ul").on("click", "button", function (e) {
     $(this).unbind("click");
@@ -377,7 +392,7 @@ var DEFAULT_SLEEP_TARGET = 7 * HOUR_IN_MS + 30 * MINUTE_IN_MS;
 var DEFAULT_STATE = 'MI';
 var DEFAULT_CITY = 'ann_arbor';
 var HOURS_IN_DAY = 24;
-var DEFAULT_DISTRIBUTION_GOALS =[7.5/HOURS_IN_DAY, 1/HOURS_IN_DAY, 5/HOURS_IN_DAY, 2.5/HOURS_IN_DAY, 1.5/HOURS_IN_DAY, 2/HOURS_IN_DAY, 3/HOURS_IN_DAY, 1/HOURS_IN_DAY];
+var DEFAULT_DISTRIBUTION_GOALS = [7.5 / HOURS_IN_DAY, 1 / HOURS_IN_DAY, 5 / HOURS_IN_DAY, 2.5 / HOURS_IN_DAY, 1.5 / HOURS_IN_DAY, 2 / HOURS_IN_DAY, 3 / HOURS_IN_DAY, 1 / HOURS_IN_DAY];
 
 
 //Variable Globals
@@ -605,7 +620,7 @@ Kairos.prototype.selectActivity = function (activity_index) {
         }
     });
     var clean_data = this.validate_time_data(storedTimeArr, time_key, activity_index);
-    storedTimeArr= clean_data[0];
+    storedTimeArr = clean_data[0];
     storedKey = clean_data[1];
     storedActivity = clean_data[2];
     updateFrontEnd(storedTimeArr, storedKey, storedActivity, distr_goal_arr);
