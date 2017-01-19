@@ -45,12 +45,14 @@ function update_activity_array_frontend(activity_labels) {
 
 
 function updateFrontEnd(timeArray, time_key, activity_text, distr_goal_arr) {
-    displayArray(timeArray, distr_goal_arr);
+    // displayArray(timeArray, distr_goal_arr);
     var percentRemaining = (((get_time_key(bedtime) - time_key) / SECONDS_IN_DAY) * 100).toFixed(1) + '%';
     document.getElementById("currentActivity").innerHTML = activity_text +
         " since " + String(time_key).toHHMMSS() + ", " + percentRemaining + " of your time today remains";
     document.getElementById("dropdown-topbar").innerHTML = activity_text;
     drawChart(timeArray);
+    drawTable(timeArray, distr_goal_arr);
+
     //Time spent on current activity
     var sec = Math.floor(get_time_key() - time_key);
     clearInterval(cu_timer);

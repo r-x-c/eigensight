@@ -12,6 +12,7 @@ var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
  * Check if current user has authorized this application.
  */
 function checkAuth() {
+    debug('check auth google cal');
     gapi.auth.authorize(
         {
             'client_id': CLIENT_ID,
@@ -26,12 +27,15 @@ function checkAuth() {
  * @param {Object} authResult Authorization result.
  */
 function handleAuthResult(authResult) {
+    debug('handling auth result google cal');
     var authorizeDiv = document.getElementById('authorize-div');
     if (authResult && !authResult.error) {
+        debug('google cal auth successful');
         // Hide auth UI, then load client library.
         authorizeDiv.style.display = 'none';
         loadCalendarApi();
     } else {
+        debug('err');
         // Show auth UI, allowing the user to initiate authorization by
         // clicking authorize button.
         authorizeDiv.style.display = 'inline';
@@ -137,7 +141,7 @@ function listUpcomingEvents() {
         //frontend
         var foo = document.getElementById('pendingCalendarTime');
         if (pending_calendar_hours > 0) {
-            debug(pending_calendar_hours);
+            // debug(pending_calendar_hours);
             foo.innerHTML = msToTime(pending_calendar_hours) + ' of remaining calendar events';
         }
         else {

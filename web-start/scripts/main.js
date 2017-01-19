@@ -328,41 +328,64 @@ Kairos.prototype.checkSetup = function () {
  }
  */
 
-google.charts.load('current', {'packages': ['corechart']});
-// google.charts.setOnLoadCallback(draw_percentage_chart);
+//fixme
+google.charts.load('current', {'packages': ['corechart', 'table']});
+// google.charts.setOnLoadCallback(drawTable);
 
+function drawTable(timeArr, distrArr) {
+    debug('drawing table...')
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Activity');
+    data.addColumn('number', 'Time');
+    data.addColumn('number', '% Day');
+    data.addColumn('number', '+/- from Target');
 
-$("#vert_navbar").on("load", function () {
-    // do something once the iframe is loaded
-    console.log("iframe loaded");
-});
+    var formatted_data = [];
+    distrArr.resize(activity_labels.length, 0);
+    var sum = timeArr.reduce(function (a, b) {
+        return a + b;
+    }, 0);
 
-~function () {
-    console.log("iframe loaded");
-    var loaded = 0;
-
-    $('#vert_navbar, #hori_navbar').load(function () {
-        if (++loaded === 2) {
-            alert('loaded!');
+    for (var i = 0; i < timeArr.length; i++) {
+        var percent_day = timeArr[i] * 100 / sum;
+        var delta = ((timeArr[i] / SECONDS_IN_DAY / distrArr[i]) - 1) * 100;
+        if(distrArr[i] === 0){
+            delta = 0;
         }
-    });
-}();
+        formatted_data.push([activity_labels[i],
+            {v: timeArr[i] * 1000, f: msToTime_plain(timeArr[i] * 1000)},
+            {v: percent_day, f: percent_day.toFixed(0) + '%'},
+            {v: delta, f: delta.toFixed(0) + '%'}]);
+    }
 
 
-$(window).on("load", function () {
+    data.addRows(formatted_data);
+    data.sort({column: 1, desc: true});
+
+    // data.addRows([
+    //     ['Mike',  {v: 10000, f: '$10,000'}, 4, 0],
+    //     ['Jim',   {v:8000,   f: '$8,000'},  5, 0],
+    //     ['Alice', {v: 12500, f: '$12,500'}, 10, 0],
+    //     ['Bob',   {v: 7000,  f: '$7,000'},  21, 0]
+    // ]);
+
+    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+    table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
+}
+
+
+window.onload = function () {
     console.log("window loaded");
     window.friendlyChat = new Kairos();
     display_weather();
     // Google Cal
-    gapi.auth.authorize(
-        {client_id: CLIENT_ID, scope: SCOPES, immediate: true},
-        handleAuthResult);
+    checkAuth();
     // Set Variables
     document.getElementsByClassName("tablink")[0].click();
     document.getElementById('bedtime_hour').value = 0;
     document.getElementById('bedtime_minute').value = 0;
-});
-
+};
 
 $("ul").on("click", "button", function (e) {
     $(this).unbind("click");
@@ -392,7 +415,7 @@ var DEFAULT_SLEEP_TARGET = 7 * HOUR_IN_MS + 30 * MINUTE_IN_MS;
 var DEFAULT_STATE = 'MI';
 var DEFAULT_CITY = 'ann_arbor';
 var HOURS_IN_DAY = 24;
-var DEFAULT_DISTRIBUTION_GOALS = [7.5 / HOURS_IN_DAY, 1 / HOURS_IN_DAY, 5 / HOURS_IN_DAY, 2.5 / HOURS_IN_DAY, 1.5 / HOURS_IN_DAY, 2 / HOURS_IN_DAY, 3 / HOURS_IN_DAY, 1 / HOURS_IN_DAY];
+var DEFAULT_DISTRIBUTION_GOALS = [7.5 / HOURS_IN_DAY, 1 / HOURS_IN_DAY, 5.5 / HOURS_IN_DAY, 2.5 / HOURS_IN_DAY, 1.5 / HOURS_IN_DAY, 2 / HOURS_IN_DAY, 3 / HOURS_IN_DAY, 1 / HOURS_IN_DAY];
 
 
 //Variable Globals
@@ -546,9 +569,11 @@ Kairos.prototype.refresh_page_data = function () {
             console.log("no values found, setting blank ones");
             that.update_settings(DEFAULT_BEDTIME, DEFAULT_SLEEP_TARGET, DEFAULT_ACTIVITIES);
         }
-        activity_labels = snapshot.val()['activity_array'];
-        sleep_target = snapshot.val()['sleep_target'];
-        bedtime = new Date(snapshot.val()['bed_time']);
+        else {
+            activity_labels = snapshot.val()['activity_array'];
+            sleep_target = snapshot.val()['sleep_target'];
+            bedtime = new Date(snapshot.val()['bed_time']);
+        }
         that.validate_settings(bedtime, sleep_target, activity_labels);
         // that.update_settings(bedtime, sleep_target, activity_labels);
         update_bedtime_frontend(bedtime, sleep_target);
@@ -561,10 +586,11 @@ Kairos.prototype.refresh_page_data = function () {
     this.timeRef.on('value', function (snapshot) {
         if (snapshot.val() === null) {
             console.log("no values found, setting blank ones");
-            var last_activity = that.get_activity_from_day(-1);
-            debug(activity_labels[last_activity]);
-            if (!last_activity) {
-                console.log("tried retrieving yesterday's activity idx, failed");
+            try {
+                lastActivity = that.get_activity_from_day(-1);
+            }
+            catch (err) {
+                debug(err);
                 lastActivity = 0;
             }
         }

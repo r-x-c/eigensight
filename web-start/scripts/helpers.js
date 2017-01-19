@@ -104,6 +104,8 @@ function get_time_key(n) {
 
 function displayArray(arr, goal_arr) {
     debug('Loading table view');
+
+    goal_arr.resize(activity_labels.length, 0);
     var table = document.getElementById("timeTable");
     var sum = arr.reduce(function (a, b) {
         return a + b;
@@ -117,15 +119,29 @@ function displayArray(arr, goal_arr) {
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
         cell1.innerHTML = activity_labels[i];
-        cell2.innerHTML =  msToTime_plain(arr[i] * 1000);
+        cell2.innerHTML = msToTime_plain(arr[i] * 1000);
         cell3.innerHTML = ((arr[i] / sum) * 100).toFixed(0) + '%';
         cell4.innerHTML = ((arr[i] / SECONDS_IN_DAY) * 100).toFixed(0) + '%';
+        var delta = ((arr[i] / SECONDS_IN_DAY / goal_arr[i]) - 1) * 100;
+        // var bar = goal_arr[i];
+        // var foo = arr[i] / SECONDS_IN_DAY;
+        // debug(bar);
+        // debug(foo);
+        // debug(foo / bar - 1);
+        if (goal_arr[i] === 0) {
+            delta = -1;
+        }
+        cell5.innerHTML = delta.toFixed(1) + '%';
+        // cell5.innerHTML = (((foo / bar) - 1) * 100).toFixed(1) + '%';
     }
-    for(var x = 0; x < DEFAULT_DISTRIBUTION_GOALS.length; x++){
-        debug(DEFAULT_DISTRIBUTION_GOALS[x]);
-    }
-    var distr_sum = goal_arr.reduce(function(a, b) { return a + b; }, 0);
+    // for (var x = 0; x < DEFAULT_DISTRIBUTION_GOALS.length; x++) {
+    //     debug(DEFAULT_DISTRIBUTION_GOALS[x]);
+    // }
+    var distr_sum = goal_arr.reduce(function (a, b) {
+        return a + b;
+    }, 0);
 
     debug(distr_sum);
 }
