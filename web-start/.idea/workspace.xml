@@ -27,7 +27,7 @@
     <favorites_list name="web-start" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38345864">
+    <splitter split-orientation="horizontal" split-proportion="0.6822319">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
           <file leaf-file-name="google_calendar.js" pinned="false" current-in-tab="false">
@@ -82,8 +82,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+                <state relative-caret-position="199">
+                  <caret line="383" column="37" selection-start-line="383" selection-start-column="37" selection-end-line="383" selection-end-column="37" />
                   <folding>
                     <element signature="e#4226#4247#0" expanded="true" />
                     <element signature="e#4327#4365#0" expanded="true" />
@@ -96,11 +96,9 @@
                     <element signature="e#8113#8119#1" expanded="true" />
                     <element signature="e#8169#8175#1" expanded="true" />
                     <element signature="e#8229#8235#1" expanded="true" />
-                    <element signature="e#16406#16462#0" expanded="true" />
-                    <element signature="e#17011#17067#0" expanded="true" />
-                    <element signature="e#20719#20726#0" expanded="true" />
-                    <element signature="e#20873#20892#0" expanded="true" />
-                    <element signature="e#21554#21583#0" expanded="true" />
+                    <element signature="e#19558#19565#0" expanded="true" />
+                    <element signature="e#19712#19731#0" expanded="true" />
+                    <element signature="e#20393#20422#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -182,8 +180,8 @@
         <option value="$PROJECT_DIR$/scripts/google_calendar.js" />
         <option value="$PROJECT_DIR$/styles/responsive.css" />
         <option value="$PROJECT_DIR$/scripts/frontend.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -504,12 +502,12 @@
       <workItem from="1484758007393" duration="2562000" />
       <workItem from="1484773367264" duration="5293000" />
       <workItem from="1484784224262" duration="2699000" />
-      <workItem from="1484797742183" duration="2296000" />
+      <workItem from="1484797742183" duration="2581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291738000" />
+    <option name="totallyTimeSpent" value="292023000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -913,10 +911,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="362" column="23" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+        <state relative-caret-position="199">
+          <caret line="383" column="37" selection-start-line="383" selection-start-column="37" selection-end-line="383" selection-end-column="37" />
           <folding>
             <element signature="e#4226#4247#0" expanded="true" />
             <element signature="e#4327#4365#0" expanded="true" />
@@ -929,20 +935,10 @@
             <element signature="e#8113#8119#1" expanded="true" />
             <element signature="e#8169#8175#1" expanded="true" />
             <element signature="e#8229#8235#1" expanded="true" />
-            <element signature="e#16406#16462#0" expanded="true" />
-            <element signature="e#17011#17067#0" expanded="true" />
-            <element signature="e#20719#20726#0" expanded="true" />
-            <element signature="e#20873#20892#0" expanded="true" />
-            <element signature="e#21554#21583#0" expanded="true" />
+            <element signature="e#19558#19565#0" expanded="true" />
+            <element signature="e#19712#19731#0" expanded="true" />
+            <element signature="e#20393#20422#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="362" column="23" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
