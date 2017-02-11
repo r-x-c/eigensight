@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <header class="demo-drawer-header">
-    <button hidden id="sign-in"
-            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        <i class="material-icons">account_circle</i>Sign-in
-    </button>
+
     <img hidden id="user-pic" class="demo-avatar">
     <div class="demo-avatar-dropdown">
         <span id="user-name"></span>
@@ -14,15 +11,23 @@
             <i class="material-icons" role="presentation">arrow_drop_down</i>
             <span class="visuallyhidden">Accounts</span>
         </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-            <li hidden id="sign-out"
-                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey">
-                Sign-out
-            </li>
-            <!--<li class="mdl-menu__item">hello@example.com</li>-->
-            <!--<li class="mdl-menu__item">info@example.com</li>-->
-            <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>-->
-        </ul>
+
+        <nav class="main-nav">
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                <li hidden id="sign-out"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey">
+                    Sign-out
+                </li>
+                <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey cd-signin" href="#0">Sign in</a></li>
+                <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--darkgrey cd-signup"
+                       href="#0">Sign up</a></li>
+                <!--<li class="mdl-menu__item">hello@example.com</li>-->
+                <!--<li class="mdl-menu__item">info@example.com</li>-->
+                <!--<li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>-->
+            </ul>
+        </nav>
+
+
     </div>
 </header>
 
@@ -33,15 +38,15 @@
             class="mdl-color-text--pink-A400 material-icons"
             role="presentation">settings</i>Settings</a>
     <!--<a class="mdl-navigation__link"><i class="mdl-color-text&#45;&#45;pink-A400  material-icons"-->
-                                       <!--role="presentation">forum</i>Forums</a>-->
+    <!--role="presentation">forum</i>Forums</a>-->
     <!--<a class="mdl-navigation__link"><i class="mdl-color-text&#45;&#45;pink-A400  material-icons"-->
-                                       <!--role="presentation">flag</i>Updates</a>-->
+    <!--role="presentation">flag</i>Updates</a>-->
     <!--<a class="mdl-navigation__link"><i class="mdl-color-text&#45;&#45;pink-A400  material-icons"-->
-                                       <!--role="presentation">local_offer</i>Promos</a>-->
+    <!--role="presentation">local_offer</i>Promos</a>-->
     <!--<a class="mdl-navigation__link"><i class="mdl-color-text&#45;&#45;pink-A400  material-icons"-->
-                                       <!--role="presentation">shopping_cart</i>Purchases</a>-->
+    <!--role="presentation">shopping_cart</i>Purchases</a>-->
     <!--<a class="mdl-navigation__link"><i class="mdl-color-text&#45;&#45;pink-A400  material-icons"-->
-                                       <!--role="presentation">people</i>Social</a>-->
+    <!--role="presentation">people</i>Social</a>-->
     <div class="mdl-layout-spacer"></div>
     <a class="mdl-navigation__link"><i class="mdl-color-text--pink-A400 material-icons"
                                        role="presentation">help_outline</i><span

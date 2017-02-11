@@ -34,6 +34,10 @@ $.getScript("/scripts/frontend.js", function () {
 
 });
 
+$.getScript("/scripts/login.js", function () {
+
+});
+
 // Initializes Kairos.
 function Kairos() {
     this.checkSetup();
@@ -184,9 +188,12 @@ Kairos.prototype.signOut = function () {
     this.auth.signOut();
 };
 
+
+
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 Kairos.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
+        debug("firebase user signed in");
         // Get profile pic and user's name from the Firebase user object.
         var profilePicUrl = user.photoURL; // Only change these two lines!
         var userName = user.displayName;   // Only change these two lines!
@@ -200,13 +207,12 @@ Kairos.prototype.onAuthStateChanged = function (user) {
         this.userPic.removeAttribute('hidden');
         this.signOutButton.removeAttribute('hidden');
 
-        // Hide sign-in button.
+        // Hide sign-in button, close login form
         this.signInButton.setAttribute('hidden', 'true');
-
-        // We load currently existing chat messages.
+        $('.cd-close-form').trigger('click');
         this.refresh_page_data();
-
     } else { // User is signed out!
+        debug("firebase user not signed in");
         // Hide user's profile and sign-out button.
         this.userName.setAttribute('hidden', 'true');
         this.userPic.setAttribute('hidden', 'true');
@@ -214,6 +220,8 @@ Kairos.prototype.onAuthStateChanged = function (user) {
 
         // Show sign-in button.
         this.signInButton.removeAttribute('hidden');
+
+        $('.cd-signin').trigger('click');
     }
 };
 
@@ -337,7 +345,6 @@ function drawTable(timeArr, distrArr) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Activity');
     data.addColumn('number', 'Time');
-    data.addColumn('number', '% Day');
     data.addColumn('number', '+/- from Target');
 
     var formatted_data = [];
@@ -354,7 +361,6 @@ function drawTable(timeArr, distrArr) {
         }
         formatted_data.push([activity_labels[i],
             {v: timeArr[i] * 1000, f: msToTime_plain(timeArr[i] * 1000)},
-            {v: percent_day, f: percent_day.toFixed(0) + '%'},
             {v: delta, f: delta.toFixed(0) + '%'}]);
     }
 
@@ -373,7 +379,6 @@ function drawTable(timeArr, distrArr) {
 
     table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
 }
-
 
 window.onload = function () {
     console.log("window loaded");
