@@ -19,12 +19,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="a humble aid to boost positive productivity">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="cache-control" content="no-cache"/>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 
-    <title>eigensight</title>
+    <title>EigenSight</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -506,36 +506,40 @@
         </ul>
         <div id="cd-login"> <!-- log in form -->
             <form class="cd-form">
-                <p>*only google auth works</p>
-                <p class="fieldset">
-                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="signin-email" type="email"
-                           placeholder="E-mail">
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+                <!--<p>*only google auth works</p>-->
+                <!--<p class="fieldset">-->
+                    <!--<label class="image-replace cd-email" for="signin-email">E-mail</label>-->
+                    <!--<input class="full-width has-padding has-border" id="signin-email" type="email"-->
+                           <!--placeholder="E-mail">-->
+                    <!--<span class="cd-error-message">Error message here!</span>-->
+                <!--</p>-->
+
+                <!--<p class="fieldset">-->
+                    <!--<label class="image-replace cd-password" for="signin-password">Password</label>-->
+                    <!--<input class="full-width has-padding has-border" id="signin-password" type="text"-->
+                           <!--placeholder="Password">-->
+                    <!--<a href="#0" class="hide-password">Hide</a>-->
+                    <!--<span class="cd-error-message">Error message here!</span>-->
+                <!--</p>-->
 
                 <p class="fieldset">
-                    <label class="image-replace cd-password" for="signin-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signin-password" type="text"
-                           placeholder="Password">
-                    <a href="#0" class="hide-password">Hide</a>
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+                <div id="my-signin2"></div>
 
+                </p>
                 <p class="fieldset">
-                    <button hidden id="sign-in"
+                    <button hidden id="sign-in" type="submit"
                             class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--black">
-                        <i class="material-icons">account_circle</i>Sign-in with google
+                        <img src="/images/btn_google_sign_dark_1x.png" alt="submit" />
                     </button>
                 </p>
-                <p class="fieldset">
-                    <input type="checkbox" id="remember-me" checked>
-                    <label for="remember-me">Remember me</label>
-                </p>
+                <!--<p class="fieldset">-->
+                    <!--<input type="checkbox" id="remember-me" checked>-->
+                    <!--<label for="remember-me">Remember me</label>-->
+                <!--</p>-->
 
-                <p class="fieldset">
-                    <input class="full-width" type="submit" value="Login">
-                </p>
+                <!--<p class="fieldset">-->
+                    <!--<input class="full-width" type="submit" value="Login">-->
+                <!--</p>-->
             </form>
 
             <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
@@ -603,6 +607,9 @@
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> <!-- google login
+button-->
+
 <script src="scripts/login.js"></script> <!-- Gem jQuery -->
 <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 <script async defer

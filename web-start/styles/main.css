@@ -489,12 +489,9 @@ button {
 
 
 /*LOGIN MODAL*/
-body {
-    padding-top: 120px;
-    padding-bottom: 40px;
-    background-color: #eee;
 
-}
+
+
 .btn
 {
     outline:0;
