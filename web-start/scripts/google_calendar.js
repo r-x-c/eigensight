@@ -5,8 +5,9 @@
     // Your Client ID can be retrieved from your project in the Google
     // Developer Console, https://console.developers.google.com
 //var CLIENT_ID = '985096514625-4uhpffki38dgrc6efi0pefj9vhhc0i3q.apps.googleusercontent.com';
-var CLIENT_ID = '985096514625-o1ren630ion3eeq12dvmotvbrdr5m9dt.apps.googleusercontent.com';
+//var CLIENT_ID = '985096514625-o1ren630ion3eeq12dvmotvbrdr5m9dt.apps.googleusercontent.com';
 
+var CLIENT_ID = '985096514625-jd28h9tfqe3inoskogq0geg5b43seah3.apps.googleusercontent.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
 /*985096514625-o1ren630ion3eeq12dvmotvbrdr5m9dt.apps.googleusercontent.com*
