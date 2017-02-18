@@ -89,15 +89,6 @@
 
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <div id="hori_navbar" class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -105,6 +96,7 @@
             <!--$("#hori_navbar").load("horizontal_nav_bar.html");-->
             <!--//            </script>-->
             <span class="mdl-layout-title" style="color:#f21e69">Home</span>
+            <span class="mdl-layout-title" style="color:#f21e69"> **BETA**</span>
             <div class="mdl-layout-spacer"></div>
             <div style="max-height:30px; margin: 10px;">
                 <div class="dropdown">
@@ -213,9 +205,18 @@
             </div>
 
             <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid">
-                <div id="piechart"></div>
+                <div class="mdl-card__title mdl-card--expand mdl-color--amber-300">
+                    <h4 class="mdl-card__title-text">Current Distribution</h4>
+                </div>
+
+                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                    <div id="piechart"></div>
+                </div>
             </div>
             <div class="mdl-color--white mdl-shadow--2dp mdl-cell  mdl-grid">
+                <div class="mdl-card__title mdl-card--expand mdl-color--green-200">
+                    <h4 class="mdl-card__title-text">Time Objectives</h4>
+                </div>
                 <div id="table_div"></div>
             </div>
 
@@ -504,21 +505,7 @@
         </ul>
         <div id="cd-login"> <!-- log in form -->
             <form class="cd-form">
-                <!--<p>*only google auth works</p>-->
-                <!--<p class="fieldset">-->
-                    <!--<label class="image-replace cd-email" for="signin-email">E-mail</label>-->
-                    <!--<input class="full-width has-padding has-border" id="signin-email" type="email"-->
-                           <!--placeholder="E-mail">-->
-                    <!--<span class="cd-error-message">Error message here!</span>-->
-                <!--</p>-->
-
-                <!--<p class="fieldset">-->
-                    <!--<label class="image-replace cd-password" for="signin-password">Password</label>-->
-                    <!--<input class="full-width has-padding has-border" id="signin-password" type="text"-->
-                           <!--placeholder="Password">-->
-                    <!--<a href="#0" class="hide-password">Hide</a>-->
-                    <!--<span class="cd-error-message">Error message here!</span>-->
-                <!--</p>-->
+                <h3><b>This Website is Under Construction</b></h3>
 
                 <p class="fieldset">
                 <div id="my-signin2"></div>
@@ -527,16 +514,16 @@
                 <p class="fieldset">
                     <button hidden id="sign-in" type="submit"
                             class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--black">
-                        <img src="/images/btn_google_sign_dark_1x.png" alt="submit" />
+                        <img src="/images/btn_google_sign_dark_1x.png" alt="submit"/>
                     </button>
                 </p>
                 <!--<p class="fieldset">-->
-                    <!--<input type="checkbox" id="remember-me" checked>-->
-                    <!--<label for="remember-me">Remember me</label>-->
+                <!--<input type="checkbox" id="remember-me" checked>-->
+                <!--<label for="remember-me">Remember me</label>-->
                 <!--</p>-->
 
                 <!--<p class="fieldset">-->
-                    <!--<input class="full-width" type="submit" value="Login">-->
+                <!--<input class="full-width" type="submit" value="Login">-->
                 <!--</p>-->
             </form>
 
