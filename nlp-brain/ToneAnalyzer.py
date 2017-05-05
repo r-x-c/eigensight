@@ -7,6 +7,7 @@
 import requests
 import json
 from pprint import pprint
+import util
 
 def analyze_tone(text):
     username = '8ac6c0f7-4e06-409f-9565-513e6200cf2b'
@@ -24,10 +25,10 @@ def analyze_tone(text):
 def display_results(data):
     data = json.loads(str(data))
     for i in data['document_tone']['tone_categories']:
-        print(i['category_name'])
-        print("-" * len(i['category_name']))
+        util.debug(i['category_name'])
+        util.debug("-" * len(i['category_name']))
         for j in i['tones']:
-            print(j['tone_name'].ljust(20),(str(round(j['score'] * 100,1)) + "%").rjust(10))
+            util.debug(j['tone_name'].ljust(20),(str(round(j['score'] * 100,1)) + "%").rjust(10))
         print()
     print()
 
@@ -38,18 +39,3 @@ def parse_results(data):
         for j in i['tones']:
             x[j['tone_name']] = j['score']
     return x
-
-
-def main():     
-    data = raw_input("Enter some text to be analyzed for tone analysis by IBM Watson (Q to quit):\n")
-    print(len(data))
-    if len(data) >= 1:
-        results = analyze_tone(data)
-        if results != False:
-            display_results(results)
-            exit
-    else:
-        print("Something went wrong")
- 
-if __name__ == "__main__":
-    main()
